@@ -15,4 +15,11 @@
   - [x] org notes - one drive to github
 
 2016-08-27
-  - [.] What is Code
+  - [60%] What is Code
+
+2016-08-28
+  - [x] What is Code
+  - [x] 95 - orientation
+
+TODO:
+  - [.] Read Mastery
