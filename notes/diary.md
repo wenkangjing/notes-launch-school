@@ -20,6 +20,9 @@
 2016-08-28
   - [x] What is Code
   - [x] 95 - orientation
+  - [.] 200 - front-end prep
 
 TODO:
-  - [.] Read Mastery
+  - [ ] Read Mastery
+  - [ ] clound9 / nitrous
+  - [] http://www.paulirish.com/2012/talk-tooling-the-webapp-development-stack/
