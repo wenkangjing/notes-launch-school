@@ -22,6 +22,10 @@
   - [x] 95 - orientation
   - [.] 200 - front-end prep
 
+2016-08-29
+  - [x] https://www.codecademy.com/en/courses/learn-the-command-line
+  - [.] downlaod ubuntu ios
+
 TODO:
   - [ ] Read Mastery
   - [ ] clound9 / nitrous

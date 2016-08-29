@@ -35,3 +35,25 @@ Usage
 - setup scheduled tasks. cron jobs in linux
 - debug server
 - Monkey patch code (dirty)
+
+Command	Description
+- cd	Change directory.
+  + - ../.. Two levels up
+  + ~     Your "home" directory, or the directory you are placed in when you log in.
+- ls	List files and directories in current directory.
+  + lah long, all, human readable 
+- pwd	Display the path of the current directory.
+- touch	Create a file.
+- mkdir	Create a directory.
+  + -p, --parents no error if existing, make parent directories as needed
+- rm	Remove a file or directory. Warning: deleting a file or directory with this command is permanent!
+  + -r recursive
+- cp	Copy a file or directory.
+- mv	Move or rename a file or directory.
+- echo	Print text to STDOUT.
+- cat	Display contents of a file.
+- more	Display contents of a file, starting at the top and letting the user scroll down.
+- less	Display contents of a file in an even more interactive way.
+- head	Display the first part of a file.
+- tail	Display the last part of a file.
+- man	Display documentation about a command.
