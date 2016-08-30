@@ -24,11 +24,25 @@
 
 2016-08-29
   - [x] https://www.codecademy.com/en/courses/learn-the-command-line
-  - [.] command line
-  - [ ] root/bin vs usr/bin
+  - [80%] command line
+
+2016-08-30
+  - [x] command line - CLI (command line interface) - file, directory, executables
+  - [x ] root/bin vs usr/bin
+  - [x] env, PWD, HOME, PATH
 
 TODO:
+  - [] practice sudo
   - [.] downlaod ubuntu ios
   - [ ] Read Mastery
   - [ ] clound9 / nitrous
   - [] http://www.paulirish.com/2012/talk-tooling-the-webapp-development-stack/
+
+Question:
+  - [?] users groups, owner
+
+NOTE:
+Course =========
+Lesson #
+Topic ##
+inside: ###...

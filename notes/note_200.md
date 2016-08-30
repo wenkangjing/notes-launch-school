@@ -1,10 +1,11 @@
-**200 Front end Prep** 
+200 Front end Prep
+====================
 
-### 200 - L1 - Front-end Prep
+# 200 - L1 - Front-end Prep
 
-#### Command Line - ebook
 
-Setup
+## Command Line - ebook
+
 
 1. Sign up for a service that provides a full, in-browser development environment, such as Nitrous or Cloud 9. 
 
@@ -141,9 +142,32 @@ Permissions in linux
 drwxr-xr-x+ 1 bao bao    0 Aug 29 21:44 .
 1/3/3/3 user group
 
-u, g, o, or a = "group", "other", and "all",
+u, g, o, or a = "group", "other", and "all"
+      
 
 $ chmod +w sample.txt // give write permission
+
+#### prerequisites of chmod
+
+- be its owner
+- be root: god, the super user—it can read, write, and delete (almost) any file, 
+  + not log as root, change when needed
+  + exception: file/dir without execute permission granted
+- be sudo - a command of being god
+  + use the sudo command to perform actions that require root privileges
+  + detailed audit trail
+
+
+#### permission summary
+
+- permissions are assigned to files/dir, not user/group
+- access level: rwx (read, write, execute) for owner, group, other
+
+#### Q&A
+
+- which user/group are assigned to folder?
+ls parent folder, $ Sls -l /
+
 
 Number	Permission
 0	No permission granted.
@@ -155,4 +179,58 @@ Number	Permission
 6	Can read and write (4 + 2 = 6).
 7	Can read and write and execute (4 + 2 + 1 = 7).
 
+
 > Shell vs Bash vs Terminal vs Console
+
+Database management commands: mysql, psql, redis-client, mongo
+Text editors: vim, pico, nano, emacs
+REPLs (Read-Eval-Print-Loop), which are basically interactive scripting consoles: irb, python, php -a
+System monitoring: top, htop
+Reading files or manuals: man, less, more
+Window/Session handling: byobu, screen, tmux
+
+bash, zsh
+
+
+ "REPLs" because they Read input, Evaluate the input, Print the results, and Loop back to read more input.
+
+
+## Git - ebook
+
+- git
+
+git was created by Linus Torvalds, the same software engineer who created Linux.
+Free and Open Source Software, or FOSS for short,
+GUI: gitk or git-gui
+Do not nest your repositories.
+
+git init - create .git, hidden, ls -a 
+
+/etc/gitconfig - apply to all users and all of their repositories.
+~/.gitconfig	- to your user account. 
+<repo>/.git/config - to a repository. 
+
+--global save to ~/.gitconfig
+--system save to /etc/gitconfig
+default to repo ./git/config
+
+- .gitignore 
+
+- git status
+
+git status is showing us what's called our working tree and staging area.aka changes
+
+- git add
+
+git add file list with space as seperater
+// stage files
+
+staged: green
+unstaged: red
+case sensitive
+
+- git commit -m 'comment description'
+
+a bundle of changes
+
+- git log
