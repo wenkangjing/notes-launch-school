@@ -31,9 +31,12 @@
   - [x ] root/bin vs usr/bin
   - [x] env, PWD, HOME, PATH
 
+2016-09-01
+  - [.] downlaod ubuntu ios
+  - [.] git branch
+
 TODO:
   - [] practice sudo
-  - [.] downlaod ubuntu ios
   - [ ] Read Mastery
   - [ ] clound9 / nitrous
   - [] http://www.paulirish.com/2012/talk-tooling-the-webapp-development-stack/

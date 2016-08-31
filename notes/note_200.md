@@ -3,9 +3,7 @@
 
 # 200 - L1 - Front-end Prep
 
-
 ## Command Line - ebook
-
 
 1. Sign up for a service that provides a full, in-browser development environment, such as Nitrous or Cloud 9. 
 
@@ -197,14 +195,16 @@ bash, zsh
 
 ## Git - ebook
 
-- git
+### git commands
 
 git was created by Linus Torvalds, the same software engineer who created Linux.
 Free and Open Source Software, or FOSS for short,
 GUI: gitk or git-gui
 Do not nest your repositories.
 
-git init - create .git, hidden, ls -a 
+- git init
+create .git, hidden, ls -a
+Create a new local repository. 
 
 /etc/gitconfig - apply to all users and all of their repositories.
 ~/.gitconfig	- to your user account. 
@@ -222,7 +222,7 @@ git status is showing us what's called our working tree and staging area.aka cha
 
 - git add
 
-git add file list with space as seperater
+git add file list with space as separator
 // stage files
 
 staged: green
@@ -233,4 +233,98 @@ case sensitive
 
 a bundle of changes
 
-- git log
+- git log:   commit history
+
+- branching
+  master is the main branching, fork to create a new branch, merge commits into master 
+  move commits only, lost unstaged files
+
+- local vs remote
+
+- GitHub
+pull: remote -> local, 
+push: local -> remote
+
+- git remote add origin <remote url>	 
+Add an existing remote repo as a remote of existing local repo.
+already got a local git
+add remote to local git
+origin: alias of remote repo
+
+#### 
+- git fetch
+  get commits from remote to local
+
+- git diff master origin/master
+  check difference / conflict
+
+- git diff master origin/master
+
+- git push
+??? -u upstream 
+
+- git clone <remote> <local>
+  Pull down contents of existing remote repo into a new local repo, and add a remote to the local repo pointing to remote repo.
+  not yet have a local repo
+  remote called origin
+
+### HTTPS vs SSH
+
+## HTML
+
+<html> head element
+<h1> heading element
+<body> 
+<head> 
+<title> show in tab
+<meta charset="utf-8"/> 
+
+<strong> bold and storng
+<em> italic
+
+<b> bold
+<i> italic 
+
+<sub> down corner
+<sup> upper corner
+
+
+div: block elements
+span: inline 
+
+## CSS
+
+Cascading Style Sheets 
+
+css property
+  - color: red;
+
+Style Attribute
+  - style="font-size: 18px;" // inline html
+  - Color and font-size are both inheritable
+  - style="color: orange; text-align: right;"
+
+- CSS Selectors **letter**
+
+p {
+  font-size: 14px;
+}
+
+
+- ID Selectors **#**
+
+<p id="intro">
+
+#intro {
+  font-size: 18px;
+}
+
+- Class Selectors  **dot**
+
+<strong class="highlight">HTML</strong>
+
+.highlight {
+  background-color: #f0f099;
+}
+
+- HEX
