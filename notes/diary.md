@@ -32,8 +32,12 @@
   - [x] env, PWD, HOME, PATH
 
 2016-09-01
-  - [.] downlaod ubuntu ios
-  - [.] git branch
+  - [x] downlaod ubuntu ios
+  - [.] html + css
+
+2016-09-02
+  - [ ] http://learn.shayhowe.com/html-css/
+
 
 TODO:
   - [] practice sudo

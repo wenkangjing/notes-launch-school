@@ -253,12 +253,18 @@ origin: alias of remote repo
 
 #### 
 - git fetch
-  get commits from remote to local
+  + get commits from remote to local
+  + just update remote-tracking
+  + never change any of local branches
+  + save to do without changing working area
+  + just for keey an eye one what happen on remote repo
 
 - git diff master origin/master
   check difference / conflict
 
-- git diff master origin/master
+- git pull
+  + = git fetch + git merge
+  + when you want to get you local up to date with remote
 
 - git push
 ??? -u upstream 
@@ -327,4 +333,5 @@ p {
   background-color: #f0f099;
 }
 
-- HEX
+
+- HEX color
