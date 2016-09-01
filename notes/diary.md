@@ -33,11 +33,12 @@
 
 2016-09-01
   - [x] downlaod ubuntu ios
-  - [.] html + css
+  - [50%] html + css
 
 2016-09-02
+  - [x] https://www.codecademy.com/learn/learn-git
+  - [.] html + css
   - [ ] http://learn.shayhowe.com/html-css/
-
 
 TODO:
   - [] practice sudo
