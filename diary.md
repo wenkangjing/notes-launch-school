@@ -1,4 +1,4 @@
-## Diary 
+## Diary
 
 2016-08-24
   - [x] is it for me
@@ -37,14 +37,15 @@
 
 2016-09-02
   - [x] https://www.codecademy.com/learn/learn-git
-  - [.] html + css
-  - [ ] http://learn.shayhowe.com/html-css/
+  - [x] html + css
+  - [v] http://learn.shayhowe.com/html-css/ // quick went thru
 
 TODO:
-  - [] practice sudo
+  - [ ] practice sudo
   - [ ] Read Mastery
+  - [ ] Introducing HTML5 (2nd Edition) (Voices That Matter) 2nd Edition
   - [ ] clound9 / nitrous
-  - [] http://www.paulirish.com/2012/talk-tooling-the-webapp-development-stack/
+  - [ ] http://learn.shayhowe.com/html-css/
 
 Question:
   - [?] users groups, owner

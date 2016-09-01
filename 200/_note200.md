@@ -5,7 +5,7 @@
 
 ## Command Line - ebook
 
-1. Sign up for a service that provides a full, in-browser development environment, such as Nitrous or Cloud 9. 
+1. Sign up for a service that provides a full, in-browser development environment, such as Nitrous or Cloud 9.
 
 2. Use Rackspace or Digital Ocean to set up a managed server that provides console access.
 
@@ -41,7 +41,7 @@ Command	Description
   + ~     Your "home" directory, or the directory you are placed in when you log in.
 
 - ls	List files and directories in current directory.
-  + lah long, all, human readable 
+  + lah long, all, human readable
   + -a all files including hidden files
   + -d list directory
   + -d .* list dotfiles/hidden
@@ -108,8 +108,8 @@ $ mv ~/tmp/1.file ./
   $COMMAND $SOMETHING
   colored prompt
   PS1="\n\[\e[0;37m\][\h] \e[0;35m\]\d\e[0m\]\n\[\e[0;31m\]\u\[\e[0;34m\] in \[\e[1;33m\]\w\[\e[m\]\[\e[0;31m\]\n\[\033[35m\]$\[\033[00m\] "
-  
-  
+
+
   - load env var in session creation, in .bashrc, export var goes globally, modify and run $ source ~/.bashrc, e.g.
   $ echo 'export PS1="this is a test$ "' >> ~/.bashrc
 
@@ -117,13 +117,13 @@ $ mv ~/tmp/1.file ./
 
 
 Execute
-- If you want to execute a file in your current directory, you have to type ./ or the path to your current directory before the filename. 
+- If you want to execute a file in your current directory, you have to type ./ or the path to your current directory before the filename.
 - Ctrl + C = SIGINT
 
 Permissions in linux
 > ownership
   - user
-  - group 
+  - group
   - other
 
 > access types
@@ -141,14 +141,14 @@ drwxr-xr-x+ 1 bao bao    0 Aug 29 21:44 .
 1/3/3/3 user group
 
 u, g, o, or a = "group", "other", and "all"
-      
+
 
 $ chmod +w sample.txt // give write permission
 
 #### prerequisites of chmod
 
 - be its owner
-- be root: god, the super user—it can read, write, and delete (almost) any file, 
+- be root: god, the super user—it can read, write, and delete (almost) any file,
   + not log as root, change when needed
   + exception: file/dir without execute permission granted
 - be sudo - a command of being god
@@ -204,17 +204,17 @@ Do not nest your repositories.
 
 - git init
 create .git, hidden, ls -a
-Create a new local repository. 
+Create a new local repository.
 
 /etc/gitconfig - apply to all users and all of their repositories.
-~/.gitconfig	- to your user account. 
-<repo>/.git/config - to a repository. 
+~/.gitconfig	- to your user account.
+<repo>/.git/config - to a repository.
 
 --global save to ~/.gitconfig
 --system save to /etc/gitconfig
 default to repo ./git/config
 
-- .gitignore 
+- .gitignore
 
 - git status
 
@@ -236,22 +236,22 @@ a bundle of changes
 - git log:   commit history
 
 - branching
-  master is the main branching, fork to create a new branch, merge commits into master 
+  master is the main branching, fork to create a new branch, merge commits into master
   move commits only, lost unstaged files
 
 - local vs remote
 
 - GitHub
-pull: remote -> local, 
+pull: remote -> local,
 push: local -> remote
 
-- git remote add origin <remote url>	 
+- git remote add origin <remote url>
 Add an existing remote repo as a remote of existing local repo.
 already got a local git
 add remote to local git
 origin: alias of remote repo
 
-#### 
+####
 - git fetch
   + get commits from remote to local
   + just update remote-tracking
@@ -267,7 +267,7 @@ origin: alias of remote repo
   + when you want to get you local up to date with remote
 
 - git push
-??? -u upstream 
+??? -u upstream
 
 - git clone <remote> <local>
   Pull down contents of existing remote repo into a new local repo, and add a remote to the local repo pointing to remote repo.
@@ -280,27 +280,27 @@ origin: alias of remote repo
 
 <html> head element
 <h1> heading element
-<body> 
-<head> 
+<body>
+<head>
 <title> show in tab
-<meta charset="utf-8"/> 
+<meta charset="utf-8"/>
 
 <strong> bold and storng
 <em> italic
 
 <b> bold
-<i> italic 
+<i> italic
 
 <sub> down corner
 <sup> upper corner
 
 
 div: block elements
-span: inline 
+span: inline
 
 ## CSS
 
-Cascading Style Sheets 
+Cascading Style Sheets
 
 css property
   - color: red;
@@ -335,3 +335,35 @@ p {
 
 
 - HEX color
+
+## Project - Grilled Cheese Recipes
+
+- html inline attributes
+  + attribule_name = "value"
+  + Attribute sytle not allowed on element p at this point.
+
+- inline css style
+  + style="color:bala"
+
+- lang attribute
+  + <html lang="en-US">
+
+- style in tag
+  + h1 no colon followed
+  + no double quote in value
+
+    h1 {
+    color: orange;
+    }
+
+- new line between tags won't impact the result
+
+### tips
+
+We’ll commonly see <div>s and <span>s with class or id attributes for styling purposes.
+
+HTML comments start with <!-- and end with -->. CSS comments start with /* and end with */.
+
+ID selector > type selector
+
+element can contains multiple class attribute values

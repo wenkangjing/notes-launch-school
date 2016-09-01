@@ -1,15 +1,124 @@
 <!doctype html>
-<html>
-  <head>
-    <title>
-      Grilled Cheese Recipes
-    </title>
-    <meta charset="utf-8"/>
-  </head>
-  <body>
-     <h1>Pear and Bacon Grilled Cheese</h1>
-    <div>
-        nothing
-    </div>
-  </body>
+
+<html lang="en-US">
+
+<head>
+  <title>
+    Grilled Cheese Recipes
+  </title>
+
+  <style>
+    body {
+      margin-top: 13px;
+      font-size: 25px;
+      color: #885644;
+    }
+    .navigation ul {
+      font: bold 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-transform: uppercase;
+    }
+    .navigation li {
+      display: inline-block;
+    }
+    .navigation a {
+      background: #395870;
+      /*background: linear-gradient(#49708f, #293f50);*/
+      /*border-right: 1px solid rgba(0, 0, 0, .3);*/
+      color: #fff;
+      padding: 12px 20px;
+      text-decoration: none;
+    }
+    .navigation a:hover {
+      background: darkblue;
+      /*box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, .3);*/
+    }
+    .navigation li:first-child a {
+      /*border-radius: 4px 0 0 4px;*/
+    }
+    .navigation li:last-child a {
+      border-right: 0;
+      /*border-radius: 0 4px 4px 0;*/
+    }
+
+    h1 {
+      color: cadetblue;
+    }
+
+    h2 {
+      color: crimson;
+    }
+
+    body {
+
+    }
+
+    div {
+      border: 6px solid #949599;
+      height: 100px;
+      margin: 20px;
+      padding: 20px;
+      width: 400px;
+    }
+
+    #ingredients {
+    color: darkslategray;
+    }
+
+    #directions {
+      color: maroon;
+    }
+
+    .ingredients {
+      font-style:italic;
+    }
+
+    .directions {
+      font-family:sans-serif;
+      font-style:bold;
+    }
+  </style>
+
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <h1>Pear and Bacon Grilled Cheese</h1>
+  <nav class="navigation">
+    <ul>
+      <li><a href="#">Profile</a></li>
+      <li><a href="#">Settings</a></li>
+      <li><a href="#">Notifications</a></li>
+      <li><a href="#">Logout</a></li>
+    </ul>
+  </nav>
+
+  <form action="/login" method="post">
+    <input type="date" name="birthday">
+    <input type="time" name="game-time">
+    <input type="email" name="email-address">
+    <input type="url" name="website">
+    <input type="number" name="cost">
+    <input type="tel" name="phone-number">
+  </form>
+
+  <h2 id="ingredients">Ingredients</h2>
+  <p class="ingredients">2 tablespoons unsalted <strong>butter</strong></p>
+  <p class="ingredients">2 tablespoons <strong>currant</strong> or <strong>fig jam</strong></p>
+  <p class="ingredients">2 slices white sandwich bread</p>
+  <p class="ingredients">2 slices Cheddar</p>
+  <p class="ingredients">2 slices cooked bacon</p>
+  <p class="ingredients">1/4 small pear, thinly sliced</p>
+
+  <h2 id="directions">Directions</h2>
+  <p class="directions"> 1. Melt the <strong>butter</strong> in a small skillet over medium-low heat. Spread the <strong>jam</strong> on 1 slice of the <strong>bread</strong> and form a <strong>sandwich</strong> with the <strong>cheese</strong>, <strong>bacon</strong>, and
+    <strong>pear</strong>. </p>
+  <p class="directions"> 2. Cook the <strong>sandwich</strong>sandwich, covered, until the <strong>bread</strong> is toasted and the <strong>cheese</strong> is melted, 2 to 3 minutes per side. </p>
+  <div>
+    nothing
+  </div>
+
+</body>
+
 </html>
