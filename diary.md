@@ -37,15 +37,17 @@
   - [x] https://www.codecademy.com/learn/learn-git
   - [x] html + css
   - [v] http://learn.shayhowe.com/html-css/ // quick went thru
-  - [.] backend prep - intro
   - [x] ubuntu at T560
-  - [.] install ruby on Win10
+  - [x] install ruby on T560
 
 2016-09-02
+  - [x] ubuntu, ruby desktop
+  - [] https://www.codecademy.com/learn/ruby
+  - [] book: Introduction to Programming
 
 TODO:
+  - [] coding convention
   - [] https://pine.fm/LearnToProgram/
-  - [] https://www.codecademy.com/learn/ruby
   - [ ] practice sudo
   - [ ] Read Mastery
   - [ ] Introducing HTML5 (2nd Edition) (Voices That Matter) 2nd Edition

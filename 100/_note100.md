@@ -9,37 +9,33 @@
 - build muscle memory
 - use powershell
 
-Cloud
- - Nitrous.io // proven by student, need tweaks
- - Cloud 9 // new, recommended
-
-Install Ruby
-  - ubuntu need sudo to setup ruby
-  - ruby 22 gem 266
-
-Sytlish
-  - tab = 2 spaces
-  - comment #
-  - lower case and underscore, snake_case
-  - const UPPERCASE
-  - hen working with do/end blocks, prefer { } when the entire code expression fits on one line.
-
-
-
 ## Windows Users
+  - tweaks
+  - ubuntu VM !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 ## Cloud based dev env
 
+ - Nitrous.io // proven by student, need tweaks
+ - Cloud 9 // new, recommended
+
 ## install ruby
+
+  - ubuntu need sudo to setup ruby
+  - ruby 22
+  - gem 266
 
 ## Editor
 
 ## Terminal vs irb
+  - irb return return value
 
 ## Ruby Style
+  -noteConvention.md
 
 ## book: intro to programming
+  _noteRuby.md
 
 ## ruby version manager
+  RVM
 
 ## final checklist

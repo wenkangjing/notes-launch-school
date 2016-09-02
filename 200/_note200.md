@@ -49,6 +49,7 @@ Command	Description
   + ls ../.. list parent's parent
 
 - path
+
   + .. list parent or root
   + ../.. list parent's parent
   + /bac from root directory
@@ -60,7 +61,7 @@ Command	Description
 
 - which
  + return the location of a command
- - root/bin vs usr/bin
+ + root/bin vs usr/bin
     - /bin : For binaries usable before the /usr partition is mounted. This is used for trivial binaries used in the very early boot stage or ones that you need to have available in booting single-user mode. Think of binaries like cat, ls, etc.
     - /sbin : Same, but for scripts with superuser (root) privileges required.
     - /usr/bin : Same as first, but for general system-wide binaries.
@@ -236,16 +237,19 @@ a bundle of changes
 - git log:   commit history
 
 - branching
+
   master is the main branching, fork to create a new branch, merge commits into master
   move commits only, lost unstaged files
 
 - local vs remote
 
 - GitHub
+
 pull: remote -> local,
 push: local -> remote
 
 - git remote add origin <remote url>
+
 Add an existing remote repo as a remote of existing local repo.
 already got a local git
 add remote to local git
@@ -260,6 +264,7 @@ origin: alias of remote repo
   + just for keey an eye one what happen on remote repo
 
 - git diff master origin/master
+
   check difference / conflict
 
 - git pull
@@ -270,6 +275,7 @@ origin: alias of remote repo
 ??? -u upstream
 
 - git clone <remote> <local>
+
   Pull down contents of existing remote repo into a new local repo, and add a remote to the local repo pointing to remote repo.
   not yet have a local repo
   remote called origin
