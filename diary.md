@@ -42,8 +42,18 @@
 
 2016-09-02
   - [x] ubuntu, ruby desktop
+  - [.] book: Introduction to Programming
+
+
+2016-09-04
+  - [] ruby book
+  - [] rubu doc: http://ruby-doc.org/core-2.1.2/String.html
+
+  
+
+2016-09-05
   - [] https://www.codecademy.com/learn/ruby
-  - [] book: Introduction to Programming
+
 
 TODO:
   - [] coding convention
