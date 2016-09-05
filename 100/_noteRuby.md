@@ -4,7 +4,6 @@ David Heinemeier Hansson (Danish) Ruby on Rails
 Written in C
 DSL - Domain Specific Language
 
-## Ruby Doc
 
 ```ruby
 # namespace
@@ -23,7 +22,7 @@ String.try_convert("red")
 ## irb
 
 Pry for debugging
-sudo gem install 
+sudo gem install
 
 binding.pry = breakpoint = open a pry session
 rm a_folder // x
@@ -33,16 +32,19 @@ rm -r a_folder // folder and everything inside
 "" allow string interpolation
 "{#fname #lname}"
 JS: "${js expression}"
+
 ```ruby
 a = "ten"
 "My fa skem #{a}"
 ```
 
-Symbols
+- Symbols
+
 :a_symble
 :"this is also a symbol"
 
-nil
+- nil
+
 nothing, empty, unknown
 "Hello".nil? # false
 
@@ -50,18 +52,49 @@ nothing, empty, unknown
 
 % reminder operator
 
-Type Conversion
+- Type Conversion
+
 '12'.to_i
 "12 is a number".to_i # Just return 12 and ignore the rest
 123.to_s # "123":w
 
-Array
+- Array
+
 []
 
 Hash (key-value pair)
 :keyname
 => assign
 {:dog => "barks", :cat => "meows", :pig => "oinks"}
+
+## Variables
+
+gets // with new line
+gets.chomp // w/o new line
+
+- scope
+
+each, times and other methods, followed by {} or do/end, that's when a new block is created.
+for...do/end is won't create a new inner scope
+
+
+- type of variables
+
+constants
+  + VAR_NAME = 'hohoho hohohoh'
+
+global variables
+  + $var_name
+
+local variables
+  + var_name = 'I am a normal variable'
+
+class variables
+  + @@instances = 0
+
+instance variables
+  + @var_name = 'bala'
+
 
 
 
