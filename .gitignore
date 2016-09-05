@@ -1,2 +1,6 @@
 # Ignore vscode cache files
 .vscode
+
+# VIM temp files
+**/.*.swp
+**/.*.swo
