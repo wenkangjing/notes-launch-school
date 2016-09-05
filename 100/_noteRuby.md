@@ -95,8 +95,52 @@ class variables
 instance variables
   + @var_name = 'bala'
 
+## Metholds
 
 
+```ruby
+def foo # no parameters
+  # body
+end
+
+def say(words) # no type needed
+  puts words
+end
+
+def say(words='hello') # default
+  puts words + '.'
+end
+
+# usage, () is optional
+say ("Hi")
+say "hello"
+
+```
+
+p with quotes
+puts w/o quptes
+
+Method cannot modify arguments like C
+
+pass by value or reference
+
+> do both
+> must check doc
+> what the?
+
+return 
+  - return type is not needed in method defination
+  - no type in function params
+  
+> Ruby methods ALWAYS return the evaluated result of the last line 
+> of the expression unless an explicit return comes before it.
+> **important** more like a default return value = last expression
+
+Chaining methods
+```ruby
+add_three(5).times {p puts "print 8 times"}
+"hi there".length.to_s      # returns "8" - a String
+```
 
 
 
