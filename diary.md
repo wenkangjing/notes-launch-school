@@ -46,10 +46,10 @@
 
 
 2016-09-04
-  - [] ruby book
-  - [] rubu doc: http://ruby-doc.org/core-2.1.2/String.html
+  - [x] ruby book
+  - [x] ruby doc: http://ruby-doc.org/core-2.1.2/String.html
 
-  
+
 
 2016-09-05
   - [] https://www.codecademy.com/learn/ruby

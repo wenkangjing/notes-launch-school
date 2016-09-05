@@ -1,8 +1,9 @@
 # hash
+
 movies = {
-	:"Hello Dad"=>1975, 
-	:"Tananic"=> 2004, 
-	:"aed"=>2013, 
+	:"Hello Dad"=>1975,
+	:"Tananic"=> 2004,
+	:"aed"=>2013,
 	:"hohoho hohoho"=> 2001
 }
 
