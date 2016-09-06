@@ -117,8 +117,10 @@ say "hello"
 
 ```
 
-p with quotes
-puts w/o quptes
+p vs puts vs prints
+p with quotes, p returns what just printed
+puts w/o quptes, put returns nil
+print = puts, return nil but no new line
 
 Method cannot modify arguments like C
 
@@ -131,8 +133,10 @@ pass by value or reference
 return 
   - return type is not needed in method defination
   - no type in function params
-  
-> Ruby methods ALWAYS return the evaluated result of the last line 
+
+> check return values in irb
+
+> Ruby methods ALWAYS return the evaluated result of the **last line** 
 > of the expression unless an explicit return comes before it.
 > **important** more like a default return value = last expression
 
@@ -141,6 +145,55 @@ Chaining methods
 add_three(5).times {p puts "print 8 times"}
 "hi there".length.to_s      # returns "8" - a String
 ```
+
+
+## Flow Control
+
+Conditionals
+  - < > <= >= == != && ||
+  - if end
+  - if else end
+  - if elsif elsif else end
+  - unless is !if
+
+> must use "then" keyword when using 1-line syntax
+> if at the end
+> unless is oppsite of if statement
+
+```ruby
+if a == 3
+  puts a
+elsif a ==4
+  puts a
+else
+  puts a
+end
+
+if x == 3 then puts "x is 3" end
+puts "x is 3" if x == 3
+puts "x is NOT 3" unless x == 3
+```
+Comparasion
+
+Combining Expressions
+  - and or, && ||
+
+Ternary operator
+  - ? :
+
+Case statement
+  - same as if elsif elsif else end
+  - **case** 
+> case a
+> when 5
+> when 6
+> else 
+> end
+
+false is
+  - false
+  - nil
+  - empty string is true
 
 
 
