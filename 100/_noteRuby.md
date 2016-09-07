@@ -199,10 +199,87 @@ case n when <value> // compare value
 case when <condition> //compare condition
 
 
+## Loop
+- loop
+- while
+- until, opposite of while
+- 5.times
+- do while
 
+```ruby
+loop do
+  // next = continue = skip this iteration
+  // break
+end
 
+while <condition>
+end
 
+until <condition>
+end
 
+for i in 1..100 do
+end
 
+```
 
+Iterators
+  - eachs
+  - |item|
+
+```ruby
+
+list = [1,2,34,4,5]
+list.each{|item| puts item}
+
+list.each do |item|
+  puts item
+end
+```
+
+Recursion
+- fibonacii sequence
+
+Exercises
+1. lists.each do |item| // item is iterator, cannot modify the original value
+
+missing pair end
+> syntax error, unexpected end-of-input, expecting keyword_end
+
+## Array
+  - mixed type
+  - []
+  - .first, .last // like C# LINQ
+  - .pop, .push // like stack
+  - array << 'new items' is equle to .push
+  - .map, .collect return new array
+  - .delete(item), .delete_at(index)
+  - .uniq, returns a new distict array
+  - .uniq! Removes duplicate elements from self.
+
+iterating array
+  - each // iterating everying
+  - select // iterating with conditions, like SQL, LINQ
+  - each, each_index, each_with_index
+
+Methold with a !
+  - bang operator
+  - change self permanently
+  - danger, check doc
+
+Mutating the callers
+- destructive methods
+- e.g. pop, push
+
+Nested array
+
+- unshift // prepeend
+- push // append
+- includes? // contains
+- flatten // nested array to one-D array
+- [1,2,3].product([4.5]) // idea, 141524253435
+
+each vs map
+  - map returns the original collection, no changes
+  - each return new array, original no changes
 
