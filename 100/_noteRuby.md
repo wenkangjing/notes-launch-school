@@ -232,6 +232,7 @@ Iterators
 list = [1,2,34,4,5]
 list.each{|item| puts item}
 
+
 list.each do |item|
   puts item
 end
@@ -280,6 +281,32 @@ Nested array
 - [1,2,3].product([4.5]) // idea, 141524253435
 
 each vs map
-  - map returns the original collection, no changes
-  - each return new array, original no changes
+  - each returns the original
+  - map return new array // hint: map to a new arrays
+  - both won't change original
 
+retrieve index by value: arr.indeox(i) **good**
+retrieve value by index: arr[i]
+
+
+each do |item|
+
+p arr // in one line []
+puts arr // in multiple lines
+
+> when not sure, test in irb, check ruby doc 
+
+## Hash
+map in JS
+dictionary in C#
+
+{:key=>value} // odd to be honest
+or
+{key:value} // haha JSON
+
+hash[:key]
+
+person.each do |key, value|
+
+> array: order, stack or queue
+> hash: use symbol as key
