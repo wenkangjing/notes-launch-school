@@ -130,13 +130,13 @@ pass by value or reference
 > must check doc
 > what the?
 
-return 
+return
   - return type is not needed in method defination
   - no type in function params
 
 > check return values in irb
 
-> Ruby methods ALWAYS return the evaluated result of the **last line** 
+> Ruby methods ALWAYS return the evaluated result of the **last line**
 > of the expression unless an explicit return comes before it.
 > **important** more like a default return value = last expression
 
@@ -183,17 +183,20 @@ Ternary operator
 
 Case statement
   - same as if elsif elsif else end
-  - **case** 
+  - **case**
 > case a
 > when 5
 > when 6
-> else 
+> else
 > end
 
 false is
   - false
   - nil
   - empty string is true
+
+case n when <value> // compare value
+case when <condition> //compare condition
 
 
 
