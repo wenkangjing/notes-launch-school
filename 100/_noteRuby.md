@@ -310,3 +310,10 @@ person.each do |key, value|
 
 > array: order, stack or queue
 > hash: use symbol as key
+
+
+hash.flatten vs array.flatten
+
+merge:return new array, not change original
+
+merge!:changed self

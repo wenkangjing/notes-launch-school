@@ -66,3 +66,4 @@ result =
 - Use ! instead of not
 
 - no or and, use && ||
+
