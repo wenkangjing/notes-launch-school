@@ -386,3 +386,39 @@ var vs ptr
 
 blocks vs procs
 
+#### Error Handling
+
+```ruby
+begin 
+rescue => exception
+end
+
+begin
+  answer = number / divisor
+rescue ZeroDivisionError => e
+  puts e
+rescue => exception
+  puts exception
+end
+
+zero.each{|e| puts element} rescue puts "wrong"
+
+```
+
+#### Stack Traces
+StandardError
+TypeError
+ArgumentError
+NoMethodError
+RuntimeError
+SystemCallError
+ZeroDivisionError
+RegexpError
+IOError
+EOFError
+ThreadError
+ScriptError
+SyntaxError
+LoadError
+NotImplementedError
+SecurityError
