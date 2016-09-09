@@ -294,7 +294,7 @@ each do |item|
 p arr // in one line []
 puts arr // in multiple lines
 
-> when not sure, test in irb, check ruby doc 
+> when not sure, test in irb, check ruby doc
 
 ## Hash
 map in JS
@@ -317,3 +317,72 @@ hash.flatten vs array.flatten
 merge:return new array, not change original
 
 merge!:changed self
+
+
+
+hash value is array
+
+```ruby
+result  = {}
+word = "hello"
+result[key] = [word] # it is an array, just one element in it
+```
+
+## Files
+
+r	只读模式。文件指针被放置在文件的开头。这是默认模式。
+r+	读写模式。文件指针被放置在文件的开头。
+w	只写模式。如果文件存在，则重写文件。如果文件不存在，则创建一个新文件用于写入。
+w+	读写模式。如果文件存在，则重写已存在的文件。如果文件不存在，则创建一个新文件用于读写。
+a	只写模式。如果文件存在，则文件指针被放置在文件的末尾。也就是说，文件是追加模式。如果文件不存在，则创建一个新文件用于写入。
+a+	读写模式。如果文件存在，则文件指针被放置在文件的末尾。也就是说，文件是追加模式。如果文件不存在，则创建一个新文件用于读写。
+
+r: read-only (starts at beginning of file)
+w: write-only (if the file exists, overwrites everything in the file)
+w+: read and write (if the file exists, overwrites everything in the file)
+a+: read-write (if file exists, starts at end of file. Otherwise creates a new file). Suitable for updating files.
+
+superclass
+require 'pathname'
+
+require vs load
+require - load a lib = 1, no need .rb, require 'test_library'
+load - could load a lib > 1, need .rb, load 'log.rb'
+
+
+wget is a utility that downloads a file or resource.
+
+Open-Use-Close
+
+File vs Dir vs Pathname
+
+## more
+
+#### Regular expression
+
+operator =~
+return index or nil
+
+"powerball" =~ /b/
+=> 5
+
+/b/.match("powerball")
+=> #<MatchData "b">
+
+
+/b/ contains b
+
+
+#### ruby standard classes
+
+Math.sqrt(400) // class function
+Math::PI // constants
+Time
+
+var vs ptr
+
+<< current memory
+= allocate a new memory
+
+blocks vs procs
+

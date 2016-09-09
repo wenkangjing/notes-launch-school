@@ -54,18 +54,22 @@
 2016-09-05
 2016-09-06
 2016-09-07
+2016-09-08
+2016-09-09
   -[.] ruby book
 
-  - [] https://www.codecademy.com/learn/ruby
+
 
 
 TODO:
-  - [] coding convention
-  - [] https://pine.fm/LearnToProgram/
-  - [ ] practice sudo
+  - [ ] HTTP book
+  - [ ] SQL book
+  - [ ] Web APIs book
+  - [ ] Regular Expressions book
+  - [ ] Agile book
+
   - [ ] Read Mastery
   - [ ] Introducing HTML5 (2nd Edition) (Voices That Matter) 2nd Edition
-  - [ ] clound9 / nitrous
   - [ ] http://learn.shayhowe.com/html-css/
 
 Question:
