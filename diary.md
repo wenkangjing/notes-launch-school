@@ -56,8 +56,10 @@
 2016-09-07
 2016-09-08
 2016-09-09
-  -[.] ruby book
+  - [x] ruby book
 
+2016-09-10
+  - [.] ruby book exercies
 
 
 
