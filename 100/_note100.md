@@ -38,4 +38,7 @@
 ## ruby version manager
   RVM
 
+## Orientation
+
+
 ## final checklist
