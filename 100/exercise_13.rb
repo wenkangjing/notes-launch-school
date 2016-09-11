@@ -8,3 +8,7 @@ hash = {
     :address=>"404 Not Found Dr.", 
     :phone=>"123-234-3454"}
 }
+
+p hash["Joe Smith"][:email]
+
+p hash["Sally Johnson"][:phone]
