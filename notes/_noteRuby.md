@@ -389,7 +389,7 @@ blocks vs procs
 #### Error Handling
 
 ```ruby
-begin 
+begin
 rescue => exception
 end
 
@@ -422,4 +422,5 @@ SyntaxError
 LoadError
 NotImplementedError
 SecurityError
+
 

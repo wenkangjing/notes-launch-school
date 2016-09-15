@@ -63,8 +63,13 @@ status code - 3-digit number
 302	redirect
 404	Not Found
 500	server side issue
-Location
 
+
+> 1×× Informational
+> 2×× Success
+> 3×× Redirection
+> 4×× Client Error
+> 5×× Server Error
 
 ## stateful web application
 
@@ -98,6 +103,7 @@ Location
 - cross-site scripting (XSS)
   - inject via input, form
   - sanitize user input, <script> tag, html+js
+
 
 
 ## TODO

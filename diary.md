@@ -61,14 +61,19 @@
   - [x] ruby book
 
 2016-09-12
-  - [.] HTTP book
+  - [x] HTTP book
 
+2016-09-13
+2016-09-14
+2016-09-15
+  - [.] Web APIs book
+  - [.] Mastery book reading
 
 TODO:
-  - [ ] HTTP book
+  - [] OAuth twitter
+    https://github.com/Mashape/mashape-oauth/blob/master/FLOWS.md
+  - [ ] RegEx book
   - [ ] SQL book
-  - [ ] Web APIs book
-  - [ ] Regular Expressions book
   - [ ] Agile book
 
   - [ ] Read Mastery
@@ -77,6 +82,9 @@ TODO:
 
 Question:
   - [?] users groups, owner
+
+Total Hours
+  - Preparatory Work: 26.5 hr
 
 NOTE:
 Course =========
