@@ -66,12 +66,14 @@
 2016-09-13
 2016-09-14
 2016-09-15
-  - [.] Web APIs book
-  - [.] Mastery book reading
+  - [x] Web APIs book
+  - [50%] Mastery book reading
+  - [.] RegEx book
 
 TODO:
   - [] OAuth twitter
     https://github.com/Mashape/mashape-oauth/blob/master/FLOWS.md
+
   - [ ] RegEx book
   - [ ] SQL book
   - [ ] Agile book
