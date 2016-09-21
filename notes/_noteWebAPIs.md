@@ -89,3 +89,55 @@ GET and POST only
 
 [] exercise retweat, geo location, ...
 
+Rest anti-patterns
+====================
+
+- URL should tell the story
+  - V: POST /accounts/4402278/close
+  - X: POST /accounts/close
+       POST /closeAccount
+
+- Verbs
+  - GET - read
+  - POST - Create 
+  - PUT - Update whole records
+  - PATCH - Updates pieces of records
+  - DELETE
+
+  - V: DELETE /accounts/4402278
+  - X: POST /accounts/4402278/delete
+
+- Idempotency
+  - Idempotent methods: GET, PUT, OPTIONS
+  - Non Idempotent methods: POST
+
+
+- Status codes
+
+2xx - Success	
+- 200 OK		
+- 201 Created	
+- 203 Partial Information
+- 204 No response		
+- 404 Not Found	
+
+3xx - Redirection
+- 301 Moved
+- 302 Found
+- 304 Not Modified
+
+4xx / 5xx - Error	
+- 400 Bad Request
+- 401 Unauthorized	
+- 402 Payment Required	
+- 403 Forbidden
+- 500 Internal Server Error	
+- 503 Service Unavailable	
+
+
+- hypermedia
+  - JSON + Links + URLs + Forms/Queries
+
+
+
+- HATEOAS
