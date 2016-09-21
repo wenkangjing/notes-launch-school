@@ -64,12 +64,13 @@ status code - 3-digit number
 404	Not Found
 500	server side issue
 
-
+>
 > 1×× Informational
 > 2×× Success
 > 3×× Redirection
 > 4×× Client Error
 > 5×× Server Error
+>
 
 ## stateful web application
 

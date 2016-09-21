@@ -1,7 +1,6 @@
-100 Bront end Prep
-====================
 
-# 100 - L1 - Front-end Prep
+100 Back end Prep
+========================
 
 ## Intro
 - ruby syntax
