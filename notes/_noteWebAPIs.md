@@ -1,12 +1,35 @@
 Web APIs
 -----------
 
-> 1×× Informational
-> 2×× Success
-> 3×× Redirection
-> 4×× Client Error
-> 5×× Server Error
+[HTTP Status Messages](http://www.w3schools.com/TAGS/ref_httpmessages.asp)
 
+1xx: Information
+- 100 Continue
+- 101 Switching Protocols
+- 103 Checkpoint
+
+2xx - Success	
+- 200 OK		
+- 201 Created	
+- 203 Partial Information
+- 204 No response		
+
+
+3xx - Redirection
+- 301 Moved
+- 302 Found
+- 304 Not Modified
+
+4xx - Client Error
+- 400 Bad Request
+- 401 Unauthorized	
+- 402 Payment Required	
+- 403 Forbidden
+- 404 Not Found	
+
+5xx - Server Error
+- 500 Internal Server Error	
+- 503 Service Unavailable	
 
 URI - just identifier
 
@@ -99,7 +122,23 @@ Rest anti-patterns
 
 - Verbs
   - GET - read
+    - Only ASCII chars
+    - Data is visible to everyone in URL
+    - GET requests can be cached
+    - GET requests remain in the browser history
+    - GET requests can be bookmarked
+    - GET requests should never be used when dealing with sensitive data (i.e. username/password)
+    - GET requests have length restrictions (2048 characters)
+    - GET requests should be used only to retrieve data
+    
   - POST - Create 
+    - Data is not displayed in URL
+    - Any data type, i.g. binary data
+    - POST requests are never cached
+    - POST requests do not remain in the browser history
+    - POST requests cannot be bookmarked
+    - POST requests have no restrictions on data length
+    
   - PUT - Update whole records
   - PATCH - Updates pieces of records
   - DELETE
@@ -111,33 +150,10 @@ Rest anti-patterns
   - Idempotent methods: GET, PUT, OPTIONS
   - Non Idempotent methods: POST
 
-
-- Status codes
-
-2xx - Success	
-- 200 OK		
-- 201 Created	
-- 203 Partial Information
-- 204 No response		
-- 404 Not Found	
-
-3xx - Redirection
-- 301 Moved
-- 302 Found
-- 304 Not Modified
-
-4xx / 5xx - Error	
-- 400 Bad Request
-- 401 Unauthorized	
-- 402 Payment Required	
-- 403 Forbidden
-- 500 Internal Server Error	
-- 503 Service Unavailable	
-
-
 - hypermedia
   - JSON + Links + URLs + Forms/Queries
 
-
-
 - HATEOAS
+
+
+
