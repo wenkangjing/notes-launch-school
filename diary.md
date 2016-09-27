@@ -70,23 +70,26 @@
   - [50%] Mastery book reading
   - [x] RegEx book
 
+2016-09-xx  
+  - [x] Read Mastery
+
 2016-09-26
   - enroll
 
 2016-09-27
-  - html and css prep
-
+  - 201 lesson 1 html and css prep
+  - 201 lesson 2
 
 TODO:
+  - [ ] safe web font: http://web.mit.edu/jmorzins/www/fonts.html
+  - [ ] Read thru w3c.org 
   - [ ] check join.me, is code still gotealeaf?
-  - [] OAuth twitter
+  - [ ] OAuth twitter
     https://github.com/Mashape/mashape-oauth/blob/master/FLOWS.md
 
-  - [ ] RegEx book
   - [ ] SQL book
   - [ ] Agile book
 
-  - [ ] Read Mastery
   - [ ] Introducing HTML5 (2nd Edition) (Voices That Matter) 2nd Edition
   - [ ] http://learn.shayhowe.com/html-css/
 
@@ -97,7 +100,8 @@ Total Hours
   - Preparatory Work: 26.5 hr
 
 NOTE:
-Course =========
+create directory per Lesson
+new directory for each lesson
 Lesson #
 Topic ##
 inside: ###...
