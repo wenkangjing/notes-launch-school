@@ -68,9 +68,17 @@
 2016-09-15
   - [x] Web APIs book
   - [50%] Mastery book reading
-  - [.] RegEx book
+  - [x] RegEx book
+
+2016-09-26
+  - enroll
+
+2016-09-27
+  - html and css prep
+
 
 TODO:
+  - [ ] check join.me, is code still gotealeaf?
   - [] OAuth twitter
     https://github.com/Mashape/mashape-oauth/blob/master/FLOWS.md
 
