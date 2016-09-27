@@ -633,4 +633,12 @@ background:         linear-gradient(#a1d3b0, #f6f1d3);
 }
 
 ```
+# QA
+- always provide code snipets
+- test in chrome first
 
+
+# Code Reviews
+- check provide solution first
+- when I have different solution
+- when there is question
