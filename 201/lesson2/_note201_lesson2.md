@@ -27,10 +27,50 @@ Read thru w3.org/
 
 # 4. image types
 
+- jpg
+  - compressed jpg is loosy image
+  - not using jpg as background image in css
+  
+- png
+  - lack of compression
+  - lots of details
+  - alpha
+
+- gif
+  - supports animation
+
 # 5. adding images to web pages
 
-# 6. walk thru - creating blog
+img tag
+  - src the image url
+  - alt 
+    - the alternative text if cannot display image
+    - some browser show as tool tips when hoving
 
+figcaption
+
+```html
+<figure>
+  <img src="masthead.jpg" alt="Sunset over the forest" />
+  <figcaption>Sunset over the forest</figcaption>
+</figure>
+```
+
+# 6. walk thru - creating blog
+Tips:
+- border-radius: 50% is circle
+
+Video walkthrough
+- copy everything to editor then adding html tag inline
+- use time tag
+- at least validate html once
+
+Q&A
+ - html block quote vs quote
+ - image align center
+ - video size
+ - video and image wider than body tag border
+ 
 
 # 7. walk thru - styling blog
 
