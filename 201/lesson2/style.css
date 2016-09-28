@@ -1,0 +1,102 @@
+/* For testing*/
+/** {
+  border: 1px solid black !important;
+} */
+
+/* The container of the blog article */
+
+
+
+h1 {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 48px;
+  text-align: center;
+}
+
+h2 {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  color: #BA3925;
+  text-align: left;
+}
+
+p, ul {
+  font-family: Georgia, serif;
+}
+
+figcaption {
+  font-family: Georgia, serif;
+  font-size: 14px;
+  line-height: 24px;
+  font-style: italic;
+  text-align: center;
+}
+
+body {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  line-height: 30px;
+  margin-left: 10em;
+  margin-right: 10em;
+}
+
+blockquote {
+  font-size: italic;
+  margin-left: 0;
+  border-left: 1px dotted #bfbfbf;
+   padding-left: 12px;
+}
+
+header {
+  font: 14px italic Franklin ITC Light,sans-serif;
+  text-align: center;
+}
+header p {
+  font-family: Arial, Helvetica, sans-serif
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+.footer-author h1, h2, h3, p{
+  color: black;
+  font-family: Helvetica, Arial, sans-serif;
+
+}
+
+.footer-author h1 {
+  font-size:  18px;
+  text-align: center;
+}
+
+.footer-author h2 {
+  font-size:  14px;
+}
+
+.footer-author h3 {
+  font-size:  12px;
+  text-transform: uppercase;
+}
+
+.footer-author p {
+  font-size:  12px;
+  line-height: 1.5em;
+}
+.author-photo {
+  border-radius: 50%;
+  border: 0.5em solid #f5f5f5;
+  float:left;
+}
+
+.footer-author .auther-description {
+  margin-left: 150px;
+}
+#author {
+  font-family: Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}

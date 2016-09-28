@@ -80,6 +80,11 @@
   - 201 lesson 1 html and css prep
   - 201 lesson 2
 
+2016-09-28
+  - 201 lesson 2
+
+
+  
 TODO:
   - [ ] safe web font: http://web.mit.edu/jmorzins/www/fonts.html
   - [ ] Read thru w3c.org 

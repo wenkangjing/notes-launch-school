@@ -57,10 +57,11 @@ figcaption
 ```
 
 # 6. walk thru - creating blog
+
 Tips:
 - border-radius: 50% is circle
 
-Video walkthrough
+Lecture
 - copy everything to editor then adding html tag inline
 - use time tag
 - at least validate html once
@@ -73,6 +74,38 @@ Q&A
  
 
 # 7. walk thru - styling blog
+
+cascade, write less code, override styles
+
+```css
+p {
+  /* style, weight/line height font family */
+  font: italic 14px/24px Georgia, serif;
+}
+```
+
+Tips:
+
+- font
+  - Georgia, serif;
+  - Helvetica, Arial, sans-serif;
+
+- css specificity 
+  - embedded
+  - id selector
+  - class selector :hover :focus
+  - type selector :before :after
+  - [css specificity caculator](https://specificity.keegan.st/)
+
+- avoid too many overwritten
+- prefer flatten and direct selector
+- know when to use margin, border, padding
+- prefer shorthand, e.g. border, font
+- debug tool, select element, right panle, sytle 
+
+
+> cascade vs class per tag
+
 
 
 # 8. html exercises: block elements
@@ -96,3 +129,5 @@ Q&A
 
 
 # 15. summary
+
+# discussions
