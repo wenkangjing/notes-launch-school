@@ -104,18 +104,83 @@ Tips:
 - debug tool, select element, right panle, sytle 
 
 
-> cascade vs class per tag
-
-
-
 # 8. html exercises: block elements
 
+Goals: 
+- wrap text content in the HTML elements that best fit semantically.
+
+Tips:
+- dl: definition list(container), dt： term, dd: description
+
+QA: 
+- should use article, main tags
 
 # 9. styling definition lists
 
+when to use definition list
+- dd can contain block element e.g. p, ul
+- key value pair
+- chat, dt as name, dd as message
+- bad
+  - dt connot contain block element
+  - search engine will not index dl content vs heading content
+  - not for complex tabular data
+
+examples:
+[Definition List examples](http://maxdesign.com.au/articles/definition/)
+
+- as box
+- as table
+- as floating image/description
+- as calendar event
 
 # 10. html exercises: form
 
+[MDN Guide](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms)
+[An Extensive Guide To Web Form Usability](https://www.smashingmagazine.com/2011/11/extensive-guide-web-form-usability/)
+
+Components:
+- label: Name: Email, 
+- input fields: text, dropdown, checkbox, email, ip, password
+- action: Ok, cancel, save, update
+- help: 
+- messages: success or failed
+- validation: field validation
+
+
+Tips
+- right align label as prompt
+
+- form 
+  - action required
+  - method required
+  - use fieldset to group filed 
+
+- textarea
+  - rows: visible rows
+
+- aglin label
+
+label {
+  display: inline-block;
+  width:100px;
+  text-align:right;
+}
+
+- label prompt text
+  - easy styling
+
+- id vs name vs value
+  - id is global attribute
+  - name is input attribute, submit with form as key 
+  - value is initial value, submit with form as value
+
+
+
+Q&A
+- input tag with button type vs button tag
+- input is self closing tag, ending with > or />
+- use lable tag to show prompt text around input  
 
 # 11. html exercies: talbes
 

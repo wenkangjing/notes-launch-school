@@ -86,6 +86,7 @@
 
   
 TODO:
+  - [ ] cascade vs class per tag, css best practise
   - [ ] safe web font: http://web.mit.edu/jmorzins/www/fonts.html
   - [ ] Read thru w3c.org 
   - [ ] check join.me, is code still gotealeaf?
