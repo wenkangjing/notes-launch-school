@@ -169,12 +169,13 @@ label {
 
 - label prompt text
   - easy styling
+  - put check box, radio inside label
 
 - id vs name vs value
   - id is global attribute
   - name is input attribute, submit with form as key 
   - value is initial value, submit with form as value
-
+  - value is independent to localization, <>localized</>, value is the consistent value
 
 
 Q&A
@@ -183,6 +184,17 @@ Q&A
 - use lable tag to show prompt text around input  
 
 # 11. html exercies: talbes
+
+[organizing data](http://learn.shayhowe.com/html-css/organizing-data-with-tables/)
+
+row headings
+- th tag scope attribute
+- default is col, can be set to row
+
+row group
+- th rowspan =  how many rows a cells is extended
+- th colspan = how many columns a cells is extended
+
 
 # 12. css exercises: text formatting
 
