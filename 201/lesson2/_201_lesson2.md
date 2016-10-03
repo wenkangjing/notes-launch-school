@@ -198,6 +198,35 @@ row group
 
 # 12. css exercises: text formatting
 
+meaningless paragraph generator: [lorem ipsum](http://generator.lorem-ipsum.info/_latin)
+
+font shorthand
+- mandatory: font-size and font-family
+- size/line height font family (last)
+- So many caveats [font](https://developer.mozilla.org/en-US/docs/Web/CSS/font)
+
+```css
+/* size | family */
+font: 2em "Open Sans", sans-serif;
+
+/* style | size | family */
+font: italic 2em "Open Sans", sans-serif;
+
+/* style | variant | weight | size/line-height | family */
+font: italic small-caps bolder 16px/3 cursive;
+
+/* style | variant | weight | stretch | size/line-height | family */
+font: italic small-caps bolder condensed 16px/3 cursive;
+
+/* The font used in system dialogs */
+font: message-box;
+font: icon;
+
+/* Global values */
+font: inherit;
+font: initial;
+font: unset;
+```
 
 # 13. css exercises: dimension and spacing
 
