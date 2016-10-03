@@ -112,6 +112,26 @@ Goals:
 Tips:
 - dl: definition list(container), dt： term, dd: description
 
+block
+- div
+- h1-6
+- p
+- ul, ol, dl // list
+- li, dt, dd // list item
+- table
+- pre // pre-formatted
+
+inline
+- span // should avoid
+- a
+- strong
+- em
+- img
+- br // should avoid
+- input
+- abbr
+- acronym
+
 QA: 
 - should use article, main tags
 
@@ -234,18 +254,54 @@ font-decoration
 - line-through, 
 
 
-text-transform
+text-transform // not transform
 - uppercase
 - lowercase
 - full-width
+
+transform
+- modify coordination
+- translateX // move along X
+- rotateX
+- scaleY // scale along Y asix
+- ...
+
 
 tips:
 - prefer sematic em over font-stype:italic 
 
 
 
-
 # 13. css exercises: dimension and spacing
+
+Tips:
+
+horizontally centering (to left and to right)
+
+```css
+1. block element: margin:auto
+img {
+  display: block;
+  margin:auto;
+
+  position: absolute;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+2. inline element: set parent text-align:center 
+
+body{
+  text-align:center;
+}
+
+3. transform, asix, viewpoint, 2D sense
+img {
+  position: absolute;
+  left:50%;
+  transform:translateX(-50%);
+}
+```
 
 
 # 14. improving
