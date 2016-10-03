@@ -228,6 +228,23 @@ font: initial;
 font: unset;
 ```
 
+font-decoration
+- uderline,
+- overline, 
+- line-through, 
+
+
+text-transform
+- uppercase
+- lowercase
+- full-width
+
+tips:
+- prefer sematic em over font-stype:italic 
+
+
+
+
 # 13. css exercises: dimension and spacing
 
 
