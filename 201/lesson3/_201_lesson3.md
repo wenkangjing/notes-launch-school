@@ -14,6 +14,25 @@ Photoshop
 
 # 2. Inspecting
 
+elements inspector
+- debugging html and css
+- tag and dimension, blue for element, orange for margin, refer to box model tab
+- element hierarchy at the bottom
+
+
+Style
+- our css files
+- user agent - browser default
+- inherited
+
+
+DevTools Cheatsheet [link](http://anti-code.com/devtools-cheatsheet/)
+- open dev tool: F12
+- inspect element: Ctrl + Shift + C
+- next/previous tab: Ctrl + [ / ]
+- undo: Ctrl Z
+- redo: Ctrl Y
+
 
 # 3. Exercises: fixing css using the inspector
 

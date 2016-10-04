@@ -89,7 +89,7 @@
 
 2016-10-04
   - 201 lesson 2 - dimension and spacing
-
+  - 201 lesson 3 - 2/22
   
 TODO:
   - [ ] cascade vs class per tag, css best practise
