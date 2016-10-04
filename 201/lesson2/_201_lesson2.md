@@ -303,6 +303,20 @@ img {
 }
 ```
 
+fill content to parent
+- width:100%
+
+[box model](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
+> The padding area extends to the border surrounding the padding. When the content area has a background, color, or image set on it, this will extend into the padding, which is why you can think of the padding as extending the content. The padding is located inside the padding edge, and its dimensions are the padding-box width and the padding-box height.
+box sizing
+
+- box-sizing:content-box (the smallest one) by default on all elements
+
+table dimension [MDN Tables](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started/Tables)
+- Cells have no margins.
+- table border-spacing the sapce among cells
+- use table border-spacing / no cell margin
+- border-spacing apply to table as a whole, no individule fine tune
 
 # 14. improving
 

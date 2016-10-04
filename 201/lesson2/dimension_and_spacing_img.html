@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Dimension and Spacing</title>
+    <meta charset="utf-8">
+    <style>
+      body{
+        /* 1. Set parent text-align to center*/
+        /*text-align:center;*/
+      }
+      img.fixed-size{
+        /* 2. set img to block and set margin to auto
+        img tag by default is inline*/
+        display: block;
+        margin:auto;
+        width:800px;
+
+        /* 3. transform image*/
+        /*position: absolute;
+        left:50%;
+        transform:translateX(-50%);*/
+      }
+      img.auto-scale{
+        display: block;
+        margin:auto;
+        max-width:800px;
+        width:100%;
+      }
+      img.fixed-height {
+        display:block;
+        margin:0 auto;
+        max-width:800px;
+        width:100%;
+        height:533px;
+      }
+      img.max-mix-width {
+        display:block;
+        margin:0 auto;
+        max-width:800px;
+        min-width:500px;
+        width:100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!--Change the class attribute value to see the differences-->
+    <img class="max-mix-width" src="./images/Hôtel_des_Invalides_-_20150801_16h09_(10630).jpg" alt="Hotel des Invalides">  
+  </body>
+</html>

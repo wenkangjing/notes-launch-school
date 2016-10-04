@@ -83,8 +83,12 @@
 2016-09-28
 2016-10-01
   - 201 lesson 2 - dl, form, table
-  
 
+2016-10-03
+  - 201 lesson 2 - text formatting
+
+2016-10-04
+  - 201 lesson 2 - dimension and spacing
 
   
 TODO:
