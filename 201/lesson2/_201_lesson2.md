@@ -320,6 +320,49 @@ table dimension [MDN Tables](https://developer.mozilla.org/en-US/docs/Web/Guide/
 
 # 14. improving
 
+header element
+- multiple headers in your html
+  - page header, article header, etc
+  - use parent > child: to give a absolute path
+  - use role attribute header[role="page-header"] {}
+  - use id seletors
+
+- nav
+  - Use ul, li in nav
+  - display:inline
+  
+main element
+  - once per page
+  - old way: div id="main"
+
+class selector
+  - set class in ul not repeating class in li
+  
+dl, dt, dd
+  - use it for term and definition
+  - replace to h3 p h3 p h3 p
+
+```css
+dl {
+  padding-bottom: 1rem;
+}
+
+dt, dd {
+  padding:0 0 .5rem 0;
+  margin:0;
+  /* looks exactly as heading and paragraph, without indent */
+  text-indent:0;
+}
+
+dt {
+  /*mock up the heading*/
+  font-weight:bold;
+}
+```  
+
+mock up button
+- span a element
+
 
 # 15. summary
 
