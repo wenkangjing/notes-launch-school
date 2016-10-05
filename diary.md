@@ -92,6 +92,7 @@
   - 201 lesson 3 - 2/22
   
 TODO:
+  - [ ] https://css-tricks.com/all-about-floats/)
   - [ ] cascade vs class per tag, css best practise
   - [ ] safe web font: http://web.mit.edu/jmorzins/www/fonts.html
   - [ ] Read thru w3c.org 

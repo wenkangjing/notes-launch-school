@@ -36,11 +36,60 @@ DevTools Cheatsheet [link](http://anti-code.com/devtools-cheatsheet/)
 
 # 3. Exercises: fixing css using the inspector
 
+Tips from Walkthrough video
+- font-family: comma , to separate each font
 
+- remove space between li tag: 
+  - ul font-size:0, 
+  - li font-size:1rem
+
+- The content CSS property is used with the ::before and ::after pseudo-elements to generate content in an element.
+
+- symble in html
+  - edit as html to modify the real html, don'd double click
+  - https://dev.w3.org/html5/html-author/charref
+  - or :before :after content
+
+- float and clear [css tricks](https://css-tricks.com/all-about-floats/)
+
+```css
+main:after {
+  display: block;
+  clear: both;
+  content: "";
+}
+```
 # 4. Assignment: Company Splash Page
-
-
 # 5. Solution: Company Splash Page
+
+css properties only for inline
+- text-align 
+
+css properties only for block
+
+
+alignment **text-aglin**
+- text-align css property: how inline content like text is aligned in its parent block element.
+  - used in center li in ul, inline-block
+   
+- align-content css property:aligns a flex container's lines within the flex container when there is extra space on the cross-axis.
+
+- align as html attribute
+  - embedded into html
+  - bad
+
+background
+  - always set background color in case background-iamge is not found
+
+To ensure page alignment
+
+```css
+header, main, footer {
+  width: 100opx;
+  margin: 0 auto;
+}
+```
+
 
 
 # 6. Exercises: CSS Selectors

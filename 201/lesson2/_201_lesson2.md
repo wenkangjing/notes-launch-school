@@ -283,10 +283,6 @@ horizontally centering (to left and to right)
 img {
   display: block;
   margin:auto;
-
-  position: absolute;
-  left:50%;
-  transform:translateX(-50%);
 }
 
 2. inline element: set parent text-align:center 
