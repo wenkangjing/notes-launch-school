@@ -90,9 +90,39 @@ header, main, footer {
 }
 ```
 
-
-
 # 6. Exercises: CSS Selectors
+
+basic
+  - type: elemeng tag
+  - class: .
+  - id: #
+  - universal: *
+  - attribute: header[role="banner"]
+
+combined
+- A > B   direct child  
+- A B     descendant         
+- A + B   immediately after/follow
+- A ~ B   A B are sibling(same parent), B after A  
+
+pseudo elements
+- ::after ::before
+- ::first-line
+- ::selection
+
+pseudo class
+- :hover
+- :focus
+- :required
+- :checked
+- :enabled
+- :read-only
+- :first-child
+- :last-child
+- nth-child
+  - tr:nth-child(odd)   Represents the odd rows of an HTML table.
+  - tr:nth-child(even)  Represents the even rows of an HTML table.
+- nth-of-type(odd)
 
 
 

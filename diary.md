@@ -91,6 +91,12 @@
   - 201 lesson 2 - dimension and spacing
   - 201 lesson 3 - 2/22
   
+2016-10-05
+  - 201 lesson 3 - 5/22
+
+2016-10-06
+  - 201 lesson 3 - 6/22
+
 TODO:
   - [ ] https://css-tricks.com/all-about-floats/)
   - [ ] cascade vs class per tag, css best practise
