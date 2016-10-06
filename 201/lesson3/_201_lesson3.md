@@ -128,6 +128,58 @@ pseudo class
 
 # 7. The Box Model
 
+block, 
+
+1. take the entire row
+2. margin, border, padding: top, right, bottom, left
+
+- h1 through h6
+- p
+- blockquote
+- ul, ol, dl
+- dt, dd
+- div
+- section
+- article
+- aside
+- header
+- footer
+- nav
+- figure and figcaption
+- form and fieldset
+
+inline
+
+1. width and height are ignored
+2. the content will dictate the dimensions 
+3. Borders are still applied, but content may be overlapping
+4. margin top and bottom are ignored
+5. the right and left padding affect its proximity to content that comes before or after it, the top and bottom do not
+
+- span
+- b, i, u
+- strong, em
+- a
+- abbr
+- sub and sup
+- time
+- mark
+
+inline-block
+
+1. width and height are set 
+2. padding and margin are added on all sides
+3. it does not automatically take up its own row for its dimensions
+4. they can be placed side by side along with other inline-block or inline elements.
+5. vertical-align:middle
+
+- button
+- input
+- select
+- textarea
+
+[Box Model](https://css-tricks.com/the-css-box-model/) 
+[shay howe](http://learn.shayhowe.com/html-css/opening-the-box-model/)
 
 
 # 8. Floats and Page Layout

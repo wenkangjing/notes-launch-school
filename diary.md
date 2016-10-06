@@ -99,24 +99,23 @@
 
 TODO:
   - [ ] https://css-tricks.com/all-about-floats/)
-  - [ ] cascade vs class per tag, css best practise
+  - [] [Box Model](https://css-tricks.com/the-css-box-model/) 
+  - [ ] [shay howe](http://learn.shayhowe.com/html-css/opening-the-box-model/)
   - [ ] safe web font: http://web.mit.edu/jmorzins/www/fonts.html
   - [ ] Read thru w3c.org 
   - [ ] check join.me, is code still gotealeaf?
-  - [ ] OAuth twitter
-    https://github.com/Mashape/mashape-oauth/blob/master/FLOWS.md
 
   - [ ] SQL book
   - [ ] Agile book
-
   - [ ] Introducing HTML5 (2nd Edition) (Voices That Matter) 2nd Edition
-  - [ ] http://learn.shayhowe.com/html-css/
 
 Question:
   - [?] users groups, owner
 
 Total Hours
   - Preparatory Work: 26.5 hr
+  - 201
+  
 
 NOTE:
 create directory per Lesson
