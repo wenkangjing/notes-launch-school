@@ -102,11 +102,12 @@
 
 2016-10-08
   - meeting with Chris via Skype
-   - ? brief intro
-   - ? start with font-end: related for current project
-   - ? percentage of Ruby as a language out of the full backend courses
+   - ? my brief intro
+   - ? is it ok to start with font-end: related for current project
+   - ? what is the percentage of Ruby as a language out of the full backend courses
+   - ? C++ C# background, currently learning asp.net core in company. common backend knowledge vs rails way 
    - ? mentor program: Australia, Offshore job hunting
-   - ? industry related lessons, testing, CI, knowledge base, collabration
+   - ? industry related lessons, testing, CI, knowledge base, collaborations
  
 
 TODO:

@@ -218,6 +218,21 @@ Elements that are floated or set to absolute or fixed position are not elements 
 
 # 10. Exercises: Floats (1)
 
+***take up the remaining space***
+- You can set overflow on a container to have it take up the remaining space within a row of floated elements. This is useful if your last element can take up the leftover space in a variable width layout.
+
+```css
+section {
+  overflow: hidden;
+}
+
+aside {
+  overflow: hidden;
+}
+```
+
+**clear**
+- The clear CSS property specifies whether an element can be next to floating elements that precede it or must be moved down (cleared) below them. The clear property applies to both floating and non-floating elements.
 
 # 11. Exercises: Floats (2)
 
