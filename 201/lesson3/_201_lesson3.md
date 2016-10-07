@@ -184,11 +184,37 @@ inline-block
 
 # 8. Floats and Page Layout
 
+floating elements
+- inline or inline-block
+- only take up as much width as is needed or as you specify
+- if no enough space, show in next row
 
+ overflow
+- overflow: visible;/* Content is not clipped */
+- overflow: hidden;/* Content is clipped, with no scrollbars */
+- overflow: scroll;/* Content is clipped, with scrollbars */
+- overflow: auto; /* Let the browser decide */
+
+**tricks to layout sidebar**
+- idea: sidebar shows in left margin of container 
+- fixed width on sidebar and auto adjust width on primary content
+- container margin-left = sidebar width 
+- primary width:100, float right
+- sidebar float left
+-  box-sizing: border-box;
 
 # 9. Containing Floats
 
+Elements that are floated or set to absolute or fixed position are not elements that normally affect the dimensions of their parents because they're taken out of the normal flow.
+- clearfix: For floated elements, we need either some element after the floated elements to clear them and allow the container to calculate a proper height
 
+```css
+#columns:after {
+  display: block;
+  clear: both;
+  content: "";
+}
+```
 
 # 10. Exercises: Floats (1)
 

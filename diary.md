@@ -95,7 +95,19 @@
   - 201 lesson 3 - 5/22
 
 2016-10-06
-  - 201 lesson 3 - 6/22
+  - 201 lesson 3 - 7/22
+
+2016-10-07
+  - 201 lesson 3 - ?/22
+
+2016-10-08
+  - meeting with Chris via Skype
+   - ? brief intro
+   - ? start with font-end: related for current project
+   - ? percentage of Ruby as a language out of the full backend courses
+   - ? mentor program: Australia, Offshore job hunting
+   - ? industry related lessons, testing, CI, knowledge base, collabration
+ 
 
 TODO:
   - [ ] https://css-tricks.com/all-about-floats/)
