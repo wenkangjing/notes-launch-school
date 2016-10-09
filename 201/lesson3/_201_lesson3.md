@@ -200,10 +200,29 @@ floating elements
 **tricks to layout sidebar**
 - idea: sidebar shows in left margin of container 
 - fixed width on sidebar and auto adjust width on primary content
-- container margin-left = sidebar width 
+- container _margin-left_ = sidebar width 
 - primary width:100, float right
 - sidebar float left
 -  box-sizing: border-box;
+
+```css
+/* sidebar example on different width */
+@media screen and (min-width:600px) {
+  nav {
+    float: left;
+    width: 25%;
+  }
+  section {
+    margin-left: 25%;
+  }
+}
+@media screen and (max-width:599px) {
+  nav li {
+    display: inline;
+  }
+}
+```
+
 
 # 9. Containing Floats
 
@@ -248,18 +267,20 @@ static position (default value)
 relative position (to its current position)
 - affect surrounding elements
 
-absolute (to the screen)
+absolute (to nearest relative)
 - remove the elements from layout
 - as if it were outside all other elements
 
 > Absolutely positioned elements are moved in relation to their closest relatively positioned parent element.
 
-fixed (to the windows)
+>An absolutely positioned element is positioned within its nearest containing element that has a position: relative (strictly speaking, any position value other than static would work, but most often position: relative is used). If none of its containing elements is relatively positioned, the absolutely positioned element is then positioned relative to the <body> element.
+
+fixed (to the viewport)
 - leaves it there even as the user scrolls the page
 - the majority of fixed position elements are located at the top or bottom of the page.
 
+> fixed position is shaky in mobile browser
 
->An absolutely positioned element is positioned within its nearest containing element that has a position: relative (strictly speaking, any position value other than static would work, but most often position: relative is used). If none of its containing elements is relatively positioned, the absolutely positioned element is then positioned relative to the <body> element.
 
 
 ```css
@@ -318,6 +339,48 @@ viewpoint width and height
 
 
 # 15. Learning CSS Layout
+
+[CSS layout tutorial](http://learnlayout.com/)
+
+css display property control the layout
+
+display none vs visibility: hidden
+- display none will render the page
+- visibility hidden will hide the element, but still take up the space 
+
+width/height and box-sizing
+
+```css
+* {
+  box-sizing: border-box;
+}
+```
+
+meta
+- @media
+- @viewport
+
+column: 
+- to show text in multiple columns,
+- [can i use](http://caniuse.com/#search=column)
+- not recommended
+
+```css
+.three-column {
+  padding: 1em;
+  -moz-column-count: 3;
+  -moz-column-gap: 1em;
+  -webkit-column-count: 3;
+  -webkit-column-gap: 1em;
+  column-count: 3;
+  column-gap: 1em;
+}
+```
+
+flexbox: it is not yet released by w3C
+- [old and new flexbox](https://css-tricks.com/old-flexbox-and-new-flexbox/)
+- [flexbox css3](https://bocoup.com/weblog/dive-into-flexbox)
+- [can i use](http://caniuse.com/#feat=flexbox)
 
 
 # 16. Assignment: Install Photoshop
