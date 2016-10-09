@@ -128,10 +128,12 @@ pseudo class
 
 # 7. The Box Model
 
-block, 
+block
 
 1. take the entire row
 2. margin, border, padding: top, right, bottom, left
+3. if no width, expand naturally to fill its parent 
+4. if no heigth, expand to fit its content 
 
 - h1 through h6
 - p
@@ -185,7 +187,7 @@ inline-block
 # 8. Floats and Page Layout
 
 floating elements
-- inline or inline-block
+- floating inline or inline-block elements will chnage its disaply to block level
 - only take up as much width as is needed or as you specify
 - if no enough space, show in next row
 
@@ -207,9 +209,11 @@ floating elements
 
 Elements that are floated or set to absolute or fixed position are not elements that normally affect the dimensions of their parents because they're taken out of the normal flow.
 - clearfix: For floated elements, we need either some element after the floated elements to clear them and allow the container to calculate a proper height
+- Elements following a floated element will wrap around the floated element, we do not want this to happen, so I applied the 'clear: both' property to the third div, there are 2 other properties for clear, that's the left and the right. I chose to clear both, just to be sure.
+- Basically, you just put the ::after pseudo-element on the containing parent element of the floated contents.
 
 ```css
-#columns:after {
+#container:after {
   display: block;
   clear: both;
   content: "";
@@ -235,16 +239,82 @@ aside {
 - The clear CSS property specifies whether an element can be next to floating elements that precede it or must be moved down (cleared) below them. The clear property applies to both floating and non-floating elements.
 
 # 11. Exercises: Floats (2)
-
+Done in Browser inspector
 
 # 12. CSS Positioning
 
+static position (default value)
+
+relative position (to its current position)
+- affect surrounding elements
+
+absolute (to the screen)
+- remove the elements from layout
+- as if it were outside all other elements
+
+> Absolutely positioned elements are moved in relation to their closest relatively positioned parent element.
+
+fixed (to the windows)
+- leaves it there even as the user scrolls the page
+- the majority of fixed position elements are located at the top or bottom of the page.
+
+
+>An absolutely positioned element is positioned within its nearest containing element that has a position: relative (strictly speaking, any position value other than static would work, but most often position: relative is used). If none of its containing elements is relatively positioned, the absolutely positioned element is then positioned relative to the <body> element.
+
+
+```css
+.item {
+  position: relative;
+  top: 10px;
+  left: 10px;
+}
+
+#top-bar {
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+```
 
 # 13. Exercises: Positioning
+
+To horizontally center a fixed width element that is positioned, you can move the element to the center of the window with position and move it back in the opposite direction with negative margin. In our example, we're moving the element from the left edge to the center of the page, then moving it back towards the left edge by half its width using negative margin.
+
+```css
+#top-centered {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  margin-left:-200px;
+  box-sizing:border-box;
+}
+```
+
+
+viewpoint width and height
+
+```css
+#fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+#fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right:0;
+  bottom:0;
+}
+```
 
 
 # 14. Project: Summary of Box Model, Positioning, Floats Rules
 
+[summary](https://d3jtzah944tvom.cloudfront.net/lesson_3/the_box_model/box_model.html)
 
 
 # 15. Learning CSS Layout

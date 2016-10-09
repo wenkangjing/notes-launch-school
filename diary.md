@@ -98,19 +98,28 @@
   - 201 lesson 3 - 7/22
 
 2016-10-07
-  - 201 lesson 3 - ?/22
+  - 201 lesson 3 - 12/22
 
 2016-10-08
-  - meeting with Chris via Skype
+  - meeting with Chris via Skype: Booking starts: Saturday, October 8, 2016 6:30 AM (Australia/Melbourne)
+Duration: 30 minutes 
+Reference: YMPH-DWEX-AQRS
    - ? my brief intro
    - ? is it ok to start with font-end: related for current project
+    - slow
+    - 2 goals , long term or short term 
    - ? what is the percentage of Ruby as a language out of the full backend courses
    - ? C++ C# background, currently learning asp.net core in company. common backend knowledge vs rails way 
-   - ? mentor program: Australia, Offshore job hunting
-   - ? industry related lessons, testing, CI, knowledge base, collaborations
- 
+    - rails is far late 
+   - ? mentor program: Australia, Offshore job hunting, no TA in Australia
+   - ? industry related lessons, testing, CI, deploy, AB testing, Automation Testing
+   - ? English as secondary language
+   -  Win vs Linux
+    - fruastraded, very high
+    
 
 TODO:
+  - [ ] http://alistapart.com/article/css-positioning-101
   - [ ] https://css-tricks.com/all-about-floats/)
   - [] [Box Model](https://css-tricks.com/the-css-box-model/) 
   - [ ] [shay howe](http://learn.shayhowe.com/html-css/opening-the-box-model/)
