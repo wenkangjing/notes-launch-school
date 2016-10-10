@@ -385,16 +385,88 @@ flexbox: it is not yet released by w3C
 
 # 16. Assignment: Install Photoshop
 
-
-
 # 17. Working with Design Files
 
+- *.psd
+- a layered collection of images, text, etc
+
+**extract image from psd**
+  + Select all (Ctrl-a or Cmd-a)
+  + Copy merged (Shift-Ctrl-c or Shift-Cmd-c)
+  + New file (Ctrl-n or Cmd-n)
+  + Enter to confirm
+  + Paste (Ctrl-v or Cmd-v)
+  + Save for web (Ctrl-alt-shift-s or Cmd-opt-shift-s)
+
+
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+font-family: 'Roboto Condensed', sans-serif;
 
 # 18. CSS Resets
 
+```css
+/*
+----------------------------------------
+Tantek Celik's Whitepsace Reset
+     Author:    Tantek Celik, Shane Riley
+    Version:    (CC) 2010 Some Rights Reserved - http://creativecommons.org/licenses/by/2.0
+Description:  Resets default styling of common browsers to a common base
+----------------------------------------
+*/
 
+ul,ol { list-style: none; }
+h1,h2,h3,h4,h5,h6,pre,code { font-size: 1em; }
+ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input,dl,dt,dd, figure, figcaption {
+  margin: 0;
+  padding: 0; }
+a img,:link img,:visited img, fieldset { border: none; }
+address { font-style: normal; }
+header, section, article, nav, footer, hgroup, details, summary, figure, main { display: block; }
+mark {
+  color: inherit;
+  background: transparent; }
+abbr { border: none; }
+summary::-webkit-details-marker { display: none; }
+```
 
 # 19. Walkthrough: starting the Photography Blog Project
+
+- bg: #d2dbbe #fcfff5
+- main bg #ffffff
+- footer: @ 2015 Shutter Bug #3e606f
+- active tab color: #91aa9d
+- font: Roboto Condensed,regular
+- tab color: #fcfff5
+- title: 36pt 
+- p font:  18pt  #3e606f
+- h font: 32pt #3e606f
+- tab text: 18pt color: rgb(145, 170, 157);
+- tab text active: 18pt color: rgb(252, 255, 245);
+
+```css
+
+.tab {
+  background-image: url("tab.png");
+  position: absolute;
+  left: 749px;
+  top: 95px;
+  width: 128px;
+  height: 45px;
+  z-index: 22;
+}
+
+
+.Background {
+  background-image: url("Background.png");
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 1100px;
+  height: 1400px;
+  z-index: 1;
+}
+
+```
 
 
 

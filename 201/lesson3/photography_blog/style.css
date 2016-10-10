@@ -1,0 +1,25 @@
+body {
+  background:#d2dbbe;
+}
+
+main {
+  background:white;
+}
+
+.logo-image, .logo-text{
+  display:inline-block;
+  box-sizing: border-box;
+  margin:0;
+}
+
+.cover {
+  width:100%;
+}
+
+main ul {
+  text-align: right;
+}
+main ul li {
+  display:inline-block;
+ 
+}
