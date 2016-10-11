@@ -127,6 +127,8 @@ Reference: YMPH-DWEX-AQRS
 
 2016-10-11
   - 201 - Lesson 3 - 22/22 
+  - 201 - Lesson 3 - done
+
 
 
 TODO:
