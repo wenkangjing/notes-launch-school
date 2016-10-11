@@ -443,32 +443,57 @@ summary::-webkit-details-marker { display: none; }
 - tab text: 18pt color: rgb(145, 170, 157);
 - tab text active: 18pt color: rgb(252, 255, 245);
 
-```css
+fixed page width, set same width for
+- header, main, footer
+- or set body width instead
 
-.tab {
-  background-image: url("tab.png");
-  position: absolute;
-  left: 749px;
-  top: 95px;
-  width: 128px;
-  height: 45px;
-  z-index: 22;
-}
+watherfall to go thru the page
+- link 
+- header
+- main
+- footer
+
+photoshop
+- extract images
+- dimension, by ruler or copy to css
+- padding
+- font
+- color
+
+vertical center text in li tag
+- add padding
+
+horizontal center
+- margin: 0 auto;
+- text-alige:center;
+
+logo can be the background of h1
+
+to make image fill its container
+- give container a fixed width
+- set image width:100%
+
+nav bar
+- clickable on whole li not only on a
+- set a display:block;
+- set a padding to center the text
+- text-decoration:none to remove the under line
+
+css Reset
+- @import url("whitespaces_reset.css"); in css file
+
+put img into figure tag
 
 
-.Background {
-  background-image: url("Background.png");
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 1100px;
-  height: 1400px;
-  z-index: 1;
-}
+floated content outside container
+- set container overflow: hidden;
 
-```
+[google font](fonts.google.com)
 
-
+when to use padding or margin?
+> padding is always part of the element, include click region and background
+> margin is outside of the element
+> use padding to increase the space of box
 
 # 20. Assignment: Finish the Photography Blog
 

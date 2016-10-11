@@ -120,12 +120,13 @@ Reference: YMPH-DWEX-AQRS
 2016-10-09
   - 201 Lesson 3 - 15/22
 
-2016-10-09
+2016-10-10
   - 101 - Lesson 1
   - 101 - Lesson 2 - ?/22
-  - 201 - Lesson 3 - 19/22 
+  - 201 - Lesson 3 - 18/22 
 
-  
+2016-10-11
+  - 201 - Lesson 3 - 22/22 
 
 
 TODO:
