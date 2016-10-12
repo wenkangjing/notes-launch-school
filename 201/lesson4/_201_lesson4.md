@@ -102,9 +102,16 @@ Textarea
 
 # 8	Exercises: Forms
 
-
+input type
+- button: just button
+- submit: the button that trigger http method to submit data to server
 
 # 9	Basic Form Layouts
+
+-->Important
+```
+```
+
 
 # 10	Walkthrough: Creating a Contact Form
 
