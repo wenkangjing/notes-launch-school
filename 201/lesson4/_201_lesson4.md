@@ -156,7 +156,24 @@ nested fields
 - multiple dl
 
 # 10	Walkthrough: Creating a Contact Form
-.
+
+tips:
+
+- write down content in plain text
+- convert to label/input or p/input
+- set proper attributes according to details, placeholder, default value, etc
+- wrap to dl dt dd in needed
+- double check each input contains name attribute to submit
+- check label for link to input id - click region
+- styling
+
+> whenever you set width and padding to one Element
+> make it box-sizing to border-box for each calculation
+
+
+input attributes
+- number: min and max, still can input more than max, so need furthervalidation
+- text: maxlength
 
 # 11	Project: Advanced Form Layout
 
