@@ -66,6 +66,7 @@ minlength and maxlength
 
 # 6	General Attributes for the Input Element
 
+- input id <> lable for (**to extend click region**)
 - required
 - autofocus: the first field need to input
 - checked
@@ -106,14 +107,56 @@ input type
 - button: just button
 - submit: the button that trigger http method to submit data to server
 
-# 9	Basic Form Layouts
+# 9	Basic Form Layouts -->Important<--
 
--->Important
-```
+## Option 1: label and input
+
+label above input (**prefered whenever possible**)
+- lable: **display:block** 
+- label: padding-bottom to 
+- input[type="text"]: style (optional)
+- form: border (optional)
+- alignment: box-sizing:border-box 
+
+pairing in one line
+- wrap pair in div to keep a pair per line
+- label: inline-block, a enough fixed width (**no good**)
+- label/input: vertical-align:middle (alignment)
+- input: inline-block, width:50%
+
+## Option 2: definition list
+- div dl as container
+- dt label
+- dd input
+
+left/rigth layout 
+
+```css
+dt, dd {
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+dt {
+  width: 25%;
+  padding-right: 20px;
+  text-align:right; /*label algin right*/
+}
+dd {
+  width: 75%;
+  margin:0;
+}
+input[type="text"] {
+  width: 100%;
+}
 ```
 
+nested fields
+- just one pair of label/input in dl
+- multiple dl
 
 # 10	Walkthrough: Creating a Contact Form
+.
 
 # 11	Project: Advanced Form Layout
 

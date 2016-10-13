@@ -130,7 +130,11 @@ Reference: YMPH-DWEX-AQRS
   - 201 - Lesson 3 - done
 
 2016-10-12
-  - 201 - Lessn 4 - 
+  - 201 - Lessn 4 - 4/22
+
+2016-10-13
+  - 201 - Lessn 4 - 4/22
+  - review html and css, write to wiki
 
 
 TODO:

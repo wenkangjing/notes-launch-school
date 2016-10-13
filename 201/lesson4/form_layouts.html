@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <title>Form Layouts</title>
+  <style>
+    * {
+      /*border:1px solid black;*/
+    }
+    .styled_form.horizontal dt,
+    .styled_form.horizontal dd {
+      display: inline-block;
+      vertical-align: middle;
+      box-sizing: border-box;
+    }
+    .styled_form.horizontal dt {
+      width: 25%;
+      padding-right: 20px;
+      text-align:right;
+    }
+    .styled_form.horizontal dd {
+      width: 75%;
+      margin:0;
+    }
+    .styled_form.horizontal input[type="text"] {
+      width: 100%;
+    }
+
+    .styled_form.stack dt,
+    .styled_form.stack dd {
+      display:block;
+      vertical-align: middle;
+      box-sizing: border-box;
+      margin:0;
+    }
+
+    .styled_form.stack dt,
+    .styled_form.stack dd {
+      padding-bottom:10px;      
+    }
+    .styled_form.stack .partial{
+      display:inline-block;
+    }
+  </style>
+</head>
+<body>
+  <fieldset>
+    <legend>Left/Right, label align right</legend>
+    <div class="styled_form horizontal">
+      <dl>
+        <dt>
+          <label for="example_2">Name</label>
+        </dt><!--
+        --><dd>
+          <input type="text" id="example_2" />
+        </dd>
+      </dl>
+      <dl>
+        <dt>
+          <label for="example_3">longggggggg</label>
+        </dt><!--
+        --><dd>
+          <input type="text" id="example_3" />
+        </dd>
+      </dl>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Advanced layout</legend>
+    <div class="styled_form stack">
+      <dl class="stack">
+        <dt><label for="name">Name</label></dt>
+        <dd><input type="text" name="name" id="name"></dd>
+      <dl>
+      <dl class="stack">
+        <dt><label for="address1">Address</label></dt>
+        <dd><input type="text" name="address1" id="address1"></dd>
+        <dd><input type="text" name="address2" id="address2"></dd>
+      </dl>
+      
+      <dl class="partial">
+        <dt><label for="city">City</label></dt>
+        <dd><input type="text" name="city" id="city"></dd>
+      </dl>
+      <dl class="partial">
+        <dt><label for="city">State</label></dt>
+        <dd>
+          <select type="text" name="state" id="state">
+            <option value="vic" selected>VIC</option>
+            <option value="nsw">NWS</option>
+            <option value="wa">WA</option>
+          </select>
+        </dd>
+      </dl>
+      <dl class="partial">
+        <dt><label for="zip">Zip</label></dt>
+        <dd><input type="text" name="zip" id="zip"></dd>                    
+      </dl>
+
+    </div>
+  </fieldset>  
+</body>
+</html>
