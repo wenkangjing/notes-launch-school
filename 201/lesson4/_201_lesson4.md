@@ -151,6 +151,11 @@ input[type="text"] {
 }
 ```
 
+stack layout
+- fixed width on container
+- margin:0 auto on container 
+- input width 100% to fill the container
+
 nested fields
 - just one pair of label/input in dl
 - multiple dl
@@ -174,8 +179,6 @@ tips:
 input attributes
 - number: min and max, still can input more than max, so need furthervalidation
 - text: maxlength
-
-
 
 
 # 11	Project: Advanced Form Layout
