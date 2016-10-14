@@ -133,18 +133,18 @@ Reference: YMPH-DWEX-AQRS
   - 201 - Lessn 4 - 8/22
 
 2016-10-13
-  - 201 - Lessn 4 - 9/22
-  - review html and css, write to wiki
+  - 201 - Lessn 4 - 10/22
+
+2016-10-14
+  - 201 - Lessn 4 - 12/22
+  - [check psd] in #12
 
 
 TODO:
-  - [ ] http://alistapart.com/article/css-positioning-101
+  - [ ] review html and css, write to wiki
   - [ ] https://css-tricks.com/all-about-floats/)
-  - [] [Box Model](https://css-tricks.com/the-css-box-model/) 
-  - [ ] [shay howe](http://learn.shayhowe.com/html-css/opening-the-box-model/)
   - [ ] safe web font: http://web.mit.edu/jmorzins/www/fonts.html
   - [ ] Read thru w3c.org 
-  - [ ] check join.me, is code still gotealeaf?
 
   - [ ] SQL book
   - [ ] Agile book

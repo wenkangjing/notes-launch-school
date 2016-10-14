@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Pseudo Elements</title>
+  <style>
+    body{
+      font:normal 16px Helvetica, Arial, sans-serif;
+      margin:0;
+    }    
+    article {
+      margin:0 150px 0 150px;
+      padding: 20px;
+      box-sizing:border-box;
+    }
+    .sidebar {
+      width:150px;
+      height:100vh;
+    } 
+
+    .sidebar h1 {
+      padding: 10px;
+    }
+    .left {
+      float:left;
+      background:#2c3e50;
+      color: #ecf0f1;
+    }
+
+    .right {
+      float:right;
+      background:#e74c3c;
+      color:#2980b9;
+    }
+
+    ul {
+      list-style:none;
+      padding-left:0;
+    }
+    
+    li.nav {
+      padding: 0 10px 0 10px;
+    }
+    li.nav:before {
+       background: transparent url("icons_nav.png") 0 0 no-repeat;
+       display: inline-block;
+       width: 24px;
+       height: 24px;
+       margin: 0;
+       content: "";
+    }
+
+    li.my-photos:before {
+      background-position: 0 -26px;
+    }
+
+    li.contact-me:before {
+      background-position: 0 -45px;
+    }
+    li.nav label {
+      padding-left:10px;
+    }
+
+
+
+    li.social {
+       background: transparent url("icons_social.png") 0 0 no-repeat;
+       background-size: 24px
+    }
+
+  </style>
+</head>
+<body>
+  <main>
+    <div class="sidebar left">
+      <h1>My Blog</h1>
+      <ul>
+        <li class="nav home"><label>Home</label></li>
+        <li class="nav my-photos"><label>My Photos</label></li>
+        <li class="nav contact-me"><label>Contact Me</label></li> 
+      </ul>
+    </div>
+    <div class="sidebar right">
+      <ul>
+        <li class="social twitter">Twitter</li>
+        <li class="social facebook">Facebook</li>
+        <li class="social instagram">Instagram</li>
+      </ul>
+    </div>
+    <article>
+      <h1>Welcome</h1>
+      <p>Sed porttitor lectus nibh. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin molestie malesuada. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</p>
+      <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Curabitur aliquet quam id dui posuere blandit. Sed porttitor lectus nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin molestie malesuada. Donec rutrum congue leo eget malesuada. Donec rutrum congue leo eget malesuada. Quisque velit nisi, pretium ut lacinia in, elementum id enim.</p>
+    </article>
+  </main>
+</body>
+</html>

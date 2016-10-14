@@ -180,12 +180,25 @@ input attributes
 - number: min and max, still can input more than max, so need furthervalidation
 - text: maxlength
 
-
 # 11	Project: Advanced Form Layout
+
+- dl dt dd is your friend
+- margin:0 auto to horizontal center
+- width:100% to fill into container
+- change box-sizing: border-box whenever apply padding
+- css cascade is handy: inside section or near behind secion 
+- tag class: muptile name can easy styling
+
+
+Refer to [profile_form.html](./profile_form.html) and [profile_form_style.css](./profile_form_style.css)
 
 # 12	Pseudo Elements
 
+- :after, :before
+- :hover
+
 # 13	Sprite Sheets
+shift around one background image by background-position
 
 # 14	Assignment: Adding Design Touches With Pseudo Elements
 
