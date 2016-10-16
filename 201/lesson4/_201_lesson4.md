@@ -222,6 +222,10 @@ multiple sections in css
 
 # 16	Project: Company Site
 
+.
+
+
+
 # 17	Assignment: Company Site - Header and Navigation
 
 # 18	Assignment: Company Site - Main Area and Footer

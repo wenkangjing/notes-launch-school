@@ -1,0 +1,119 @@
+/*@import url("whitespapce-reset.css")*/
+
+/* Common */
+body{
+  font:normal 16px Helvetica, Arial, sans-serif;
+  width:100%;
+  margin:0;
+}
+
+main {
+  margin: 0 auto;
+  width:800px;
+}
+
+h1 {
+  font-size:36px;
+  text-align: center;
+}
+
+h1:after,
+h1:before{
+  content:"\2022";
+  padding: 0 30px;
+}
+
+h2 {
+  font-size:24px;
+  text-align: center;
+  color:#3e59b2;
+}
+
+p, footer {
+  font-size:20px;
+  text-align: center;
+}
+
+/* header */
+header {
+  margin:0;
+  padding-bottom: 35px;
+  width:100%;
+  background: transparent url("./images/bg_body.gif") 0 0 repeat;
+}
+
+header h1 {
+  text-align: center;
+}
+header img {
+  padding-top:130px;
+  padding-bottom:100px;
+}
+header nav {
+  text-align:center;
+}
+header ul {
+  display:inline-block;
+  list-style: none;
+  padding-left:0;
+}
+
+header li {
+  display:inline-block;
+  padding:0 25px;
+  text-transform: uppercase
+}
+header a {
+  font-size:26px;
+  color:#cacaca;
+  text-decoration: none;
+}
+
+/* main */
+article {
+  margin-bottom:100px;
+}
+
+/* footer */
+
+footer {
+  margin:0;
+  padding:  85px 0 75px 0;
+  width:100%;
+  background: rgb(231, 231, 231);
+  text-align: center;
+}
+
+footer p {
+  color: #45494d;
+  margin: 0 ;
+}
+footer ul {
+  display:inline-block;
+  list-style: none;
+  padding-top:50px;
+}
+
+footer li {
+  display:inline-block;
+  margin:0 70px;
+  width:46px;
+  height:46px;
+  background:transparent url("./images/icons_social-media.png") 0 0 no-repeat;
+}
+
+footer li:hover{
+  cursor: pointer;
+}
+
+footer .facebook {
+  background-position:0 -46px;
+}
+
+footer .email {
+  background-position:0 -92px;
+}
+
+footer .instagram {
+  background-position:0 -138px;
+}
