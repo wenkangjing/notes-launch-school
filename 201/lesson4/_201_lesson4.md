@@ -215,7 +215,10 @@ multiple sections in css
   - 50% 0   --> center top
   - 100% 0  --> right top
 
-2 column layout
+[2 column layout](./2_columns.html)
+
+[3 column layout](./3_columns.html)
+
 
 # 16	Project: Company Site
 
