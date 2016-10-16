@@ -202,7 +202,20 @@ shift around one background image by background-position
 
 # 14	Assignment: Adding Design Touches With Pseudo Elements
 
+multiple sections in css
+- generic style, body, h1-6, ul, defualt font, background
+- each page layout, header, body, footer
+
+
 # 15	Solution: Adding Design Touches With Pseudo Elements
+- a:hover:before to change icon when hover a
+- background:transparent url("xx.png") 0 0 no-repeat;
+- [background-postion](https://css-tricks.com/i-like-how-percentage-background-position-works/)
+  - 0 0     --> top left
+  - 50% 0   --> center top
+  - 100% 0  --> right top
+
+2 column layout
 
 # 16	Project: Company Site
 

@@ -3,90 +3,152 @@
 <head>
   <meta charset="utf-8">
   <title>Pseudo Elements</title>
-  <style>
+  <style title="generic">
     body{
       font:normal 16px Helvetica, Arial, sans-serif;
       margin:0;
-    }    
-    article {
+    }  
+    main {
       margin:0 150px 0 150px;
       padding: 20px;
       box-sizing:border-box;
     }
-    .sidebar {
-      width:150px;
-      height:100vh;
-    } 
-
-    .sidebar h1 {
-      padding: 10px;
-    }
-    .left {
-      float:left;
-      background:#2c3e50;
-      color: #ecf0f1;
-    }
-
-    .right {
-      float:right;
-      background:#e74c3c;
-      color:#2980b9;
-    }
-
     ul {
       list-style:none;
       padding-left:0;
+      vertical-align:middle;
     }
-    
-    li.nav {
-      padding: 0 10px 0 10px;
-    }
-    li.nav:before {
-       background: transparent url("icons_nav.png") 0 0 no-repeat;
-       display: inline-block;
-       width: 24px;
-       height: 24px;
-       margin: 0;
-       content: "";
+    h1 {
+      padding: 10px;
+      font-size:24px;
     }
 
-    li.my-photos:before {
-      background-position: 0 -26px;
+    header{
+      float:left;
+      width:150px;
+      height:100vh;
+      background:#2c3e50;
+      color: #ecf0f1;
+      box-sizing:border-box;
     }
 
-    li.contact-me:before {
-      background-position: 0 -45px;
+    header li {
+      padding: 5px 0;
     }
-    li.nav label {
+    header a {
+      color: #ecf0f1;
+      text-decoration:none;
       padding-left:10px;
     }
+  </style>
+  <style title="sidebar left">
+    header ul a:before {
+       background: transparent url("icons_nav.png") 0 0 no-repeat;
+       width: 27px;
+       height: 26px;
+       margin: 0 5px 0 0;
+       content: "";
+       vertical-align: middle;
+       display:inline-block;
+    }
+    header ul a.home:hover:before {
+      background-position: 100% 0;
+    }
+    header .my-photos:before {
+      height:20px;
+      background-position: 0 -26px;
+    }
+    header ul a.my-photos:hover:before {
+      background-position: 100% -26px;
+    }
+    header .contact-me:before {
+      height:16px;
+      background-position: 0 -45px;
+    }
+    header ul a.contact-me:hover:before {
+      background-position: 100% -46px;
+    }
+  </style>
 
-
-
-    li.social {
-       background: transparent url("icons_social.png") 0 0 no-repeat;
-       background-size: 24px
+  <style title="sidebar-right">
+    footer {
+      width:150px;
+      height:100vh;      
+      float:right;
+      background:#e74c3c;
+      color:#2980b9;
+      box-sizing:border-box;
+      display:inline-block;
+    }
+    footer ul li {
+      padding: 10px 0;
+      margin:10px;
+     background:#ffffff;
     }
 
+    footer ul li a {
+      width:100%;
+      color: #2980b9;
+      text-decoration:none;
+      padding:5px; 
+    }
+
+    footer ul a:before {
+       background: transparent url("icons_social.png") 0 0 no-repeat;
+       background-size: 24px;
+       width: 27px;
+       height: 26px;
+       margin: 0 5px 0 0;
+       content: "";
+       vertical-align: middle;
+       display:inline-block;       
+    }
+
+    footer ul a.twitter:before {
+
+    }
+
+    footer ul a.twitter:hover:before {
+      background-position: 100% 0;
+    }
+    footer ul a.facebook:before {
+      background-position: 100% -24px;
+    }
+    footer ul a.facebook:hover:before {
+      background-position: 100% -26px;
+    }    
+    footer ul a.instagram:before {
+      background-position: 100% -46px;
+    } 
+    footer ul a.instagram:hover:before {
+      background-position: 100% -45px;
+    }       
   </style>
 </head>
+
+
 <body>
+  <header>
+    <h1>My Blog</h1>
+    <nav>
+      <ul>
+        <li><a href="" class="home">Home</a></li>
+        <li><a href="" class="my-photos">My Photos</a></li>
+        <li><a href="" class="contact-me">Contact Me</a></li> 
+      </ul>
+    </nav>
+  </div>
+  </header>
+  <footer>
+    <nav>
+      <ul>
+        <li><a href=""  class="twitter">Twitter</a></li>
+        <li class="facebook"><a href="" class="facebook">Facebook</a></li>
+        <li><a href="" class="instagram">Instagram</a></li>
+      </ul>
+    </nav>
+  </footer>
   <main>
-    <div class="sidebar left">
-      <h1>My Blog</h1>
-      <ul>
-        <li class="nav home"><label>Home</label></li>
-        <li class="nav my-photos"><label>My Photos</label></li>
-        <li class="nav contact-me"><label>Contact Me</label></li> 
-      </ul>
-    </div>
-    <div class="sidebar right">
-      <ul>
-        <li class="social twitter">Twitter</li>
-        <li class="social facebook">Facebook</li>
-        <li class="social instagram">Instagram</li>
-      </ul>
-    </div>
     <article>
       <h1>Welcome</h1>
       <p>Sed porttitor lectus nibh. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin molestie malesuada. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</p>
