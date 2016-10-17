@@ -181,6 +181,7 @@ footer .instagram {
 
   p {
     padding: 0 20px;
+    text-align: left;
   }
 
   footer li {
@@ -207,7 +208,7 @@ footer .instagram {
   header nav {
     width:auto;
     height:60px;
-    padding: 10px;
+    padding: 5px;
     box-sizing:border-box;
   }
 
@@ -224,7 +225,15 @@ footer .instagram {
   header a {
     font-size:12px;
   }
+  p {
+    padding: 0 20px;
+    text-align: left;
+  }
 
+  main figure {
+    padding:0;
+    margin:0;
+  }
   .team figure,
   .team li {
     width:48%;

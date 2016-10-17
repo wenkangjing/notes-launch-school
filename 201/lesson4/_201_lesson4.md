@@ -253,16 +253,25 @@ a { color: #ff0000; }
   a { color: #0066cc; }
 }
 
-@media screen and (min-width: 300px) { /* ...mobile styles here... */ }
-@media screen and (min-width: 600px) { /* ...tablet styles here... */ }
-@media screen and (min-width: 900px) { /* ...desktop styles here...*/ }
-
+@media (max-width: 480px) { /* ...tablet styles here... */ }
+@media (max-width: 768px) { /* ...mobile styles here... */ }
 
 ```
 
-
 # 22	Project: Company Site Responsive Breakpoints
 # 23	Solution: Company Site Responsive Breakpoints
+
+ideas
+- smaller font size on h1-6, p article body
+- smaller inline image size
+- block image to fit whole width
+- smaller padding/margin
+- smaller height of header 
+  - wrapper logo in h1
+  - float h1
+- smaller footer 
+- top the nav bar
+- less columns
 
 # 24	Fluid and Liquid Layouts
 
