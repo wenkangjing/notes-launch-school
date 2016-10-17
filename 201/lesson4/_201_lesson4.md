@@ -261,7 +261,7 @@ a { color: #ff0000; }
 # 22	Project: Company Site Responsive Breakpoints
 # 23	Solution: Company Site Responsive Breakpoints
 
-ideas
+ideas: layout changes with screen width
 - smaller font size on h1-6, p article body
 - smaller inline image size
 - block image to fit whole width
@@ -275,8 +275,20 @@ ideas
 
 # 24	Fluid and Liquid Layouts
 
-# 25	Project: Photo Gallery with Fluid Layout
+responsive
+ - @media queries to set breakpoints, layout changes when screen width hitting the breakpoints
 
+liquid
+- always same precentage
+
+Fluid
+- set a min-width and max-width on the main element to prevent the site from getting too wide or cramped.
+- set nav overflow:hidden
+
+# 25	Project: Photo Gallery with Fluid Layout
 # 26	Solution: Photo Gallery with Fluid Layout
+
+
+
 
 # 27	Summary
