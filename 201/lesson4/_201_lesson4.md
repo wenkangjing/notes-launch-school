@@ -242,8 +242,24 @@ full width img
 - display:block
 - wrapped in figure
 
-
 # 21	CSS Media Queries
+
+better styling on mobile devices
+
+```css
+a { color: #ff0000; }
+
+@media (max-width: 480px) {
+  a { color: #0066cc; }
+}
+
+@media screen and (min-width: 300px) { /* ...mobile styles here... */ }
+@media screen and (min-width: 600px) { /* ...tablet styles here... */ }
+@media screen and (min-width: 900px) { /* ...desktop styles here...*/ }
+
+
+```
+
 
 # 22	Project: Company Site Responsive Breakpoints
 # 23	Solution: Company Site Responsive Breakpoints

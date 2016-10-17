@@ -1,5 +1,7 @@
 @import url("whitespapce-reset.css");
 
+
+
 /* Common */
 body{
   font:normal 16px Helvetica, Arial, sans-serif;
@@ -133,7 +135,7 @@ footer .instagram {
 
 /* Projects page */
 .project img {
-  width:800px;
+  width:100%;
   display:block;
 }
 
@@ -160,4 +162,77 @@ footer .instagram {
 }
 .team ul a {
   text-decoration: none;
+}
+
+
+
+/* medium screen */
+@media (max-width: 768px) {
+
+  main {
+    width:auto;;
+  }
+  header img {
+    width:223px;
+    height:182px;
+    padding-top:30px;
+    padding-bottom:30px;
+  }
+
+  p {
+    padding: 0 20px;
+  }
+
+  footer li {
+    margin:0 10px;
+  }
+  
+}
+
+/* small screen */
+@media (max-width: 480px) {
+  main {
+    width:auto;;
+  }
+
+  header h1 {
+    float:left;
+    padding:0;
+  }
+  header h1:before,
+  header h1:after{
+    padding:0;
+  }
+  header img,
+  header nav {
+    width:auto;
+    height:60px;
+    padding: 10px;
+    box-sizing:border-box;
+  }
+
+  header nav {
+    width:100%;
+  }
+  header ul {
+    display:block;
+  }
+  header li {
+    display:block;
+    text-align:right;
+  }
+  header a {
+    font-size:12px;
+  }
+
+  .team figure,
+  .team li {
+    width:48%;
+    padding: 0;
+    margin:0;
+  }
+
+  footer li {
+    margin:0 10px;
+  }
 }
