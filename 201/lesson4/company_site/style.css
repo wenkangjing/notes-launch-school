@@ -1,4 +1,4 @@
-/*@import url("whitespapce-reset.css")*/
+@import url("whitespapce-reset.css");
 
 /* Common */
 body{
@@ -63,6 +63,10 @@ header li {
   padding:0 25px;
   text-transform: uppercase
 }
+header a:hover {
+  color:darkblue;
+}
+
 header a {
   font-size:26px;
   color:#cacaca;
@@ -72,6 +76,10 @@ header a {
 /* main */
 article {
   margin-bottom:100px;
+}
+
+p {
+  padding:0 110px;
 }
 
 /* footer */
@@ -116,4 +124,40 @@ footer .email {
 
 footer .instagram {
   background-position:0 -138px;
+}
+
+
+/* Home page */
+
+
+
+/* Projects page */
+.project img {
+  width:800px;
+  display:block;
+}
+
+
+/* Team page */
+
+.team ul {
+  display:inline-block;
+  text-align: center;
+  list-style: none;
+  padding:0;
+  margin:0;
+  box-sizing:border-box;
+}
+
+.team figure {
+  margin:0 28px 60px 28px;
+}
+
+.team li {
+  display:inline-block;
+  padding:0;
+  margin:0;
+}
+.team ul a {
+  text-decoration: none;
 }

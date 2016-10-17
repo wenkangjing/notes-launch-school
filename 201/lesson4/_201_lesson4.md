@@ -221,23 +221,31 @@ multiple sections in css
 
 
 # 16	Project: Company Site
-
-.
-
-
-
 # 17	Assignment: Company Site - Header and Navigation
-
 # 18	Assignment: Company Site - Main Area and Footer
-
 # 19	Assignment: Company Site - Projects Page
-
 # 20	Assignment: Company Site - Team Page
+
+css reset
+- @import url("whatespace-reset.css");
+
+center horizontal nav bar
+- nav inline-block;
+- header: text-align: center;
+- ul list-style:none;
+- li: inline-block;
+- a: text-decoration:none;
+- a: text-transform if needed
+- a: color a:hover coleor
+
+full width img
+- display:block
+- wrapped in figure
+
 
 # 21	CSS Media Queries
 
 # 22	Project: Company Site Responsive Breakpoints
-
 # 23	Solution: Company Site Responsive Breakpoints
 
 # 24	Fluid and Liquid Layouts
