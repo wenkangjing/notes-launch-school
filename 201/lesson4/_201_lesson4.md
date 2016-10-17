@@ -288,7 +288,21 @@ Fluid
 # 25	Project: Photo Gallery with Fluid Layout
 # 26	Solution: Photo Gallery with Fluid Layout
 
+> font-size:0 on ul to remove inline-block whitespace
 
+> pull out ul to correct first and last li padding
 
+```css
+ul {
+  margin: 0 -15px;
+  font-size: 0;
+}
 
+ul li {
+  display: inline-block;
+  width: 25%;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+```
 # 27	Summary
