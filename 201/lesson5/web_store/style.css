@@ -1,0 +1,68 @@
+@import url("whitespaces-reset.css");
+
+body {
+  font: normal 16px Helvetica, Arial, sans-serif;
+  background:#ffd505;
+}
+
+header, main {
+  width:900px;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+header {
+  background:#047ec1;
+  border-bottom-left-radius: 20px 20px;
+  border-bottom-right-radius: 20px 20px;
+}
+
+h1 {
+  color:#ffffff;
+  font-size:2rem;
+}
+
+h2 {
+  color: #000000;
+  font-size:1.2rem;
+}
+main {
+  margin-top:30px;
+  background:#ececec;
+}
+
+ul {
+  content:"";
+  overflow:hidden;
+  display:block;
+}
+li {
+  float:left;
+  margin: 10px;
+  padding:20px;
+  width:200px;
+  height:240px;
+  background:#ffffff;
+  box-sizing: border-box;
+}
+
+li:nth-of-type(4n+1) {
+   clear:both;
+   margin-left:-10px;
+}
+
+li:nth-of-type(4n) {
+   margin-right:-10px;
+}
+
+li h3 { padding-top:20px;}
+li p  { padding-bottom:20px;}
+
+li img {
+  margin: 0 auto;
+  width:auto;
+  height:150px;
+  display:block;
+  /*border:1px dotted black;*/
+  box-sizing: border-box;
+}

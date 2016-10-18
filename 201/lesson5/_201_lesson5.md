@@ -12,11 +12,50 @@ goals:
 - use as few class and id attributes to apply styles as possible
 - Use of headings, tables, and definition lists are a necessity.
 
-- [ ] review table
+tips:
+- use table to orgnize data <caption>, <thead>, <tbody>, and <tfoot>
+- [organizing-data-with-tables](http://learn.shayhowe.com/html-css/organizing-data-with-tables/)
+- Border Collapse
 
+> The border-collapse property determines a table’s border model. There are three values for the border-collapse property: collapse, separate, and inherit. By default, the border-collapse property value is separate, meaning that all of the different borders will stack up next to one another, as described above. The collapse property, on the other hand, condenses the borders into one, choosing the table cell as the primary border.
+
+```css
+/* border collapse */
+table {
+  border-collapse: collapse;
+}
+th,
+td {
+  border: 1px solid #cecfd5;
+  padding: 10px 15px;
+}
+
+/* border seperate with spacing */
+table {
+  border-collapse: separate;
+  border-spacing: 4px;
+}
+table,
+th,
+td {
+  border: 1px solid #cecfd5;
+}
+th,
+td {
+  padding: 10px 15px;
+}
+```
 
 # 3	Project: Web Store Catalog
+Goals:
+- use flosts to list product, clear float
+- trick to show modal 
 
+
+tips 
+- :nth-of-type(4n+1) to clear:both
+- li:first pull left by nagetive margin left
+- li:last pull right by nagetive margin right
 
 # 4	Project: Responsive Blog Design
 
