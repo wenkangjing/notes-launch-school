@@ -130,26 +130,29 @@ Reference: YMPH-DWEX-AQRS
   - 201 - Lesson 3 - done
 
 2016-10-12
-  - 201 - Lessn 4 - 8/27
+  - 201 - Lesson 4 - 8/27
 
 2016-10-13
-  - 201 - Lessn 4 - 10/27
+  - 201 - Lesson 4 - 10/27
 
 2016-10-14
-  - 201 - Lessn 4 - 12/27
+  - 201 - Lesson 4 - 12/27
   - [check psd] in #12
 
 2016-10-16
-  - 201 - Lessn 4 - 16/27
+  - 201 - Lesson 4 - 16/27
 
 2016-10-17
-  - 201 - Lessn 4 - 16/27
+  - 201 - Lesson 4 - 16/27
 
-
+2016-10-18
+  - 201 - Lesson 4 - Done
+  - 201 - Lesson 5 - 1/8 (Nutrition Facts)
 
 
 
 TODO:
+  - [ ] review table http://learn.shayhowe.com/html-css/organizing-data-with-tables/
   - [ ] [css inheritance and cascade](https://www.w3.org/wiki/Inheritance_and_cascade)
   - [ ] [Web Standards Curriculum](https://www.w3.org/wiki/Web_Standards_Curriculum)
   - [ ] review html and css, write to wiki
