@@ -13,33 +13,31 @@
         padding:5px;
       }
 
-      section {
-        border-top: 20px solid #000000;
-      }
-
-      h1, p {
+      h1, h2, p {
         margin:5px 0;
       }
 
-      section div:first-of-type {
+      h2 {
+        border-top: 20px solid #000000;
+      }
+
+      h2 {
         border-bottom: 1px solid #000000;
       }
 
-      div.value {
-        text-align:right
-      }
       ul {
+        border-top: 20px solid #000000;
         list-style:none;
         padding:0;
         margin:5px 0;
       }
+
       dl{
         margin:5px 0;
       }
       dd, dt, li{
         border-bottom:1px solid #000000;
       }
-
       dl dt:first-of-type {
         border-bottom:10px solid #000000;
       }
@@ -57,10 +55,10 @@
         float:right;
       }
 
-      section p {
+      p.notes {
         margin-left:20px;
       }
-      section p:before {
+      p.notes:before {
         content:"*";
         float:left;
         margin-left:-20px;
@@ -82,96 +80,88 @@
   </head>
   <body>
     <main>
-      <div class="header">
         <h1>Nutrition Facts</h1>
         <div>Serving Size 2/3 cup (55g)</div>
         <div>Servings Per Container About 8</div>
-      </div>
-
+        <h2><strong>Amount Per Serving</strong></h2>
       <!--black bar-->
-      <section> 
+      <dl>
+        <dt><strong>Calories</strong> 230<label>Calories from Fat 40</label></dt>
+        <dt class="align-right"><strong>% Daily Value *</strong></dt>
+
+        <dt><strong>Total Fat</strong> 8g<label><strong>12</strong>%</label></dt>
+        <dd>Saturated Fat 1g<label><strong>5</strong>%</label></dd>
+        <dd>Trans Fat 0g</dd>
+
+        <dt><strong>Cholesterol</strong> 0mg <label><strong>0</strong>%</label></dt>
         
-        <div><strong>Amount Per Serving</strong></div>
-        <dl>
-          <dt><strong>Calories</strong> 230<label>Calories from Fat 40</label></dt>
-          <dt class="align-right"><strong>% Daily Value *</strong></dt>
+        <dt><strong>Sodium</strong> 160mg<label><strong>7</strong>%</label></dt>
 
-          <dt><strong>Total Fat</strong> 8g<label><strong>12</strong>%</label></dt>
-          <dd>Saturated Fat 1g<label><strong>5</strong>%</label></dd>
-          <dd>Trans Fat 0g</dd>
+        <dt><strong>Total Carbohydrate</strong> 37g<label><strong>12</strong>%</label></dt>
+        <dd>Dietary Fiber 4g<label><strong>16</strong>%</label></dd>
+        <dd>Sugars 1g</dd>
 
-          <dt><strong>Cholesterol</strong> 0mg <label><strong>0</strong>%</label></dt>
-          
-          <dt><strong>Sodium</strong> 160mg<label><strong>7</strong>%</label></dt>
-
-          <dt><strong>Total Carbohydrate</strong> 37g<label><strong>12</strong>%</label></dt>
-          <dd>Dietary Fiber 4g<label><strong>16</strong>%</label></dd>
-          <dd>Sugars 1g</dd>
-
-          <dt><strong>Protein</strong> 3g</dt>
-        </dl>
-      </section>
+        <dt><strong>Protein</strong> 3g</dt>
+      </dl>
 
       <!-- black bar-->
-      <section>
-        <ul>
-          <li>Vitamin A<label>10%</label></li>
-          <li>Vitamin C<label>8%</label></li>
-          <li>Calcium<label>20%</label></li>
-          <li>Iron<label>45%</label></li>
-       </ul>
+      <ul>
+        <li>Vitamin A<label>10%</label></li>
+        <li>Vitamin C<label>8%</label></li>
+        <li>Calcium<label>20%</label></li>
+        <li>Iron<label>45%</label></li>
+      </ul>
 
-       <p>Percent Daily Values are based on a 2,000 calorie diet. Your daily value may be higher or lower depending on your calorie needs.</p>
+      <p class="notes">Percent Daily Values are based on a 2,000 calorie diet. Your daily value may be higher or lower depending on your calorie needs.</p>
 
-       <table>
-         <thead>
-           <tr>
-             <td></td>
-             <td>Calories:</td>
-             <td>2,000</td>
-             <td>2,500</td>
-           </tr>
-         </thead>
-         <tbody>
-           <tr>
-             <td>Total Fat</td>
-             <td>Less tdan</td>
-             <td>65g</td>
-             <td>80g</td>
-           </tr>
-           <tr>
-             <td  class="indent">Sat Fat</td>
-             <td>Less tdan</td>
-             <td>20g</td>
-             <td>25g</td>
-           </tr>           
-           <tr>
-             <td>Cholesterol</td>
-             <td>Less tdan</td>
-             <td>300mg</td>
-             <td>300mg</td>
-           </tr>
-           <tr>
-             <td>Sodium</td>
-             <td>Less tdan</td>
-             <td>2,400mg</td>
-             <td>2,400mg</td>
-           </tr>
-           <tr>
-             <td>Total Carbohydrate</td>
-             <td></td>
-             <td>300g</td>
-             <td>375g</td>
-           </tr>
-           <tr>
-             <td class="indent">Dietary Fiber</td>
-             <td></td>
-             <td>25g</td>
-             <td>30g</td>
-           </tr>
-         </tbody>
-       </table>
-     </section>
+      <table>
+        <thead>
+          <tr>
+            <td></td>
+            <td>Calories:</td>
+            <td>2,000</td>
+            <td>2,500</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Total Fat</td>
+            <td>Less tdan</td>
+            <td>65g</td>
+            <td>80g</td>
+          </tr>
+          <tr>
+            <td  class="indent">Sat Fat</td>
+            <td>Less tdan</td>
+            <td>20g</td>
+            <td>25g</td>
+          </tr>           
+          <tr>
+            <td>Cholesterol</td>
+            <td>Less tdan</td>
+            <td>300mg</td>
+            <td>300mg</td>
+          </tr>
+          <tr>
+            <td>Sodium</td>
+            <td>Less tdan</td>
+            <td>2,400mg</td>
+            <td>2,400mg</td>
+          </tr>
+          <tr>
+            <td>Total Carbohydrate</td>
+            <td></td>
+            <td>300g</td>
+            <td>375g</td>
+          </tr>
+          <tr>
+            <td class="indent">Dietary Fiber</td>
+            <td></td>
+            <td>25g</td>
+            <td>30g</td>
+          </tr>
+        </tbody>
+      </table>
 
     </main>
   </body>

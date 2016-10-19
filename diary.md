@@ -148,10 +148,13 @@ Reference: YMPH-DWEX-AQRS
 2016-10-18
   - 201 - Lesson 4 - Done
   - 201 - Lesson 5 - 1/8 (Nutrition Facts)
+  - 201 - Lesson 5 - 3/8 (Web Store)
 
-
+2016-10-19  
+  - [x] Sematic html to wiki
 
 TODO:
+  - [ ] semantic meaning of HTML elements 
   - [ ] review table http://learn.shayhowe.com/html-css/organizing-data-with-tables/
   - [ ] [css inheritance and cascade](https://www.w3.org/wiki/Inheritance_and_cascade)
   - [ ] [Web Standards Curriculum](https://www.w3.org/wiki/Web_Standards_Curriculum)

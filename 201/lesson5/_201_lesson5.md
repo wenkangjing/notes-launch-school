@@ -46,6 +46,12 @@ td {
 }
 ```
 
+> Code Review by Victor Paolo Reyes (TA)
+> the semantic meaning of the element
+> A general rule is that the section element is appropriate only if the element's contents would be listed explicitly in the document's outline.
+> The div element has no special meaning at all.
+
+
 # 3	Project: Web Store Catalog
 Goals:
 - use flosts to list product, clear float
