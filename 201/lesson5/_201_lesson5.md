@@ -53,15 +53,37 @@ td {
 
 
 # 3	Project: Web Store Catalog
+
+
 Goals:
 - use flosts to list product, clear float
-- trick to show modal 
-
+- click to show modal 
+  - absolute positioning and a fixed position pseudo element
 
 tips 
-- :nth-of-type(4n+1) to clear:both
+- :nth-of-type(4n+1) to clear:both **every 4 elements take the first one**
 - li:first pull left by nagetive margin left
 - li:last pull right by nagetive margin right
+- center element with absolute
+  - dimenssion  
+    + fixed width
+    + margin-left: - 1/2 wodtj
+  - position
+    + a fixed top
+    + 50% left
+
+```css
+input:checked + figure img {
+  position:absolute;
+  top:100px;
+  width:400px; 
+  left: 50%;
+  margin-left: -200px;
+}
+
+```
+
+
 
 # 4	Project: Responsive Blog Design
 
