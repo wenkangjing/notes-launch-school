@@ -150,8 +150,12 @@ Reference: YMPH-DWEX-AQRS
   - 201 - Lesson 5 - 1/8 (Nutrition Facts)
   - 201 - Lesson 5 - 3/8 (Web Store)
 
-2016-10-19  
+2016-10-19
   - [x] Sematic html to wiki
+
+2016-10-20
+  - [x] remove wiki, use kb folder instead
+  - [x] kb - css float, css selector
 
 TODO:
   - [ ] semantic meaning of HTML elements 
