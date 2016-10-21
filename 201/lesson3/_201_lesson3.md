@@ -191,7 +191,7 @@ floating elements
 - only take up as much width as is needed or as you specify
 - if no enough space, show in next row
 
- overflow
+overflow
 - overflow: visible;/* Content is not clipped */
 - overflow: hidden;/* Content is clipped, with no scrollbars */
 - overflow: scroll;/* Content is clipped, with scrollbars */

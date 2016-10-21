@@ -155,7 +155,12 @@ Reference: YMPH-DWEX-AQRS
 
 2016-10-20
   - [x] remove wiki, use kb folder instead
-  - [x] kb - css float, css selector
+  - [x] kb - css float, css selector, semantic html
+
+2016-10-21
+  - [.] kb - css display
+  - [.] kb - em and rem
+
 
 TODO:
   - [ ] semantic meaning of HTML elements 

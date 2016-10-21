@@ -6,6 +6,15 @@ https://css-tricks.com/all-about-floats
 
 ### 1. Auto scaled sidebar
 
+```css
+nav {
+  float: left;
+  width: 25%;
+}
+section {
+  margin-left: 25%;
+}
+```
 
 
 ### 2. Fixed sidebar
@@ -118,9 +127,9 @@ or
 
 ----
 
-## Ways to clear float
+## Clear float
 
-### 0. Set clear on the direct followed block
+### 0. Set clear on after box
 
 simply clear the direct block element
 

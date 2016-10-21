@@ -122,3 +122,4 @@
 ### Not every image is a figure. 
 
 Your logo is not a figure. Figure can be more than an image
+

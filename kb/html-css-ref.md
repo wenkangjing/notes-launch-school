@@ -22,6 +22,8 @@ A review and summary of notes taking on Launch School
 
 [MDN Tables](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started/Tables)
 
+[MDN Form](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms)
+
 ## CSS
 
 [CSS Validation](http://jigsaw.w3.org/css-validator/)
@@ -39,6 +41,8 @@ A review and summary of notes taking on Launch School
 [float](https://css-tricks.com/almanac/properties/f/float/)
 
 [Display](https://css-tricks.com/almanac/properties/d/display/)
+
+[CSS layout tutorial](http://learnlayout.com/)
 
 ## Misc.
 
