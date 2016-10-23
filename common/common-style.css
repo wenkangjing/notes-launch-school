@@ -1,9 +1,21 @@
+/* layouts  */
 body{
   font:normal 16px Helvetica, Arial, sans-serif;
 }
 
-/* list */
+header {
+  padding: 0px 0px 0px 0px;
+}
 
+main {
+  padding: 0px 0px 0px 0px;
+}
+
+footer {
+  clear:both;
+}
+
+/* common style */
 ul {
   list-style: none;
 }
@@ -12,8 +24,11 @@ li {
   background: transparent url("./images/blt_ul.png") 0 50% no-repeat;
 }
 
+/* anchor */
 a {
   text-decoration: none;
   color:#000000;
 }
 
+/* styles per sections */
+/* Be more specific: direct child, descendant, sibling */

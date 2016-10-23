@@ -20,7 +20,6 @@
 
 `*` a single element of any type `* { border: 1px solid black }`
 
-
 ----
 
 ## Pseudo
