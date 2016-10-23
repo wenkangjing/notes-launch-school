@@ -83,10 +83,10 @@ input:checked + figure img {
 
 ```
 
-
-
 # 4	Project: Responsive Blog Design
 
+......`480`......`600`......`760`......
+mobile    small tablet tablet   desktop
 
 # 5	Assignment: Responsive Blog Design - The Blog Post Index Page
 # 6	Assignment: Responsive Blog Design - A Blog Post Show Page
