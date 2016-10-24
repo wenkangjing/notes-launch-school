@@ -85,10 +85,17 @@ input:checked + figure img {
 
 # 4	Project: Responsive Blog Design
 
-......`480`......`600`......`760`......
-mobile    small tablet tablet   desktop
+- mobile < 480
+- small tablet < 600
+- table < 760
+- desktop (normally give max-width on body element)
+
 
 # 5	Assignment: Responsive Blog Design - The Blog Post Index Page
+- anchor as button, given a class name
+- give max-width on body>header, body>main, body>footer
+- nav: page that links to other pages or to parts within the page
+
 # 6	Assignment: Responsive Blog Design - A Blog Post Show Page
 # 7	Assignment: Responsive Blog Design - Add Responsive Break Points
 

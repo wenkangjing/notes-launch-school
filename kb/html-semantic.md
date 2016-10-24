@@ -24,7 +24,7 @@
 
 `aside` sidebars, related links, etc
 
-`nav` navigation, usually contains `ul`, `li`
+`nav` navigation, usually contains `ul`, `li`. page that links to other pages or to parts within the page
 
 `address` supplies contact information for its nearest 'article' or 'body' ancestor; in the latter case, it applies to the whole document. Can be placed inside `footer`. rendered `i` or `em`
 

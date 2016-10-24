@@ -161,7 +161,8 @@ Reference: YMPH-DWEX-AQRS
   - [.] kb - css display
 
 2016-10-23
-  - [.] kb - em and rem
+  - [x] kb - em and rem
+  - [x] 201 - Lesson 5 - 5/8
 
 
 TODO:
