@@ -22,7 +22,7 @@ LaunchSchool Notes
 ## 200
 - [ ] [Front end Prep](201/_200.md)
 
-# Back-end
+# Front-end
 
 ## 201 HTML and CSS
 - [x] [Lesson 1 Preparations](201/lesson1/_201_lesson1.md)
@@ -33,9 +33,9 @@ LaunchSchool Notes
 - [ ] [Lesson 6 CSS Framework](201/lesson6/_201_lesson6.md)
 
 
-# Front-end
 
 
+# Back-end
 
 # Advanced
 
