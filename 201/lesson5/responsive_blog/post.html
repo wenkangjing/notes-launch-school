@@ -23,24 +23,34 @@
       <div id="content">
         <article>
           <header>
-            <h2><a href="./post.html">Post Headline</a></h2>
+            <h2>Post Headline</h2>
             <p>Written by <a href="#">Shane Riley</a> on <time datetime="2014-02-15">Feb, 15, 2014</time> </p>
           </header>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </article>
-        <article>
+        
+        <section class="comments">
           <header>
-            <h2><a href="./post.html">Post Headline</a></h2>
-            <p>Written by <a href="#">Shane Riley</a> on <time>Feb, 15, 2014</time> </p>
+            <h2>Comments</h2>
           </header>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </article>   
+          <article>
+            <h3><a href="#">Kevin</a> on <time datetime="2014-02-15">Feb, 15, 2014</time></h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </article>
+          <article>
+            <h3><a href="#">Chris</a> on <time datetime="2014-02-15">Feb, 15, 2014</time></h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </article>
+        </section>
 
-        <div class="pager">
-          <a href="#" class="button">Pre</a>
-          <a href="#" class="button">Next</a>
-        </div>
-      </div>
+        <form action="submit" method="post">
+          <h2>Post Comment</h2>
+          <input type="text" placeholder="Enter Your name" name="name">
+          <input type="text" placeholder="Enter Email address" name="email">
+          <textarea name="comment" placeholder="Enter your Comments" rows="10"></textarea>
+          <input type="submit" value="Submit" class="button">
+        </form>
+      </div> 
       <aside id="sidebar">
         <div> 
           <h2>Categories</h2>

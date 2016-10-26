@@ -32,19 +32,34 @@ a {
   text-decoration: none;
 }
 
-a.button {
+.button {
   display:inline-block;
   width: 85px;
   height:30px;
   border-radius: 20px;
-  color:#ffffff;
-  background:lightgray;
   padding: 5px 25px;
+  color:#ffffff;
   box-sizing:border-box;
+}
+a.button {
+  background:lightgray;
 }
 
 a.button:hover {
  background:#50c3af;
+}
+
+h2 {
+  font-size:40px;
+  margin:20px 0;
+}
+
+article {
+  margin:0 0 100px 0;
+}
+
+textarea, input, button, select { 
+  font-family: inherit; font-size: inherit; 
 }
 
 /* index.html */
@@ -115,19 +130,12 @@ main:after{
 #content header {
   margin: 0 0 40px 0;
 }
-#content header h2 {
-  font-size:40px;
-  margin:20px 0;
-}
 
-#content article {
-  margin:0 0 100px 0;
-}
 #content header p {
   font:1rem;
   margin:20px 0;
 }
-#content header a {
+#content p a {
   color:#50c3af;
 }
 /*pager*/
@@ -167,6 +175,43 @@ footer {
   padding:20px 0;
 }
 
+/* post page */
+
+.comments article {
+  margin: 0 0 50px 0;
+}
+
+.comments h3 {
+  padding-bottom:20px;
+}
+form  input[type="text"],
+form  input[type="email"],
+form textarea{
+  display:block;
+  width:100%;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+  padding: 10px;
+  box-sizing: border-box; 
+  /*font: normal 16px Helvetica, Arial, sans-serif;*/
+}
+
+
+form textarea{
+  resize: vertical;
+  max-height:300px;
+}
+
+form .button {
+  display:block;
+  color:#ffffff;
+  background:#50c3af;
+  box-shadow: none;
+  text-shadow:none !important;
+  border:none !important;
+  box-shadow:none !important;  
+}
 
 /*
 * {

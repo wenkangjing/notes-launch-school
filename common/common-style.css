@@ -47,6 +47,11 @@ a.button:hover {
  background:#50c3af;
 }
 
+/* form wont take body font automatically */
+textarea, input, button, select { 
+  font-family: inherit; font-size: inherit; 
+}
+
 
 /* styles per sections */
 /* Be more specific: direct child, descendant, sibling */
