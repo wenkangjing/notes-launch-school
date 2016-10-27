@@ -10,11 +10,22 @@
 
 `main` main content of `body`
 
-`article` can contain 'header', 'section', 'footer'
-
-
+`article` can contain 'header', 'section', 'footer', can contains multiple sections
 
 `section`: A general rule is that the section element is appropriate only if the element's contents would be listed explicitly in the document's outline.
+
+```
+article
+  |--header, p...p, footer
+  |
+  |--section (comments)
+  |     |--article (header, p, footer with one comment)
+  |     |--article (header, p, footer with one comment)
+  |
+  |--section (form)
+        |-- form (name, comments, button)
+
+```
 
 `header`
 

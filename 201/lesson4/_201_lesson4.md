@@ -249,12 +249,9 @@ better styling on mobile devices
 ```css
 a { color: #ff0000; }
 
-@media (max-width: 480px) {
-  a { color: #0066cc; }
-}
-
-@media (max-width: 480px) { /* ...tablet styles here... */ }
-@media (max-width: 768px) { /* ...mobile styles here... */ }
+@media (max-width: 480px) { /* ...mobile... */ }
+@media (max-width: 600px) { /* ...small tablet... */ }
+@media (max-width: 768px) { /* ...tablet... */ }
 
 ```
 

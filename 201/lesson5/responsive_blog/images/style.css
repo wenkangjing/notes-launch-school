@@ -37,12 +37,13 @@ a {
   width: 85px;
   height:30px;
   border-radius: 20px;
-  padding: 5px 25px;
   color:#ffffff;
   box-sizing:border-box;
 }
 a.button {
+  padding: 5px 25px;
   background:lightgray;
+  vertical-align: middle;
 }
 
 a.button:hover {
@@ -181,12 +182,18 @@ footer {
   margin: 0 0 50px 0;
 }
 
-.comments h3 {
-  padding-bottom:20px;
+.comments header img {
+  border-radius: 20px;
+  vertical-align:middle;
 }
-form  input[type="text"],
-form  input[type="email"],
-form textarea{
+.comments header h3 {
+  vertical-align:middle;
+  display:inline-block;
+}
+
+form > input[type="text"],
+form > input[type="email"],
+form > textarea{
   display:block;
   width:100%;
   margin: 10px 0;
@@ -194,27 +201,32 @@ form textarea{
   border: 1px solid #cccccc;
   padding: 10px;
   box-sizing: border-box; 
-  /*font: normal 16px Helvetica, Arial, sans-serif;*/
 }
 
-
-form textarea{
+form >  textarea{
   resize: vertical;
   max-height:300px;
 }
 
-form .button {
+form >  .button {
   display:block;
   color:#ffffff;
   background:#50c3af;
-  box-shadow: none;
   text-shadow:none !important;
   border:none !important;
   box-shadow:none !important;  
 }
 
-/*
-* {
-  border:1px solid black;
-  box-sizing:border-box;
-}*/
+/* ...mobile... */ 
+@media (max-width: 480px) { 
+
+}
+/* ...small tablet... */ 
+@media (max-width: 600px) {
+
+}
+
+/* ...tablet... */ 
+@media (max-width: 768px) { 
+
+}

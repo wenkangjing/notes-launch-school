@@ -85,11 +85,7 @@ input:checked + figure img {
 
 # 4	Project: Responsive Blog Design
 
-- mobile < 480
-- small tablet < 600
-- table < 760
-- desktop (normally give max-width on body element)
-
+mobiel < `400` < small tab < `600` < tab < `760` < desktop
 
 # 5	Assignment: Responsive Blog Design - The Blog Post Index Page
 - anchor as button, given a class name

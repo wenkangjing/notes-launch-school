@@ -1,3 +1,7 @@
+/* 
+  common styles 
+*/
+
 /* big sections  */
 body{
   font:normal 16px Helvetica, Arial, sans-serif;
@@ -16,16 +20,24 @@ footer {
   clear:both;
 }
 
-/* common style */
+/* form wont take body font automatically or give each a font */
+textarea, input, button, select { 
+  font-family: inherit; font-size: inherit; 
+}
+
+/* list: no bullet, no margin */
 ul {
   list-style: none;
   margin:0;
 }
 
+/* list item with custom bullet */
 li {
   background: transparent url("./images/blt_ul.png") 0 50% no-repeat;
+  margin-left:20px;
 }
 
+/* normal anchor: no underline, not in blue */
 a {
   text-decoration: none;
   color:#000000;
@@ -47,11 +59,40 @@ a.button:hover {
  background:#50c3af;
 }
 
-/* form wont take body font automatically */
-textarea, input, button, select { 
-  font-family: inherit; font-size: inherit; 
+/* form button - flat style */
+form .button {
+  text-shadow:none !important;
+  border:none !important;
+  box-shadow:none !important;  
+  display:block;
+  color:#ffffff;
+  background:#50c3af;
+  box-shadow: none;
+}
+
+/* vertical center the image and its following description */
+header img {
+  border-radius: 20px;
+  vertical-align:middle;
+}
+header h3 {
+  vertical-align:middle;
+  display:inline-block;
+}
+
+/* ...tablet... */ 
+@media (max-width: 768px) { 
+
+}
+
+/* ...small tablet... */ 
+@media (max-width: 600px) {
+
+}
+
+/* ...mobile... */ 
+@media (max-width: 480px) { 
+
 }
 
 
-/* styles per sections */
-/* Be more specific: direct child, descendant, sibling */
