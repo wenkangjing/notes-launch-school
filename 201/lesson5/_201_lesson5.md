@@ -93,7 +93,12 @@ mobiel < `400` < small tab < `600` < tab < `760` < desktop
 - nav: page that links to other pages or to parts within the page
 
 # 6	Assignment: Responsive Blog Design - A Blog Post Show Page
+- nested article as comments
+- article which can contain multiple sections which can contain nested articles
+
 # 7	Assignment: Responsive Blog Design - Add Responsive Break Points
 
-
+```html
+<meta name="viewport" content="width=device-width,initial-scale=1">
+```
 # 8	Summary

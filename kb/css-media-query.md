@@ -1,16 +1,14 @@
 
 ## @media
 
-- 320px (iPhones) to 480px for phones
-- up to 600px for small tablets
-- up to 768px for iPad-style tablets
-- a final layout for everything beyond that.
+```html
+ <meta name="viewport" content="width=device-width,initial-scale=1">
+```
 
 ```css
 @media (max-width: 480px) { /* ...mobile styles here... */ }
 @media (max-width: 600px) { /* ...small tablets... */ }
 @media (max-width: 768px) { /* ...tablet styles here... */ }
-@a final layout for everything beyond that.
 ```
 
 ## Q&A

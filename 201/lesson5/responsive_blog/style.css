@@ -24,8 +24,6 @@ summary::-webkit-details-marker { display: none; }
 /* common style */
 body{
   font:normal 16px Helvetica, Arial, sans-serif;
-  max-width:1200px;
-  margin:0 auto;
 }
 
 a {
@@ -68,12 +66,12 @@ textarea, input, button, select {
 body > header {
   background-color:#3d3d3d;
   text-align: center;
-  padding: 150px 250px 50px 250px;
+  padding: 150px 50px 50px 50px;
 }
 
 body > header h1 {
   color:#ffffff;
-  font-size:56px;
+  font-size:52px;
   height:200px;
   letter-spacing: 20px;
   text-transform: uppercase;
@@ -108,14 +106,13 @@ main {
   background-color:#ffffff;
   width:65%;
   float:left;
-  margin-right:10%;
+  padding-right:10%;
 }
 
 #sidebar{
   padding:30px;
   box-sizing: border-box;
   background-color:#f6f7f8;
-  width:200px;
   overflow:hidden;
 }
 
@@ -151,8 +148,8 @@ main:after{
   margin:20px 0;
 }
 
-#sidebar div + div{
-  margin-top:100px;
+#sidebar > div{
+  margin:0 0 50px 0;
 }
 
 #sidebar p {
@@ -191,9 +188,9 @@ footer {
   display:inline-block;
 }
 
-form > input[type="text"],
-form > input[type="email"],
-form > textarea{
+form input[type="text"],
+form input[type="email"],
+form textarea{
   display:block;
   width:100%;
   margin: 10px 0;
@@ -203,12 +200,12 @@ form > textarea{
   box-sizing: border-box; 
 }
 
-form >  textarea{
+form  textarea{
   resize: vertical;
   max-height:300px;
 }
 
-form >  .button {
+form  .button {
   display:block;
   color:#ffffff;
   background:#50c3af;
@@ -217,16 +214,87 @@ form >  .button {
   box-shadow:none !important;  
 }
 
-/* ...mobile... */ 
-@media (max-width: 480px) { 
+/* ...tablet... */ 
+@media screen and (max-width: 768px) {
+  body > header {
+    padding: 40px 0 20px 0;
+  }
 
+  #content {
+    padding:5%;
+    box-sizing:border-box;
+  }
+
+  body > header h1 {
+    font-size: 48px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+  }
 }
+
 /* ...small tablet... */ 
 @media (max-width: 600px) {
+  #content,
+  #sidebar {
+    width:100%;
+    padding:20px;
+    float:none;
+  }
 
+  #sidebar > div {
+    display:inline-block;
+    width:49%;
+    vertical-align: top;
+  }
 }
 
-/* ...tablet... */ 
-@media (max-width: 768px) { 
 
+/* ...mobile... */ 
+@media (max-width: 480px) { 
+  body > header h1 {
+    letter-spacing: 5px;
+    
+    background-size:90% auto;
+    margin-bottom:50px;
+    height:150px;
+  }
+  
+  body > header h1 a {
+    font-weight: normal;
+  }
+  body > header li {
+    width:49%;
+    padding:0;
+  }
+  body > main {
+    padding:20px 0;
+  }
+  #content article {
+    margin:20px 0;
+  }
+  #content .pager {
+    margin:20px 0;
+  }
+
+  #sidebar {
+    background:transparent;
+  }
+  #sidebar > div {
+    display:block;
+    width:100%;
+    background-color:#f6f7f8;
+    padding:20px;
+  }
+
+  #sidebar h2 {
+    margin:0;
+  }
 }

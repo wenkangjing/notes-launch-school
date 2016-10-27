@@ -56,11 +56,12 @@
 
 ## Tips
 
-#### input and textarea not take body font
+#### 1. input and textarea not take body font
 
 ```css
 textarea, input, button, select { 
   font-family: inherit; font-size: inherit; 
 }
-
 ```
+
+#### 2. padding and margin

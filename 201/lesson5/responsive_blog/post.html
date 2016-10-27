@@ -4,6 +4,7 @@
   <head>
     <title>Blog Title</title>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -15,7 +16,6 @@
           <li><a href="#">HTML</a></li>
           <li><a href="#">CSS</a></li>
           <li><a href="#">Javascript</a></li>
-          <li><a href="#">About</a></li>
         </ul>
       </nav>
     </header>
@@ -49,11 +49,13 @@
           </article>
         </section>
         <form action="submit" method="post">
-          <h2>Post Comment</h2>
-          <input type="text" placeholder="Enter Your name" name="name">
-          <input type="text" placeholder="Enter Email address" name="email">
-          <textarea name="comment" placeholder="Enter your Comments" rows="10"></textarea>
-          <input type="submit" value="Submit" class="button">
+          <fieldset>
+            <h2>Post Comment</h2>
+            <input type="text" placeholder="Enter Your name" name="name">
+            <input type="text" placeholder="Enter Email address" name="email">
+            <textarea name="comment" placeholder="Enter your Comments" rows="10"></textarea>
+            <input type="submit" value="Submit" class="button">
+          </fieldset>
         </form>
       </div> 
       <aside id="sidebar">
