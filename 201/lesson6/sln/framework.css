@@ -1,0 +1,97 @@
+@import url("whitespace-reset.css");
+
+/* Create font sizes for four levels of headings. Use em measurements. */
+h1 {
+  margin: 0 0 25px 0;
+  font-size: 2.6em;
+}
+h2 {
+  margin: 0 0 25px 0;
+  font-size: 2.2em;
+}
+h3 {
+  margin: 0 0 20px 0;
+  font-size: 1.8em;
+}
+h4 {
+  margin: 0 0 20px 0;
+  font-size: 1.5em;
+}
+
+/*Style paragraphs, ordered lists, and unordered lists that fall within a .copy class.*/
+.copy p {
+  margin: 0 0 20px 0;
+  font-size:1em;
+  line-height: 150%;
+}
+
+/*Set list styles for nested unordered and ordered lists.*/
+.copy ul {
+  padding: 0 0 20px 25px;
+  list-style: disc;
+}
+
+.copy ul ul {
+  padding: 20px 0 20px 18px;
+  list-style: circle;
+}
+
+.copy ol {
+  padding: 0 0 20px 25px;  
+  list-style: decimal;
+}
+
+.copy ol ol{
+  padding: 20px 0 20px 18px;
+  list-style: lower-latin;
+}
+
+/*Define a class for ordered lists with roman numerals.*/
+.copy ol.roman {
+  list-style: upper-roman;
+}
+
+.copy ol.roman ol{
+  list-style: lower-roman;
+}
+
+/*Create a row class as we did in the previous topic. Set a max-width and have it horizontally center if it reaches that max width using margin.
+.copy*/
+
+.row {
+  max-width: 1200px;
+  margin:0 auto 20px auto;
+}
+
+.row:after {
+  display:block;
+  content:"";
+  line-height: 0;
+  clear:both;
+}
+
+.sixth, .fourth, .third, .half, .two_third, .five_sixth {
+  float:left;
+  box-sizing: border-box;
+}
+/* columns */
+.half {width:50%;}
+.third {width:33%;}
+.fourth {width:24%;}
+.sixth {width:16%;}
+.two_third {width:66%;}
+.five_sixth {width:83%;}
+
+/* add margin between columns */
+/*.margin_row .half + .half,
+.margin_row .half + .third,*/
+.margin_row > * + *{
+  margin-left:2%;
+}
+
+.margin_row .half {width:49%;}
+.margin_row .third {width:32%;}
+.margin_row .fourth {width:23%;}
+.margin_row .sixth {width:15%;}
+.margin_row .two_third {width:66%;}
+.margin_row .five_sixth {width:82.9%;}
