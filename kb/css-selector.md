@@ -20,8 +20,8 @@
 
 `*` a single element of any type `* { border: 1px solid black }`
 
->People may use the markup incorrectly and use elements besides the classes we have created as direct children.
-Asterisk selectors can be very cpu-intensive for a browser, and using it twice like this compounds the problem.
+>1 People may use the markup incorrectly and use elements besides the classes we have created as direct children.
+>2 Asterisk selectors can be very cpu-intensive for a browser, and using it twice like this compounds the problem.
 
 ----
 

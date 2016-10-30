@@ -85,9 +85,9 @@ h4 {
 /* add margin between columns */
 /*.margin_row .half + .half,
 .margin_row .half + .third,*/
-.margin_row > * + *{
+/*.margin_row > * + *{
   margin-left:2%;
-}
+}*/
 
 .margin_row .half {width:49%;}
 .margin_row .third {width:32%;}
