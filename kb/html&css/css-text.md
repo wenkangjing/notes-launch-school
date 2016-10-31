@@ -22,11 +22,17 @@
 
 `text-transform`
 
-`text-align` `text-indent`
-
 `letter-spacing` `word-spacing`
 
 `word-break`
 
-`vertical-align` for an inline or table-cell box.
+`text-align` `text-indent`
 
+`vertical-align` for an **inline** or table-cell box.
+
+## Q&A
+
+#### text-align vs vertical-align
+
+- text-align: horizontaly
+- vertical-align: inline element, or table cell

@@ -11,6 +11,19 @@ border
 
 margin
 
+## Box Sizing
+
+content-box by default
+
+```css
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+```
 
 ## Q&A
 

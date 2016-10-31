@@ -85,35 +85,19 @@ textarea, input, button, select {
 start from big picture: header -> main (content, navbar) > footer
 
 padding and margin
+
 1. padding on outter element
 2. margin-bottom on otter element
 
 styling
-1. water fall header -> main -> footer
-2. **if anything common, move above as general type style**
 
-```
-1. reset css
-2. body (like a milestone)
-3. general tyle style
+1. css reset
+2. common style, most in type: body, h1-h2, li, a, p 
+3. water fall header -> main -> footer
 
-//if anything in common, move to upper section
+**if anything common, move above as general type style**
 
-header section
-  |--title, logo
-  |--nav 
-
-main section
-  |--content
-  |--sidebar
-
-footer section 
-  |--links
-
-```
-
-
-#### PSD to html/css
+#### Photoshop PSD
 - Auto select
 - Select all (Ctrl-a or Cmd-a)
 - Copy merged (Shift-Ctrl-c or Shift-Cmd-c)
@@ -137,6 +121,11 @@ div:before {
     border-left: 100px solid transparent;
 }
 ```
+
+#### triangles
+
+https://css-tricks.com/snippets/css/css-triangle/
+
 
 #### Shorthand property
 

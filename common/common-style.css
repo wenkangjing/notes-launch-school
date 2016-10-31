@@ -20,11 +20,12 @@ footer {
   clear:both;
 }
 
-/* box-sizing */
-* {
-  box-sizing:border-box;
-  /* debug the layout */
-  /*border:1px solid #cccccc;*/
+/* set border-box by default */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 /* form wont take body font automatically or give each a font */

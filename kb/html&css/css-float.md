@@ -2,9 +2,13 @@ https://css-tricks.com/almanac/properties/f/float/
 
 https://css-tricks.com/all-about-floats
 
+http://css.maxdesign.com.au/floatutorial/index.htm
+
 ## float
 
-**Floating an element automatically makes it into a box.**
+- **Floating an element automatically makes it into a box.**
+- **always set a width on floated items** 
+- **positioned within the normal flow, then taken out of the flow and shifted to the left or right as far as possible.**
 
 
 ## Layout

@@ -28,6 +28,10 @@ p { font-size: 16px } /* 1em = 16px */
 - pixel
 - dot
 
+#### precentage
+
+relative to the width of its parent element
+
 
 ## computed value
 

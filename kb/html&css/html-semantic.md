@@ -1,4 +1,4 @@
-## Category
+## semantic
 
 ### Head
 
@@ -12,7 +12,11 @@
 
 `article` can contain 'header', 'section', 'footer', can contains multiple sections
 
+> The <article> element is used to identify a section of independent, self-contained content that may be independently distributed or reused. We’ll often use the <article> element to mark up blog posts, newspaper articles, user-submitted content, and the like.
+
 `section`: A general rule is that the section element is appropriate only if the element's contents would be listed explicitly in the document's outline.
+
+>The <section> element is used to identify a thematic grouping of content, which generally, but not always, includes a heading. The grouping of content within the <section> element may be generic in nature, but it’s useful to identify all of the content as related.
 
 ```
 article
@@ -43,7 +47,7 @@ article
 
 `div` no special meaning at all
 
-`span` does not inherently represent anything
+`span` does not inherently represent anything. something can to **hook** the css to
 
 `p` is paragraph
 

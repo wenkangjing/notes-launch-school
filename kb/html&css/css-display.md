@@ -4,6 +4,8 @@ https://css-tricks.com/almanac/properties/d/display/
 
 ### inline
 
+> Please keep in mind that inline-level elements will not accept the width and height properties or any values tied to them. 
+
 `span, em, storng`
 
 - accept `margin`, `padding`, but only work horizontally not vertically
@@ -69,6 +71,12 @@ used for horizontal nav bar and layout blocks
 - select
 - textarea
 
+The Space Between Inline-Block Elements
+> One important distinction with inline-block elements is that they are not always touching, or displayed directly against one another. Usually a small space will exist between two inline-block elements.
+
+
+
+
 ### none
 
 totally remove the element from the page, used for **clearfix**
@@ -94,3 +102,13 @@ margin:0 auto
 - or set every element
 
 `* { box-sizing: border-box; }`
+
+
+#### 4. h ow to remove spaces between inline-block elements
+```html
+<ul>
+	<li>Item content</li><!--
+ --><li>Item content</li><!--
+ --><li>Item content</li>
+</ul>
+```
