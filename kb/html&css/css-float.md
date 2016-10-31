@@ -26,10 +26,10 @@ section {
 ```
 
 
-### 2. Fixed sidebar
+### 2. fixed width leftbar
 
-- sidebar: fixed width, float left, height 100vh
-- content: width 100%, height 100vh
+- Apply `float` and `width` to the leftnav
+- Setting `margin-left` to the "content" div
 
 ```css
 .sidebar {
@@ -42,40 +42,19 @@ section {
 .content {
   width:100%;
   height:100vh;
-  background:green;
-}
-```
-or
-
-- container: pull right: set margin-left 100px
-- siderbar: pull left: set margin-left -100px
-
-```css
-.container {
-  margin:0 0 0 100px;
-}
-
-.sidebar {
-  float:left;
-  margin:0 0 0 -100px;
-  width:100px;
-  height:100vh;
-  background:red;
-}
-.content {
-  margin:0;
-  width:100%;
-  height:100vh;
+  margin-left:100px;
   background:green;
 }
 ```
 
-### 3. Three columns
+### 3. Fixed width 3 column layout
 
-- html: left, right, put content after sidebars
-- left bar float left
-- right bar float right
-- content width 100%, height 100vh
+- Start with the semantically marked up code, `leftnav, rightnav, content`
+- Add width and `margin:0 auto` to the container
+- Apply `float:left, width`, margin and padding to the `leftnav`
+- Apply `float-right, width`, margin and padding to the `rightnav`
+- Setting `margin-left, margin-right` to the `content` div
+
 
 ```css
 .left {

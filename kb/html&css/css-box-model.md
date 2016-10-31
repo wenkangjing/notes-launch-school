@@ -3,13 +3,14 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_t
 
 
 ## Box Model
-content
+- content:color and background
 
-padding
+- padding: transparent, no color, share same background as content
+> The padding area extends to the border surrounding the padding. When the content area has a background, color, or image set on it, this will extend into the padding, which is why you can think of the padding as extending the content. 
 
-border
+- border:width, style, color 
 
-margin
+- margin: transparent
 
 ## Box Sizing
 
