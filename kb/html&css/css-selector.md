@@ -145,3 +145,24 @@ https://www.sitepoint.com/web-foundations/understanding-nth-child-pseudo-class-e
 - 3n+2: the second element and every 3 elements after that. 2, 5, 8, 11
 - odd: 2n+1
 - even:2n
+
+
+#### nth-child vs nth-of-type
+
+https://css-tricks.com/the-difference-between-nth-child-and-nth-of-type/
+
+Our :nth-child selector, in "Plain English," means select an element if:
+- It is a paragraph element
+- It is the second child of a parent
+
+Our :nth-of-type selector, in "Plain English," means:
+- Select the second paragraph child of a parent
+- what's a good way to say it... less conditional.
+
+```HTML
+<section>
+   <h1>Words</h1>
+   <p>Little</p>   <!-- p:nth-child(2) -->
+   <p>Piggy</p>    <!-- p:nth-of-type(2) -->
+</section>
+```

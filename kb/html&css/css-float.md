@@ -4,6 +4,8 @@ https://css-tricks.com/all-about-floats
 
 http://css.maxdesign.com.au/floatutorial/index.htm
 
+[youtube float explaination](https://www.youtube.com/watch?v=xara4Z1b18I)
+
 ## float
 
 - **Floating an element automatically makes it into a box.**
@@ -70,8 +72,9 @@ section {
   background:red;
 }
 .content {
-  margin:0;
-  width:100%;
+  margin-left:100px;
+  margin-right:100px;
+  width:auto;
   height:100vh;
   background:green;
 }
@@ -119,7 +122,7 @@ or
 
 ### 0. Set clear on after box
 
-simply clear the direct block element
+simply clear the direct followed block element
 
 ### 1. Add empty div after last float
 - add a empty div element after the last float element
@@ -155,8 +158,10 @@ simply clear the direct block element
 #### how to wrap around a float element?
 
 
-#### how to clear float
+#### how to float in multiple lines
+
+Set element `float:left` and `clear:left`
 
 
-
-
+#### what does clear mean?
+- clear:left on A means no float elements are allowed on that side

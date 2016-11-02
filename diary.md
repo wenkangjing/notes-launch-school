@@ -166,6 +166,13 @@ Reference: YMPH-DWEX-AQRS
 
 2016-10-26
 
+2016-10-31
+- 209 : http://css.maxdesign.com.au/floatutorial/index.htm
+
+2016-11-02
+
+
+
 TODO:
   - [ ] semantic meaning of HTML elements 
   - [ ] review table http://learn.shayhowe.com/html-css/organizing-data-with-tables/

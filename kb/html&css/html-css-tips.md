@@ -160,3 +160,30 @@ p {
 }
 ```
 
+#### vertical-align
+
+http://phrogz.net/css/vertical-align/index.html
+
+http://christopheraue.net/2014/03/05/vertical-align/
+
+
+- in table cells (container). bottom: content showing just above **bottom edge of cell**
+- on inline elements (inside). align siblings with **botton edge** 
+
+#### how to vertical center inline or inline-block
+
+Assumption: set vertical-align on inline element. **align to its `parent` edge**
+
+
+#### how to vertical center block 
+
+Assumption: fixed height on `child`
+- set `child` position:absolute, top:50%;
+- set `parent` margin-top:-1/2 child height;
+
+
+#### how to vertical center on block
+Assumption: fixed height on `parent`
+- set parent `line-height` 
+
+#### common shorthand 
