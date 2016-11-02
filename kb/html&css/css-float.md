@@ -139,9 +139,10 @@ simply clear the direct followed block element
 
 > Be careful not to hide content or trigger unwanted scrollbars.
 
-### 3. Clearfix on parent
+### 3. Clearfix on **direct** parent
 - give parent a class name "clearfix"
 - clear container:after 
+- MUST clearfix on **direct parent**
 
 ```css
 .clearfix:after { 

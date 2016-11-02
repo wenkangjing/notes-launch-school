@@ -1,0 +1,101 @@
+body{
+  font:normal 16px Helvetica, Arial, sans-serif;
+  max-width:800px;
+  margin:50px auto;
+  line-height: 1.5em;
+}
+
+h2 {
+  background:#ccccff;
+  padding:10px 0;
+}
+
+.margins-removed dl {
+  margin: 0;
+  padding: 0;
+}
+
+.margins-removed dt {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+.margins-removed dd {
+  margin: 0;
+  padding: 0;
+}
+
+.background-image dt {
+  color: #000;
+  font-weight: bold;
+  padding: 0;
+}
+
+.background-image dd {
+  margin: 0;
+  padding: 0 0 0 20px;
+  background: url("bullet.png") no-repeat 0 center;
+}
+
+.border-around dl{
+  margin: 2em 0;
+  padding: 0;
+  width: 20em;
+}
+
+.border-around dt {
+  background-color: #131210;
+  color: #959289;
+  padding: .5em;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  border-left: 1px solid #131210;
+  border-right: 1px solid #131210;
+  border-top: 1px solid #131210;
+}
+
+.border-around dd {
+  margin: 0 0 1em 0;
+  background: #DBD8D8;
+  text-align: center;
+  padding: 1em .5em;
+  font-style: italic;
+  border-left: 1px solid #131210;
+  border-right: 1px solid #131210;
+  border-bottom: 1px solid #131210;
+}
+
+.table-display dl{
+  width: auto;
+  margin: 1em 0;
+  padding: 0;
+  border-bottom: 1px solid #999;
+  overflow:hidden;
+}
+
+.table-display dl:after{
+  content:"";
+  display:block;
+  clear:both;
+  visibility: hidden;
+}
+
+.table-display dt {
+  clear: left; /*not allow float element on its left side*/
+  float: left;
+  width: 300px;
+  margin: 0;
+  padding: 5px;
+  border-top: 1px solid #999;
+  font-weight: bold;
+}
+
+.table-display dd {
+  float: left;
+  width: 300px;
+  margin: 0;
+  padding: 5px;
+  border-top: 1px solid #999;
+}
