@@ -29,3 +29,21 @@ the distance between the left margin edge of the element and the left edge of it
 ![position diagram](position_type.png)
 
 
+## background-position
+
+image < element
+- positive value, 
+- move image inside element
+- use precentage, left, right, top, bottom, center
+- use px
+
+image > element
+- negetive value
+- sprites sheet
+- move drag background left or up
+- use px to set offset is easy
+- precentage is hard to calculate
+ 
+
+
+
