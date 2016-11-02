@@ -26,7 +26,6 @@
 8. continually refactor code
 
 
-
 ## CSS coding practises
 
 1. Comments
@@ -53,6 +52,14 @@
 - not 0px or 0%
 
 8.  Group & Align Vendor Prefixes
+
+#### performance
+
+- keep selector short
+- seperate content from container
+- favor classes
+- image Sprites
+
 
 ## Tips
 
@@ -187,3 +194,11 @@ Assumption: fixed height on `parent`
 - set parent `line-height` 
 
 #### common shorthand 
+- font: italic bold .8em/1.2 Arial, sans-serif;
+- font:normal 16px Helvetica, Arial, sans-serif;
+- background: #000 url(images/bg.gif) no-repeat top right;
+- border: 1px dashed gray
+
+#### gradient
+- linear-gradient() repeating-linear-gradient()
+- radial-gradient() repeating-radial-gradient()

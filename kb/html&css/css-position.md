@@ -28,9 +28,4 @@ the distance between the left margin edge of the element and the left edge of it
 
 ![position diagram](position_type.png)
 
-## image sprites
 
-https://css-tricks.com/css-sprites/
-
-- set same `background:#cccccc url("same_url.png") no-repeat`
-- set different `background-position:`

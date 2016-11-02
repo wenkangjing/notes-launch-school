@@ -20,7 +20,7 @@ LaunchSchool Notes
 - [x] [Back end Prep](100/_100.md)
 
 ## 200
-- [ ] [Front end Prep](201/_200.md)
+- [x] [Front end Prep](201/_200.md)
 
 # Front-end
 
@@ -29,13 +29,15 @@ LaunchSchool Notes
 - [x] [Lesson 2 Your First Web Page](201/lesson2/_201_lesson2.md)
 - [x] [Lesson 3 Working with Design Files](201/lesson3/_201_lesson3.md)
 - [x] [Lesson 4 Forms and Advanced CSS](201/lesson4/_201_lesson4.md)
-- [ ] [Lesson 5 More Projects CSS](201/lesson5/_201_lesson5.md)
-- [ ] [Lesson 6 CSS Framework](201/lesson6/_201_lesson6.md)
+- [x] [Lesson 5 More Projects CSS](201/lesson5/_201_lesson5.md)
+- [x] [Lesson 6 CSS Framework](201/lesson6/_201_lesson6.md)
 
-
-
+## 209 Assessment HTML and CSS
+- [ ] [Assessment](209/_209.md)
 
 # Back-end
+
+
 
 # Advanced
 
