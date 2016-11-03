@@ -202,3 +202,22 @@ Assumption: fixed height on `parent`
 #### gradient
 - linear-gradient() repeating-linear-gradient()
 - radial-gradient() repeating-radial-gradient()
+
+
+#### submit button to flat
+
+```css
+.button {
+  text-shadow:none !important;
+  border:none !important;
+  box-shadow:none !important;
+}
+```
+
+
+#### element messy layout
+
+- check float
+- check overflow on container
+- do clearfix by overflow:hidden on container + :after {}
+- check z-indexs

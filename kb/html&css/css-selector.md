@@ -153,10 +153,10 @@ https://css-tricks.com/the-difference-between-nth-child-and-nth-of-type/
 
 Our :nth-child selector, in "Plain English," means select an element if:
 - It is a paragraph element
-- It is the second child of a parent
+- It is the **second child** of a parent
 
 Our :nth-of-type selector, in "Plain English," means:
-- Select the second paragraph child of a parent
+- Select the **second paragraph child** of a parent
 - what's a good way to say it... less conditional.
 
 ```HTML
