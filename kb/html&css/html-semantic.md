@@ -85,9 +85,11 @@ article
 
 `optgroup` within `select`, to group `select`
 
-`input` `button`
+`input` 
 
-`label` for attribute, ref by ID or wrap control. 
+`button` submit, reset, button, menu
+
+`label` for attribute, ref by ID or wrap control. **to set width, must change to `inline-block` or `block`**
 
 `textarea`
 
@@ -124,7 +126,7 @@ article
 `details` contains`summary `element, click to view detailed info
 
 
-## DO NOT
+## Tips
 
 ### Don’t use section as a wrapper for styling. 
 
@@ -138,3 +140,8 @@ article
 
 Your logo is not a figure. Figure can be more than an image
 
+#### Self closing elements
+
+```html
+<br> <embed> <hr> <img> <input> <link> <meta> <param> <source> <wbr>
+```

@@ -1,0 +1,55 @@
+body {
+  font:normal 16px/1.5em Helvetica, Arial, sans-serif;
+}
+
+p{
+  padding:20px;
+  border:2px dashed black;
+  background:#cccccc;
+}
+
+div {
+  border:1px solid black;
+  padding:20px;
+  margin:20px;
+}
+
+
+
+/* collapse */
+.collapse table{
+  border-collapse: collapse;
+  border-spacing: 10px;
+}
+
+.collapse th,
+.collapse td {
+  border:2px dashed gray;
+  padding:10px;
+}
+
+.collapse th{
+  background:#ccccff;
+}
+
+.collapse td{
+  background:#ccffff;
+}
+
+/* separate  */
+.separate table {
+  border-collapse: separate;
+  border-spacing: 20px;
+  border:2px solid blue;
+}
+.separate th,
+.separate td {
+  border:2px solid gray;
+  border-radius: 5px;
+  border-spacing: 5px;
+}
+
+
+.separate tbody tr:nth-child(odd) {
+  background: #ffffcc;
+}

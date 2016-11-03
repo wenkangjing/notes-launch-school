@@ -4,6 +4,12 @@
     <title>Dimension and Spacing</title>
     <meta charset="UTF-8">
     <style>
+      body{border:1px solid black;}
+      p {
+        border: 1px dashed black;
+        padding:20px;
+        margin:20px;
+      }
       div {
         width:300px;
         height:300px;
@@ -11,6 +17,7 @@
         box-sizing:border-box;
         /* display horizonally */
         display:inline-block; 
+        vertical-align:top;
       }
 
       .red {
@@ -29,7 +36,7 @@
         /* 1: Apply to all four sides */
         /* 2: vertical | horizontal */
         /* 4: top | right | bottom | left */
-        /*margin: 0 20px;*/
+        margin: 0 20px;
       }
 
       ul {
@@ -48,21 +55,19 @@
         background: #ffffcc;
         margin: -10px 1%;
       }
-
     </style>
   </head>
   <body>
-    <div class="red">
-
-    </div>
-
-    <div class="blue">
+    <p>I have to set vertical-align on div to ensure 2 boxes can align vertically, <mark>whywhywhy</mark></p>
+    <div class="red">content in red box</div>
+    <div class="blue">content in blue
       <ul>
         <li>Item 1</li><!--
         --><li>Item 2</li><!--
         --><li>Item 3</li><!--
         --><li>Item 4</li>
       </ul>
-    </div>
+  </div>
+  <p>Is it because of this? I am a block element</p>
   </body>
 </html>

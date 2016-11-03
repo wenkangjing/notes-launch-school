@@ -5,15 +5,14 @@
     <title>Fixed Width Sidebar</title> 
     <style>
       body { background: #e0e0e0; }
-      * {
-        border: 1px solid black;
-      }
+
       #columns {
         margin: 0 0 0 220px;
       }
-      #primary, #secondary {
+      #primary, #leftbar {
         padding: 25px;
         box-sizing: border-box;
+        height:100vh;
       }
 
       #primary {
@@ -22,7 +21,7 @@
         width: 100%;
       }
 
-      #secondary {
+      #leftbar {
         float: left;
         width: 200px;
         margin: 0 0 0 -220px;
@@ -32,12 +31,8 @@
   </head>
   <body>
     <div id="columns">
-      <div id="primary">
-        <h1>Main Content</h1>
-      </div>
-      <div id="secondary">
-        <h3>Sidebar Content</h3>
-      </div>
+      <div id="primary">Main Content</div>
+      <div id="leftbar">Sidebar Content</div>
     </div>
   </body>
 </html>

@@ -166,3 +166,6 @@ Set element `float:left` and `clear:left`
 
 #### what does clear mean?
 - clear:left on A means no float elements are allowed on that side
+
+
+#### vertical-align doesn't work on float elements

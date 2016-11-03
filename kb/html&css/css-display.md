@@ -74,8 +74,9 @@ used for horizontal nav bar and layout blocks
 The Space Between Inline-Block Elements
 > One important distinction with inline-block elements is that they are not always touching, or displayed directly against one another. Usually a small space will exist between two inline-block elements.
 
+Align inline-block elements
 
-
+[Vertical Align](https://css-tricks.com/what-is-vertical-align/)
 
 ### none
 

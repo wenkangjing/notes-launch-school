@@ -6,9 +6,9 @@
 
 `font-size`
 
-`font-weight`
+`font-weight` 
 
-`font-style`
+`font-style` : `italic normal bold`
 
 `font-variant`
 
@@ -18,9 +18,9 @@
 
 #### text
 
-`text-decoration`
+`text-decoration` : `none, underline red, underline wavy red, line-through overline underline`
 
-`text-transform`
+`text-transform` : `capitalize; uppercase; lowercase; none;`
 
 `letter-spacing` `word-spacing`
 
@@ -30,9 +30,30 @@
 
 `vertical-align` for an **inline** or table-cell box.
 
+`mark`
+
+`em`
+
+`strong`
+
 ## Q&A
 
 #### text-align vs vertical-align
 
 - text-align: horizontaly
-- vertical-align: inline element, or table cell
+- vertical-align: inline element, or table cell, doesn't work on float elements
+
+https://css-tricks.com/what-is-vertical-align/
+
+
+#### text formatting
+
+```css
+body {
+  font-size: 16px;
+  font-weight: normal;
+  font-style: italic;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 140%;
+}
+```

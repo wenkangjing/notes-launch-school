@@ -170,6 +170,9 @@ Reference: YMPH-DWEX-AQRS
 - 209 : http://css.maxdesign.com.au/floatutorial/index.htm
 
 2016-11-02
+2016-11-03
+- 209 - Prep - Lesson 2
+- 209 - Prep - Lesson 3
 
 
 

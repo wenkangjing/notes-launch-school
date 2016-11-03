@@ -8,6 +8,19 @@
         /* 1. Set parent text-align to center*/
         /*text-align:center;*/
       }
+      .container{
+        border:1px solid black;
+        margin:20px;
+        padding:20px;
+        box-sizing:border-box;
+      }
+
+      p {
+        border:1px dashed black;
+        padding:20px;
+        background:#cccccc;
+      }
+
       img.fixed-size{
         /* 2. set img to block and set margin to auto
         img tag by default is inline*/
@@ -44,7 +57,21 @@
   </head>
 
   <body>
-    <!--Change the class attribute value to see the differences-->
-    <img class="max-mix-width" src="./images/Hôtel_des_Invalides_-_20150801_16h09_(10630).jpg" alt="Hotel des Invalides">  
+    <div class="container">
+      <p>fixed width: of 800 pixels. Horizontally center. Image right edge will be clipped in a narrow window</p>
+      <img class="fixed-size" src="./images/Hôtel_des_Invalides_-_20150801_16h09_(10630).jpg" alt="Hotel des Invalides">  
+    </div>
+    <div class="container">
+      <p>auto scale: img width set to 100%, will auto scale together with window resize</p>
+      <img class="auto-scale" src="./images/Hôtel_des_Invalides_-_20150801_16h09_(10630).jpg" alt="Hotel des Invalides">
+    </div>
+    <div class="container">
+      <p>fixed height: with 100% width. will end up with wrong scale, can  be fixed by given width auto</p>
+      <img class="fixed-height" src="./images/Hôtel_des_Invalides_-_20150801_16h09_(10630).jpg" alt="Hotel des Invalides">
+    </div>
+    <div class="container">
+      <p>mix and max on width: image will be clipped if window size smaller than min-width, can be fixed by given a min-width on container or body</p>
+      <img class="max-mix-width" src="./images/Hôtel_des_Invalides_-_20150801_16h09_(10630).jpg" alt="Hotel des Invalides">
+    </div>
   </body>
 </html>

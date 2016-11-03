@@ -1,0 +1,61 @@
+body {
+  font:normal 16px/1.5em Helvetica, Arial, sans-serif;
+}
+
+p{
+  padding:20px;
+  margin:20px;
+  border:2px dashed black;
+  background:#cccccc;
+}
+textarea, input, button, select { 
+  font-family: inherit; 
+  font-size: inherit; 
+}
+
+textarea {
+   resize: vertical;
+}
+
+form {
+  margin:10px;
+}
+
+fieldset {
+  border-radius: 5px;
+}
+
+.stack {
+  width:500px;
+}
+.stack dd{
+  margin:0 0 10px 0;
+}
+
+.horizontal {
+  width:500px;
+}
+.horizontal input,
+.horizontal textarea {
+  width:75%;
+}
+
+
+.horizontal label{
+  width:20%;
+  text-align: right;
+  vertical-align: top;
+  display:inline-block;
+  margin-bottom:10px;
+}
+.horizontal button{
+  margin-left:20%;
+}
+
+.section div{
+  margin: 0 0 20px 0;
+}
+
+.section label{
+  display:inline-block;
+}
