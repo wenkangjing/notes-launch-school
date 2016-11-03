@@ -11,6 +11,13 @@
 
 ## Conbinator
 
+_NOTE: not footer li + footer li_
+
+```css
+footer li + li {
+  padding-left:150px;
+}
+```
 - `A > B` direct child: 
 
 - `A B`   descendant 
