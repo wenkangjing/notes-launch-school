@@ -7,7 +7,11 @@ to its normal flow
 
 ## absolute
 
-to its first parent with relative position
+https://css-tricks.com/absolute-positioning-inside-relative-positioning/
+
+>closest positioned ancestor if any, or otherwise relative to the initial containing block
+
+>An absolutely positioned element is positioned within its nearest containing element that has a position: relative (strictly speaking, any position value other than static would work, but most often position: relative is used). If none of its containing elements is relatively positioned, the absolutely positioned element is then positioned relative to the <body> element.
 
 **position is not inherited. the position value doesn’t cascade**
 

@@ -1,0 +1,44 @@
+body {
+  background:lightgrey;
+}
+
+article {
+  background:white;
+}
+
+#mask {
+  position:fixed;
+  background: rgba(0, 0, 0, .6);
+  top:0;
+  left:0;
+  width:100vw;
+  height:100vh;
+  /* Or 
+  right:0;
+  bottom:0;
+  */
+}
+
+#positioned {
+  position: fixed;
+  background:white;
+  padding:20px 50px;
+  width:400px;
+  left: 50%;
+  top: 50px;
+  margin-left:-200px;
+  box-sizing:border-box;
+  z-index:1;
+  /* fixed postion will make this element render out of flow, no need */
+  /*display:inline-block;*/
+}    
+
+#child {
+  position:absolute;
+  width: 20px;
+  height: 20px;
+  background: #fcfc99;
+  z-index:2;
+  left:-10px;
+  top:-10px;
+}  
