@@ -221,3 +221,17 @@ Assumption: fixed height on `parent`
 - check overflow on container
 - do clearfix by overflow:hidden on container + :after {}
 - check z-indexs
+
+
+#### how to vertical and horizontal center text in div
+- vertical center: set `line-height` equal to div `height`
+- horizontal center: `text-align:center`
+
+```css
+div{
+  width:400px;
+  height:70px;
+  line-height:70px;
+  text-align: center;
+}
+```

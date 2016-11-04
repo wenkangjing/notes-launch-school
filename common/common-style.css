@@ -7,25 +7,19 @@ body{
   font:normal 16px Helvetica, Arial, sans-serif;
 }
 
-header {
-  padding: 0px 0px 0px 0px;
-}
-
-main {
-  padding: 0px 0px 0px 0px;
-}
-
-footer {
-  padding: 0px 0px 0px 0px;
-  clear:both;
-}
-
 /* set border-box by default */
 html {
   box-sizing: border-box;
 }
 *, *:before, *:after {
   box-sizing: inherit;
+}
+
+.clearfix::after{
+  content:"";
+  display:block;
+  visibility: none;
+  clear:both;
 }
 
 /* form wont take body font automatically or give each a font */

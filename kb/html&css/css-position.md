@@ -9,6 +9,21 @@ to its normal flow
 
 to its first parent with relative position
 
+**position is not inherited. the position value doesn’t cascade**
+
+To make the child element positioned absolutely from its parent element we need to
+- set **relative** on the parent element
+- set **absolute** on child element
+
+```css
+.parent {
+  position: relative;
+}
+.child {
+  position:absolute;
+}
+```
+
 > absolutely positioned element is removed from the normal flow. This means you can put it anywhere, and it won’t affect or be affected by any other element in the flow. 
 
 > absolute elements create a new coordinate system for child elements. 
@@ -43,7 +58,8 @@ image > element
 - move drag background left or up
 - use px to set offset is easy
 - precentage is hard to calculate
- 
 
+## Q&A
 
+#### position fixed box is half transparent?
 
