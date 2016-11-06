@@ -15,14 +15,14 @@ HTML and CSS - Lesson 4: Forms and Advanced CSS
 - target: _blank for new window, _parent or _top
 
 # 3	The Input Element
-
+- text: minlength
 - button, checkbox, number, password, tel, url
-- radio: same name as a group
-- range: slider
+- radio: radios with same **name** auto groupded as one
+- range: slider, min max step
 - reset: button to empty all fields
 - color: color pickup
-- search
-- submit 
+- search: with cross on the right
+- submit: submit data to server using get/post
 - date, week, month: pickup
 - datetime, datetime-local
 - email
@@ -66,7 +66,7 @@ minlength and maxlength
 
 # 6	General Attributes for the Input Element
 
-- input id <> lable for (**to extend click region**)
+- input id <> lable for (**to extend click region**) or **wrapped by label**
 - required
 - autofocus: the first field need to input
 - checked
@@ -100,6 +100,7 @@ Textarea
 - no value attribute, will return name="text between opending and closing tag"
 - rows / cols:  visible rows and cols
 - size
+- resize: vertical
 
 # 8	Exercises: Forms
 
@@ -190,7 +191,7 @@ input attributes
 - tag class: muptile name can easy styling
 
 
-Refer to [profile_form.html](./profile_form.html) and [profile_form_style.css](./profile_form_style.css)
+Refer to [profile_form.html](./profile_form.html) and [profile_form_style.css](./profile_form.css)
 
 # 12	Pseudo Elements
 

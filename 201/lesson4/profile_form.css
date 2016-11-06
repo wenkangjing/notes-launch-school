@@ -45,7 +45,7 @@ textarea {
 
 textarea {
   height: auto;
-  resize:vertical;
+  resize: vertical;
 }
 
 input[type="submit"] {
@@ -74,4 +74,19 @@ dl.horizontal-three {
 .agree {
   display:block;
   padding: 24px 0 24px 0;
+}
+
+
+.comment {
+  float:right;
+  width:400px;
+}
+
+.comment p{
+  background:#ffcccc;
+  padding:5px;
+}
+
+dl {
+  border:2px solid red;
 }

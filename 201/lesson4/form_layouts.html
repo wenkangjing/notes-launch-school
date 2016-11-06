@@ -4,49 +4,55 @@
   <meta charset="utf-8">
   <title>Form Layouts</title>
   <style>
-    * {
-      /*border:1px solid black;*/
+    body {
+      width:1000px;
     }
-    .styled_form.horizontal dt,
-    .styled_form.horizontal dd {
+    dl {
+      border:1px solid red;
+    }
+    .horizontal dt,
+    .horizontal dd {
       display: inline-block;
       vertical-align: middle;
       box-sizing: border-box;
     }
-    .styled_form.horizontal dt {
+    .horizontal dt {
       width: 25%;
       padding-right: 20px;
       text-align:right;
     }
-    .styled_form.horizontal dd {
+    .horizontal dd {
       width: 75%;
       margin:0;
     }
-    .styled_form.horizontal input[type="text"] {
+    .horizontal input[type="text"] {
       width: 100%;
     }
 
-    .styled_form.stack dt,
-    .styled_form.stack dd {
+    .stack dt,
+    .stack dd {
       display:block;
       vertical-align: middle;
       box-sizing: border-box;
       margin:0;
     }
 
-    .styled_form.stack dt,
-    .styled_form.stack dd {
+    .stack dt,
+    .stack dd {
       padding-bottom:10px;      
     }
-    .styled_form.stack .partial{
+    .stack .partial{
       display:inline-block;
     }
   </style>
 </head>
 <body>
+  <h1>Form layout using definition list</h1>
+  <mark>definistion list is red bordered</mark>
+  
   <fieldset>
-    <legend>Left/Right, label align right</legend>
-    <div class="styled_form horizontal">
+    <legend>horizontal layout</legend>
+    <div class="horizontal">
       <dl>
         <dt>
           <label for="example_2">Name</label>
@@ -68,11 +74,11 @@
 
   <fieldset>
     <legend>Advanced layout</legend>
-    <div class="styled_form stack">
+    <div class=" stack">
       <dl class="stack">
         <dt><label for="name">Name</label></dt>
         <dd><input type="text" name="name" id="name"></dd>
-      <dl>
+      </dl>
       <dl class="stack">
         <dt><label for="address1">Address</label></dt>
         <dd><input type="text" name="address1" id="address1"></dd>
