@@ -66,4 +66,4 @@ image > element
 ## Q&A
 
 #### position fixed box is half transparent?
-
+be careful with z-index [CSS absolute and fixed positioning](https://www.w3.org/wiki/CSS_absolute_and_fixed_positioning#The_third_dimension.E2.80.94z-index)

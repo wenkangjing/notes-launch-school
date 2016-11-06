@@ -38,6 +38,9 @@
 
 ## Q&A
 
+#### what is vertical-align
+> Initial value	baseline, apply to inline-level and table-cell elements. It also applies to ::first-letter and ::first-line.
+
 #### text-align vs vertical-align
 
 - text-align: horizontaly

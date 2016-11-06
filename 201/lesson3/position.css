@@ -17,11 +17,13 @@ article {
   right:0;
   bottom:0;
   */
+  z-index:0;
 }
 
 #positioned {
   position: fixed;
   background:white;
+  border:1px solid red;
   padding:20px 50px;
   width:400px;
   left: 50%;
@@ -29,6 +31,7 @@ article {
   margin-left:-200px;
   box-sizing:border-box;
   z-index:1;
+  
   /* fixed postion will make this element render out of flow, no need */
   /*display:inline-block;*/
 }    
@@ -38,7 +41,7 @@ article {
   width: 20px;
   height: 20px;
   background: #fcfc99;
-  z-index:2;
   left:-10px;
   top:-10px;
+  z-index:2;
 }  
