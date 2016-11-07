@@ -43,25 +43,38 @@ textarea, input, button, select {
   clear:both;
 }
 
-
 /* 
 --------------------------------
 common
 -------------------------------- 
 */
-body{
-  font: normal 13px "Open Sans", Arial, sans-serif;
+body {
+  font: normal 16px "Open Sans", Arial, sans-serif;
+  margin-top:45px;
 }
+
 
 a {
   text-decoration: none;
 }
 
 .button{
+  display:inline-block;
+  height: 45px;
+  line-height: 45px;
+  padding: 0 30px;
+  margin:15px;
   background:#008000;
   color:#ffffff;
 }
 
+.text-centered {
+  text-align: center;
+}
+
+.pos-rel {
+  position: relative;
+}
 
 /*
 -----------------------------------
@@ -88,13 +101,14 @@ top-most
 }
 #top-most a{
   color:#444;
+  font-size:13px;
   line-height: 45px;
   text-transform: uppercase;
 }
 
-body > header {position:relative;}
+/*body > header {position:relative;}
 body > main {position:relative;}
-body > footer {position:relative;}
+body > footer {position:relative;}*/
 /* 
 --------------------------------
 header
@@ -102,16 +116,27 @@ header
 */
 
 header {
-  top: 45px;
-  background:transparent url("./images/front.jpg") center center no-repeat;
   height:428px;
   width: auto;
   text-align: center;
-   margin-bottom:100px;
+  padding: 150px 0 65px 0;
+  background:transparent url("./images/front.jpg") center center no-repeat;
 }
 
-header 
+header h1 {
+  font-size:72px;
+  text-align: center;
+  font-weight: normal;
+  color:#fff;
+  height: 70px;
+  line-height: 70px;
+  margin:15px 0;
+}
 
+header h2{
+  color:#fff;
+  text-transform: uppercase;
+}
 
 /* 
 --------------------------------
@@ -119,7 +144,110 @@ sections
 -------------------------------- 
 */
 
+/* generic section */
+.section {
+  padding: 75px 0 50px 0;
+  margin: 0 30px;
+}
 
+.section + .section {
+  border-top:1px solid #efefef;
+}
+
+.section h1 {
+  font-size: 48px;
+  font-weight: normal;
+  text-align: center; 
+  margin-bottom: 50px;
+}
+
+.section h2 { 
+  font-size: 24px;
+  text-align: center;
+  color: #008000;  
+  margin:30px auto 5px auto;
+}
+
+.section h3 { 
+  font-size: 18px; 
+}
+
+/* speakers section */
+.speakers ul {
+  text-align: center;
+} 
+.speakers li {
+  display:inline-block;
+  width:280px;
+  height:378px;
+  vertical-align: top;
+  margin:5px;
+  border: 1px solid #e8e8e8;
+  background:#fff;
+}
+.speakers .intro {
+  display:none;
+  position:absolute;
+  top: 0;
+  left: 0;
+  bottom:0;
+  right:0;
+  padding:10px;
+  background:#000000;
+}
+.speakers .intro h2 {
+  margin:10px;
+}
+.speakers .intro p{
+  color: #fff;
+  font-size:13px;
+  text-align: center;
+}
+.speakers .intro p + p{
+  margin-top:1em;
+}
+.speakers .intro a {
+  color: #008000;
+}
+.speakers li:hover .intro {
+  display:inline-block;
+}
+
+/* schedule section */
+.schedule table{
+  border-collapse: collapse;
+}
+
+.schedule tr{
+  border-top:1px solid #EFEFEF;
+}
+
+.schedule td {
+  font-size:24px;
+  line-height: 1.4em;
+  padding: 15px;
+}
+
+.schedule tr:last-of-type {
+  border-bottom:1px solid #EFEFEF;
+}
+
+.schedule h3 a { 
+  color: #008000;
+  text-align: left;
+}
+.schedule label {
+  background:#eee;
+  border:1px solid #aaa;
+  padding: 1px 4px;
+  font-size:7px;
+  vertical-align: middle;
+}
+.schedule img {
+  width: 130px;
+  height:auto;
+  float:right;
+}
 /* 
 --------------------------------
 footer
