@@ -1,0 +1,156 @@
+/*
+----------------------------------------
+Tantek Celik's Whitepsace Reset
+     Author:    Tantek Celik, Shane Riley
+    Version:    (CC) 2010 Some Rights Reserved - http://creativecommons.org/licenses/by/2.0
+Description:  Resets default styling of common browsers to a common base
+----------------------------------------
+*/
+
+ul,ol { list-style: none; }
+h1,h2,h3,h4,h5,h6,pre,code { font-size: 1em; }
+ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input,dl,dt,dd, figure, figcaption {
+  margin: 0;
+  padding: 0; }
+a img,:link img,:visited img, fieldset { border: none; }
+address { font-style: normal; }
+header, section, article, nav, footer, hgroup, details, summary, figure, main { display: block; }
+mark {
+  color: inherit;
+  background: transparent; }
+abbr { border: none; }
+summary::-webkit-details-marker { display: none; }
+
+html { box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
+
+textarea, input, button, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.clearfix::after{
+  content:"";
+  display:block;
+  visibility: none;
+  clear:both;
+}
+
+body{
+  font:normal 16px Helvetica, Arial, sans-serif;
+  margin:0;
+}  
+
+ul {
+  list-style:none;
+  padding-left:0;
+  vertical-align:middle;
+}
+
+#column {
+  margin: 0 130px 0 160px;
+}
+
+header{
+  float:left;
+  margin-left:-160px;
+  width:150px;
+  height:100vh;
+  background:#2c3e50;
+  color: #ecf0f1;
+}
+
+main {
+  float: left;
+  width: 100%;
+  padding: 25px;
+}
+
+footer {
+  float: right;
+  width: 130px;
+  height: 100vh;
+  padding: 15px;
+  margin-right: -130px;
+  font-size: 12px;
+  background: #e74c3c;
+}
+
+h1 {
+  padding: 10px;
+  font-size:24px;
+}
+
+header li {
+  padding: 5px 0;
+}
+header a {
+  color: #ecf0f1;
+  text-decoration:none;
+  padding-left:10px;
+}
+header ul a:before {
+    background: transparent url("icons_nav.png") 0 0 no-repeat;
+    width: 27px;
+    height: 26px;
+    margin: 0 5px 0 0;
+    content: "";
+    vertical-align: middle;
+    display:inline-block;
+}
+header .photos:before {
+  height:20px;
+  background-position: 0 -26px;
+}
+header .contact:before {
+  height:16px;
+  background-position: 0 -46px;
+}
+
+header ul a.home:hover:before {
+  background-position: 100% 0;
+}
+header ul .photos:hover:before {
+  background-position: 100% -26px;
+}
+header ul a.contact:hover:before {
+  background-position: 100% -46px;
+}
+footer ul li {
+  padding: 5px 0;
+  margin: 10px 0;
+  background:#ffffff;
+}
+
+footer ul li a {
+  width:100%;
+  color: #2980b9;
+  text-decoration:none;
+  padding:5px; 
+}
+
+footer ul a:before {
+  display:inline-block;
+  background: transparent url("icons_social.png") 0 0 no-repeat;
+  background-size:24px;
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+  content: "";
+  vertical-align: middle;
+}
+
+footer ul a:hover:before{
+  background-color: #00bf8f;
+}
+
+footer ul a.twitter:before {
+  background-position: 0 0;
+}
+
+footer ul a.facebook:before {
+  background-position: 0 -24px;
+}
+footer ul a.instagram:before {
+  background-position: 0 100%;
+} 
