@@ -198,6 +198,9 @@ Refer to [profile_form.html](./profile_form.html) and [profile_form_style.css](.
 - :after, :before
 - :hover
 
+- Correct: a:hover:before {}
+- Wrong: a:before:hover {}
+
 # 13	Sprite Sheets
 shift around one background image by background-position
 
