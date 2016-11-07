@@ -21,6 +21,20 @@ mark {
 abbr { border: none; }
 summary::-webkit-details-marker { display: none; }
 
+/*
+-----------------------------------------
+Prefered common styling
+-----------------------------------------
+*/
+html { box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
+
+.clearfix::after{
+  content:"";
+  display:block;
+  visibility: none;
+  clear:both;
+}
 
 /* Common */
 body{
@@ -29,15 +43,16 @@ body{
   width:auto;
 }
 
+/* This is a base styling, can be override by IDs in each page */
 .column{
   max-width:1000px;
-  padding:120px 0 135px 0;
+  padding:75px 0 135px 0;
   margin:0 auto;
 }
-/* header */
 
+/* header */
 header {
-  padding:130px 0 50px 0;
+  padding:75px 0 50px 0;
 }
 header h1 {
   padding-bottom:120px;
@@ -46,13 +61,11 @@ header h1 {
 header nav {
   text-align:center;
 }
-header ul {
-  list-style: none;
-  padding-left:0;
-}
+
 header li {
   display:inline-block;
-  text-transform: uppercase
+  text-transform: uppercase;
+  padding: 0 42px;
 }
 
 header li + li {
@@ -69,7 +82,6 @@ header a.active {
 
 /* main */
 main {
-  /*padding:120px 0 135px 0;*/
   background:#ffffff;
 }
 
@@ -84,7 +96,6 @@ main h2:before{
   content:"\2022";
   padding: 0 30px;
 }
-
 main h3 {
   font-size:24px;
   text-align: center;
@@ -94,8 +105,6 @@ main h3 {
 
 main p {
   text-align: center;
-  font-size:20px;
-  
 }
 
 /* footer */
@@ -154,6 +163,14 @@ footer li + li{
 }
 
 /* Projects page */
+#projects > article{
+  padding:0 30px 50px 30px;
+}
+
+#projects  article + article{
+  padding-top:50px;
+}
+
 #projects img {
   width:100%;
   display:block;
@@ -163,11 +180,11 @@ footer li + li{
 #projects p {
   padding: 0 120px;
 }
-#projects article + article {
-  margin-top:120px;
-}
 
 /* Team page */
+#team > article{
+  padding:0;
+}
 #team p{
   padding:0 110px 130px 110px;
 }
@@ -192,36 +209,37 @@ footer li + li{
 }
 
 @media (max-width: 875px) {
+  header h1 {
+    padding-bottom:50px;
+  }  
   #team li {
     width: 48%;
     padding: 0 0 30px 0;
+  }
+  #team li figcaption {
+    padding-top: 0;
+  }
+  
+  #projects article + article{
+    border-top:1px solid #cccccc;
+    margin:0;
   }
 }
 
 /* medium screen */
 @media (max-width: 768px) {
-  .column {
-    padding:80px 40px 80px 40px;
-  }
-
   #home article{
     padding:0;
   }
+
   #home article + article {
     margin-top:130px;
   }
   
-  #projects p{
+  #projects p {
     padding:0;
   }
-  #projects article{
-    padding:50px 0;
-    margin:0;
-  }
-  #projects article + article{
-    border-top:1px solid #cccccc;
-    margin:0;
-  }
+
   #team p {
     padding:0 0 130px 0;
   }
@@ -233,7 +251,7 @@ footer li + li{
   }
   header img {
     width:223px;
-    height:182px;
+    height:auto;
     padding-top:30px;
     padding-bottom:30px;
   }
@@ -268,21 +286,19 @@ footer li + li{
   }
   header img,
   header nav {
+    height: 60px;
     width:auto;
-    height:60px;
     padding: 5px;
     box-sizing:border-box;
   }
 
-  header nav {
-    width:100%;
-  }
-  header ul {
-    display:block;
-  }
   header li {
     display:block;
     text-align:right;
+    padding:0;
+  }
+  header li + li{
+    padding:0;
   }
   header a {
     font-size:12px;
@@ -302,10 +318,14 @@ footer li + li{
   #home article + article{
     margin-top:50px;
   }
-  #team figure,
+
+  #team p{
+    padding:0 30px 40px 30px;
+  }
+  
   #team li {
     width:48%;
-    padding: 0;
+    padding: 0 0 30px 0;
     margin:0;
   }
 

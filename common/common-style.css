@@ -1,18 +1,14 @@
-/* 
-  common styles 
+/*
+-----------------------------------------
+Prefered common styling
+-----------------------------------------
 */
+html { box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
 
-/* big sections  */
-body{
-  font:normal 16px Helvetica, Arial, sans-serif;
-}
-
-/* set border-box by default */
-html {
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
+textarea, input, button, select {
+  font-family: inherit;
+  font-size: inherit;
 }
 
 .clearfix::after{
@@ -22,10 +18,11 @@ html {
   clear:both;
 }
 
-/* form wont take body font automatically or give each a font */
-textarea, input, button, select { 
-  font-family: inherit; font-size: inherit; 
+/* big sections  */
+body{
+  font: normal 16px Helvetica, Arial, sans-serif;
 }
+
 
 /* list: no bullet, no margin */
 ul {
