@@ -21,11 +21,27 @@ mark {
 abbr { border: none; }
 summary::-webkit-details-marker { display: none; }
 
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+textarea, input, button, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+.clearfix::after{
+  content:"";
+  display:block;
+  visibility: none;
+  clear:both;
+}
+
 /* common style */
 body{
   font:normal 16px Helvetica, Arial, sans-serif;
 }
-
 a {
   text-decoration: none;
 }
@@ -110,19 +126,11 @@ main {
 }
 
 #sidebar{
-  padding:30px;
-  box-sizing: border-box;
+  padding:35px;
   background-color:#f6f7f8;
   overflow:hidden;
 }
 
-main:after{
-  content: "";
-  visibility: hidden;
-  display: block;
-  height: 0;
-  clear: both;
-}
 
 /*articles*/
 #content header {
@@ -197,7 +205,6 @@ form textarea{
   border-radius: 5px;
   border: 1px solid #cccccc;
   padding: 10px;
-  box-sizing: border-box; 
 }
 
 form  textarea{
@@ -205,7 +212,7 @@ form  textarea{
   max-height:300px;
 }
 
-form  .button {
+form .button {
   display:block;
   color:#ffffff;
   background:#50c3af;
@@ -256,7 +263,6 @@ form  .button {
   }
 }
 
-
 /* ...mobile... */ 
 @media (max-width: 480px) { 
   body > header h1 {
@@ -293,7 +299,6 @@ form  .button {
     background-color:#f6f7f8;
     padding:20px;
   }
-
   #sidebar h2 {
     margin:0;
   }

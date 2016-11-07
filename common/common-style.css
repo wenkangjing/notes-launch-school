@@ -26,12 +26,11 @@ summary::-webkit-details-marker { display: none; }
 MUST common style
 -----------------------------------------
 */
-html { 
-  box-sizing: border-box; 
+html {
+  box-sizing: border-box;
 }
-*, *:before, *:after 
-{ 
-  box-sizing: inherit; 
+*, *:before, *:after{
+  box-sizing: inherit;
 }
 textarea, input, button, select {
   font-family: inherit;
