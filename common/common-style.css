@@ -29,18 +29,18 @@ MUST common style
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after{
+*, *:before, *:after {
   box-sizing: inherit;
 }
 textarea, input, button, select {
   font-family: inherit;
   font-size: inherit;
 }
-.clearfix::after{
-  content:"";
-  display:block;
-  visibility:hidden;
-  clear:both;
+.clearfix::after {
+  content: "";
+  display: block;
+  visibility: hidden;
+  clear: both;
 }
 
 /*

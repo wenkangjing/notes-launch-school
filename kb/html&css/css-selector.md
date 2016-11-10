@@ -100,6 +100,8 @@ footer li + li {
 `::spelling-error`
 `::grammar-error`
 
+**NOTES: most browsers do NOT support using `:after` or `:before` on img tags**
+
 e.g.
 
 ```css
@@ -173,3 +175,9 @@ Our :nth-of-type selector, in "Plain English," means:
    <p>Piggy</p>    <!-- p:nth-of-type(2) -->
 </section>
 ```
+
+
+#### there is no parent selector for performance reasons
+
+https://css-tricks.com/parent-selectors-in-css/
+

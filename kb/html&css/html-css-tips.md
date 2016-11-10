@@ -235,3 +235,14 @@ div{
   text-align: center;
 }
 ```
+
+#### wrapped div around img tag not same
+```css
+img {
+    display: block;
+}
+
+.img-container {
+    float: left;
+}
+```

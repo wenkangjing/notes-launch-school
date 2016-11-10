@@ -1,0 +1,6 @@
+- [ ] html validator
+- [ ] css validator
+- [ ] link validation
+- [ ] media query break points
+- [ ] font link
+- [ ] css space consistency
