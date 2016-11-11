@@ -169,11 +169,17 @@ Reference: YMPH-DWEX-AQRS
 2016-10-31
 - 209 : http://css.maxdesign.com.au/floatutorial/index.htm
 
-2016-11-02
-2016-11-03
-- 209 - Prep - Lesson 2
-- 209 - Prep - Lesson 3
+2016-11-02 ~ 2016-11-07
+- 209 - Prep - review lessons
 
+2016-11-07 ~ 2016-11-09 
+- 209 - Prep - JSConfBR
+
+2016-11-09 ~ 2016-11-12
+- 209 - Prep - JSConfBP
+
+2016-11-11
+- another read thru kn articles
 
 
 TODO:

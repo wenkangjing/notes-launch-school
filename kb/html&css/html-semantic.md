@@ -79,9 +79,9 @@ article
 
 `form` to submit data to server
 
-`fieldset` group controls within a form
-
 `legend` represents a caption of its parent `fieldset`
+
+`fieldset` group controls within a form
 
 `optgroup` within `select`, to group `select`
 

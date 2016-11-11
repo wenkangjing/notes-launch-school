@@ -10,6 +10,8 @@ A review and summary of notes taking on Launch School
 
 ## HTML
 
+[w3c html wiki](https://www.w3.org/wiki/HTML/Elements)
+
 [HTML Best Practices](https://github.com/hail2u/html-best-practices)
 
 [Organizing data with tables](http://learn.shayhowe.com/html-css/organizing-data-with-tables/)
