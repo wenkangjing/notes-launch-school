@@ -16,15 +16,15 @@ LaunchSchool Notes
 ## 95
 - [x] [Orientation](95/_095.md)
 
-## 100
+## 100 - Back end Prep
 - [x] [Back end Prep](100/_100.md)
 
-## 200
+## 200 - Front end Prep
 - [x] [Front end Prep](201/_200.md)
 
 # Front-end
 
-## 201 HTML and CSS
+## 201 - HTML and CSS
 - [x] [Lesson 1 Preparations](201/lesson1/_201_lesson1.md)
 - [x] [Lesson 2 Your First Web Page](201/lesson2/_201_lesson2.md)
 - [x] [Lesson 3 Working with Design Files](201/lesson3/_201_lesson3.md)
@@ -32,16 +32,19 @@ LaunchSchool Notes
 - [x] [Lesson 5 More Projects CSS](201/lesson5/_201_lesson5.md)
 - [x] [Lesson 6 CSS Framework](201/lesson6/_201_lesson6.md)
 
-## 209 Assessment HTML and CSS
+## 209 - Assessment HTML and CSS
 - [ ] [Assessment](209/_209.md)
 
-# Back-end
+## 210 - Computational Thinking and JavaScript Programming
 
+## 219 - Assessment: Computational Thinking and JavaScript Programming
+
+
+# Back-end
 
 
 # Advanced
 
 
-
 # Mentoring
-
+TBD
