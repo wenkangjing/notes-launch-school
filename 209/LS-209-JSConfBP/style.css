@@ -1,0 +1,571 @@
+/*
+----------------------------------------
+Tantek Celik's Whitepsace Reset
+     Author:    Tantek Celik, Shane Riley
+    Version:    (CC) 2010 Some Rights Reserved - http://creativecommons.org/licenses/by/2.0
+Description:  Resets default styling of common browsers to a common base
+----------------------------------------
+*/
+
+ul,ol { list-style: none; }
+h1，h2,h3,h4,h5,h6,pre,code { font-size: 1em; }
+ul,ol,li,h2,h3,h4,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input,dl,dt,dd, figure, figcaption {
+  margin: 0;
+  padding: 0; }
+a img,:link img,:visited img, fieldset { border: none; }
+address { font-style: normal; }
+header, section, article, nav, footer, hgroup, details, summary, figure, main { display: block; }
+mark {
+  color: inherit;
+  background: transparent; }
+abbr { border: none; }
+summary::-webkit-details-marker { display: none; }
+
+/*
+-----------------------------------------
+MUST common style
+-----------------------------------------
+*/
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after{
+  box-sizing: inherit;
+}
+textarea, input, button, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+.clearfix::after {
+  content: "";
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+
+/*
+------------------------------------
+common
+------------------------------------
+*/
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+}
+
+h2 {
+  font-size: 30px;
+  line-height: 40px;
+  font-weight: bold;
+  color: #3580C2;
+  text-transform: uppercase;
+  text-align: center;
+}
+h3 {
+  font-size: 28px;
+  line-height: 39px;
+  font-weight: 600;
+  color: #3580C2;
+}
+h4 {
+  font-size: 24px;
+  line-height: 34px;
+  font-weight: 600;
+}
+p, 
+blockquote {
+  font-size: 24px;
+  line-height: 34px;
+  font-weight: 300;
+  margin: 1em 0;
+  color: #20201f;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.pos-relative {
+  position: relative;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+------------------------------------
+header
+------------------------------------
+*/
+body > header {
+  width: 100%;
+  background-image: url("./images/bg-init-blue.jpg"),url("./images/bg1080.jpg");
+  background-color: #3580C2;
+  background-position: center center;
+  background-size: cover;
+  color: #fff;
+}
+
+/* header > nav */
+.navigation {
+  height: 80px;
+  line-height: 80px;
+  vertical-align: middle;
+}
+.navigation .sidenav {
+  display: none;
+}
+.navigation .social {
+  float: right;
+  width: 28px;
+  height: 28px;
+  margin: 26px;
+  background: transparent url("./images/social.png") 0 0 no-repeat;
+  background-size: cover;
+}
+.navigation nav {
+  max-width: 980px;
+  margin: 0 auto;
+  vertical-align: middle;
+}
+.navigation ul {
+  text-align: center;
+  margin-left: 30px;
+  padding-left: 40px;
+}
+.navigation li{
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 16px;
+  padding: 0 15px;
+}
+.navigation li a {
+  color: white;
+  text-decoration: none;
+}
+.navigation .tw {
+  background-position: 0 0;
+}
+.navigation .fb {
+  background-position: 100% 100%;
+}
+
+/* header > content */
+.content {
+  padding-top: 110px;
+  height: 383px;
+}
+.content h2 span {
+  display: inline-block;
+  font-size: 36px;
+  color: #fff;
+  margin: 0 10px;
+  vertical-align: middle;
+}
+.content h2 span.sign {
+  font-size: 60px;
+  font-weight: 300;
+}
+.content h2 span.yellow {
+  color: #F3DF49;
+}
+.content h2 img {
+  vertical-align: middle;
+}
+
+/*
+------------------------------------
+article
+------------------------------------
+*/
+
+/* article header */
+article > header {
+  max-width: 570px;
+  margin: 90px auto;
+  text-align: center;
+}
+article > header strong {
+  color: #000;
+  font-weight: 600;
+}
+article > header p {
+  font-size: 30px;
+  line-height: 42px;
+  font-weight: 100;
+  color: #20201f;
+}
+
+/* article sections common */
+section {
+  max-width: 980px;
+  margin: 90px auto;
+}
+section:after {
+  content:"";
+  display:block;
+  visibility: hidden;
+  clear:both; 
+}
+section header {
+  margin: 77px auto 32px auto;
+  text-align: center;
+}
+
+section header h2, 
+section header .left,
+section header .right {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+section header .left,
+section header .right {
+  width: 84px;
+  height: 84px;
+}
+
+section header .left {
+  border-top: 42px solid transparent;
+  border-right: 42px solid transparent; 
+  border-bottom: 42px solid rgba(0, 123, 255, 0.05);
+  border-left: 42px solid rgba(0, 123, 255, 0.2);
+}
+
+section header .right {
+  border-top: 42px solid rgba(53,128,194, 0.05);
+  border-right: 42px solid rgba(53,128,194, 0.1);
+  border-bottom: 42px solid transparent;
+  border-left: 42px solid transparent;
+}
+
+section .photo {
+  position: relative;
+  display: block;
+  float: left;
+  margin-right: 16px;
+  clear: both;
+}
+
+section .description {
+  margin-left: 135px;
+}
+section .photo img {
+  width: 120px;
+  height: 120px;
+  display: block;
+}
+
+section .photo .top {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  right: 0;
+  top: 0;
+  border-right: 6px solid #fff;
+  border-top: 6px solid #fff;
+  border-bottom: 6px solid transparent;
+  border-left: 6px solid transparent;
+}
+
+section .photo .bottom {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  left: 0;
+  bottom: 0;
+  border-left: 6px solid #fff;
+  border-bottom: 6px solid #fff;
+  border-top: 6px solid transparent;
+  border-right: 6px solid transparent;
+}
+
+section p a {
+  font-weight: 400;
+}
+
+section a {
+  color: #3580c2;
+}
+
+
+
+/* speakers */
+.speaker {
+  width: 50%;
+  min-width: 325px;
+  min-height: 175px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  float: left;
+}    
+
+.speaker h3 {
+  font-size: 22px;
+  line-height: 31px;
+}
+.speaker h3 a.name {
+  text-transform: uppercase;
+}
+.speaker h3 a.at {
+  font-weight: 300;
+  color: #969696;
+}
+.speaker h3 a.at:hover {
+  text-decoration: none;
+} 
+.speaker h4 a {
+  font-size: 21px;
+  line-height: 29px;  
+  color: #DB3127;
+}
+
+/* masters of ceremony */
+#mc .speaker{
+  float: none;
+  margin: 0 auto;
+}
+
+/* workshops */
+.workshop {
+  min-height: 120px;
+  margin-bottom: 20px;
+  /*padding-left: 20px;*/
+}
+.workshop h3 a,
+.workshop h4 a {
+  color: #3580C2;
+}
+.workshop p {
+  margin: 24px 0;
+}
+
+/* sponsors */
+#sponsors ul {
+  text-align: center;
+}
+#sponsors li {
+  margin-bottom: 30px;
+}
+#sponsors img {
+  width: auto;
+  height: auto;
+}
+#sponsors .platinum img {
+  width: 550px;
+}
+#sponsors .gold img {
+  width: 460px;
+}
+#sponsors .silver img {
+  width: 400px;
+}
+#sponsors .supporter img {
+  width: 310px;
+  padding: 10px 15px 0 15px;
+}
+
+#sponsors .platinum,
+#sponsors .gold,
+#sponsors .siver {
+  display: block;
+}
+#sponsors .supporter {
+  display: inline-block;
+}
+
+#sponsors h3 {
+  color: #20201f;
+}
+
+/* news */
+#news time {
+  font-size: 17px;
+  line-height: 24px;
+  font-weight: 300;
+  color: gray;
+}
+#news p {
+  margin-bottom: 60px;
+}
+
+/* venue */
+#venue {
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+#venue .container {
+  max-width: 980px;
+  margin: 60px auto 40px auto;
+} 
+#venue h3 {
+  font-size: 30px;
+  line-height: 40px;
+  font-weight: bold;
+}
+#venue blockquote {
+  margin-bottom: 40px;
+  font-style: italic;
+  margin-left: 0;
+  padding-left: 40px;
+  border-left: 4px solid #3580C2;
+}
+#venue blockquote cite {
+  display: block;
+  font-size: 14px;
+  text-align: right;
+}
+#venue .img {
+  height: 320px;
+  width: 100%;
+  background: transparent url("./images/akvarium-in.jpg") center 40% no-repeat;
+  background-size: cover;
+}
+#venue iframe {
+  height: 320px;
+  width: 100%;
+}
+
+/*
+------------------------------------
+footer
+------------------------------------
+*/
+body > footer {
+
+  text-align: center;
+  margin-bottom: 20px;
+}
+body > footer .down {
+  display: block;
+  margin: 5px auto;
+  width: 20px;
+  height: 20px;
+  border-width: 20px 20px 0 20px;
+  border-color: #3580C2 transparent transparent transparent;
+  border-style: solid;
+  opacity: .05;
+}
+body > footer p {
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 300;
+}
+body > footer a {
+  color: #3580c2;
+  padding: 0 5px;
+  font-weight: 400;
+}
+body > footer a + a {
+  border-left: 1px solid #cccccc;
+}
+
+
+/* 
+------------------------------
+media queries
+------------------------------
+*/
+
+@media (max-width: 1023px) {
+  .navigation li {
+    font-size: 13px;
+  }
+  h3 {
+    font-size: 22px;
+    line-height: 31px;
+    font-weight: 600;
+    color: #3580C2;
+  }
+  h4 {
+    font-size: 19px;
+    line-height: 27px;
+    font-weight: 600;
+  }
+  p, 
+  blockquote {
+    font-size: 19px;
+    line-height: 27px;
+    font-weight: 300;
+    margin: 1em 0;
+    color: #20201f;
+  }
+}
+
+@media (max-width: 767px) {
+  .navigation > nav{
+    display: none;
+  }
+  .navigation > .sidenav {
+    display: block;
+    float: left;
+    font-size: 28px;
+    margin-left: 20px;
+  }
+  .content {
+    position: relative;
+    top: 100px;
+    height: 360px;
+  }
+  .content .sign {
+    display: none;
+  }
+  .content h2 span {
+    display: block;
+  }
+  .content h2 img {
+    position: relative;
+    top: -250px;
+  }
+  article > header {
+    width: auto;
+    margin: 90px auto;
+  }
+  article > header p {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  section > .container,
+  #venue > .container {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  section header .left {
+    float: left;
+  }
+  section header .right {
+    float: right;
+  }
+  section header:after {
+    content: "";
+    display: block;
+    visibility: hidden;
+    clear: both;
+  }
+  .speaker {
+    min-height: 140px;
+    width: auto;
+    padding-left: 10px;
+  }
+  .workshop {
+    padding-left: 5px;
+  }
+
+  #sponsors .platinum img {
+    width:360px;
+  }
+  .sponsor li.gold a {
+    width: 310px;
+  }
+  .sponsor li.silver a {
+    width: 280px;
+  }
+  .sponsor li.supporter a {
+    width: 140px;
+  }  
+}
