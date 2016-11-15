@@ -137,13 +137,13 @@ Sidebar - Left
   padding: 0 32px 0 138px;
 }
 
-#sidebar li.active {
+#sidebar .active-group {
   opacity: 1;
   color: #cccccc;
   background: #383f5f;
 }
 
-#sidebar li.completed {
+#sidebar .completed-group {
   text-decoration: line-through;
 }
 
@@ -189,11 +189,11 @@ Content - Right
   margin-left: 19px;
 }
 
-#content p.add {
+#content .add {
   margin-left: 12px;
 }
 
-#content p.add a {
+#content .add a {
   height: 50px;
   line-height: 50px;
   color: #148fd5;
@@ -221,7 +221,7 @@ Content - Right
   width: 38px;
 }
 
-#content table label.my-checkbox {
+#content table .my-checkbox {
   background: transparent url("./images/unchecked.png") 0 0 no-repeat;
   width: 14px;
   height: 14px;
@@ -230,17 +230,17 @@ Content - Right
   margin: auto 12px;
 }
 
-#content table tr.completed label.my-checkbox{
+#content table .completed-task .my-checkbox{
   background: transparent url("./images/checked.png") 0 0 no-repeat;
 }
 
-#content table tr.completed td.title > label {
+#content table .completed-task .task-title > label {
   color: #b3b3b3;
   text-decoration: line-through;
 }
 
-#content table td.title > label:hover,
-#content table tr.completed td.title > label:hover {
+#content table .task-title > label:hover,
+#content table .completed-task .task-title > label:hover {
   color: #148fd5;
   cursor: pointer;
 }
@@ -331,19 +331,19 @@ form select {
   color: #070707; 
 } 
 
-form  div.three {
+form  .three-columns {
   display: inline-block;
   width: 396px;
 }
 
-form div.three input[type="text"],
-form div.three input[type="number"],
-form div.three select {
+form .three-columns input[type="text"],
+form .three-columns input[type="number"],
+form .three-columns select {
   width: 115px;
   font-size: 16px;
 }
 
-form div.three span {
+form .three-columns span {
   display: inline-block;
   font-size: 16px;
   width: 24px;
@@ -357,7 +357,7 @@ form fieldset > div {
   height: 36px;
 }
 
-form fieldset > div.description {
+form fieldset > .task-description {
   height: 144px;
 }
 

@@ -60,6 +60,22 @@
 - favor classes
 - image Sprites
 
+[How Efficiently Rendering CSS](https://css-tricks.com/efficiently-rendering-css/)
+[Writing efficient CSS](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS)
+
+*fancy selectors are more browser resource intensive to use.*
+*I think the lesson here is not to sacrifice semantics or maintainability for efficient CSS.*
+
+1. Browsers parse CSS Selectors from **right** to **left**
+
+2. ID's are the most efficient, Universal are the least
+
+3. Don't tag-qualify (e.g. `ul#top-nav` or `ul.navigation`)
+
+4. Descendant selectors are the worst. `html body ul li a {  }` is a disaster
+
+5. If fails a matching from right to left, stop trying
+
 
 ## Tips
 
