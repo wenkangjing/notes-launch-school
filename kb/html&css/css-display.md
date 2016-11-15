@@ -4,19 +4,13 @@ https://css-tricks.com/almanac/properties/d/display/
 
 ### inline
 
-> Please keep in mind that inline-level elements will not accept the width and height properties or any values tied to them. 
+1. not accept `width`, `height`
+  - the content will dictate the dimensions
 
-`span, em, storng`
+2. accept `margin`, `padding` **horizontally only** 
+  - the right and left padding affect its proximity to content that comes before or after it, the top and bottom do not
 
-- accept `margin`, `padding`, but only work horizontally not vertically
-- not accept `width`, `height`
-
-
-1. width and height are not accpeted
-2. margin top and bottom are ignored
-3. the content will dictate the dimensions 
-4. Borders are still applied, but content may be overlapping
-5. the right and left padding affect its proximity to content that comes before or after it, the top and bottom do not
+3. accept `border` but may be overlapping
 
 - span
 - b, i, u
@@ -31,14 +25,14 @@ https://css-tricks.com/almanac/properties/d/display/
 
 ### block 
 
-`div section ul h1...h6`
-
 1. take the entire row
-2. margin, border, padding: top, right, bottom, left
-3. if no width, expand naturally to fill its parent 
-4. if no heigth, expand to fit its content 
+2. `margin, border, padding` **4 directions**
+3. if no `width`, expand naturally to fill its parent 
+4. if no `heigth`, expand to fit its content 
 
-- h1 through h6
+> Block level elements do not sit inline but break past them. By default (without setting a width) they take up as much horizontal space as they can.
+
+- h1 ~ h6
 - p
 - blockquote
 - ul, ol, dl
@@ -55,13 +49,13 @@ https://css-tricks.com/almanac/properties/d/display/
 
 ### inline-block
 - accept `margin`, `padding`
-- accept `width`, `height`
-- has `vertical-align`
+- accept `width`, `height` **4 directions**
+- has `vertical-align`, `baseline` by default
 
 used for horizontal nav bar and layout blocks
 
-1. width and height are set 
-2. padding and margin are added on all sides
+1. accept `width` `height` 
+2. accept `padding` `margin`
 3. it does not automatically take up its own row for its dimensions
 4. they can be placed side by side along with other inline-block or inline elements.
 5. `vertical-align:middle`
@@ -78,10 +72,14 @@ Align inline-block elements
 
 [Vertical Align](https://css-tricks.com/what-is-vertical-align/)
 
+> as a: inline + block elements properties (width and height). 
+>
+> as if: float - the clear property.
+
 ### none
 
-totally remove the element from the page, used for **clearfix**
-
+- totally remove the element from the page, used for **clearfix**
+- Note that while the element is still in the DOM, i.e. can bef found in dev tool
 
 ### flex
 
@@ -91,21 +89,27 @@ totally remove the element from the page, used for **clearfix**
 ## Q&A
 
 #### 1. precentage width doesn't fit in one row (50%/50%, 25%/75%)
-- padding?
-- margin?
+- padding? margin?
+- box-sizing
 - font-size on contain element?, e.g. `ul` `dl`
 
 #### 2. center a block element horizontally
-margin:0 auto
+- add a container `div`
+- set `margin: 0 auto`
 
 #### 3. box-sizing
 - whenever a padding applied, change to border-size, 
 - or set every element
-
-`* { box-sizing: border-box; }`
-
+- **box-sizing reset**
 
 #### 4. h ow to remove spaces between inline-block elements
+[Fighting the Space Between Inline Block Elements](https://css-tricks.com/fighting-the-space-between-inline-block-elements/)
+
+- comment hack
+- set `font-size: 0` **inpect descendents**
+- Minimized HTML
+- float them instead
+
 ```html
 <ul>
 	<li>Item content</li><!--

@@ -3,13 +3,14 @@ Position
 
 ## relative 
 
-to its normal flow
+- relative to its normal flow
+- space will be preserved
 
 ## absolute
 
 https://css-tricks.com/absolute-positioning-inside-relative-positioning/
 
->closest positioned ancestor if any, or otherwise relative to the initial containing block
+>closest **positioned ancestor** if any, or otherwise relative to the initial containing block
 
 >An absolutely positioned element is positioned within its nearest containing element that has a position: relative (strictly speaking, any position value other than static would work, but most often position: relative is used). If none of its containing elements is relatively positioned, the absolutely positioned element is then positioned relative to the <body> element.
 
@@ -25,6 +26,8 @@ To make the child element positioned absolutely from its parent element we need 
 }
 .child {
   position:absolute;
+  top: 10px;
+  left: 10px;
 }
 ```
 
@@ -41,7 +44,7 @@ always there, e.g. footer always shows on the bottom, notifications
 
 the distance between the left margin edge of the element and the left edge of its 
 
-- containing block or html if not found (absolute)
+- positioned parent or body if not found (absolute)
 - normal position or itself (relative)
 - relative to the viewport (fixed)
 
@@ -66,4 +69,5 @@ image > element
 ## Q&A
 
 #### position fixed box is half transparent?
+
 be careful with z-index [CSS absolute and fixed positioning](https://www.w3.org/wiki/CSS_absolute_and_fixed_positioning#The_third_dimension.E2.80.94z-index)
