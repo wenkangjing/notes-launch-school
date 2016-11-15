@@ -49,8 +49,7 @@ Prefered common style
 ----------------------------------------
 */
 
-/* big sections  */
-body{
+body {
   font: normal 16px Helvetica, Arial, sans-serif;
 }
 
@@ -58,35 +57,34 @@ body{
 /* list: no bullet, no margin */
 ul {
   list-style: none;
-  margin:0;
+  margin: 0;
 }
 
 /* list item with custom bullet */
 li {
   background: transparent url("./images/blt_ul.png") 0 50% no-repeat;
-  margin-left:20px;
+  margin-left: 20px;
 }
 
 /* normal anchor: no underline, not in blue */
 a {
   text-decoration: none;
-  color:#000000;
+  color: #000000;
 }
 
 /* anchor as button.e.g. pager */
 a.button {
   display:inline-block;
   width: 85px;
-  height:30px;
+  height: 30px;
   border-radius: 20px;
-  color:#ffffff;
-  background:lightgray;
+  color: #ffffff;
+  background: lightgray;
   padding: 5px 25px;
-  box-sizing:border-box;
 }
 
 a.button:hover {
- background:#50c3af;
+ background: #50c3af;
 }
 
 /* form button - flat style */
@@ -94,20 +92,21 @@ form .button {
   text-shadow:none !important;
   border:none !important;
   box-shadow:none !important;  
-  display:block;
-  color:#ffffff;
-  background:#50c3af;
+  display: block;
+  color: #ffffff;
+  background: #50c3af;
   box-shadow: none;
 }
 
 /* vertical center the image and its following description */
 header img {
   border-radius: 20px;
-  vertical-align:middle;
+  vertical-align: middle;
 }
+
 header h3 {
-  vertical-align:middle;
-  display:inline-block;
+  vertical-align: middle;
+  display: inline-block;
 }
 
 /* ...tablet... */ 
