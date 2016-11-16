@@ -126,6 +126,52 @@ Sidebar - Left
   background: transparent url("./images/all-todos.png") 0 center no-repeat;
 }
 
+/*assessment*/
+#sidebar .all dt,
+#sidebar .all dd {
+  display: inline-block;
+  opacity: 0.5;
+  height: 40px;
+  line-height: 40px; 
+}
+
+#sidebar .all dt {
+  width: 70%;
+  padding-left: 138px; 
+}
+
+#sidebar .all dd {
+  width: 30%;
+  text-align: right;
+  padding-right: 32px;
+}
+
+#sidebar dt.active-group,
+#sidebar dd.active-group  {
+  opacity: 1;
+  color: #cccccc;
+  background: #383f5f;
+}
+
+#sidebar dl dt:last-of-type {
+  width: 235px;
+  margin-left: -168px;
+}
+#sidebar dl dd:last-of-type {
+  width: 100px;
+  margin-left: 67px;
+}
+#sidebar dl dt:last-of-type,
+#sidebar dl dd:last-of-type {
+  position: fixed;
+  background: #383f5f;
+  top: 0;
+  left: 50%;
+
+}
+
+/*assessment*/
+
 #sidebar .done h1 {
   background: transparent url("./images/completed.png") 0 center no-repeat;
 }

@@ -52,10 +52,10 @@ section {
 ### 3. Fixed width 3 column layout
 
 - Start with the semantically marked up code, `leftnav, rightnav, content`
-- Add width and `margin:0 auto` to the container
-- Apply `float:left, width`, margin and padding to the `leftnav`
-- Apply `float-right, width`, margin and padding to the `rightnav`
-- Setting `margin-left, margin-right` to the `content` div
+- Add `width` and `margin:0 auto` to the container
+- Apply `float:left, width` to the `leftnav`
+- Apply `float-right, width` to the `rightnav`
+- Setting `margin-left(width of leftnav), margin-right(width of rightnav)` to the `content` div
 
 
 ```css
@@ -134,7 +134,7 @@ simply clear the direct followed block element
 
 ### 2. Set overflow on parent
 
-- set parent element overflow:hidden
+- set parent element `overflow: hidden`
 - the parent element will expand to contain the floats
 
 > Be careful not to hide content or trigger unwanted scrollbars.
@@ -165,7 +165,7 @@ Set element `float:left` and `clear:left`
 
 
 #### what does clear mean?
-- clear:left on A means no float elements are allowed on that side
-
+- `clear:left` means no float elements are allowed on that side
 
 #### vertical-align doesn't work on float elements
+`vertical-align` inline-level and table-cell elements. It also applies to ::first-letter and ::first-line.

@@ -1,4 +1,4 @@
-[css specificity caculator](https://specificity.keegan.st/)
+[css specificity calculator](https://specificity.keegan.st/)
 
 ## Selectors
 
@@ -9,15 +9,17 @@
 
 >  embedded > id > class > type 
 
-## Conbinator
-
-_NOTE: not footer li + footer li_
+## Combinator
 
 ```css
+/* Wrong, second foot is not needed */
+footer li + footer li
+/* Correct */
 footer li + li {
   padding-left:150px;
 }
 ```
+
 - `A > B` direct child: 
 
 - `A B`   descendant 
@@ -87,7 +89,12 @@ footer li + li {
 `:not(), :empty`
 
 ## Pseudo element selector
+
 > They may only appear at the end of a selector chain
+>
+> You can use only one pseudo-element in a selector. It must appear after the simple selectors in the statement.
+> 
+> they allow you to style certain parts of a document
 
 `::after`
 `::before`
@@ -116,7 +123,7 @@ e.g.
 
 ## Q&A 
 
-#### enlarge first letter in p, if p is the first child of its parent.
+#### enlarge first letter in `p`, if `p` is the first child of its parent.
 
 ```css
 p:first-child:first-letter { 
@@ -124,7 +131,7 @@ p:first-child:first-letter {
 }
 ```
 
-#### how to use use :after and :before
+#### how to use use `:after` and `:before`
 
 ```css
 a:after {
@@ -144,7 +151,7 @@ a:after {
 }
 ```
 
-#### how to use nth-child, nth-of-type
+#### how to use `nth-child`, `nth-of-type`
 
 https://www.sitepoint.com/web-foundations/understanding-nth-child-pseudo-class-expressions/
 
@@ -160,11 +167,11 @@ https://www.sitepoint.com/web-foundations/understanding-nth-child-pseudo-class-e
 
 https://css-tricks.com/the-difference-between-nth-child-and-nth-of-type/
 
-Our :nth-child selector, in "Plain English," means select an element if:
+Our :`nth-child` selector, in "Plain English," means select an element if:
 - It is a paragraph element
 - It is the **second child** of a parent
 
-Our :nth-of-type selector, in "Plain English," means:
+Our :`nth-of-type` selector, in "Plain English," means:
 - Select the **second paragraph child** of a parent
 - what's a good way to say it... less conditional.
 
@@ -175,7 +182,6 @@ Our :nth-of-type selector, in "Plain English," means:
    <p>Piggy</p>    <!-- p:nth-of-type(2) -->
 </section>
 ```
-
 
 #### there is no parent selector for performance reasons
 

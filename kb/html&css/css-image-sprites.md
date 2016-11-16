@@ -14,7 +14,7 @@ https://css-tricks.com/css-sprites/
 - Y: vertical, top bottom
 
 - 0 0： top left 
-- 100% 100% :right bottom cornor
+- 100% 100% :right bottom corner
 
 - 50% 0: center top
 - 100% 0: right top

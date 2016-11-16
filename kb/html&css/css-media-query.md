@@ -5,8 +5,7 @@
  <meta name="viewport" content="width=device-width,initial-scale=1">
 ```
 
-
-desktop by defaulot, use max-width from biggest size to smallest size
+desktop by default, use max-width from biggest size to smallest size
 
 ```css
 /* desltop by default */
