@@ -1,4 +1,4 @@
-## HTML coding proactices
+## HTML coding practices
 
 1. css id is unique
 - id is unique
@@ -26,10 +26,10 @@
 8. continually refactor code
 
 
-## CSS coding practises
+## CSS coding practices
 
 1. Comments
-- commments on top of each style /* Primary header */
+- comments on top of each style `/* Primary header */`
 
 2. multiple lines
 - one property per line
@@ -56,7 +56,7 @@
 #### performance
 
 - keep selector short
-- seperate content from container
+- separate content from container
 - favor classes
 - image Sprites
 
