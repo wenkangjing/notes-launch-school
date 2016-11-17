@@ -36,14 +36,14 @@ LaunchSchool Notes
 - [x] [Assessment](209/_209.md) 97/100
 
 ## 210 - Computational Thinking and JavaScript Programming
-- [x] [Lesson 1 JavaScript Basics](210/_210_lesson1.md)
-- [ ] [Lesson 2 Functions and Variable Scope](210/_210_lesson2.md)
-- [ ] [Lesson 3 Exercises: Logic and Flow Control](210/_210_lesson3.md)
-- [ ] [Lesson 4 Arrays](210/_210_lesson4.md)
-- [ ] [Lesson 5 Objects](210/_210_lesson5.md)
-- [ ] [Lesson 6 Writing Better Code](210/_210_lesson6.md)
-- [ ] [Lesson 7 List Processing and Functional Abstractions](210/_210_lesson7.md)
-- [ ] [Lesson 8 String and Text Processing](210/_210_lesson8.md)
+- [x] [Lesson 1 JavaScript Basics](210/lesson1/_210_lesson1.md)
+- [ ] [Lesson 2 Functions and Variable Scope](210/lesson2/_210_lesson2.md)
+- [ ] [Lesson 3 Exercises: Logic and Flow Control](210/lesson3/_210_lesson3.md)
+- [ ] [Lesson 4 Arrays](210/lesson4/_210_lesson4.md)
+- [ ] [Lesson 5 Objects](210/lesson5/_210_lesson5.md)
+- [ ] [Lesson 6 Writing Better Code](210/lesson6/_210_lesson6.md)
+- [ ] [Lesson 7 List Processing and Functional Abstractions](210/lesson7/_210_lesson7.md)
+- [ ] [Lesson 8 String and Text Processing](210/lesson8/_210_lesson8.md)
 
 ## 219 - Assessment: Computational Thinking and JavaScript Programming
 
