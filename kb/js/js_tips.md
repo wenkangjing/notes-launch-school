@@ -13,6 +13,8 @@
 
 - `if, for, while` always use space between following parenthesis
 
-- one `var` per variable
+- one var per variable/pre line
 
- 
+- avoid implicit
+  - Always use explicit type coercions `parseInt, toString, Number(), String()`
+  - Always use strict equality operators (`=== and !==`)
