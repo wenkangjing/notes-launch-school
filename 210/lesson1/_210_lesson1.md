@@ -1,3 +1,7 @@
+JavaScript Basics
+===============================
+
+
 # 1	About This Course	completed
 
 - Think procedurally and the bottom up, imperative solution expressions
