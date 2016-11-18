@@ -178,8 +178,20 @@ Reference: YMPH-DWEX-AQRS
 2016-11-09 ~ 2016-11-12
 - 209 - Prep - JSConfBP
 
-2016-11-11
+2016-11-11 
 - another read thru kn articles
+
+2016-11-13
+- 209 - assessment - take home
+
+2016-11-16
+- 209 assessment 1 on 1
+
+2016-11-17
+- 210 - Lesson 1 
+
+2016-11-18
+- 210 - Lesson 2
 
 
 TODO:
