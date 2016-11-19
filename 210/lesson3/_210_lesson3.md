@@ -11,29 +11,29 @@
 
 - proper name ease the debuger
 
+## 
 
-
-## Source break
+Source break
 - embedded `debuger;` 
 - toggle to break
 
-## DOM break: 
+DOM break: 
 - right click on tag
 - select break on ...
 
 
-## XHR break (XMLHttpRequest)
+XHR break (XMLHttpRequest)
 - XMLHttpRequest or XHR is a javascript API used for communication between the client and the server
 - part of AJAX
 
-## Event break
+Event break
 
-## Async Call Stack
+Async Call Stack
 the async call stack feature provides increased visibility into the full call stack of asynchronous functions.
 
-## Blackbox
+Blackbox
 
-## Live editing
+Live editing
 
 - CTRL + S to resume the debuger
 - changes patch to Browser only not original file 
