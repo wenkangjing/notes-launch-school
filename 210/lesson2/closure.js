@@ -49,8 +49,6 @@ var counter = makeCounter();
 
 console.log(counter.value());
 
-state;
-
 counter.increment();
 counter.increment();
 console.log(counter.value());
