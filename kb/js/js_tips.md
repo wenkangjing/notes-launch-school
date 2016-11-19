@@ -1,19 +1,35 @@
-# coding convention
+[Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
+[JavaScript Coding Style in LS](https://launchschool.com/lessons/56df7843/assignments/6350e31c)
+
+# Formatting and Aesthetic
 
 - var, function, property - camel case `myNumber` `myFunction`
 
-- curly braces
+- use one space before the leading curly braces
 
-```js
-if (true) {
-  bala
-}
-```
 - use semicolon at the end of each statement
 
-- `if, for, while` always use space between following parenthesis
+- one space after `if, for, while`
 
-- one var per variable/pre line
+- Set off operators with spaces.
+
+- No whitespace at the end of line or on blank lines.
+
+- one var/let/const per variable
+
+- Ternaries should not be nested and should generally be single line expressions.
+
+- logical expression over ternary statement
+
+- Leave a blank line after blocks and before the next statement.
+
+- Use single quotes '' for strings.
+
+- `var hasAge = !!age;`
+
+- Never declare a function in a non-function block (if, while, etc).
+
+# Best Practice
 
 - avoid implicit
   - Always use explicit type coercions `parseInt, toString, Number(), String()`
