@@ -45,4 +45,17 @@
   - var to declare variable
   - function to declare function
 
+- convert to boolean
+```js
+!!(null)       // false
+!!(NaN)        // false
+!!(0)          // false
+!!('')         // false
+!!(false)      // false
+!!(undefined)  // false
 
+!!('abc')      // true
+!!(123)        // true
+!!('true')     // true
+!!('false')    // this is also true! All strings are truthy in JavaScript
+```
