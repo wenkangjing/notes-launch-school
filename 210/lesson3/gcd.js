@@ -11,8 +11,8 @@ gcd(9, 2);    // 1
 
 */
 
-
-function gcd(value1, value2) {
+// loop i in 1-min, store the reminder and return the largest one  
+function gcd_1(value1, value2) {
   var greatest = 0;
   var min = Math.min(value1, value2);
   for (var i = 1; i <= min; i++) {
@@ -23,6 +23,41 @@ function gcd(value1, value2) {
   return greatest;
 }
 
+
+// Euclid's algo
+function gcd_2(value1, value2) {
+  while(value1 !== 0 && value2 !== 0) {
+    if (value1 > value2) {
+      value1 = value1 % value2; 
+    } else {
+      value2 = value2 % value1;
+    }
+  } 
+  return value1 || value2; 
+}
+
+/*
+Pseudo code in wikipedia: if a < b, a b exchange 
+function gcd(a, b)
+    while b ≠ 0
+       t := b; 
+       b := a mod b; 
+       a := t; 
+    return a;
+
+*/
+function gcd(value1, value2) {
+  while (value2 !== 0) {
+    var temp = value2;
+    value2 = value1 % value2
+    value1 = temp;
+  }
+  return value1; 
+}
+
 console.log(gcd(12, 4));
 console.log(gcd(15, 10));
 console.log(gcd(9, 2));
+
+console.log(gcd(12, gcd(4, 8))); 
+console.log(gcd(gcd(12, 4), 8));
