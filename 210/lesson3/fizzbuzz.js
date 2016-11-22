@@ -65,3 +65,12 @@ function fizzbuzz() {
 }
 
 fizzbuzz();
+
+
+
+/*
+In this exercise, you must loop through the integers 1 to 100, inclusive. For each number, check whether it is a multiple of 3, 5, or both, then log the appropriate number or string. Pay attention to the order of your checks, and be mindful that your loop includes both 1 and 100.
+
+In an earlier exercise, you logged numbers that are a multiple of 3, 5, or both. You can tweak this solution to meet the requirements of this exercise.
+
+*/

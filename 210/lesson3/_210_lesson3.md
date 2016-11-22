@@ -113,9 +113,45 @@ Can you think of a situation where a boolean isXor function is useful?
 辗转想除法
 
 # 12	Goldbach Numbers
+Goldbach's Conjecture (歌德巴赫猜想): Every even integer greater than 2 can be expressed as the sum of two primes.
+
+Write a function named checkGoldbach() that uses Goldbach's Conjecture to log every pair of primes that sum to the number supplied as an argument. The conjecture states that "you can express every even integer greater than 2 as the sum of two primes". The function takes as its only parameter, an integer n, and logs all combinations of two prime numbers whose sum is n. Log the prime pairs with the smaller number first. If n is odd or less than 4, your function should log null.
+
+
 # 13	Pattern Generation
+
+One way to think through this type of problem is to write a formal description of the required output. For example, we can describe it this way:
+
+We must output n lines of n characters.
+
+If the line number is i, then this line should have the digits from 1 to i followed by enough * characters to fill out the line to a total length of n characters. This description should provide an idea of what you need to do in your program.
+
 # 14	Index of Substring
+
+```js
+indexOf('Some strings', 's');      // 5
+indexOf('Blue Whale', 'Whale');    // 5
+indexOf('Blue Whale', 'Blute');    // -1
+indexOf('Blue Whale', 'leB');      // -1
+```
+
+Don't dive too fast into coding; try to solve this logically step-by-step. For instance, here is a straightforward algorithm for indexOf:
+
+Assume that the first string's length is m and the second string's length is n.
+Iterate from the beginning of the first string and work to the end.
+During each iteration:
+Compare the n characters starting at the current position in the first string with the n characters of the second string.
+If all n characters match, return the index of the current character in the first string
+Otherwise, continue iteration.
+The last character we need to check in the first string is the character at index m - n.
+Return -1 if you cannot find the second string in the first string.
+For the lastIndexOf function, the algorithm is similar. However, for this function we start with the m - nth character in the first string and work backward to index 0.
+
+Thinking about the algorithm before you write code helps you solve the problem logically. You don't have to worry about the programming aspect. Once you have the algorithm, you can then use it as a "blueprint" and translate it to code.
+
 # 15	Trimming Spaces
+
+
 # 16	Splitting a String
 # 17	Repeating Strings
 # 18	String StartsWith

@@ -52,3 +52,26 @@ function checkGoldbach(num) {
     }
   } 
 }
+/*
+To solve this problem, you need to get all possible pairs of numbers that add up to n. For each pair of candidates, check whether both numbers are prime. Be mindful of duplicates. For example: (47, 53) and (53, 47) are the same pair of numbers; check only one of the pairs, and log only one.
+
+One way uses a nested loop that generates all number pairs from 2 to n:
+
+for (var i = 2; i < n; i++) {
+  for (var j = 2; j < n; j++) {
+    if (i + j === n) {
+      // do something here with i and j
+    }
+  }
+}
+Check each pair to see if they add up to n. This is slow for big numbers, and duplicates each pair of numbers; it does, however, do the job, and is easy to write.
+
+Alternatively, we can use the fact that the numbers must add to n, and use just one loop; the other number in each pair will always be n - i:
+
+for (var i = 2; i < n; i++) {
+  var j = n - i;
+  // do something with i and j
+}
+Going further, we can avoid duplicates: just terminate the loop when i > j or when i >= n / 2:
+
+*/

@@ -95,3 +95,14 @@ function generatePattern(n) {
 
 
 generatePattern(20);
+
+/*
+
+One way to think through this type of problem is to write a formal description of the required output. For example, we can describe it this way:
+
+We must output n lines of n characters.
+If the line number is i, then this line should have the digits from 1 to i followed by enough * characters to fill out the line to a total length of n characters. This description should provide an idea of what you need to do in your program.
+
+You'll need a loop from 1 to n to build the n rows; for each row, start with an empty string and gradually build the pattern string via concatenation.
+
+*/

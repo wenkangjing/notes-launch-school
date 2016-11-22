@@ -55,3 +55,15 @@ if (average >= 90) {
 }
 
 console.log(message);
+
+/*
+To simplify things, treat the program as three separate sub-problems:
+
+Get the scores from the user.
+Compute the average score.
+Display the grade for the average score.
+The first step needs to convert the user inputs, which are strings, to actual numbers. The final step needs to log the proper output string to the console.
+
+Our solution limits us to exactly three input scores. Modify it to accept any number of scores. To simplify matters, move the computation of the average into a function.
+
+*/

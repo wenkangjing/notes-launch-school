@@ -61,3 +61,16 @@ console.log(gcd(9, 2));
 
 console.log(gcd(12, gcd(4, 8))); 
 console.log(gcd(gcd(12, 4), 8));
+
+
+/*
+The examples all put the larger number first. Do you think the program will still work if you reverse the order and place the smaller number first?
+
+Our solution works with only two numbers. Can you expand it to accept an array of two or more numbers instead? Hint: the GCD is associative. To compute the GCD of 12, 4, and 8, for instance, you can compute:
+
+gcd(12, gcd(4, 8)); // 4
+You can also compute it with:
+
+gcd(gcd(12, 4), 8)); // 4
+
+*/
