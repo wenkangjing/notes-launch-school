@@ -29,6 +29,8 @@
 
 - Never declare a function in a non-function block (if, while, etc).
 
+- **JavaScript strings are immutable**, so don't try to mutate the original string. Instead, build a new string via concatenation.
+
 # Best Practice
 
 - avoid implicit

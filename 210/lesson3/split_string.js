@@ -49,7 +49,7 @@ splitString(';hello;', ';');
 
 //a string to be split
 //a delimiter string, not a char, should not be included in split strings
-// return an array after split
+// return an array after split // it is wrong, you are asked to print to console, not return array
 // return unchanged string if delimiter not found
 // 
 //
@@ -62,7 +62,11 @@ function splitString_1(str, delimiter) {
     return;
   }
     
-  var result = [];
+  if (delimiter.length === 0) {
+    console.log(str);
+    return;
+  }  
+  
   var i = 0; // main loop to iterating the given string
   var subString = '';
   var stop = 0;
@@ -76,15 +80,11 @@ function splitString_1(str, delimiter) {
     for(var j = i; j < stop; j++) {
       substring += str[j];
     } 
-    result.push(substring);
+    console.log(substring);
 
     i = j + delimiter.length; // i should continue after j but skip delimiter
   }
-
-  if (result.length === 0)
-    result.push(str);
-    
-  return result;
+  rp
 }
 
 function splitString(string, delimiter) {

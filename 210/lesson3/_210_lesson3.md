@@ -169,11 +169,30 @@ Keep in mind that string primitives in JavaScript are immutable values, so your 
 
 **if (typeof delimiter === 'undefined')**
 
-read description carefullyk, you are asked to print to console, not return an array
+One reason to use typeof is that it does not throw an error if the variable has not been declared.
+
+you are asked to print to console, not return an array
 
 # 17	Repeating Strings
+
+use `isNaN`, do not compare `NaN === NaN` caused it always return false
+
+```js
+isNaN(NaN);         // true
+isNaN(undefined);   // true
+```
+
 # 18	String StartsWith
+
+`'abc'[3];      // undefined`
+
+edge cases: searchString is empty or longer 
+
 # 19	Converting Strings to Lower Case
+
+Note that **JavaScript strings are immutable**, so don't try to mutate the original string. Instead, build a new string via concatenation.
+
+
 # 20 	Substring (1)
 # 21	Substring (2)
 # 22	Code Review: Rot13 Cipher
