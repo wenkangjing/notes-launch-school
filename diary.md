@@ -193,28 +193,23 @@ Reference: YMPH-DWEX-AQRS
 2016-11-18
 - 210 - Lesson 2
 
+2016-11-19
+- 210 - Lesson 3 (exercise easy algo)
 
 TODO:
-  - [ ] semantic meaning of HTML elements 
-  - [ ] review table http://learn.shayhowe.com/html-css/organizing-data-with-tables/
   - [ ] [css inheritance and cascade](https://www.w3.org/wiki/Inheritance_and_cascade)
   - [ ] [Web Standards Curriculum](https://www.w3.org/wiki/Web_Standards_Curriculum)
-  - [ ] review html and css, write to wiki
-  - [ ] https://css-tricks.com/all-about-floats/)
-  - [ ] safe web font: http://web.mit.edu/jmorzins/www/fonts.html
   - [ ] Read thru w3c.org 
 
   - [ ] SQL book
   - [ ] Agile book
   - [ ] Introducing HTML5 (2nd Edition) (Voices That Matter) 2nd Edition
 
-Question:
-  - [?] users groups, owner
-
 Total Hours
   - Preparatory Work: 26.5 hr
-  - 201
-  
+  - 201: 83 hr
+  - 209: 67 hr
+  -210
 
 NOTE:
 create directory per Lesson

@@ -150,9 +150,27 @@ For the lastIndexOf function, the algorithm is similar. However, for this functi
 Thinking about the algorithm before you write code helps you solve the problem logically. You don't have to worry about the programming aspect. Once you have the algorithm, you can then use it as a "blueprint" and translate it to code.
 
 # 15	Trimming Spaces
+It's possible to craft an algorithm that eliminates the spaces in one pass. However, it's simpler to divide the solution into two steps: trim spaces on the left, and then trim spaces on the right. You can create one function for each operation, and call those two functions in your main function. This approach avoids special handling for interior spaces; that would require very careful tracking.
 
+Let's examine the logic for trimming spaces on the left:
+
+Declare a variable that indicates when you're in "copy mode"; initialize it to false.
+Loop through each character of the string starting from the left.
+With each iteration:
+If the character is a space and copy mode is false, perform the next iteration.
+If the character is not a space, set the copy mode to true.
+Concatenate the character to the new string.
+Perform the next iteration.
+The same logic applies to trimming spaces on the right. This time, though, iterate through the string backwards, beginning with the last character. When in copy mode, copy characters to the beginning of the new string.
+
+Keep in mind that string primitives in JavaScript are immutable values, so your solution must first create a new, empty string, then gradually build on that string with each copy operation. In the end, return the new string. Don't try to modify or mutate the original string.
 
 # 16	Splitting a String
+
+**if (typeof delimiter === 'undefined')**
+
+read description carefullyk, you are asked to print to console, not return an array
+
 # 17	Repeating Strings
 # 18	String StartsWith
 # 19	Converting Strings to Lower Case
