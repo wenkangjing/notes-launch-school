@@ -57,7 +57,7 @@ splitString(';hello;', ';');
 // loop str, concat a new substring from i to index of delimiter
 // i skip delimiter length
 function splitString_1(str, delimiter) {
-  if (typeof delimiter === undefined) {
+  if (typeof delimiter === 'undefined') {
     console.log('ERROR: No delimiter');
     return;
   }

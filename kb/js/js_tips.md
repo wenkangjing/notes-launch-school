@@ -61,3 +61,13 @@
 !!('true')     // true
 !!('false')    // this is also true! All strings are truthy in JavaScript
 ```
+
+- invalid 
+```js
+
+if (typeof a === 'undefined') // better, avoid ReferenceError declarated
+
+if (a === undefined)  
+
+``` 
+

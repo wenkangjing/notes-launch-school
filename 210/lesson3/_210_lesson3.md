@@ -169,6 +169,12 @@ Keep in mind that string primitives in JavaScript are immutable values, so your 
 
 **if (typeof delimiter === 'undefined')**
 
+vs.
+
+**if (delimiter === undefined)**
+
+
+
 One reason to use typeof is that it does not throw an error if the variable has not been declared.
 
 you are asked to print to console, not return an array
@@ -195,5 +201,12 @@ Note that **JavaScript strings are immutable**, so don't try to mutate the origi
 
 # 20 	Substring (1)
 # 21	Substring (2)
+
+be careful with the edge case, 0, negetive, out of boundary, swap
+check if implementatin matches all requirements one by one
+
 # 22	Code Review: Rot13 Cipher
+
 # 23	Reference Solution: Rot13 Cipher
+
+
