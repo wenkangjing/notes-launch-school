@@ -30,16 +30,11 @@ This happens since there are 26 characters in the modern English alphabet: 2 set
 // lengh of index m to n is n - m + 1
 //
 
-function rot13Asc_1(asc, ascStart) {
+function rot13Asc(asc, ascStart) {
   var newAsc = asc + 13;
   if (newAsc > ascStart + 26 - 1) {
     newAsc = newAsc - 26;
   }
-  return newAsc;
-}
-
-function rot13Asc(asc, ascStart) {
-  var newAsc = (asc + 13) % 26;
   return newAsc;
 }
 
