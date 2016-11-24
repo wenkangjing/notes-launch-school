@@ -89,13 +89,22 @@ function toString_1(array) {
   return string;
 }
 
-function arrayToString(arr) {
+function arrayToString_1(arr) {
   var str = '';
   for (var i = 0; i < arr.length; i++) {
     if (arr[i] === undefined) {
       continue;
     }
     str += arr[i].toString();
+  }
+
+  return str;
+}
+
+function arrayToString_1(arr) {
+  var str = '';
+  for (var i = 0; i < arr.length; i++) {
+    str += String(arr[i]);
   }
 
   return str;
