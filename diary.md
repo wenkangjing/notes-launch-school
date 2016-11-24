@@ -193,8 +193,12 @@ Reference: YMPH-DWEX-AQRS
 2016-11-18
 - 210 - Lesson 2
 
-2016-11-19
+2016-11-19 - 2016-11-24
 - 210 - Lesson 3 (exercise easy algo)
+
+2016-11-24 
+- 210 - Lesson 4 - Array
+
 
 TODO:
   - [ ] [css inheritance and cascade](https://www.w3.org/wiki/Inheritance_and_cascade)

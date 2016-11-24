@@ -207,6 +207,13 @@ check if implementatin matches all requirements one by one
 
 # 22	Code Review: Rot13 Cipher
 
+lengh of index m to n is n - m + 1
+
+count = (end - start + step) / step
+
 # 23	Reference Solution: Rot13 Cipher
+
+map to an array starting with 0, 65-95 -> 0-25
+
 
 
