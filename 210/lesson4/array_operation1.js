@@ -50,8 +50,9 @@ count;                    // [ 0, 1, 2, 3 ]
 
 */
 
-// insert 0
+// insert to index 0
 // return new len
+// pushFirst
 function unshift_1(array, value) {
   var newLength = array.length + 1;
   for (var i = newLength - 1; i >= 1; i--) {
@@ -87,7 +88,7 @@ count;                  // [ 2, 3 ]
 
 */
 
-
+// popFirst
 function shift_1(array) {
   var value = array[0];
   for (var i = 1; i < array.length; i++) {
