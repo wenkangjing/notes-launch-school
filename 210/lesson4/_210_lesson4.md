@@ -132,5 +132,9 @@ slice() without parameters will return a copy of array
 
 reverse() modify the original
 
+Array.prototype.sort() is in place sort
+
 
 # 11	Exercise: Find Missing Numbers
+
+

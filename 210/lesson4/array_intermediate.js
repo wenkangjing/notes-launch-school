@@ -89,8 +89,99 @@ console.log(joinArray([1, 4, 1, 5, 9, 2, 7])); // Returns "1415927"
 
 
 
-// 5.
+// 5. Using the array sort method, create a function that accepts 
+// an array of numbers and 
+//returns a new array of the numbers sorted 
+//in descending order.
+function compare(a, b) {
+  return b - a;
+}
 
-// 6.
+function sortDescending_1(arr) {
+  var sorted = arr.slice();
+  sorted.sort(compare);
+  return sorted;
+}
 
-// 7. 
+
+// inline annoyous function
+function sortDescending(arr) {
+  var arrCopy = arr.slice();
+  arrCopy.sort(function (a, b) { 
+    return b - a; 
+  });
+  return arrCopy;
+}
+
+console.log(sortDescending([23, 4, 16, 42, 8, 15])); // Returns [42, 23, 16, 15, 8, 4]
+
+
+
+// 6. Write a function that
+// accepts an array of arrays and 
+// returns a new array containing the sums of each of the sub arrays.
+
+
+// misunderstand the description
+function matrixSums_1(arr) {
+  var arrPlain = [];
+  for (var i = 0; i < arr.length; i++) {
+     arrPlain = arrPlain.concat(arr[i]);
+  }
+  return arrPlain;
+}
+
+//We are going to create an empty array first to collect the final result. Then we have to iterate over the parent array, knowing that each element is an array itself which we need to iterate through to get the sum. Once we get the sum of an inner array, we're going to push it into the final result array. In the end, we'll have an array of sums that we can return.
+
+function matrixSums(arr) {
+  var arrPlain = [];
+  for (var i = 0; i < arr.length; i++) {
+    var sum = 0;
+    for (var j = 0; j < arr[i].length; j++) {
+      sum += arr[i][j];
+    }
+    arrPlain.push(sum);
+  }
+  return arrPlain;
+}
+
+
+console.log(matrixSums([[2, 8, 5], [12, 48, 0], [12]])); // Returns [15, 60, 12]
+
+/*
+function matrixSums(arr) {
+  var sums = [];
+  var currentSum;
+
+  for (var i = 0, outerLen = arr.length; i < outerLen; i++) {
+    currentSum = 0;
+    for (var j = 0, innerLen = arr[i].length; j < innerLen; j++) {
+      currentSum += arr[i][j];
+    }
+
+    sums.push(currentSum);
+  }
+
+  return sums;
+}
+
+matrixSums([[2, 8, 5], [12, 48, 0], [12]]); // Returns [15, 60, 12]
+
+*/
+
+// 7. Write a function that takes an array and 
+// returns a new array with duplicate elements removed.
+
+function uniqueElements(arr) {
+  var unique = [];
+  for (var i = 0; i < arr.length; i++) {
+    if (unique.indexOf(arr[i]) === -1) {
+      unique.push(arr[i]);
+    }
+  }
+  return unique;
+}
+
+console.log(uniqueElements([1, 2, 4, 3, 4, 1, 5, 4])); // Returns [1, 2, 4, 3, 5]
+
+// in-place remove dup??
