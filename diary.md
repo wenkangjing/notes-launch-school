@@ -196,8 +196,12 @@ Reference: YMPH-DWEX-AQRS
 2016-11-19 - 2016-11-24
 - 210 - Lesson 3 (exercise easy algo)
 
-2016-11-24 
+2016-11-24 - 2016-11-25 
 - 210 - Lesson 4 - Array
+
+2016-11-25 -  
+- 210 - Lesson 5 - Object
+
 
 
 TODO:
