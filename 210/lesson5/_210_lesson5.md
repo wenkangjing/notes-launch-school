@@ -230,7 +230,15 @@ radians vs angles
 
 # 10	Working with the Function Argument Object
 
+`arguments`
+- object
+- Array-like, but not a real Array
+- contains all arguments passed to the Function
+- `arguments.length`that returns how many total arguments were passed to the Function
+- `arguments[i]` to iterate all arguments
+- `Array.prototype.slice.call();` this effectively creates an array equivalent for arguments
 
+Functions that Accept Any Number of Arguments, but bad practice
 
 # 11	Exercise: Welcome Stranger
 # 12	Exercise: Repeated Characters
