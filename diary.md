@@ -205,6 +205,7 @@ Reference: YMPH-DWEX-AQRS
 
 
 TODO:
+  - [ ] https://github.com/airbnb/javascript
   - [ ] [css inheritance and cascade](https://www.w3.org/wiki/Inheritance_and_cascade)
   - [ ] [Web Standards Curriculum](https://www.w3.org/wiki/Web_Standards_Curriculum)
   - [ ] Read thru w3c.org 
