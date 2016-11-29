@@ -343,12 +343,57 @@ const obj = {
 array.map
 - The map() method creates a new array with the results of calling a provided function on every element in this array.
 
-perfer rest parameters over `arguments` 
+prefer rest parameters over `arguments` 
 
-side effectss
+side effects
+- modify arguments in function
+
+parentheses `()`
+
+curly brackets `{}`
+
+square brackets `[]` 
+
+use class over directly manipulating prototype
+
+use extends for inheritance, `instanceOf`
+
+import
+  - import { member } from "module-name";
+  - import defaultMember from "module-name";
+  - import defaultMember, {member1, member2} from "module-name";
+
+no for loop, no for...in
+- to iterate over array
+  - map() / 
+  - every() / 
+  - filter() / 
+  - find() / 
+  - findIndex() / 
+  - reduce() / 
+  - some() / ... to 
+
+- to produce arrays so you can iterate over objects.
+  - Object.keys() / 
+  - Object.values() / 
+  - Object.entries() 
+
+hoisting
+- `var` declarations get hoisted to the top of their scope, their assignment does not. 
+- `const` and `let` declarations are blessed with a new concept called Temporal Dead Zones (TDZ). 
+- It's important to know why `typeof` is no longer safe.
 
 
+conditional compassion
+- Objects evaluate to true
+- Undefined evaluates to false
+- Null evaluates to false
+- Booleans evaluate to the value of the boolean
+- Numbers evaluate to false if +0, ‐0, or NaN, otherwise true
+- Strings evaluate to false if an empty string '', otherwise true
 
+
+page 45
 
 # 4	Errors
 
