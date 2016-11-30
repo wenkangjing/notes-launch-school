@@ -199,8 +199,13 @@ Reference: YMPH-DWEX-AQRS
 2016-11-24 - 2016-11-25 
 - 210 - Lesson 4 - Array
 
-2016-11-25 -  
+2016-11-25 - 2016-11-28  
 - 210 - Lesson 5 - Object
+
+2016-11-28 - 2016-11-
+- 210 - Lesson 6 - better code
+- quiz 
+
 
 
 

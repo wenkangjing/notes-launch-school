@@ -1,3 +1,5 @@
+"use strict";
+
 // Closure
 function makeAdder(x) {
   return function(y) {
@@ -55,3 +57,61 @@ console.log(counter.value());
 
 counter.decrement();
 console.log(counter.value());
+
+
+//Emulating private methods with closures
+var counterPrivate = (function() {
+  var privateCounter = 0;
+  function changeBy(val) {
+    privateCounter += val;
+  }
+  return {
+    increment: function() {
+      changeBy(1);
+    },
+    decrement: function() {
+      changeBy(-1);
+    },
+    value: function() {
+      return privateCounter;
+    }
+  };   
+})();
+
+console.log(counterPrivate.value()); // logs 0
+counterPrivate.increment();
+counterPrivate.increment();
+console.log(counterPrivate.value()); // logs 2
+counterPrivate.decrement();
+console.log(counterPrivate.value()); // logs 1
+
+
+//or
+
+var makeCounterEx = function() {
+  var privateCounter = 0;
+  function changeBy(val) {
+    privateCounter += val;
+  }
+  return {
+    increment: function() {
+      changeBy(1);
+    },
+    decrement: function() {
+      changeBy(-1);
+    },
+    value: function() {
+      return privateCounter;
+    }
+  }  
+};
+
+var counter1 = makeCounterEx();
+var counter2 = makeCounterEx();
+alert(counter1.value()); /* Alerts 0 */
+counter1.increment();
+counter1.increment();
+alert(counter1.value()); /* Alerts 2 */
+counter1.decrement();
+alert(counter1.value()); /* Alerts 1 */
+alert(counter2.value()); /* Alerts 0 */ 

@@ -343,7 +343,27 @@ const obj = {
 array.map
 - The map() method creates a new array with the results of calling a provided function on every element in this array.
 
+
+mapreduce
+- map: to chunks
+- reduce: to 
+
+> e.g. mapreduce
+> 
+>We want to count all the books in the library. You count up shelf #1, I count up shelf #2. That’s map. The more people we get, the faster it goes.
+>
+>Now we get together and add our individual counts. That’s reduce.
+
 prefer rest parameters over `arguments` 
+- rest parameters are only the ones that haven't been given a separate name, while the arguments object contains all arguments passed to the function;
+- the arguments object is not a real array, while rest parameters are Array instances, meaning methods like sort, map, forEach or pop can be applied on it directly;
+- the arguments object has additional functionality specific to itself (like the callee property).
+
+```js
+function(a, b, ...theArgs) {
+  // ...
+}
+```
 
 side effects
 - modify arguments in function
@@ -362,6 +382,10 @@ import
   - import { member } from "module-name";
   - import defaultMember from "module-name";
   - import defaultMember, {member1, member2} from "module-name";
+
+export
+- The export statement is used to export functions, objects or primitives from a given file (or module).
+- Default exports (only one per script), A default export can be a function, a class, an object or anything else.
 
 no for loop, no for...in
 - to iterate over array
@@ -393,12 +417,116 @@ conditional compassion
 - Strings evaluate to false if an empty string '', otherwise true
 
 
-page 45
-
 # 4	Errors
+
+There are many situations where the JavaScript interpreter will be unable to continue to execute a program. 
+
+In such a situation, it will create an Error that describes the problem and stop the program.
+
+JavaScript Errors are referred to as exceptions in some other programming languages,
+
+raised -  "exception being raised"
+
+thrown - "error being thrown"
+
+## ReferenceError
+- **variable doesn't exist**
+- a;           // Referencing a variable that doesn't exist results in a ReferenceError
+- a();         // The same is true of attempting to call a function that doesn't exist.
+
+## TypeError
+- **property doesn't exist**
+- attempting to access properties on values that don't have properties 
+
+## SyntaxError
+
+SyntaxErrors are special in that they will typically occur immediately when a program is loaded by JavaScript, and not later when it is being run. This is unlike ReferenceError and TypeError, which are dependent upon the specific variables and their values that have been created by the program.
+
+## Other Errors
+
+RangeError
+- > max or < min
+
+URIError
 
 # 5	Preventing Errors
 
+## Guard Clause
+
+```js
+if (word.length === 0) {          // If word contains an empty String,
+  return '-';                     // return a dash instead of proceeding.
+}
+```
+
+## When To Use Guard Clauses
+
+when a Function can't trust that the arguments it is called with will be of the correct type, or structure.
+
+your program should be able to trust itself to do the right thing
+
+called with values that had already been validated in some way, it might not need to contain a guard clause.
+
+## Detecting Edge Cases
+
+string: 
+- ''? 
+- start with spaces? 
+- contains only spaces? 
+- contains special characers?
+
+number: 
+- 0? 
+- negative?
+
+## Planning Out Your Code
+- test case first
+
+This is a lot of cases to try to handle all at once, and a lot of the time it will be too much to handle. So it's OK to focus on the "happy path" or basic case that a Function is expected to handle, and then refer back to the list of use cases to verify that implementation decisions don't inadvertently cause the code to break in a particular situation.
+
+Also, notice how the list above doesn't include cases where the wrong data types are passed in as arguments. It can make sense to add checks to make sure that a Function's arguments are the correct type, but doing so in every Function is unnecessary and makes the code harder to maintain.
+
+
 # 6	Catching Errors
+
+Only use try/catch/finally blocks when all of the following are true:
+
+- An Error could be thrown by a **built-in** JavaScript Function or method 
+- It isn't possible to write a simple **guard clause** to prevent the situation where an Error could be raised.
+
+```js
+
+function parseJSON(data) {
+  var result;
+
+  try {                         // If an Error is thrown within the try block, program
+                                // execution stops and...
+    result = JSON.parse(data);
+
+  } catch (e) {                 // ...the catch block will be invoked if it exists.
+                                // The variable e will contain an Error object,
+                                // which can be inspected by accessing certain
+                                // properties on it:
+
+    console.log('There was a', e.name, 'parsing JSON data:', e.message);
+    result = null;
+
+  } finally {                   // Any code within a finally block is executed
+                                // last, regardless of whether an error was raised.
+
+    console.log('Finished parsing data.');
+  }
+
+  return result;
+}
+
+var data = 'not valid JSON';
+
+parseJSON(data);                // Logs "There was a SyntaxError parsing JSON data:
+                                //       Unexpected token i in JSON at position 0"
+                                // Logs "Finished parsing data."
+                                // and returns null
+
+```
 
 # 7	Quiz: What We've Learned So Far

@@ -71,3 +71,9 @@ if (a === undefined)
 
 ``` 
 
+# The good parts
+
+... (spread)
+
+
+# The bad parts
