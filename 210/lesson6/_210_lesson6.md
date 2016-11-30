@@ -530,3 +530,13 @@ parseJSON(data);                // Logs "There was a SyntaxError parsing JSON da
 ```
 
 # 7	Quiz: What We've Learned So Far
+
+
+- The questions demand a very high level of precision. 
+- Use precise words to describe exactly what's happening. 
+- Typically, we are interested in 
+  - the return value of an expression, 
+  - whether there are side effects, 
+  - whether new objects are created, 
+  - or whether something is being output. 
+- Be precise and explain with the highest level of clarity you can.
