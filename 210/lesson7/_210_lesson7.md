@@ -206,6 +206,9 @@ forEach
 - `callback` has 3 parameters: `current`, `index`(optional), `array` optional
 - `callback` return nothing
 
+> There is no way to stop or break a forEach() loop other than by throwing an exception. If you need such behavior, the forEach() method is the wrong tool, use a plain loop instead. If you are testing the array elements for a predicate and need a Boolean return value, you can use every() or some() instead
+
+
 # 5	Filtering / Selection
 
 filter
@@ -222,20 +225,81 @@ map
 
 # 7	Reducing / Folding
 
+reduce
+- accumulator, each value of the array (from left-to-right) to reduce it to a single value.
+- returns the accumulator (a single value) 
+- `callback` 4 params: 
+  - `previousResult`: The return value of the last callback  
+  - `current`, 
+  - `index`, 
+  - `array`
 
 # 8	Interrogation
 
+determine how many of an Array's elements satisfy a test.
+
+`callback` 3 params
+- `current`
+- `index`
+- `array`
+
+every, like `all` in LINQ
+- iterate over all the elements in the array until a `false` is returned, then immediately returns `false`
+- returns `true` if the callback returns `true` for **all** of the elements in the original Array.
+
+
+some, like `any` in LINQ
+- iterate over all the elements in the array until a `true` is returned, then immediately returns `true`.
+- returns `true` if the callback returns `true` for **at least one of** the elements in the original Array
 
 # 9	Sort
 
+- arrange the elements in an Array **in place**
+- returns the sorted array.
+- also mutates the array on which it's called
+- `callback` 2 params `a, b`
+  - return -1, a before b
+  - return 0, unchanged
+  - return 1, a after b
 
 # 10	Combining Abstractions
+
+var names = ['Heather', 'Gisella', 'Katsuki', 'Hua', 'Katy', 'Kathleen', 'Otakar'];
+
+Let`s say that our goal is to calculate which letter is at the beginning of most names in this list. We can break this problem down into steps:
+
+1. For each name in the list, determine its first letter
+2. Count how many occurrences there are of each letter
+3. Find the letter with the largest number of occurrences
+
+Step	| Result
+------|-------
+For each name in the list, determine its first letter	| Array of first letters
+Count how many occurrences there are of each letter	| Object containing letters as keys and counts as values
+Find the letter with the largest number of occurrences	| Letter with the largest number of occurrences.
+
+Step	| Result	| Abstraction |	Array Method
+------|---------|---------------|------------
+For each name in the list, determine its first letter |	Array of first letters	| Transformation	| map
+Count how many occurrences there are of each letter	| Object containing letters as keys and counts as values	| Reduction	| reduce
+Find the letter with the largest number of occurrences	| Letter with the largest number of occurrences.	| Reduction	| reduce
+
 # 11	Functional Abstractions on Objects
-# 12	Exercise: Total Square Area
+
+# 12	Exercise: Total Square Areas
+
 # 13	Exercise: Processing Releases
+
 # 14	Exercise: Octal
+
 # 15	Exercise: Anagrams
+
 # 16	Exercise: Formatting Bands
+
 # 17	Exercise: Class Records Summary
+
 # 18	Don't Be Afraid to Use Low Level Abstractions
+
 # 19	You've Already Known Some Functional Programming
+
+

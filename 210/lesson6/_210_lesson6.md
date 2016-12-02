@@ -529,7 +529,9 @@ parseJSON(data);                // Logs "There was a SyntaxError parsing JSON da
 
 ```
 
-# 7	Quiz: What We've Learned So Far
+
+
+# 8	Quiz: What We've Learned So Far
 
 
 - The questions demand a very high level of precision. 
@@ -540,3 +542,4 @@ parseJSON(data);                // Logs "There was a SyntaxError parsing JSON da
   - whether new objects are created, 
   - or whether something is being output. 
 - Be precise and explain with the highest level of clarity you can.
+

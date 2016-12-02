@@ -207,6 +207,7 @@ Reference: YMPH-DWEX-AQRS
 - quiz 
 
 2016-12-01
+- 210 - Lesson 6 - exercises - js fundamental
 - 210 - Lesson 7 - 
 
 
