@@ -4,6 +4,10 @@ Exercises: JavaScript Language Fundamentals
 [JavaScript Language Fundamentals](https://launchschool.com/exercises#javascript_language_fundamentals)
 
 JavaScript Basics (10)
+- string.slice
+- 2 / 3 is float, use Math.floor to convert to int
+- use key/value to simple the logic (mapping, convert)
+
 
 Functions (10)
 

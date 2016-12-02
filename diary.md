@@ -204,18 +204,20 @@ Reference: YMPH-DWEX-AQRS
 
 2016-11-28 - 2016-12-01
 - 210 - Lesson 6 - better code
-- quiz 
+- https://github.com/airbnb/javascript
+- quiz (score: 65/60)
 
-2016-12-01
-- 210 - Lesson 6 - exercises - js fundamental
-- 210 - Lesson 7 - 
+2016-12-01 - 2016-12-02
+- 210 - Lesson 6 - exercises - js basic
+- 210 - Lesson 7 - 10/19
 
-
-
+2016-12-03
+- 210 - Lesson 6 - exercises - js functon
+- 210 - Lesson 7 - x/19
 
 
 TODO:
-  - [ ] https://github.com/airbnb/javascript
+  - [ ] review regex
   - [ ] [css inheritance and cascade](https://www.w3.org/wiki/Inheritance_and_cascade)
   - [ ] [Web Standards Curriculum](https://www.w3.org/wiki/Web_Standards_Curriculum)
   - [ ] Read thru w3c.org 
