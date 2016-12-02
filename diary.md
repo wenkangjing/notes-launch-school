@@ -202,9 +202,13 @@ Reference: YMPH-DWEX-AQRS
 2016-11-25 - 2016-11-28  
 - 210 - Lesson 5 - Object
 
-2016-11-28 - 2016-11-
+2016-11-28 - 2016-12-01
 - 210 - Lesson 6 - better code
 - quiz 
+
+2016-12-01
+- 210 - Lesson 7 - 
+
 
 
 
