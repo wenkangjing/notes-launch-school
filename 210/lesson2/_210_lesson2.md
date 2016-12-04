@@ -65,7 +65,6 @@ A closure lets you associate some data (the environment) with a function that op
 - hoists Function declarations to the top of the scope; 
 - can declare a variable anywhere in a scope
 
-
 without an explicit declaration, a becomes a property of the global object
 - If JavaScript can't find a matching variable, it creates a new global variable instead. 
 
@@ -73,7 +72,12 @@ ReferenceError
 - The ReferenceError object represents an error when a non-existent variable is referenced.
 - JavaScript throws a `ReferenceError` exception if it can't find a variable anywhere in the scope hierarchy. `console.log(a);`
 
+## Hoisting Variable
+- Move `var a` to top of its scope
+- Leave `a = 1` where it is
 
+## Hoisting Function
+- unlike the way it hoists variables, it hoists entire function declarations including the code blocks.
 
 **Best Practice**
 

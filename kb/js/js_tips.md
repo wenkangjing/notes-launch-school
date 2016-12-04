@@ -40,7 +40,7 @@
 - Hoisting
 
   - Always declare variables at the top of their scope.
-  - lways declare functions before calling them:
+  - Always declare functions before calling them:
   - **always remember to convert code to after hoisting**
 
 - declare

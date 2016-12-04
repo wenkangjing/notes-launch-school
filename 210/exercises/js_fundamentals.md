@@ -10,8 +10,23 @@ JavaScript Basics (10)
 
 
 Functions (10)
+- hoisting var declaration 
+- hoisting entire function declarations including the code blocks.
 
 Array (10)
+- by reference, how to copy values, `slice` or iterating to `push`
+- splice **delete, insert**
+  - start, 
+  - deleteCount
+  - new items
+
+- [ ] `call` `apply`
+
+- `string` is quite similar to `array`
+  - know how to use `string split(''), join('')`
+  - know how to use dump chars to array to use help solve problems, like `array reserve, slice, split, sort`
+
+
 
 Objects(10)
 

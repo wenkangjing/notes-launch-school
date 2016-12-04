@@ -216,7 +216,9 @@ Reference: YMPH-DWEX-AQRS
 - 210 - Lesson 7 - x/19
 
 
+
 TODO:
+  - [ ] JS `call` `apply`   
   - [ ] review regex
   - [ ] [css inheritance and cascade](https://www.w3.org/wiki/Inheritance_and_cascade)
   - [ ] [Web Standards Curriculum](https://www.w3.org/wiki/Web_Standards_Curriculum)
