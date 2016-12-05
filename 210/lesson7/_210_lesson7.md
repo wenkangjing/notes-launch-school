@@ -234,6 +234,10 @@ reduce
   - `index`, 
   - `array`
 
+> It is usually safer to provide an initial value 
+
+> Note: If initialValue isn't provided, reduce will execute the callback function starting at index 1, skipping the first index. If initialValue is provided, it will start at index 0.
+
 # 8	Interrogation
 
 determine how many of an Array's elements satisfy a test.

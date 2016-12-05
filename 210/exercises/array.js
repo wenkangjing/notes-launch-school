@@ -245,3 +245,183 @@ testArray;                       // [1, 2, 3]
 //The Built-in Method
 
 //Compared to the built-in Array.prototype.shift() and Array.prototye.unshift() methods, the function built does not mutate the arrays. Additionally, the return value for the built-in unshift is the new length of the array. The built-in methods can also be called directly from the array objects.
+
+//
+// Array Slice and Splice
+// 
+
+
+function slice(array, begin, end) {
+  var sliced = [];
+
+  // if (begin < 0) {
+  //   begin = array.length + begin;
+  //   if (begin < 0) {
+  //     begin = 0;
+  //   }    
+  // }
+
+  // if (begin === undefined) {
+  //   begin = 0;
+  // }
+  // if (end === undefined) {
+  //   end = array.length;
+  // }
+
+  // undefined
+  if (!begin) { 
+    begin = 0;
+  }
+
+  // out of boundary
+  if (begin < 0 && Math.abs(begin) > array.length) {
+    begin = 0;
+  }
+
+  // negative but within boundary
+  if (begin < 0) {
+    begin = array.length + begin;
+  }
+
+  // 
+  if (end === undefined || end > array.length) {
+    end = array.length;
+  }
+
+  if (end < 0) {
+    end = array.length + end;
+  }
+
+  for (var i = begin; i < end; i++) {
+    sliced.push(array[i]);
+  }
+
+  return sliced;
+}
+
+slice([1, 2, 3]);                 // [1, 2, 3]
+slice([1, 2, 3], 0);              // [1, 2, 3]
+slice([1, 2, 3], 1);              // [2, 3]
+slice([1, 2, 3], -1);             // [3]
+slice([1, 2, 3], -2);             // [2, 3]
+slice([1, 2, 3], -6);             // [1, 2, 3]
+slice([1, 2, 3], 1, 2);           // [2]
+slice([1, 2, 3], 2, 0);           // []
+
+
+
+function splice(array, start, deleteCount) {
+  var spliced = [];
+
+  if (start > array.length) {
+    start = array.length;
+  }
+  if (start < 0) {
+    start = array.length + start;
+    if (start < 0) {
+      start = 0;
+    }
+  }
+
+  var end = start + deleteCount;
+  if (deleteCount > array.length - start || deleteCount === undefined) {
+    end = array.length;
+  } 
+
+  for (var i = 0; i < start; i++) {
+      spliced.push(array[i]);
+  }
+
+  for (var i = 3; i < arguments.length; i++) {
+    spliced.push(arguments[i]);
+  }
+
+  for (var i = end; i < array.length; i++) {
+      spliced.push(array[i]);
+  }
+
+  return spliced;
+}
+
+splice([1, 2, 3], 0);                      // []
+splice([1, 2, 3], 1, 2);                   // [1]
+splice([1, 2, 3], -1, 1);                  // [1, 2]
+splice([1, 2, 3], 1);                      // [1]
+splice([1, 2, 3], -1);                     // [1, 2]
+splice([1, 2, 3], 1, 3);                   // [1]
+splice([1, 2, 3], 1, 1, 'two')             // [1, "two", 3]
+splice([1, 2, 3], 1, 2, 'two', 'three')    // [1, "two", "three"]
+splice([1, 2, 3], 1, 0);                   // [1, 2, 3]
+splice([1, 2, 3], 0, 1);                   // [2, 3]
+
+
+
+// The slice function is straight forward. The solution loops through the elements of the original array starting from the beginning index up to but not including the ending index and assigns those values to a new array. The thing to handle for the slice functions are the values to use depending on the arguments passed to begin and end. The series of conditionals follow the description that given.
+
+//The splice function is bit more difficult to follow because there are two things happening; deleting and adding elements. However, if you dissect this function you can think of it as having the following parts:
+
+//1 slice from 0 to start
+//2 Optional items to add. These come from the arguments object starting from index 3
+//3 slice from start + deleteCount - 1 to end of array
+
+//The resulting array is incrementally built from the result of the three. With these parts, the thing to take note again would be the values of start and deleteCount depending on the arguments passed. There are two conditionals put in place to handle the value for start and deleteCount.
+
+//The Built-in Method
+
+//We've implemented functions that are similar to the built-in methods of Array.prototype.slice() and Array.prototype.splice(). The main difference is that both methods mutate the array. The built-in splice method also returns an array of the deleted elements and not the original array less the deleted and added elements. Both built-in methods are called directly from the array objects.
+
+//
+// Oddities
+//
+
+// The oddities function returns an Array that contains every other element of an Array that passed as an argument. The values in the returned list are those values that are in the 1st, 3rd, 5th, and so on elements of the argument Array. Below is a sample run of the program that uses the output as part of a comparison. Can you explain the results of the comparison?
+
+function oddities(array) {
+  var oddElements = [];
+  for (var i = 0; i < array.length; i += 2) {
+    oddElements.push(array[i]);
+  }
+  return oddElements;
+}
+
+oddities([2, 3, 4, 5, 6]) === [2, 4, 6]   // false
+oddities(['abc', 'def']) === ['def']      // false
+
+// The result for the comparison will always be false unless it is the actual objects that are compared. Recall that Arrays are Objects and that the only way for the === comparison operator to return true for array comparison is if its the exact same objects or a comparison is done between the contents of the array and not the array itself.
+
+//
+// Array Comparison
+//
+
+// In the arrays lesson, we implemented a version of comparing arrays that had an implicit assumption that elements are in the same indices when compared. In this exercise, the objective is to implement the same function but this time it compares the values of the arrays from any index (i.e. [1, 2, 3] === [3, 2 ,1] will return true).
+
+
+// loop array1, if found in array2, remove it from array2 and continue search
+// return false if not found
+function areArraysEqual(array1, array2) {
+  if (array1.length !== array2.length) {
+    return false;
+  }
+
+  var index;
+  for (var i = 0; i < array1.length; i++) {
+    index = array2.indexOf(array1[i]);
+    if (index >= 0) {
+      array2.splice(index, 1) // this mutate array2, side effects
+    } else {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+areArraysEqual([1, 2, 3], [1, 2, 3]);                  // true
+areArraysEqual([1, 2, 3], [3, 2, 1]);                  // true
+areArraysEqual(['a', 'b', 'c'], ['b', 'c', 'a'])       // true
+areArraysEqual(['1', 2, 3], [1, 2, 3]);                // false
+areArraysEqual([1, 1, 2, 3], [3, 1, 2, 1]);            // true
+areArraysEqual([1, 2, 3, 4], [1, 1, 2, 3]);            // false
+areArraysEqual([1, 1, 2, 2], [4, 2, 3, 1]);            // false
+
+///
