@@ -45,7 +45,7 @@ LaunchSchool Notes
 - [ ] [Lesson 7 List Processing and Functional Abstractions](210/lesson7/_210_lesson7.md)
 - [ ] [Lesson 8 String and Text Processing](210/lesson8/_210_lesson8.md)
 
-- [ ] [Exercises: JavaScript Fundamental](210/exercises/js_fundamentals.md) 
+- [x] [Exercises: JavaScript Fundamental](210/exercises/js_fundamentals.md) 
 
 
 ## 219 - Assessment: Computational Thinking and JavaScript Programming
