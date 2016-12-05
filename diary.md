@@ -215,7 +215,10 @@ Reference: YMPH-DWEX-AQRS
 - 210 - Lesson 6 - exercises - js fundamental
 
 2016-12-05
-- 210 - Lesson 7 - 10/19
+- 210 - Lesson 7 - x/19
+
+2016-12-06
+- 210 - Lesson 7 - xx/19
 
 TODO:
   - [ ] JS `call` `apply`   

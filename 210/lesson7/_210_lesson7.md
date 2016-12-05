@@ -290,9 +290,26 @@ Find the letter with the largest number of occurrences	| Letter with the largest
 
 # 11	Functional Abstractions on Objects
 
+Iteration
+
+`Object.keys(obj).forEach()`
+
+Working with Keys or Values as Arrays
+
+
 # 12	Exercise: Total Square Areas
 
+area.js
+
 # 13	Exercise: Processing Releases
+
+release_data.js
+
+`filter` to filter out falsy elements 
+
+`reduce` to a single value
+
+`map` to return a new array with modified value 
 
 # 14	Exercise: Octal
 
