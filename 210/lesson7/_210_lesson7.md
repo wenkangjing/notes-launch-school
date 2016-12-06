@@ -313,11 +313,48 @@ release_data.js
 
 # 14	Exercise: Octal
 
+octal.js
+- know how number calculated
+- 256 in dec means `2 * 10pow(2)` + `5 * 10pow(1)` + `6 * 10pow(0)`
+- 256 in oct means `2 * 8pow(2)` + `5 * 8pow(1)` + `6 * 8pow(0)`
+- 
+
 # 15	Exercise: Anagrams
+
+anagrams.js
+
+- know how to use `every`
+- know top to bottom to abstract functions
 
 # 16	Exercise: Formatting Bands
 
+formatting.js
+
+- know input (dirty array of objects) and output (formatted array of  object) -> map
+- loop element to format object 
+  - country
+  - capitalize name
+  - remove dot
+
+string.replace
+- regex `string.replace(/\./g, '');`
+- or subStr `string.replace('.', '');` 
+
+mutate 
+  - re-assign to object in map
+
+side effect free
+  - return a new object in map
+
+  ```js
+  return {
+    prop0: 'value',
+    prop1: 1
+  };
+  ```
 # 17	Exercise: Class Records Summary
+
+records.js
 
 # 18	Don't Be Afraid to Use Low Level Abstractions
 
