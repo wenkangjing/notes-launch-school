@@ -356,8 +356,28 @@ side effect free
 
 records.js
 
+know how to split big task into several small tasks
+
+abstract function top down
+
+use nested function expression if it just for this function, and make the global scope neat and clean  
+
+know how to transpose a 2D array
+
 # 18	Don't Be Afraid to Use Low Level Abstractions
 
+if not able to abstract function using map, foreach, reduce, filter, every, some, try use loop 
+
 # 19	You've Already Known Some Functional Programming
+
+[Operation Catalog](http://martinfowler.com/articles/collection-pipeline/)
+
+Clojure and Haskell are more Functional than js
+
+JS functional library
+
+- [unerscore](http://underscorejs.org/) [github](https://github.com/jashkenas/underscore)
+- [lodash](https://lodash.com/) [github](https://github.com/lodash/lodash)
+
 
 

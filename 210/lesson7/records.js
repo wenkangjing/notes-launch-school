@@ -147,31 +147,50 @@ function generateClassRecordSummary(scores) {
   });
 
   // exam summary fixme
-  var examsSummary = Object.keys(scores).map(function(student, index){
-    return generateExamSummary(scores[student].scores.exams);
+  var studentExams = []; 
+  Object.keys(scores).forEach(function(student, index){
+    studentExams[index] = scores[student].scores.exams;
   });
 
+  var exams = [];
+  studentExams.forEach(function(row, rowIndex){
+    row.forEach(function(column, colIndex) {
+      if (exams[colIndex]) {
+        exams[colIndex].push(column);
+      } else {
+        exams[colIndex] = [];
+        exams[colIndex].push(column);
+      }
+    })
+  });
+
+  var examSummary = exams.map(function(scores) {
+    return generateScoreSummary(scores);
+  })
+
+  //return generateExamSummary(scores[student].scores.exams);
   return {
     'studentGrades': studentGrades,
-    'exams': examsSummary
+    'exams': examSummary
   };
 };
 
 // input array of exams
-// output object that contains averyage, min, max
+// output object that contains averyage, min, max of 4 exams, regardless students
 // not group by student, group by exams
-function generateExamSummary(exams) {
+function generateScoreSummary(scores) {
   var sum = 0;
   var min = Infinity;
   var max = -Infinity;
-  exams.forEach(function(exam) {
-    sum = sum + exam;
-    min = Math.min(exam, min);
-    max = Math.max(exam, max);
+  var count = scores.length;
+  scores.forEach(function(score) {
+    sum = sum + score;
+    min = Math.min(score, min);
+    max = Math.max(score, max);
   });
 
   return {
-    'average': Math.round(sum / 4),
+    'average': sum / count,
     'minimum': min,
     'maximum': max
   };
@@ -209,7 +228,7 @@ function gradePrecentToletter(number){
   }
 }
 
-generateClassRecordSummary(studentScores);
+console.log(generateClassRecordSummary(studentScores));
 
 
 
@@ -224,3 +243,66 @@ generateClassRecordSummary(studentScores);
 //     { average: 91.8, minimum: 80, maximum: 100 },
 //   ],
 // }
+
+
+// Thinking in Abstractions
+// This problem may feel a bit overwhelming at first, and it can be if you try to solve everything at once. Instead, looking at the desired return value of the function, we know it needs two piece of data:
+
+// an array of student grades, in a specific format. Each student grade needs to be calcuated from that student's exam and exercise scores.
+// an array of exam summary objects. Each exam summary object needs to be calcuated from all students' scores for that exam.
+// We can then rely on the above two pieces of insights to write out the skeleton of our solution:
+
+// function generateClassRecordSummary(scores) {
+//   // an array of score objects, with both exams and exercises
+//   var scoreData = Object.keys(scores).map(function(student) {
+//     return scores[student].scores;
+//   });
+
+//   // transform the above score objects to be an array of arrays for exam scores
+//   var examData = scoreData.map(function(score) {
+//     return score.exams;
+//   });
+
+//   return {
+//     studentGrades: scoreData.map(function(scoreObj) {
+//       return getStudentScore(scoreObj);
+//     }),
+//     exams: getExamSummary(examData);
+//   }
+// }
+
+// function getStudentScore(scoreObj) {
+//   // ...
+// }
+
+// function getExamSummary(examData) {
+//   // ...
+// }
+// Now we have turned the original bigger problem into two much smaller problems, each with just the data that they need. You can follow the similar process to further decompose and get to the eventual solution.
+
+
+function transpose(array) {
+  return array[0].map(function(col, columnIdx) {
+    return array.map(function(row) {
+      return row[columnIdx];
+    });
+  });
+}
+
+function getExamAverage(scores) {
+  return scores.reduce(function(total, score) {
+    return total + score;
+  }) / scores.length;
+}
+
+function getExamMinimum(scores) {
+  return scores.reduce(function(min, score) {
+    return min <= score ? min : score;
+  });
+}
+
+function getExamMaximum(scores) {
+  return scores.reduce(function(max, score) {
+    return max >= score ? max : score;
+  });
+}
