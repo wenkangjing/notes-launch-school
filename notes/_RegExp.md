@@ -4,19 +4,22 @@ Regular Expression
 **case sensitive by default**
 **escape all non-alphanumeric characters even if they don't need to be escaped**
 
+http://scriptular.com/
+
 ## patterns
 
 - Alphanumerics
   - /cat/
 
 - special characters
-  - $ ^ * + ? . ( ) [ ] { } | \
-  - \ is escape, /\?/ contains ?
+  - `$ ^ * + ? . ( ) [ ] { } | \` (metacharacters)
+  - use \ to escape, /\?/ contains ?
 
 
 - alternation
   - (a|b|c) contains a or b or c
   - a(1|2)d contains a1d or a2d
+  - parentheses isn't always required, but is strongly recommended. 
 
 - ignore case
   - /cat/i contains cat, Cat, CAT, caT (case insensitive)
@@ -139,3 +142,47 @@ options
 - m make dot match newlines 
 - x ignore whitespace in regex 
 - o perform #{...} substitutions only once 
+
+
+# Brief Summary
+
+## Modifiers:
+
+i	Perform case-insensitive matching
+g	Perform a global match
+
+## Brackets:
+
+[abc]	Match a single character a, b, or c
+[^abc]	Match any character except a, b, or c
+[A-z]	Match any character from uppercase A to lowercase z
+(ab|cd|ef)	Match either ab, cd, or ef
+(...)	Capture anything enclosed
+
+## Metacharacters
+
+^	Start of line
+$	End of line
+.	Match any character
+\w	Match a word chracter
+\W	Match a non-word character
+\d	Match a digit
+\D	Match any non-digit character
+\s	Match a whitespace character
+\S	Match a non-whitespace character
+\b	Match character at the beginning or end of a word
+\B	Match a character not at beginning or end of a word
+\0	Match a NUL character
+\t	Match a tab character
+\xxx	Match a character specified by octal number xxx
+\xdd	Match a character specified by hexadecimal number dd
+\uxxxx	Match a Unicode character specified by hexadecimal number xxxx
+
+## Quantifiers
+
+n+	Match at least one n
+n*	Match zero or more n's
+n?	Match zero or one n
+n{X}	Match sequence of X n's
+n{X,Y}	Match sequence of X to Y n's
+n{X,}	Match sequence of X or more n's
