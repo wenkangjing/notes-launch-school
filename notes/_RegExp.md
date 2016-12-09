@@ -59,8 +59,8 @@ http://scriptular.com/
 ## Anchors
 
 - start `^` or end `$` of line 
-  - /^cat/
-  - /cat$/
+  - `/^cat/`
+  - `/cat$/`
 
 - start `\A` or end `\Z` of string
   - /\Acat/
@@ -88,57 +88,87 @@ http://scriptular.com/
 - `\b[a-z][a-z][a-z]\b` 3 small case letter
 - `\s...\s` 3 anything between whitespace
 
-## Quantifiers
+## Quantifiers 
 
-- 0 or more *
-  - \b\d\d\d\d*\b 3 or more than 3 digits as a word
-  - /co*t/, mathces ct, cot, coot, cooot
+*(occurrence of the pattern to its left)*
 
-- 1 or more + 
+- 0 or more `*`
+  - `\d*` o ro more digits
+  - `\b\d\d\d\d*\b` 3 or more than 3 digits as a word
+  - `/co*t/`, mathces ct, cot, coot, cooot, *any number of o*
 
-- 0 or 1 ? 
-
-- range {}
-  - /b\d{10}/b exactly 10 digits
-  - /\b\d{3,}\b/ as least 3 digits
-  - /\b[a-z]{5,8}\b/i all words between 5 to 8 letters
+> The regex `*` quantifier looks very similar to the * wildcard you find in many command line shells, but don't be fooled; they are not the same. 
+>
+> The * wildcard from a shell is more like the regex `/.*/`; it matches any sequence of characters, regardless of what those characters are. So, the wildcard `blue*doc` matches any file whose name begins with blue and ends with doc, while `/blue*doc/` matches any sequence of characters that begins with blu, ends with doc, and contains any number of es between the beginning and end.
 
 
-## greedy vs lazy
+- 1 or more `+` 
+
+- 0 or 1 `?` 
+
+> The regex `?` quantifier looks very similar to the ? wildcard you find in many command line shells, but don't be fooled. They are not the same. 
+>
+>The ? wildcard means 0 or 1 occurrence of any character, or acts as a placeholder for exactly one character, depending on what shell you are using. 
+>
+>**The ? regex quantifier means 0 or 1 occurrence of the pattern to its left**. If you allow yourself to become confused by the similarity in appearance, you will have trouble.
+
+- range `{}`
+  - `{m}` m occurrence
+  - `{m,}` m or more occurrence
+  - `{m,n}` m or more but no more than n
+  - `/b\d{10}/b` exactly 10 digits
+  - `/\b\d{3,}\b/` as least 3 digits
+  - `/\b[a-z]{5,8}\b/i` all words between 5 to 8 letters
+
+
+## Quantifiers are greedy
+
+xabcbcbacy 
+- `/a[abc]*c/` matches abcabcabc
+
+## Quantifiers can be lazy `?`
 xabcbcbacy
-- /a[abc]*c/ matches abcabcabc
-- /a[abc]*?c/ matches abc it is a lazy match by specifying ?
-
+- `/a[abc]*?c/` matches abc it is a lazy match by specifying?
 
 ## examples
+- `.*` any sequence of chars
+- `[abc]` 	A single character of: a, b, or c
+- `[^abc]` 	Any single character except: a, b, or c
+- `[a-z]` 	Any single character in the range a-z
+- `[a-zA-Z]` 	Any single character in the range a-z or A-Z
 
-- [abc] 	A single character of: a, b, or c
-- [^abc] 	Any single character except: a, b, or c
-- [a-z] 	Any single character in the range a-z
-- [a-zA-Z] 	Any single character in the range a-z or A-Z
-- ^ 	Start of line
-- $ 	End of line
-- \A 	Start of string
-- \z 	End of string
-- . 	Any single character
-- \s 	Any whitespace character
-- \S 	Any non-whitespace character
-- \d 	Any digit
-- \D 	Any non-digit
-- \w 	Any word character (letter, number, underscore)
-- \W 	Any non-word character
-- \b 	Any word boundary
-- (...) 	Capture everything enclosed
-- (a|b) 	a or b
-- a? 	Zero or one of a
-- a* 	Zero or more of a
-- a+ 	One or more of a
-- a{3} 	Exactly 3 of a
-- a{3,} 	3 or more of a
-- a{3,6} 	Between 3 and 6 of a
-- /[^a-z]/i non letter
-- /[^0-9]/ non digit
-- [0-9A-Za-z] letter and digit
+- `^` 	Start of line
+- `$` 	End of line
+- `\A` 	Start of string
+- `\z` 	End of string
+- `.` 	Any single character
+
+- `\s` 	Any whitespace character
+- `\s*` 0 or more whitespace chars
+- `\S` 	Any non-whitespace character
+- `/\Ahttps?:\/\/\S+\z/` a url
+- `/(['"]).+/` text that quoted
+
+- `\d` 	Any digit
+- `\D` 	Any non-digit
+
+- `\w` 	Any word character (letter, number, underscore)
+- `\W` 	Any non-word character
+
+- `\b` 	Any word boundary
+- `(...)` 	Capture everything enclosed
+- `(a|b)` 	a or b
+- `a?` 	Zero or one of a
+- `a*` 	Zero or more of a
+- `a+` 	One or more of a
+
+- `a{3}` 	Exactly 3 of a
+- `a{3,}` 	3 or more of a
+- `a{3,6}` 	Between 3 and 6 of a
+
+- `/[^a-z]/i` non letter
+- `/[^0-9]/` non digit
+- `[0-9A-Za-z]` letter and digit
 
 
 space (' '), 
@@ -225,3 +255,17 @@ big is included since big is 3 characters that are both preceded and followed by
 `2 3` is included since 2 3 is 3 characters long and is both preceded and followed by whitespace.
 
 
+
+```js
+
+var text = 'Four score and seven';
+var vowelless = text.replace(/[aeiou]/g, '')
+// -> 'Fr scr nd svn'
+
+
+
+
+var text = 'We read "War of the Worlds".';
+console.log(text.sub(/(['"]).+\1/, '$1The Time Machine$1'));
+// # outputs: We read "The Time Machine".
+```
