@@ -223,9 +223,14 @@ Reference: YMPH-DWEX-AQRS
 2016-12-08
 - 210 - Lesson 8
 
+2016-12-10
+- [x] review regex
+
+
+
 TODO:
-  - [ ] JS `call` `apply`   
-  - [ ] review regex
+  - [ ] JS `call` `apply`
+  - [ ] archive regex to kb article   
   - [ ] [css inheritance and cascade](https://www.w3.org/wiki/Inheritance_and_cascade)
   - [ ] [Web Standards Curriculum](https://www.w3.org/wiki/Web_Standards_Curriculum)
   - [ ] Read thru w3c.org 

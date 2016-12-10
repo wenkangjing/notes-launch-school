@@ -74,10 +74,35 @@ console.log(danish('I love pineapple'));
 // 6
 // Challenge: write a method that changes dates in the format 2016-06-17 to the format 17.06.2016. You must use a regular expression and should only use only methods described in this section.
 
-function formatDate (dateString) {
-  return
+// split by -
+// reverse
+// join by .
+function formatDate_1 (dateString) {
+  return dateString.split('-').reverse().join('.');
 }
 
+// captire group
+var formatDate = function (original_date) {
+  return original_date.replace(/^(\d\d\d\d)-(\d\d)-(\d\d)$/, '$3.$2.$1');
+};
 
-formatDate('2016-06-17'); // -> '17.06.2016'
-formatDate('2016/06/17'); // -> '2016/06/17' (no change)
+console.log(formatDate('2016-06-17')); // -> '17.06.2016'
+console.log(formatDate('2016/06/17')); // -> '2016/06/17' (no change)
+
+// 7
+// Challenge: write a method that changes dates in the format 2016-06-17 or 2016/06/17 to the format 17.06.2016. You must use a regular expression and should only use only methods described in this section.
+
+var format_date_wrong = function (original_date) {
+  return original_date.replace(/^(\d\d\d\d)[-/](\d\d)[-/](\d\d)$/, '$3.$2.$1');
+}
+
+//use function chain to process the secon
+var format_date = function (original_date) {
+  return original_date
+    .replace(/^(\d\d\d\d)-(\d\d)-(\d\d)$/, '$3.$2.$1')
+    .replace(/^(\d\d\d\d)\/(\d\d)\/(\d\d)$/, '$3.$2.$1');
+}
+
+console.log(format_date('2016-06-17')); // -> '17.06.2016'
+console.log(format_date('2017/05/03')); // -> '03.05.2017'
+console.log(format_date('2015/01-31')); // -> '2015/01-31' (no change)

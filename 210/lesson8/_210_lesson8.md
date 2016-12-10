@@ -61,11 +61,16 @@ can't call toStirng on a number directly
 
 # 4	Regular Expressions
 
-[ ] Regular Expression Book and my note
+[x] Regular Expression Book and my note
 
 # 5	Reverse a String
 
+- loop from end to beginning, or
+- split.reverse.join
+
 # 6	Acronym
+
+know how to use regexp to clean, reformat for further processing
 
 # 7	Email Validation
 

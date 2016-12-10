@@ -76,3 +76,38 @@ function padLeft(string, filler, toLength) {
 
 // surround the number with parentheses
 (3645).toString();
+
+
+// valid url
+function isUrl(string){
+  return !!string.match(/^https?:\/\/\S+$/);
+}
+
+console.log(isUrl('http://launchschool.com'));   // -> true
+console.log(isUrl('https://example.com'));       // -> true
+console.log(isUrl('https://example.com hello')); // -> false
+console.log(isUrl('   https://example.com'));    // -> false
+
+// Write a method that returns all of the fields in a haphazardly formatted string. The fields are separated by a variety of spaces, tabs, and commas, with possibly multiple occurrences of theses characters.
+
+function fields(string) {
+  return string.split(/[ \t,]+/);
+}
+
+console.log(fields("Pete,201,Student"));
+// -> ['Pete', '201', 'Student']
+
+console.log(fields("Pete \t 201    ,  TA"));
+// -> ['Pete', '201', 'TA']
+
+console.log(fields("Pete \t 201"));
+// -> ['Pete', '201'']
+
+
+// capture group
+var formatDate = function (original_date) {
+  return original_date.replace(/^(\d\d\d\d)-(\d\d)-(\d\d)$/, '$3.$2.$1');
+};
+
+console.log(formatDate('2016-06-17')); // -> '17.06.2016'
+console.log(formatDate('2016/06/17')); // -> '2016/06/17' (no change)
