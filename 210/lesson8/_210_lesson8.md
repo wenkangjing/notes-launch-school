@@ -1,6 +1,18 @@
 String and Text Processing
 ============================
 
+# summary
+- know how to `split` text/string to `array`, using `array - filter/map/forEach/some/every`, then join back 
+- know how to filter text/string by `regex`
+- know how to valid a string using `regex`
+- `regex` good at filter word in different form
+
+```js
+var positiveRegex = /(fortunes?)|(dream(s|t|ed)?)|(love(s|ed)?)|(respect(s|ed)?)|(patien(ce|t)?)|(devout(ly)?)|(noble)|(resolut(e|ion)?)/gi;
+var negativeRegex = /(die(s|d)?)|(heartached?)|(death)|(despise(s|d)?)|(scorn(s|ed)?)|(weary)|(troubles?)|(oppress(es|ed|or)?)/gi;
+
+```
+
 # 1	String Processing Patterns
 
 
@@ -74,11 +86,21 @@ know how to use regexp to clean, reformat for further processing
 
 # 7	Email Validation
 
+
 # 8	Matching Parentheses
+
 
 # 9	Sentiment Analysis 1
 
+if string is in a string array, use `indexOf()` rather than `some()`
+
+know how to use `filter`
+
 # 10	Sentiment Analysis 2
+
+know how to get text array by `string.match(regex)`
+
+know how to filter text by `array.indexOf()` 
 
 # 11	Mail Count
 
