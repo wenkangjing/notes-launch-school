@@ -230,7 +230,7 @@ Reference: YMPH-DWEX-AQRS
 - 210 - Done
 
 2016-12-12
-- 219 - Prep video (part 2 44:21)
+- 219 - Prep video (part 2)
 
 TODO:
   - [ ] JS `call` `apply`

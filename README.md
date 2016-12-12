@@ -48,11 +48,10 @@ LaunchSchool Notes
 - [x] [Exercises: JavaScript Fundamental](210/exercises/js_fundamentals.md) 
 
 ## 219 - Assessment: Computational Thinking and JavaScript Programming
-
-- [ ] 219 video on problem solving https://launchschool.com/gists/c013accd
-- [ ] review js
-- [ ] review expex
-- [ ] 210 small problems https://launchschool.com/exercises#210_small_problems
+- [x] 219 video on problem solving https://launchschool.com/gists/c013accd
+- [ ] [Assessment](219/_219.md)
+- [ ] [Examples](219/example.md)
+- [ ] [Guide](219/_guide.md)
 
 # Back-end
 TBD

@@ -127,6 +127,17 @@ Examples:
   century(2112);     => 22nd
   century(22222);     => 223rd
 
+Data Structure
+- input: number
+- output: century number + st, nd, rd, th
+
+Algorithm
+- century number: (year -1) / 100; // 1. code and test this first
+- century string = century number to string + 'suffix rules' // 2. then suffix
+
+Abstraction
+
+
 
 # scrabble score (implicit)
 
@@ -162,7 +173,10 @@ Algorithm
 - map each char into its scrabble score, referencing the lookup table
 - redyce wutg synnubg up the values
 
-# quuen attach
+# queen attach
+
+...
+
 
 # what is
 
@@ -202,9 +216,15 @@ Data Structure
   - multiplied by: *
   - divided by: /
 
-
-
 Algorithm
+
+
+
+
+# substring
+
+return all substrings
+
 
 
 
