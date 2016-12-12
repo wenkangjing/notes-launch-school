@@ -3,7 +3,7 @@ LaunchSchool Notes
 
 # Books
 - [x] [HTTP](notes/_HTTP.md)
-- [x] [RegEx](notes/_RegEx.md)
+- [x] [RegEx](kb/regex/_RegEx.md)
 - [x] [Ruby - Intro](notes/_RubyBasics.md)
 - [x] [Ruby - Coding Convention](notes/_RubyConvention.md)
 - [x] [Web APIs](notes/_WebAPIs.md)

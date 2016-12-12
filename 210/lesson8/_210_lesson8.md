@@ -105,5 +105,6 @@ know how to filter text by `array.indexOf()`
 # 11	Mail Count
 
 # 12	Code Review: Longest Sentence
-
 # 13	Reference Solution: Longest Sentence
+
+whenever ask a max, min, longest, shortest, try use `array.reduce`
