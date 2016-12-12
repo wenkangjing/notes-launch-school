@@ -226,7 +226,11 @@ Reference: YMPH-DWEX-AQRS
 2016-12-10
 - [x] review regex
 
+2016-12-11
+- 210 - Done
 
+2016-12-12
+- 219 - Prep video (part 2 44:21)
 
 TODO:
   - [ ] JS `call` `apply`

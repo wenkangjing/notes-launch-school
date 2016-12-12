@@ -43,13 +43,16 @@ LaunchSchool Notes
 - [x] [Lesson 5 Objects](210/lesson5/_210_lesson5.md)
 - [x] [Lesson 6 Writing Better Code](210/lesson6/_210_lesson6.md)
 - [x] [Lesson 7 List Processing and Functional Abstractions](210/lesson7/_210_lesson7.md)
-- [ ] [Lesson 8 String and Text Processing](210/lesson8/_210_lesson8.md)
+- [x] [Lesson 8 String and Text Processing](210/lesson8/_210_lesson8.md)
 
 - [x] [Exercises: JavaScript Fundamental](210/exercises/js_fundamentals.md) 
 
-
 ## 219 - Assessment: Computational Thinking and JavaScript Programming
 
+- [ ] 219 video on problem solving https://launchschool.com/gists/c013accd
+- [ ] review js
+- [ ] review expex
+- [ ] 210 small problems https://launchschool.com/exercises#210_small_problems
 
 # Back-end
 TBD
