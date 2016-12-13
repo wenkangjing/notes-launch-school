@@ -88,3 +88,8 @@ How to compare NaN
 How to terminate JS file
 - `return` in file scope doesn't work 
 - `throw new Error('error message')`
+
+What is Fibonacci series
+- The Fibonacci series is a series of numbers (1, 1, 2, 3, 5, 8, 13, 21, ...)
+- the first 2 numbers are 1 by definition
+- each subsequent number is the sum of the two previous numbers

@@ -11,9 +11,12 @@ Understanding
 
 Test Cases
 
+
 Data Structure
 
 Algorithm
+
+**verify algo by test cases before coding**
 
 Abstraction
 
