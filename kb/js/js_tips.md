@@ -77,3 +77,14 @@ if (a === undefined)
 
 
 # The bad parts
+
+
+# How to
+
+How to compare NaN
+- Nan is not equal to NaN
+- use `isNaN()`
+
+How to terminate JS file
+- `return` in file scope doesn't work 
+- `throw new Error('error message')`
