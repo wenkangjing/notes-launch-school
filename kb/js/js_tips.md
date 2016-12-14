@@ -93,3 +93,17 @@ What is Fibonacci series
 - The Fibonacci series is a series of numbers (1, 1, 2, 3, 5, 8, 13, 21, ...)
 - the first 2 numbers are 1 by definition
 - each subsequent number is the sum of the two previous numbers
+
+Does compare by value or  by reference
+- string is compare by value, 'abc' === 'abc'
+- array and object is by reference 
+
+What is the difference between `substring` `slice` `substr`
+- all doesn't modify the original string
+
+```js
+string.slice(start, end) // can be negative
+string.substr(start, length) // can be negative
+string.substring(start, end) // can NOT be negative
+//  slice() == substring()
+```

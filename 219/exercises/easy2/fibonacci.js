@@ -28,7 +28,7 @@ Abstraction
   - return length;
 */
 
-function findFibonacciIndexByLength(length) {
+function findFibonacciIndexByLength_1(length) {
   if (length === 1) {
     return 1;
   }
@@ -36,10 +36,10 @@ function findFibonacciIndexByLength(length) {
   let array = [1, 1]; // initials by definition
   let number = 2;
   while (numberOfDigits(number) < length) {
-    array.push(number);
+    array.push(number); // no need to push to array, just count on-the-fly
     number = array[array.length - 1] + array[array.length - 2]; 
   }
-  
+
   // console.log('Fibonacci series: ' + array);
   // console.log('Number: ' + number);
   // console.log('Index: ' + (array.length + 1));
@@ -47,11 +47,59 @@ function findFibonacciIndexByLength(length) {
   return array.length + 1;
 }
 
+function findFibonacciIndexByLength_2(length) {
+  if (length === 1) {
+    return 1;
+  }
+
+  let p1 = 1; // bad variable name
+  let p2 = 1;
+  let index = 2; // 1-based index
+  let number = 2;
+  while (numberOfDigits(number) < length) {
+    number = p1 + p2;
+    index++; 
+    p2 = p1;
+    p1 = number;
+  }
+
+  return index;
+}
+
+
 function numberOfDigits(number) {
   return String(number).length;
 }
 
 findFibonacciIndexByLength(1)     // 1
 findFibonacciIndexByLength(2)     // 7
- findFibonacciIndexByLength(10)    // 45
+findFibonacciIndexByLength(10)    // 45
 findFibonacciIndexByLength(23)    // 485
+
+
+//Solution
+
+function findFibonacciIndexByLength(length) {
+  var first = 1;
+  var second = 1;
+  var index = 2;
+  var fibonacci;
+  do {
+    fibonacci = first + second;
+    index++;
+    first = second;
+    second = fibonacci;
+  } while (fibonacci.toString().length < length);
+
+  return index;
+}
+
+// Discussion
+
+// The function starts of with the initialization of the fibonacci sequence. The first and second numbers, as defined, are both assigned the value of 1 while the value of index is 2.
+
+// The solution then uses a do while loop to increment the value of fibonacci while its length is still less than the value of the argument passed. At every iteration the solution does the following:
+
+// - Computes the value for fibonacci by adding the first and second values
+// - Increments index by 1. It returns the value if it meets the length requirement of the fibonacci.
+// - Sets the value of first to the value of second and the value of second to the value of fibonacci. If the criteria for stopping the loop isn't met at the end of this iteration, it used the two numbers for the computation of fibonacci in the next iteration.
