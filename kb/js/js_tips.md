@@ -107,3 +107,7 @@ string.substr(start, length) // can be negative
 string.substring(start, end) // can NOT be negative
 //  slice() == substring()
 ```
+
+Why forEach can't `brea` or `continue`?
+- iterating till end
+- early terminating need for loop
