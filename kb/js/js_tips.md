@@ -111,3 +111,11 @@ string.substring(start, end) // can NOT be negative
 Why forEach can't `brea` or `continue`?
 - iterating till end
 - early terminating need for loop
+
+
+What are the differences between `toString()` vs `String()`
+- can't call `toString()` againest `undefined` vs. `String(undefined)` is 'undefined'
+- `(000).toString()` is '000' vs String(000) is '0'
+- `String(0)` is '0'
+
+I would prefer `String()` over `toString()` as AirBnB JS Guide suggested
