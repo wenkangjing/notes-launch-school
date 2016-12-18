@@ -2,48 +2,93 @@
 
 // Write a function that takes a floating point number that represents an angle between 0 and 360 degrees and returns a String that represents that angle in degrees, minutes, and seconds. You should use a degree symbol (˚) to represent degrees, a single quote (') to represent minutes, and a double quote (") to represent seconds. There are 60 minutes in a degree, and 60 seconds in a minute.
 
-// Examples:
 
-// dms(30)        // 30°00'00"
-// dms(76.73)     // 76°43'48"
-// dms(254.6)     // 254°35'59"
-// dms(93.034773) // 93°02'05"
-// dms(0)         // 0°00'00"
-// dms(360)       // 360°00'00" or 0°00'00"
+/*
 
+Understanding
+- input 
+  - a float number [0-360] inclusive
 
+- output
+  - a string of angle 
+    - degrees ˚
+    - minutes '
+    - seconds "
 
-
-
-
-
-
-
-
+- rules
+  - convert: 1 degree == 60 minutes, 1 minute == 60 seconds
+  - format: degree in any digits, minutes/seconds in 2 digits (padLeft)
 
 
+Algorithm
+- convert to string, get index of '.'
+- degree is slice(0, index of .)
+
+- reminding = the given number - degree
+- convert reminding to minutes / seconds
+  - minutes = floor of convert reminding to minutes
+  - seconds = reminder - minutes
+  
+- padLeft minutes and seconds
+
+*/
+
+var DEGREE = '\xB0'
+
+function dms(float) {
+  let sign = float < 0 ? '-' :'';
+
+  float = Math.abs(float);
+
+  let degree = Math.floor(float);
+  let remindingDegree = float - degree;
+  
+  let minute = Math.floor(remindingDegree * 60);
+  let remindingMinute = remindingDegree * 60 - minute;
+
+  let second = Math.floor(remindingMinute * 60);
+
+  let result = sign + String(degree) + DEGREE + padLeft(minute) + '\'' + padLeft(second) + '\"';
+  
+  console.log(result);
+}
 
 
+/*
+Abstraction
+
+- degreeToMinute (degree)
+  -  return degree * 60;   
+
+- degreeToSecond (degree)
+  - return degree * 60 * 60;
+
+- padLeft (string)
+  - return padded string  
+*/
+
+function padLeft(number) {
+  let string = number.toString();
+  while (string.length < 2) {
+    string = '0' + string;
+  }
+  return string;
+}
+
+function print(degree, minute, second) {
+  console.log(String(degree) + DEGREE + padLeft(minute) + '\'' + padLeft(second) + '\"');
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+dms(30)        // 30°00'00"
+dms(-30)        // -30°00'00"
+dms(30)        // 30°00'00"
+dms(76.73)     // 76°43'48"
+dms(-76.73)     // -76°43'48"
+dms(254.6)     // 254°35'59"
+dms(93.034773) // 93°02'05"
+dms(0)         // 0°00'00"
+dms(360)       // 360°00'00" or 0°00'00"
 
 
 

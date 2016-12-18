@@ -117,5 +117,11 @@ What are the differences between `toString()` vs `String()`
 - can't call `toString()` againest `undefined` vs. `String(undefined)` is 'undefined'
 - `(000).toString()` is '000' vs String(000) is '0'
 - `String(0)` is '0'
+- I would prefer `String()` over `toString()` as AirBnB JS Guide suggested
 
-I would prefer `String()` over `toString()` as AirBnB JS Guide suggested
+How to iterating objects
+- iterating `Object.keys(myObj)` as array
+- `for (var item in myObj)` item is key, myObj[item] is value
+
+
+

@@ -2,13 +2,43 @@
 
 // Write a function that takes one argument, a positive integer, and returns a list of the digits in the number.
 
+
+
+/*
+Understanding
+- input
+  - a positive integer
+  ? 0
+  ? 0000
+  ? overflow
+
+- output
+  - an array
+    - digits in the number  
+
+
+Algorithm
+- convert it to string 
+- split to array -> string
+- map to digits
+- return the new array 
+
+*/
+
+function digitList(number) {
+  return number.toString().split('').map(function (digitChar) {
+    return parseInt(digitChar, 10);
+  });
+}
+
 // Examples:
 
-// digitList(12345);       // [1, 2, 3, 4, 5]
-// digitList(7);           // [7]
-// digitList(375290);      // [3, 7, 5, 2, 9, 0]
-// digitList(444);         // [4, 4, 4]
-
+digitList(12345);       // [1, 2, 3, 4, 5]
+digitList(7);           // [7]
+digitList(375290);      // [3, 7, 5, 2, 9, 0]
+digitList(444);         // [4, 4, 4]
+digitList(0); // [0]
+digitList(0000); // [0, 0, 0, 0] // wrong, return [0]
 
 
 

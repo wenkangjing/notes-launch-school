@@ -2,26 +2,47 @@
 
 // Write a function that takes two Array arguments, in which each Array contains a list of numbers, and returns a new Array that contains the product of each pair of numbers from the arguments that have the same index. You may assume that the arguments contain the same number of elements.
 
+
+/*
+
+Understanding
+- input
+  - 2 arrays:  array1, array2
+    - numbers
+    - same length
+
+- ouput
+  - a new array
+    - element is array1[i] * array2[i]
+
+- question
+  ? can be negative? y
+  ? empty array ? y, return []
+
+Algorithm
+- result array
+- interating 2 arrays, in each iteration
+  - push the result of array1[i] * array2[i] result array
+
+*/
+
+function multiplyList(array1, array2) {
+  let result = [];
+
+  for (var i = 0; i < array1.length; i++) {
+    result.push(array1[i] * array2[i]);
+  }
+
+  console.log(result);
+  return result;
+}
+
+
 // Examples:
-
-// multiplyList([3, 5, 7], [9, 10, 11]) // [27, 50, 77]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+multiplyList([], []) // []
+multiplyList([-1], [1]) // [-1]
+multiplyList([0, 1], [2, 0]) // [0, 0]
+multiplyList([3, 5, 7], [9, 10, 11]) // [27, 50, 77]
 
 
 

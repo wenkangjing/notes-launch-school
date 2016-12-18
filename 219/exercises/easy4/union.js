@@ -2,9 +2,83 @@
 
 // Write a function that takes two Arrays as arguments, and returns an Array that contains the union of the values from the two. There should be no duplication of values in the returned Array, even if there are duplicates in the original Arrays. You may assume that the arguments will be Arrays only.
 
+
+/*
+
+Understanding
+- input
+  - 2 arrays
+
+- ouput
+  - a new array
+    - contains union value
+    - no duplication
+
+- question
+
+- exceptions
+
+
+Algorithm
+- an object to store result: value as key, always true if exist 
+- iterating 2 arrays one by one
+  - push to object
+- return object.keys
+
+*/
+
+
+function union_1(array1, array2) {
+  let result = {};
+
+  array1.forEach(function (element) {
+    result[element] = result[element] || true; 
+  })
+
+  array2.forEach(function (element) {
+    result[element] = result[element] || true; 
+  })
+
+  console.log(Object.keys(result));
+  return Object.keys(result);
+}
+
+/*
+
+Algorithm works for more than 2 arrays
+  - assume all arguments are array
+*/
+
+function union() {
+  let result = {};
+
+  for (var i = 0; i < arguments.length; i++) {
+    arguments[i].forEach(function (element) {
+      result[element] = result[element] || true; 
+    })
+  }
+
+  console.log(Object.keys(result));
+  return Object.keys(result);
+}
+
+
+
 // Example
 
-// union([1, 3, 5], [3, 6, 9]); // [1, 3, 5, 6, 9]
+union([1, 3, 5], [3, 6, 9]); // [1, 3, 5, 6, 9]
+union([2, 3], [3, 2, 9]); // [2, 3, 9]
+union([2], [2]); // [2]
+union([1, 2], [1, 2]); // [1, 2]]
+union([1, 2, 3], [1, 2]); // [1, 2, 3]]
+union([1, 2, 3], [1, 2], [3, 4]); // [1, 2, 3]]
+
+
+
+
+
+
+
 
 
 

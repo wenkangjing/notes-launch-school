@@ -232,6 +232,14 @@ Reference: YMPH-DWEX-AQRS
 2016-12-12
 - 219 - Prep video (part 2)
 
+2016-12-17
+- exercies - 210 small problems - easy 3
+  - \exercises\easy4\dms.js messy code (symbol code)
+  - no hurry to abstract functons
+
+2016-12-19
+- exercises - 210 small problems  - easy4
+
 TODO:
   - [ ] JS `call` `apply`
   - [ ] archive regex to kb article   

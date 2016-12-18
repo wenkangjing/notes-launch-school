@@ -2,28 +2,47 @@
 
 // Write a function that takes an Array as an argument, and returns two Arrays that contain the first half and second half of the original Array, respectively. If the original array contains an odd number of elements, place the middle element in the first half Array.
 
+/*
+
+Understanding
+- input
+  - an array number/string/anything
+
+- output
+  - a array contains 2 arrays
+    - first half
+    - second half
+
+- rules
+  - even length, balanced     
+  - odd length, first + middle, second 
+
+
+Algorithm
+- separate index = ceil of (length / 2)
+
+- frst half = slice 0 - separate index
+- second half = slice(separate index)
+
+
+*/
+
+function halvsies (array) {
+  let divider =Math.ceil(array.length / 2);
+  let first = array.slice(0, divider); // exclusive divider
+  let second = array.slice(divider); // till end
+  
+  return [first, second];
+}
+
+
+
 // Examples:
 
-// halvsies([1, 2, 3, 4])    // [[1, 2], [3, 4]]
-// halvsies([1, 5, 2, 4, 3]) // [[1, 5, 2], [4, 3]]
-// halvsies([5])             // [[5], []]
-// halvsies([])              // [[], []]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(halvsies([1, 2, 3, 4]));    // [[1, 2], [3, 4]]
+console.log(halvsies([1, 5, 2, 4, 3])); // [[1, 5, 2], [4, 3]]
+console.log(halvsies([5]));             // [[5], []]
+console.log(halvsies([]));              // [[], []]
 
 
 

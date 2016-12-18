@@ -2,23 +2,46 @@
 
 // Write a function that takes an Array of integers as input, multiplies all of the numbers together, divides the result by the number of entries in the Array, and then prints the result rounded to 3 decimal places.
 
+
+/*
+
+Understanding
+- input
+  - an array  
+    - integers
+
+- ouput
+  - a number rounded to 3 decimal places
+    
+- question
+  ? non-empty array? y
+
+Algorithm
+- reduce the given array to a number of  multiplies of all elements
+- divided by length and round to 3
+
+*/
+
+
+
+function showMultiplicativeAverage(integers) {
+  let multiplies = integers.reduce(function (a, b) {
+    return a * b;
+  }, 1);
+
+  return (multiplies / integers.length).toFixed(3);
+}
+
+
+
+
 // Examples
 
-// showMultiplicativeAverage([3, 5])                 // 7.500
-// showMultiplicativeAverage([2, 5, 7, 11, 13, 17])  // 28361.667
-
-
-
-
-
-
-
-
-
-
-
-
-
+showMultiplicativeAverage([1]);
+showMultiplicativeAverage([0]);
+showMultiplicativeAverage([0, 1, 2,]); //0   
+showMultiplicativeAverage([3, 5]);                 // 7.500
+showMultiplicativeAverage([2, 5, 7, 11, 13, 17]);  // 28361.667
 
 // Hide Solution & Discussion
 // Solution

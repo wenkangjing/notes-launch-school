@@ -70,6 +70,13 @@ function padLeft(string, filler, toLength) {
   return string;
 }
 
+// pad zeros
+function padZeroes(number) {
+  var numString = number.toString();
+  return numString.length < 2 ? '0' + numString : numString;
+}
+
+
 
 // two dot to all method on a number
 365..toString()

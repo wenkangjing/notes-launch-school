@@ -2,34 +2,86 @@
 
 // Write a function that counts the number of occurrences of each element in a given array. Once counted, log each element alongside the number of occurrences.
 
-// var vehicles = ['car', 'car', 'truck', 'car', 'SUV', 'truck', 'motorcycle', 'motorcycle', 'car', 'truck'];
-// countOccurrences(vehicles);
+
+/*
+
+Understanding
+- input
+  - an array
+
+- ouput
+  - print out element and count
+
+- question
+  ? case sensitive // probably yes, as SUV is upper case
+  ? element primitive value or array/object
+
+
+Algorithm
+- a obejct for counting, counter {}, element as key, count as value, increasing in each iteration
+- iterating the array, in each iteration
+  - if exist, increase
+  - else push, and set value to 1
+
+- print out
+  - for each key in counter.keys
+    - log key => counter[key]
+*/
+
+function countOccurrences_1(array) {
+  let counter = {};
+
+  array.forEach(function (element) {
+    if (counter[element]) {
+      counter[element]++;
+    } else {
+      counter[element] = 1;
+    }
+  });
+
+  print(counter);
+}
+
+// use || to provide a default value 
+function countOccurrences(array) {
+  let counter = {};
+
+  array.forEach(function (element) {
+    counter[element] = counter[element] || 0; // decent way to providing a default value
+    counter[element]++;
+  });
+  
+  print(counter);
+}
+
+
+// function name could be better e.g. displayOccurrences after countOccurrences
+function print_1(obj) { 
+  Object.keys(obj).forEach(function (key) {
+    console.log(key + ' => ' + obj[key]);
+  })
+}
+
+
+// another way to iterating object
+function print(obj) {
+  for (let element in obj) {
+    console.log(element + ' => ' + obj[element]);
+  }
+}
+
+
+
+
+
+ var vehicles = ['car', 'car', 'truck', 'car', 'SUV', 'truck', 'motorcycle', 'motorcycle', 'car', 'truck'];
+ countOccurrences(vehicles);
 
 // // console output
 // car => 4
 // truck => 3
 // SUV => 1
 // motorcycle => 2
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -57,6 +109,9 @@
 //     console.log(item + ' => ' + occurrences[item]);
 //   }
 // }
+
+
+
 // Discussion
 
 // The solution uses two functions. The second function, displayOccurrences, is more for readability purposes. Its sole use is to display each key: value pair in the format specified in the exercise description.

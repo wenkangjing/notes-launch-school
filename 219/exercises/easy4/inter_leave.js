@@ -1,22 +1,56 @@
 // Combine Two Lists
 
-// Write a function that combines two Arrays passed as arguments, and returns a new Array that contains all elements from both Array arguments, with the elements taken in alternation.
+// Write a function that combines two Arrays passed as arguments, and returns a new Array that contains all elements from both Array arguments, with the elements taken in alternation. // 交替
 
 // You may assume that both input Arrays are non-empty, and that they have the same number of elements.
 
+
+/*
+
+Understanding
+- input
+  - 2 arrays
+    - non-empty
+    - same length
+
+- ouput
+  - a new array
+
+- question
+
+- exceptions
+
+- text cases
+
+Algorithm
+- iterating arrays first and second, index is i
+  - push first[i]
+  - push second[i]
+
+- return new array
+*/
+
+function interleave (first, second) {
+  let alternativeArray = [];
+
+  for (var i = 0; i < first.length; i++) {
+    alternativeArray.push(first[i]);
+    alternativeArray.push(second[i]);
+  }
+
+  console.log(alternativeArray);
+  return alternativeArray;
+
+}
+
+
+
+
 // Example:
 
-// interleave([1, 2, 3], ['a', 'b', 'c']) // [1, 'a', 2, 'b', 3, 'c']
-
-
-
-
-
-
-
-
-
-
+interleave([1, 2, 3], ['a', 'b', 'c']); // [1, 'a', 2, 'b', 3, 'c']
+interleave(['a','b'], ['x', 'y']);
+interleave(['one'], ['1']);  
 
 
 
