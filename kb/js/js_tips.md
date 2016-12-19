@@ -124,4 +124,7 @@ How to iterating objects
 - `for (var item in myObj)` item is key, myObj[item] is value
 
 
+What array `shift` does?
+- remove the first element
+- return the removed element
 
