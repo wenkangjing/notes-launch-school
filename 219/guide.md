@@ -23,7 +23,11 @@ Abstraction
 
 
 
-
+Understand the problem
+Examples / test cases
+Data structure and algorithms
+Verify your algorithm against the examples
+Start Coding
 
 
 

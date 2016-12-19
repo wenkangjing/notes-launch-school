@@ -4,21 +4,76 @@
 
 // You may (and should) use the transactionsFor function from the previous exercise.
 
+
+
+
+
+/*
+
+Understanding
+- input
+   - a number, id
+   - transactions, array of obejcts
+
+- output
+  - true if sum of quantity > 0
+  - false otherwise
+  
+- rules
+ - obj.movement 
+  - out  - quantity
+  - in  + quantity
+
+Data Struction
+- filter by given id
+- reduce to sum of quantity
+
+Algorigthm
+- filter trans by id
+- reduce to a sum of quantity, 
+  - if movement is out, - 
+  - else +
+
+
+
+*/
+
+function isItemAvailable(id, trans) {
+  // filter
+  let filtered = trans.filter(function (obj) {
+    return obj.id === id;
+  });
+
+  let quantity = filtered.reduce(function(sum, obj) {
+    if (obj.movement.toLowerCase() === 'out') {
+      return sum - obj.quantity;
+    } else if (obj.movement.toLowerCase() === 'in') {
+      return sum + obj.quantity;
+    } else {
+      return sum;
+    }
+  }, 0);
+
+
+  return (quantity > 0);
+}
+
+
 // Example
 
-// var transactions = [ {id: 101, movement: 'in', quantity: 5, },
-//                      {id: 105, movement: 'in', quantity: 10, },
-//                      {id: 102, movement: 'out', quantity: 17, },
-//                      {id: 101, movement: 'in', quantity: 12, },
-//                      {id: 103, movement: 'out', quantity: 15, },
-//                      {id: 102, movement: 'out', quantity: 15, },
-//                      {id: 105, movement: 'in', quantity: 25, },
-//                      {id: 101, movement: 'out', quantity: 18, },
-//                      {id: 102, movement: 'in', quantity: 22, },
-//                      {id: 103, movement: 'out', quantity: 15, },];
+var transactions = [ {id: 101, movement: 'in', quantity: 5, },
+                     {id: 105, movement: 'in', quantity: 10, },
+                     {id: 102, movement: 'out', quantity: 17, },
+                     {id: 101, movement: 'in', quantity: 12, },
+                     {id: 103, movement: 'out', quantity: 15, },
+                     {id: 102, movement: 'out', quantity: 15, },
+                     {id: 105, movement: 'in', quantity: 25, },
+                     {id: 101, movement: 'out', quantity: 18, },
+                     {id: 102, movement: 'in', quantity: 22, },
+                     {id: 103, movement: 'out', quantity: 15, },];
 
-// isItemAvailable(101, transactions); // false
-// isItemAvailable(105, transactions); // true
+console.log(isItemAvailable(101, transactions)); // false
+console.log(isItemAvailable(105, transactions)); // true
 
 
 

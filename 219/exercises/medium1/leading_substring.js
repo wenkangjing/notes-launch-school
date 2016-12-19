@@ -2,38 +2,65 @@
 
 // Write a function that returns a list of all substrings of a string that start at the beginning of the original string. It returns the substrings arranged from shortest to longest.
 
+/*
+
+Understanding
+- input
+  - a string
+
+- output
+  - an array
+    - all substrings, 0-i, i in [0-string length]
+    - from shortest to longest  
+
+Algorithm
+- result is []
+- looping the string from 0 to end, in each iteration
+  - push leading substring to result array
+  - slice(0, index + 1)
+
+*/
+
+function substringsAtStart_1(string) {
+  let result = [];
+  for (var i = 0; i < string.length; i++) {
+    let subString = string.slice(0, index + 1);
+    result.push(subString);
+  }
+  console.log(result);
+  return result;
+}
+
+
+
+/*
+
+Algorithm using map
+- convert string to char array
+- map array to a new array that 
+  - slice(0, index + 1)
+
+*/
+
+
+
+
+function substringsAtStart(string) {
+  let result = string.split('').map(function (value, index, array) {
+    return array.slice(0, index + 1).join('');
+  });
+  console.log(result);
+  return result;
+}
+
+
+
+
 // Examples:
 
-// substringsAtStart('abc')   // ['a', 'ab', 'abc']
-// substringsAtStart('a')     // ['a']
-// substringsAtStart('xyzzy') // ['x', 'xy', 'xyz', 'xyzz', 'xyzzy']
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+substringsAtStart('abc')   // ['a', 'ab', 'abc']
+substringsAtStart('a')     // ['a']
+substringsAtStart('xyzzy') // ['x', 'xy', 'xyz', 'xyzz', 'xyzzy']
 
 
 

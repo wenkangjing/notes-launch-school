@@ -4,39 +4,80 @@
 
 // You may (and should) use the substringsAtStart function you wrote in the previous exercise:
 
-// Examples:
+/*
 
-// substrings('abcde');
-// // result
+Understanding
+- input
+  - a string
+- output
+  - an array
+    - ALL possible substrings
+    - in order of starting char
+      all substring start at index 0
+      all substring start at index 1
+      ...
+        - from shortest to longest
+
+
+Algorithm
+- result  []
+- convert string to array
+- looping the array, at each iteration 
+    - substrignAtStart() i - end
+    - push to result
+
+*/
+
+
+function substrings_1(string) {
+  let result = [];
+  string.split('').forEach(function (char, index, array) {
+    substringsAtStart(array.slice(index).join('')).forEach(function (substring) {
+      result.push(substring);
+    });
+  });
+  console.log(result);
+
+}
+
+// simplify
+function substrings_1(string) {
+  let result = [];
+  string.split('').forEach(function(char, idx){
+     let array = substringsAtStart(string.slice(idx));
+     result = result.concat(array); // concat need to reassign to take effect
+  });
+
+  console.log(result);
+}
+
+// without result to holding the array
+function substrings(string) {
+  return string.split('').map(function (char, idx) {
+    return  substringsAtStart(string.slice(idx))
+  }).reduce(function (result, leadingSubStrings) {
+    return result.concat(leadingSubStrings);
+  }, []);
+}
+
+
+function substringsAtStart(string) {
+  let result = string.split('').map(function (value, index, array) {
+    return array.slice(0, index + 1).join('');
+  });
+  return result;
+}
+
+
+// Examples:
+console.log(substrings('abcde'));
+
+// result
 // [ 'a', 'ab', 'abc', 'abcd', 'abcde',
 //   'b', 'bc', 'bcd', 'bcde',
 //   'c', 'cd', 'cde',
 //   'd', 'de',
 //   'e' ]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

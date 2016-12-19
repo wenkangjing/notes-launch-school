@@ -4,36 +4,48 @@
 
 // You may assume that neither argument is an empty Array.
 
+
+
+/*
+
+Understanding
+- input
+  - 2 array
+    - each contains a list of numbers
+    ? integers or float
+    - non empty array
+
+- output
+  - a new array
+    - product of all pairs of number
+
+Algorithm
+- conbime 2 array into one by nested forEach => product
+- sort the product 
+
+*/
+
+
+function multiplyAllPairs(leftArray, rightArray) {
+  let products = [];
+  leftArray.forEach(function(leftItem) {
+    rightArray.forEach(function (rightItem) {
+      products.push(leftItem * rightItem);
+    })
+  });
+
+  products.sort(function (a, b) {
+    return a > b; // should be a - b, asc
+  });
+
+  return products;
+}
+
+
 // Examples:
-
-// multiplyAllPairs([2, 4], [4, 3, 1, 2]) // [2, 4, 4, 6, 8, 8, 12, 16]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+multiplyAllPairs([1], [1]) // [1]
+multiplyAllPairs([5, 2], [3]) // [6, 15]
+multiplyAllPairs([2, 4], [4, 3, 1, 2]) // [2, 4, 4, 6, 8, 8, 12, 16] // 8, 6, 2, 4, 16, 12, 4, 8 => 2, 4, 4, 6, 8, 8, 12, 16
 
 
 // Hide Solution & Discussion

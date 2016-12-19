@@ -6,58 +6,108 @@
 
 // For the purposes of this exercise, you should consider all characters and pay attention to case; that is, "AbcbA" is a palindrome, but neither "Abcba" nor "Abc-bA" are. In addition, assume that single characters are not palindromes.
 
+
+
+/*
+
+Understanding
+- input
+  - a string
+
+- output
+  - an array contains
+    - palindromic substring
+    - same sequence as apperance in the string
+    - including dup ones multiple times
+- rules
+  - case sensitve
+  - abcba 
+  - abba
+  - single chars are NOT palindromes    
+
+
+Data Structure
+- array
+
+Algorithm
+- filter all substring by
+  - Palindromic
+- return the filtered array
+
+
+Abstraction
+- isPalindromic (string)
+  - if string length is 1, false;
+  - if string is equal to  reverse string, true
+  - otherwise false 
+
+- substrings (string)
+  - convert sting to array
+  - iterating array, at each iteration 
+    - slice 0, index + 1
+    - push to result
+  - return result
+
+  abcd =>
+  - a, ab, abc, abcd
+  - b, bc, bcd
+  - c, cd
+  - d
+*/
+
+function palindromes(string) {
+  let result = substrings(string).filter(function(sub) {
+    return isPalindromic(sub);
+  });
+
+  console.log(result);
+  return result;
+}
+
+function isPalindromic(string) {
+  // if (string.length <= 1) {
+  //   return false;
+  // }
+
+  // return string.split('').reverse().join('') === string;
+
+  // use compact way 
+  return string.length > 1 && string === string.split('').reverse().join('');
+}
+
+
+// better to add one layer abstraction, substringStartAt(string, i)
+function substrings(string) {
+  let result = [];
+
+  string.split('').forEach(function(char, index) {
+    for (var i = index; i < string.length; i++) {
+      result.push(string.slice(index, i + 1));      
+    }
+  });
+
+  return result;
+}
 // Examples:
 
-// palindromes('abcd');  // []
-// palindromes('madam'); // ['madam', 'ada']
-// palindromes('hello-madam-did-madam-goodbye');
-// // result
+palindromes('abcd');  // []
+palindromes('madam'); // ['madam', 'ada']
+// m, ma, mad, mada, madam
+// a, ad, ada, adam  
+// d, da, dam
+// a, am
+// m
+// => 
+// madam, ada
+palindromes('hello-madam-did-madam-goodbye');
+// result
 // [ 'll', '-madam-', '-madam-did-madam-', 'madam', 'madam-did-madam', 'ada',
 //   'adam-did-mada', 'dam-did-mad', 'am-did-ma', 'm-did-m', '-did-', 'did',
 //   '-madam-', 'madam', 'ada', 'oo' ]
 
-// palindromes('knitting cassettes');
-// // result
+palindromes('knitting cassettes');
+// result
 // [ 'nittin', 'itti', 'tt', 'ss', 'settes', 'ette', 'tt' ]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

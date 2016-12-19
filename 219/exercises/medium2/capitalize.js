@@ -5,36 +5,74 @@
 
 // You may assume that words are any sequence of non-blank characters.
 
+
+
+/*
+
+Understanding
+- input
+  - a string
+  ? words are separated by 1 space
+
+- output
+  - first letter of a word should be uppercase
+  - the rest letters of a word are lowercase
+
+- rules
+  - what is a word?
+    - start with a-zA-Z
+
+Data Structure
+- array
+
+Algorithm
+- convert to words array by spliting by ' '
+- if it is a word, capitalize and succeeding characters to lowercase
+- owhersie keep as is
+
+Abstraction
+- isWord(string)
+  - first char is a-zA-Z
+
+- formatWord(string)
+  - make all lowercase 
+  - make first one uppercase
+*/
+
+
+function wordCap(string) {
+  let capitalised = string.split(' ').map(function(word) {
+    if (isWord(word)) {
+      return formatWord(word);
+    } else {
+      return word;
+    }
+  }).join(' ');
+
+  console.log(capitalised);
+  return capitalised;
+}
+
+
+function formatWord(word) {
+  return word[0].toUpperCase() + word.toLowerCase().slice(1) ;
+}
+
+// this can be ignored, can we?
+function isWord(word) {
+  return !!(word.length > 0 && word[0].toLowerCase() >='a' && word[0].toLowerCase() <= 'z');
+}
+
+
 // Examples
 
-// wordCap('four score and seven')    // 'Four Score And Seven'
-// wordCap('the javaScript language') // 'The Javascript Language'
-// wordCap('this is a "quoted" word') // 'This Is A "quoted" Word'
+wordCap('four score and seven');    // 'Four Score And Seven'
+wordCap('the javaScript language'); // 'The Javascript Language'
+wordCap('this is a "quoted" word'); // 'This Is A "quoted" Word'
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+wordCap(''); // ''
+wordCap('a'); // 'A'
+wordCap('aA'); // 'Aa'
 
 
 

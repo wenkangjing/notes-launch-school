@@ -2,44 +2,76 @@
 
 // Write a function which takes a grocery list (array) of fruits with quantities and converts it into an array of the correct number of each fruit.
 
+/*
+
+Understanding
+- input
+  - an array of array
+    - [0] fruit name
+    - [1] quantity 
+      ? 0 or more, not negative
+- output
+  - a flat array
+    - n times of fruits
+    - n is quantity of the fruit
+
+Data Structure
+- 2D array
+- array
+
+Algorightm
+- result array []
+- iterating the given fruits array
+  - loop fruit[1] times
+    - push fruit[0] to the result array  
+- return result
+*/
+
+function buyFruit_1(fruits) {
+  let result = [];
+  
+  fruits.forEach(function(item) {
+    for (var i = 0; i < item[1]; i++) {
+      result.push(item[0]);
+    }
+  });
+
+  return result;
+}
+
+
+
+/*
+
+Algorithm using reduce
+- map given array to grocery list 
+  - by returning array of [1] times [0]
+- reduce 2d array to a flat array 
+   - by returning array concat
+
+*/
+
+function buyFruit(fruits) {
+  return fruits.map(function(item) {
+    let result = [];
+    for (var i = 0; i < item[1]; i++) {
+      result.push(item[0])
+    }
+    return result;
+  }).reduce(function(groceryList, fruit) {
+    return groceryLis = groceryList.concat(fruit);
+  }, []);
+}
+
+
 // Example:
 
-// buyFruit([['apples', 3], ['orange', 1], ['bananas', 2]]);
-// // result
+console.log(buyFruit([['apples', 3], ['orange', 1], ['bananas', 2]]));
+// result
 // ['apples', 'apples', 'apples', 'orange', 'bananas','bananas']
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(buyFruit([['apples', 0]])); // []
+console.log(buyFruit([['apples', 3],['pearl', 2]])); // ['apples', 'apples', 'apples', 'pearl', 'pearl']
 
 
 
