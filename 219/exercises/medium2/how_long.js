@@ -4,63 +4,75 @@
 
 // You may assume that one blank space separate words in the string.
 
+
+
+/*
+
+Understanding
+- input 
+  - a string
+  - words are separated by just one space  
+
+- output
+  - an array
+    - every word + space + word length
+
+Data Structure
+- array
+  - map
+  - reduce to sum
+
+
+Algorithm
+- spliting stirng to array, then mapping to a new array with count, at each iteration
+  - return word + space + wrod length
+    
+
+*/
+
+
+// guard claus
+
+function wordLengths_1(string) {
+  if (!string || string.length === 0) {
+    return [];
+  }
+
+  return string.split(' ').map(function(word) {
+    return word + ' ' + word.length;
+  });
+}
+
+// or using default value []
+function wordLengths(str) {
+  var words = str ? str.split(' ') : [];
+
+  return words.map(word => word + ' ' + word.length);
+}
+
 // Examples
 
-// wordLengths('cow sheep chicken')
-// // result
-// ['cow 3', 'sheep 5', 'chicken 7']
+wordLengths('cow sheep chicken');
+// result
+//['cow 3', 'sheep 5', 'chicken 7']
 
-// wordLengths('baseball hot dogs and apple pie')
-// // result
-// ['baseball 8', 'hot 3', 'dogs 4', 'and 3', 'apple 5', 'pie 3']
+wordLengths('baseball hot dogs and apple pie');
+// result
+//['baseball 8', 'hot 3', 'dogs 4', 'and 3', 'apple 5', 'pie 3']
 
-// wordLengths('It ain\'t easy, is it?')
-// // result
-// ['It 2', 'ain\'t 5', 'easy, 5', 'is 2', 'it? 3']
+wordLengths('It ain\'t easy, is it?');
+// result
+//['It 2', 'ain\'t 5', 'easy, 5', 'is 2', 'it? 3']
 
-// wordLengths('Supercalifragilisticexpialidocious')
-// // result
-// ['Supercalifragilisticexpialidocious 34']
+wordLengths('Supercalifragilisticexpialidocious');
+// result
+//['Supercalifragilisticexpialidocious 34']
 
-// wordLengths('')
-// // result
-// []
+wordLengths('');
+// result
+//[]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+wordLengths();
 
 
 

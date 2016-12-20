@@ -2,18 +2,30 @@
 
 // Modify the function from the previous exercise so it ignores non-alphabetic characters when determining whether it should uppercase or lowercase each letter. The non-alphabetic characters are still included in the return value; they just don't count when toggling the desired case.
 
+
+
+function staggeredCase(string) {
+  let newString = '';
+
+  for (let i = 0, stage = true; i < string.length; i++) {
+    newString += stage ? string[i].toUpperCase() : string[i].toLowerCase();
+    if (string[i].match(/[a-z]/gi)) {
+      stage = !stage;
+    }
+  }
+  return newString;
+}
+
+
 // Example:
 
-// staggeredCase('I Love Launch School!')     // 'I lOvE lAuNcH sChOoL!'
-// staggeredCase('ALL CAPS')                  // 'AlL cApS'
-// staggeredCase('ignore 77 the 444 numbers') // 'IgNoRe 77 ThE 444 nUmBeRs'
+staggeredCase('I Love Launch School!')     // 'I lOvE lAuNcH sChOoL!'
+staggeredCase('ALL CAPS')                  // 'AlL cApS'
+staggeredCase('ignore 77 the 444 numbers') // 'IgNoRe 77 ThE 444 nUmBeRs'
 
-
-
-
-
-
-
+staggeredCase('aaa'); // AaA
+staggeredCase('aaaaaa'); // AaAaAa
+staggeredCase('a a_A4aa$Aa'); // A a_A4aA$aA
 
 
 

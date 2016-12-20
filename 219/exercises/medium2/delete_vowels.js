@@ -2,12 +2,73 @@
 
 // Write a function that takes an array of strings, and returns an array of the same string values without the vowels (a, e, i, o, u).
 
+
+/*
+
+Understanding
+- input
+  - an array of strings
+    ? []
+    ! case insensitive
+
+- output
+  - an array of string
+    - without vowels
+
+Data Struction
+- array
+- stirng
+  - transform => map
+  - removing vowels => filter
+
+Algorithm
+- mapping the array of strings, in each iteration
+  - return the string with vowels removed
+
+- return the new array
+
+Abstraction
+- removeVowels(word)
+  - vowels array contains (a, e, i, o, u).
+  - convert word to and filtered by wovels, indexOf === -1
+
+ 
+
+*/
+
+
+var VOWELS = ['a', 'e', 'i', 'o', 'u'];
+
+function removeVowels_1(array) {
+  return array.map(function (string) {
+    return string.split('').filter(function(char) {
+      return VOWELS.indexOf(char.toLowerCase()) === -1;
+    }).join('');
+  });
+}
+
+/*
+Algorithm using regex
+
+repace /[aeiou]/gi ''
+*/
+
+
+function removeVowels(array) {
+  return array.map(function (string) {
+    return string.replace(/[aeiou]/gi, '');
+  });
+}
+
 // Example:
 
-// removeVowels(['abcdefghijklmnopqrstuvwxyz']);             // ['bcdfghjklmnpqrstvwyxz']
-// removeVowels(['green', 'YELLOW', 'black', 'white']);      // ['grn', 'YLLW', 'blck', 'wht']
-// removeVowels(['ABC', 'AEIOU', 'XYZ']);                    // ['BC', '', 'XYZ']
+removeVowels(['abcdefghijklmnopqrstuvwxyz']);             // ['bcdfghjklmnpqrstvwyxz']
+removeVowels(['green', 'YELLOW', 'black', 'white']);      // ['grn', 'YLLW', 'blck', 'wht']
+removeVowels(['ABC', 'AEIOU', 'XYZ']);                    // ['BC', '', 'XYZ']
 
+removeVowels(['AEIOU']); // ['']
+removeVowels(['A', '']); // ['', '']
+removeVowels([' ']); // [' ']
 
 
 

@@ -123,8 +123,29 @@ How to iterating objects
 - iterating `Object.keys(myObj)` as array
 - `for (var item in myObj)` item is key, myObj[item] is value
 
-
 What array `shift` does?
 - remove the first element
 - return the removed element
 
+How to provide default value to an array?
+- using `||` at the end of expression
+- the default value is an empty array
+- `let lowercases = string.match(/[a-z]/g) || [];`
+
+
+What is guard clause?
+- if `word` is undefined
+- or if `word` is empty string
+```js
+if (!word || word.length === 0) {
+  return [];
+}
+```
+
+
+How to compose RegExp pattern from variables?
+
+```js
+let word = 'abc';
+let regex = new RegExp(word, 'ig');
+```
