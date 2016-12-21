@@ -49,9 +49,19 @@ LaunchSchool Notes
 
 ## 219 - Assessment: Computational Thinking and JavaScript Programming
 - [x] 219 video on problem solving https://launchschool.com/gists/c013accd
-- [ ] [Assessment](219/_219.md)
-- [ ] [Examples](219/example.md)
-- [ ] [Guide](219/_guide.md)
+- [x] [Note](219/_219.md)
+- [x] [Examples](219/example.md)
+- [x] [Guide](219/_guide.md)
+- [x] Assessment - pass
+
+## 220 - Front End Development with JavaScript
+- [ ] [Function Contexts and Objects](220/lesson1/_210_lesson1.md)
+- [ ] [jQuery and the DOM](220/lesson2/_210_lesson2.md)
+- [ ] [Debugging and Improving Code](220/lesson3/_210_lesson3.md)
+- [ ] [Putting it All Together](220/lesson4/_210_lesson4.md)
+- [ ] [Advanced jQuery and Dynamic Content Creation](220/lesson5/_210_lesson5.md)
+- [ ] [HTML5 APIs](220/lesson6/_210_lesson6.md)
+- [ ] [Object Creation Patterns](220/lesson7/_210_lesson7.md)
 
 # Back-end
 TBD

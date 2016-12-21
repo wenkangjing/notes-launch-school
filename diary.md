@@ -245,7 +245,11 @@ Reference: YMPH-DWEX-AQRS
 - 210/219 lesson notes / exercise: JS Foundamental / 210 small problems
 
 2016-12-23
-- Interview with Kevin at 6am
+- Interview with Kevin at 6am - pass
+
+2016-12-23
+- 220 - Lesson 1
+
 
 TODO:
   - [ ] JS `call` `apply`
