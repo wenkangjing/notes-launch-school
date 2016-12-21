@@ -14,7 +14,7 @@ function addtion(a, b) {
 ```
 
 - `Argument` 
-  - is the value/variable/reference being passed in. C
+  - is the value/variable/reference being passed in
   - when invoking a function
 
 - `Parameter` 
@@ -82,7 +82,7 @@ ReferenceError
 **Best Practice**
 
 - Always declare variables at the top of their scope.
-- lways declare functions before calling them:
+- Always declare functions before calling them:
 
 
 # 7	Function Declarations and Function Expressions
@@ -112,4 +112,4 @@ ok
 
 # 9	Exercises: Variable Scopes in JavaScript (2) 
 [ ] pls review
-[ ] read thru the answer, very helpful on how to clearly explaint code in a interview
+[ ] read thru the answer, very helpful on how to clearly explain the code in a interview

@@ -64,15 +64,16 @@ add property
   ```
 
 delete property
-  ```js
-  var foo = {
-    a: 'hello',
-    b: 'world',
-  };
 
-  delete foo.a;
-  foo;                      // {b: "world"}
-  ```
+```js
+var foo = {
+  a: 'hello',
+  b: 'world',
+};
+
+delete foo.a;
+foo;                      // {b: "world"}
+```
 
 
 # 3	Stepping through Object Properties
