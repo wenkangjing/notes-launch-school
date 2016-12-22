@@ -149,3 +149,10 @@ How to compose RegExp pattern from variables?
 let word = 'abc';
 let regex = new RegExp(word, 'ig');
 ```
+
+
+How JS looks up variables?
+- it will start to check within its current scope for its value. 
+- If it doesn't exist, it will look at the next outer score and see if the variable exists at that scope. 
+- It will continue doing this until reaches the outer most (global) scope.
+- if there is none even the outer scopes. When this happens, JavaScript binds it to be a "property" of the global object. This is "almost" the same as if myVar was globally declared.

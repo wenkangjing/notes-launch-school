@@ -237,12 +237,18 @@ Reference: YMPH-DWEX-AQRS
   - \exercises\easy4\dms.js messy code (symbol code)
   - no hurry to abstract functons
 
-2016-12-19
-- exercises - 210 small problems  - easy4
+2016-12-19 - 2016-12-21
+- exercises - 210 small problems  - done
+
+2016-12-22
+- Interview prep
+- 210/219 lesson notes / exercise: JS Foundamental / 210 small problems
+
+2016-12-23
+- Interview with Kevin at 6am
 
 TODO:
   - [ ] JS `call` `apply`
-  - [ ] archive regex to kb article   
   - [ ] [css inheritance and cascade](https://www.w3.org/wiki/Inheritance_and_cascade)
   - [ ] [Web Standards Curriculum](https://www.w3.org/wiki/Web_Standards_Curriculum)
   - [ ] Read thru w3c.org 

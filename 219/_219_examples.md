@@ -52,6 +52,7 @@ Understanding the problem
   - join together with \n or loop and print
 
 Examples
+
 ```
   *
  ***

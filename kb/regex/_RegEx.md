@@ -13,12 +13,12 @@ http://scriptular.com/
 
 - special characters
   - `$ ^ * + ? . ( ) [ ] { } | \` (metacharacters)
-  - use \ to escape, /\?/ contains ?
+  - use `\` to escape, `/\?/` contains `?`
 
 - alternation `|`
   - `(a|b|c)` contains a or b or c
   - `a(1|2)d` contains a1d or a2d
-  - parentheses isn't always required, but is strongly recommended. 
+  - **parentheses isn't always required, but strong recommended.** 
 
 - ignore case `/i`
   - `/cat/i` contains cat, Cat, CAT, caT (case insensitive)
@@ -28,7 +28,7 @@ http://scriptular.com/
   - `[12345]` contains any of char in []
   - `[abc][12]` contains any of a1 a2 b1 b2 c1 c2
   - e.g. wants a user to choose between 5 different things by entering a number between 1 and 5, you can validate that input with the regex `/[12345]/`. 
-  - e.g. Likewise, you can validate a y/n prompt response with `/[nyNY]/`
+  - e.g. Likewise, you can validate a `y/n` prompt response with `/[nyNY]/`
 
 - all
   - `(abc)` contains abc, same as /abc/
@@ -42,10 +42,7 @@ http://scriptular.com/
 
 `[0-9A-Ja-j]` = 
 
-
-
-> While it is possible to construct ranges that cover non-alphanumeric characters, do not do this. Stick to the alphanumeric characters. Also, don't try to combine lowercase and uppercase alphabetic characters in a single range: /[A-z]/ does not do what you probably think it does. To see this, try /[A-z]/ with the following strings:
-
+> While it is possible to construct ranges that cover non-alphanumeric characters, do not do this. Stick to the alphanumeric characters. Also, don't try to combine lowercase and uppercase alphabetic characters in a single range: /[A-z]/ does not do what you probably think it does. 
 
 - Negation, must be inside `[]`
   - `/[^y]/` anything not y
@@ -58,13 +55,13 @@ http://scriptular.com/
 
 ## Anchors
 
-- start `^` or end `$` of line 
+- start `^` or end `$` of **line** 
   - `/^cat/`
   - `/cat$/`
 
-- start `\A` or end `\Z` of string
-  - /\Acat/
-  - /cat\z/
+- start `\A` or end `\Z` of **string**
+  - `/\Acat/`
+  - `/cat\z/`
 
 - word boundary
   - `/\b\w\w\w\b/` any 3-letter words
@@ -88,6 +85,11 @@ http://scriptular.com/
 - `\b[a-z][a-z][a-z]\b` 3 small case letter
 - `\s...\s` 3 anything between whitespace
 
+- `\bcat\b` whole word
+- `\bcat` starts with 'cat'
+- `\Bcat\b` end with
+
+
 ## Quantifiers 
 
 *(occurrence of the pattern to its left)*
@@ -99,7 +101,7 @@ http://scriptular.com/
 
 > The regex `*` quantifier looks very similar to the * wildcard you find in many command line shells, but don't be fooled; they are not the same. 
 >
-> The * wildcard from a shell is more like the regex `/.*/`; it matches any sequence of characters, regardless of what those characters are. So, the wildcard `blue*doc` matches any file whose name begins with blue and ends with doc, while `/blue*doc/` matches any sequence of characters that begins with blu, ends with doc, and contains any number of es between the beginning and end.
+> The * wildcard from a shell is more like the regex `/.*/`; it matches any sequence of characters, regardless of what those characters are. So, the wildcard `blue*doc` matches any file whose name begins with blue and ends with doc, while `/blue*doc/` matches any sequence of characters that begins with blu, ends with doc, and contains any number of `e`s between the beginning and end.
 
 
 - 1 or more `+` 
@@ -146,7 +148,7 @@ xabcbcbacy
 - `\s` 	Any whitespace character
 - `\s*` 0 or more whitespace chars
 - `\S` 	Any non-whitespace character
-- `/\Ahttps?:\/\/\S+\z/` a url
+- `/\Ahttps?:\/\/\S+\z/` a url, \S is non space characters (URL doesn't contain any spaces)
 - `/(['"]).+/` text that quoted
 
 - `\d` 	Any digit
