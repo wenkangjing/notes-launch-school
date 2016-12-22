@@ -250,9 +250,8 @@ Reference: YMPH-DWEX-AQRS
 2016-12-23
 - 220 - Lesson 1
 
-
 TODO:
-  - [ ] JS `call` `apply`
+  - [ ] need review `context`, `this` for several times
   - [ ] [css inheritance and cascade](https://www.w3.org/wiki/Inheritance_and_cascade)
   - [ ] [Web Standards Curriculum](https://www.w3.org/wiki/Web_Standards_Curriculum)
   - [ ] Read thru w3c.org 
