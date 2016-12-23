@@ -180,6 +180,33 @@ https://launchschool.com/lessons/2555bbbb/assignments/a25e45f9
 
 https://launchschool.com/lessons/2555bbbb/assignments/93b8b6af
 
+https://github.com/getify/You-Dont-Know-JS/tree/master/this%20%26%20object%20prototypes
 
 
 # 14	Functions in Objects
+
+> Every function is called with a context, whether it is specified using `apply` or `call`, `bind` or `called as-is`.
+
+## IIFE
+
+an anonymous function that is executed right after it's created
+
+```js
+
+// call a function direct after its created
+var f = function () {
+};
+f();
+
+// equalvenlent
+(function () {
+
+})();
+
+// Crockford's preference - parens on the inside
+(function() {
+  console.log('show immediately.');
+}());
+
+
+```
