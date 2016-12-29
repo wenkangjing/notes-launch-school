@@ -98,6 +98,13 @@ nodeValue
 textContent
 - of a node and its descendants.
 
+data
+- https://dom.spec.whatwg.org/#concept-cd-data
+
+> CharacterData is an abstract interface and does not exist as node. It is used by Text, ProcessingInstruction, and Comment nodes.
+>
+> Each node inheriting from the CharacterData interface has an associated mutable string called data.
+
 # 6	Determining the Type of a Node
 
 ```
@@ -187,6 +194,9 @@ style
 
 
 # 10	Exercises: Traversing and Accessing Attributes
+
+1. Write JavaScript to determine how many total images are on the webpage and how many of those images are in the PNG format.
+
 
 
 # 11	Finding DOM Nodes
