@@ -176,6 +176,9 @@ How to detect the node type in JS?
 ```
 
 
+How to convert HTMLCollection or NodeList to JS Array?
+- `var arr = Array.prototype.slice.call(htmlCollection)`
+- `var arr = [].slice.call(htmlCollection)`
 
 
 
