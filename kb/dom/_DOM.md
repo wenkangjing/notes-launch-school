@@ -181,6 +181,12 @@ How to convert HTMLCollection or NodeList to JS Array?
 - `var arr = [].slice.call(htmlCollection)`
 
 
+textContent vs value vs innerText vs innerHtml
+- `Node.textContent` property represents the text content of a node and its descendants.
+- `Node.innerText` is a property that represents the "rendered" text content of a node and its descendants
+- `textarea.value` form controls
+- `innerText` will not include text that is hidden by CSS, but textContent will.
+
 
 
 

@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>Event Preventing</title>
+    <style>
+      div {
+        border: solid 2px blue;
+        background: lightblue;
+        padding: 2em;
+      }
+    </style>
+    <script>
+      function turnRed(event) {
+        //event.stopPropagation(); // Tells the browser to not bubble the event up to parents
+        event.preventDefault();
+        console.log(event.target.className, event.currentTarget.className);
+        event.currentTarget.style.background = 'red';
+      }
+
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelector('.outer').addEventListener('click',  turnRed);    
+        document.querySelector('.inner').addEventListener('click',  turnRed);
+      }); 
+    </script>
+  </head>
+  <body>
+    <div class="outer">
+      <div class="inner">
+      </div>
+    </div>
+  </body>
+</html>

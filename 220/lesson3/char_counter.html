@@ -19,19 +19,22 @@
     </style>
 
     <script>
-      document.addEventListener('DOMContentLoaded', function(e){
+      document.addEventListener('DOMContentLoaded', function(){
     
         let textarea = document.querySelector('.composer textarea');
         let counter = document.querySelector('.composer p');
         let button = document.querySelector('.composer button');
         
         function updateCounter(e) {
-          let reminding = 140 - textarea.textContent.length;
+          let reminding = 140 - textarea.value.length;
           counter.textContent = reminding + ' Characters remainding';
 
           if (reminding < 0) {
-            textarea.setAttribute('class', 'invalid');
-            button.disabled = invalid;
+            textarea.classList.add('invalid');
+            button.setAttribute('disabled');
+          } else {
+            textarea.classList.toggle('invalid');
+            button.removeAttribute('disabled')
           }
         }
 
@@ -52,7 +55,9 @@
 </html>
 
 
-/*
+
+
+<!--
 
 document.addEventListener('DOMContentLoaded', function() {
   var composer = document.querySelector('.composer');
@@ -77,4 +82,4 @@ document.addEventListener('DOMContentLoaded', function() {
   updateCounter();
 });
 
-*/
+-->

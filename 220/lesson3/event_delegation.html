@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <title>Event Delegation</title>
+    <style>
+      #message {
+        padding: .5em .8em;
+        background-color: lightyellow;
+        display: inline-block;
+      }
+
+      a.highlight {
+        color: green;
+      }
+    </style>
+    <script>
+
+      /*This technique of attaching a single event handler at a higher location in the DOM is called event delegation.*/
+      document.addEventListener('click', function(event) {
+        var tag = event.target.tagName;
+        if (tag === 'BUTTON') {
+          var message = document.getElementById('message');
+          message.textContent = event.target.textContent + " was clicked!";
+        } else if (tag === 'A') {
+          event.preventDefault();
+          event.target.classList.toggle('highlight');
+        }
+      });
+
+      /*addEventListener to all buttons*/
+      // function clickHandler(event) {
+      //   var message = document.getElementById('message');
+      //   message.textContent = event.target.textContent + " was clicked!";
+      // }
+
+      // document.addEventListener('DOMContentLoaded', function() {
+      //   var buttons = document.querySelectorAll('button');
+      //   for (var i = 0; i < buttons.length; i++) {
+      //     buttons[i].addEventListener('click', clickHandler);
+      //   }
+      // });
+    </script>
+  </head>
+  <body>
+    <button>One</button>
+    <button>Two</button>
+    <a href="#">Three</a>
+    <a href="#">Four</a>
+
+    <div>
+      <p>
+        <button>Five</button>
+        <button>Six</button>
+        <a href="#">Seven</a>
+        <a href="#">Eight</a>
+      </p>
+    </div>
+
+    <div id="message"></div>
+  </body>
+</html>

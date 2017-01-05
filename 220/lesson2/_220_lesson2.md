@@ -184,7 +184,7 @@ class
 - `classList` array-like 
   - add(name)	Add the class name to the element
   - remove(name)	Removes the class name from the element
-  - toggle(name)	Adds the class name unless it exists, in which case it is removed.
+  - `toggle(name)`	Adds the class name unless it exists, in which case it is removed.
   - contains(name)	Returns true or false depending on if the element has the class name.
   - length	The number of classes on the element.
 
