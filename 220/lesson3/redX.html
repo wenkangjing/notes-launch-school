@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <title>Move on hover</title>
+    <style>
+      .x {
+        position: absolute;
+        transform: rotate(45deg);
+        top: 20px;
+        left: 20px;
+        border: 1px solid green;
+        background: green;
+      }
+
+      .x .horizontal {
+        width: 45px;
+        height: 5px;
+        position: absolute;
+        left: -20px;
+        background: red;
+      }
+
+      .x .vertical {
+        height: 45px;
+        width: 5px;
+        background: red;
+        position: absolute;
+        left: 0px;
+        top: -20px;
+      }    
+    </style>
+    <script>
+      
+      document.onmousemove = function(e) {
+        let x = document.querySelector('.x');
+        x.style.left = String(e.clientX) + 'px';
+        x.style.top = String(e.clientY) + 'px';
+      };
+
+      document.addEventListener('keyup', function(event) {
+        var key = event.which; // prefer wich over key
+        var color;
+
+        if (key === 82) {
+          color = 'red';
+        } else if (key === 71) {
+          color = 'green';
+        } else if (key === 66) {
+          color = 'blue';
+        }
+
+        if (color) {
+          var x = document.querySelector('.x');
+          for (var i = 0; i < x.children.length; i++) {
+            var child = x.children[i];
+            child.style.background = color;
+          }
+        }
+      });
+
+    </script>
+  </head>
+  <body>
+    <div class="x">
+      <div class="horizontal"></div>
+      <div class="vertical"></div>
+    </div> 
+  </body>
+</html>

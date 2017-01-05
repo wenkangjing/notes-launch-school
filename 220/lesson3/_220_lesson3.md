@@ -75,6 +75,10 @@ Form
 - `e.target` The object the event originally was fired upon.
 - `e.currentTarget` The object that is currently being targetted as the event bubbles up the DOM. This will be the object the event handler was attached to.
 
+keyboard event
+- which // keyCode **preferred**
+- key // letter
+- keyup/keydown/keypress(only for none modifier keys)
 
 # 9	Capturing and Bubbling
 

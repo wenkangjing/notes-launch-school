@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <title>Keyboard Event</title>
+    <style>
+      html {
+        height: 100%;
+        background: lightblue;
+        text-align: center;
+        font-family: monospace;
+        line-height: 1.4;
+        font-size: 14px;
+      }
+      td, th {
+        width: 5em;
+        text-align: center;
+      }    
+    </style>
+    <script>
+      function display(event) {
+        var tbody = document.querySelector('table tbody');
+        var tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${event.type}</td>
+          <td>${event.which}</td>
+          <td>${event.key}</td>
+          <td>${event.shiftKey}</td>
+          <td>${event.altKey}</td>
+          <td>${event.ctrlKey}</td>
+          <td>${event.metaKey}</td>
+        `;
+        tbody.appendChild(tr);
+        
+        document.body.scrollTop = document.body.scrollHeight
+      }
+
+      document.addEventListener("keydown", display);
+      document.addEventListener("keyup", display);
+      document.addEventListener("keypress", display);
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var button = document.querySelector('#clear');
+        button.addEventListener('click', function() {
+          var tbody = document.querySelector('table tbody');
+          tbody.innerHTML = '';
+        });
+      });    
+    </script>
+  </head>
+</html>
+<button id="clear">Clear</button>
+
+<table>
+  <thead>
+    <tr>
+      <th>type</th>
+      <th>which</th>
+      <th>key</th>
+      <th>shiftKey</th>
+      <th>altKey</th>
+      <th>ctrlKey</th>
+      <th>metaKey</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
