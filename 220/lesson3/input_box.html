@@ -34,8 +34,60 @@
     
     <script>
 
+      let cursorInterval;
+      let focusedTextField;
 
-    
+      document.addEventListener('DOMContentLoaded', function() {
+        //
+        // 1. adds the class focused to the .text-field element when it is clicked.
+        //
+        let textfiled = document.querySelector('.text-field');
+
+        textfiled.addEventListener('click', function(e){
+          e.stopPropagation();
+          this.classList.add('focused');
+          focusedTextField = this;
+
+          //
+          // 3. When the .text-field element is clicked, 
+          // create an interval that adds and removes the class cursor 
+          // from .text-field every 500 milliseconds.
+          //
+          cursorInterval = window.setInterval(function(){
+            textfiled.classList.toggle('cursor');
+          }, 500);
+        });
+      });
+
+      //
+      // 2. removes the class focused from the .text-field element when the document is clicked.
+      //
+      document.addEventListener('click', function(e){
+        //e.stopPropagation(); // no need, top-most handler in bubbling phase
+        window.clearInterval(cursorInterval);
+        focusedTextField = null;
+        document.querySelector('.text-field').classList.remove('focused');
+      });
+
+      //
+      // 4. When the .text-field is "focused" and a key is pressed on the keyboard, 
+      // add the String value of the pressed key to the .content element.
+      //
+      document.addEventListener('keydown', function(e){
+        if (focusedTextField) {
+          let content = document.querySelector('.content');
+          if (e.which ===8 ) {
+            content.textContent = content.textContent.slice(0, content.textContent.length - 1);
+          } else {
+            content.textContent += e.key;
+          }
+        }
+      });
+
+      //
+      // 5. When the Backspace key is pressed, 
+      // delete the last character from the text with the .content element.
+      // 
     </script>
 
   </head>

@@ -145,12 +145,35 @@ callback queue
 
 
 # 13	Assignment: Guessing Game
-
-
 # 14	Assignment: Build an Input Box
 
+quesiton
+- keydown on `div` or `document`
 
 # 15	Summary
 
+- `setTimeout(callback, delay)` is used to invoke a Function after the specified number of milliseconds, 0 ms is used to invoke when callback queue is empty
+
+- `setInterval(callback, delay)` is used to repeatedly invoke a Function after the specified number of milliseconds. clearInterval can be used to prevent future invocations of the Function.
+
+- An event is an object that represents some occurrence and contains a variety of information about what and where it happened. Events can be triggered by the browser as it loads a page, by a user as they interact with the page, and by the browser as it performs work as directed by a program.
+
+- **Code that needs access to the DOM should be invoked after the `DOMContentLoaded` event is fired on document.**
+
+- User events are used to drive most user interfaces and can be the result of a user interacting with the keyboard, mouse, touchscreen, window, and more. Examples of these user events are click, mouseover, keydown, and scroll.
+
+- **Event listeners are callbacks** that will be invoked whenever a matching event is detected.
+
+- `element.addEventListener` is used to register an event listener.
+
+- The Event object provides the useful properties `type, target, and currentTarget`.
+
+- **Keyboard events** have properties `which` and `key` (and others) that describe what keys were pressed. Mouse events similarly provide `button`, `clientX`, and `clientY`.
+
+- There are three phases to events being fired: **capturing, target, and bubbling**.
+
+- `event.preventDefault()` is used to prevent default browser behavior in response to an event. `event.stopPropagation` stops the event from being triggered on other containing or contained elements.
+
+- **Event delegation** is a technique used to handle events triggered by **multiple elements using a single event handler.**
 
 # 16	Assessment: Context, Events, and the DOM
