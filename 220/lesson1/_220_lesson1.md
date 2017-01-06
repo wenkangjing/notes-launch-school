@@ -165,10 +165,14 @@ var bar = function() { // must be function expression
 
 # 10	Dealing with Context Loss (3)
 
+whenever execute a function, know which object the functino is calling against.
+
+Either `bind(obj)` or pass context via `call/apply`
+
+
 # 11	Summary: The "this" Keyword in JavaScript
 
 https://rainsoft.io/gentle-explanation-of-this-in-javascript/
-
 
 
 # 12	Exercises: What is this? (1)
@@ -215,9 +219,9 @@ f();
 # Summary
 
 
-## All JavaScript code executes within a context. The top level context within a web browser is the window object. All global methods and Objects (such as isNaN or Math) are available as properties of this object.
+- All JavaScript code executes within a context. The top level context within a web browser is the window object. All global methods and Objects (such as isNaN or Math) are available as properties of this object.
 
-##Variables and Functions defined at in the global scope can not be deleted using delete:
+- Variables and Functions defined at in the global scope can not be deleted using delete:
 
 ```js`
 var car = 1;
@@ -225,19 +229,22 @@ var car = 1;
 function speak() { ... }
 ```
 
-## Object Oriented Programming is a pattern that uses objects to organize code instead of procedures or Functions. Unlike procedures and Functions, objects can also contain data.
+- Object Oriented Programming is a pattern that uses objects to organize code instead of procedures or Functions. Unlike procedures and Functions, objects can also contain data.
 
-## `this` is used to refer to the current execution context of a function.
+- `this` is used to refer to the current execution context of a function.
 
-## The value of `this` changes based on how a function is invoked, not how it was defined.
+- The value of `this` changes based on how a function is invoked, not how it was defined.
 
-## JavaScript has first-class functions, which means that functions can be:
+- JavaScript has first-class functions, which means that functions can be:
+
 - added to objects and execute in their contexts
+
 - taken out of their objects, passed around and executed in entirely different contexts
+
 - not bound to an object initially, but dynamically given a context to be executed in
 
-## `call` and `apply` can be used to explicitly define a Function's execution context.
+- `call` and `apply` can be used to explicitly define a Function's execution context.
 
-## `bind` is used to permanently bind a function to the context of an object.
+- `bind` is used to permanently bind a function to the context of an object.
 
-## A function included in an object that operates on the data within that object is called a method.
+- A function included in an object that operates on the data within that object is called a method.

@@ -177,3 +177,7 @@ quesiton
 - **Event delegation** is a technique used to handle events triggered by **multiple elements using a single event handler.**
 
 # 16	Assessment: Context, Events, and the DOM
+
+[x] Context
+[ ] Event
+[ ] the DOM
