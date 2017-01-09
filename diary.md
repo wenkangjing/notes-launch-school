@@ -247,8 +247,17 @@ Reference: YMPH-DWEX-AQRS
 2016-12-23
 - Interview with Kevin at 6am - pass
 
-2016-12-23
-- 220 - Lesson 1
+2017-01-08
+- 220 - Assessment  - Context, Event and the DOM
+
+2017-01-09
+- 220 - Done - score - 75/81
+
+2017-01-09
+- 220 - Lesson 4 - 5/16 
+
+
+
 
 TODO:
   - [ ] need review `context`, `this` for several times
