@@ -101,6 +101,8 @@ Attributes vs. Properties
 
 # 5	Read: jQuery Events
 
+http://api.jquery.com/category/events/
+
 `.on()`
 - $('form').on('submit', function(e) {
 - $('a').on('click', function(e) {
@@ -111,11 +113,39 @@ Attributes vs. Properties
 
 # 6	Read: jQuery DOM Traversal
 
-`.parent(selector)`
+http://api.jquery.com/category/traversing/
+
+`.parent()` `.parents()` optional [selector]
 
 `.closest(selector)`
+- a closest element
+
+`.find()`
+- by selector or element
+- Get the **descendants** of each element
+
+
+`filter()`
+- by selector or function
+- Reduce the **set of matched elements**
+
+
+`.children(])` 
+- optional [selector]
+
+`.nextAll()`
+- optional [selector] 
+
+`.prevAll()`
+
+`.siblings()`
+
+`.eq(i)` 
+- 0 based
+- same as [i]
 
 # 7	Exercises: Using jQuery Selectors
+http://d3jtzah944tvom.cloudfront.net/jquery_selectors/index.html
 
 
 # 8	Exercises: jQuery Events
