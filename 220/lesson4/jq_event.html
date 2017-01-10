@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>jQuery Event Exercises</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+      let code;
+
+      $(function() {
+        $('form').on('submit', function (e) {
+          e.preventDefault();
+          let char = $('input[type="text"]').val();
+          code = char.charCodeAt(0);
+          console.log(char, code);
+        });
+
+        $('a').on('click', function (e) {
+          e.preventDefault();
+          $('#accordion').slideToggle();
+        });
+      });
+
+       $(document).off('keypress').on('keypress', function (e) {
+        console.log(e.which);
+        if (e.which !== code) {
+          return;
+        }
+        console.log('bingo');
+        $('a').trigger('click');
+      });
+
+    </script>
+  </head>
+  <body>
+    <form action="" method="get">
+      <input type="text" maxlength ="1" name="" value="">
+      <input type="submit" value="Set">
+      <div></div>
+      <a href="#">toggle</a>
+      <div id="accordion">
+        <p>Eu proident ea deserunt reprehenderit veniam eu consequat amet do laborum. Deserunt veniam non sunt enim ea nulla mollit pariatur velit minim. Ea eu labore esse excepteur occaecat adipisicing sunt sit. Ut ad pariatur ut sint voluptate mollit aliqua mollit. Fugiat esse ullamco sint labore ipsum do nostrud occaecat eu. Dolore dolore proident eu et adipisicing adipisicing exercitation laboris eiusmod voluptate nulla ea.</p>
+      </div>
+    </form>
+  </body>
+</html>

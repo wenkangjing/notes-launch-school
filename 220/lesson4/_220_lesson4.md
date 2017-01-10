@@ -5,6 +5,9 @@ jQuery
 
 jQuery is a JavaScript library that provides a convenient and consistent API across many browsers and platforms.
 
+Every method in jQuery can be accomplished with JavaScript and the DOM methods. 
+
+
 # 2	Douglas Crockford Lecture: The Metamorphosis of Ajax
 
 https://www.youtube.com/watch?v=Fv9qT9joc0M
@@ -12,6 +15,9 @@ https://www.youtube.com/watch?v=Fv9qT9joc0M
 # 3	Read: Introduction to jQuery
 
 >jQuery, at its core, is a function that wraps a DOM element or collection of elements in a collection of convenience methods that can be called to either manipulate the objects or use those elements in combination with other jQuery methods. 
+
+> in jQuery, **$()** is an alias to **querySelector()**
+
 
 ```js
 
@@ -107,6 +113,12 @@ http://api.jquery.com/category/events/
 - $('form').on('submit', function(e) {
 - $('a').on('click', function(e) {
 
+ `$(document).on()`
+ - 
+
+`.trigger('click')`
+- trigger click event on the element
+
 `.click()` or `.submit()`
 - $('a').click(function(e) {
 - $('form').submit(function(e) {
@@ -144,15 +156,54 @@ http://api.jquery.com/category/traversing/
 - 0 based
 - same as [i]
 
+`.next()` `.last()`
+
+Selectors
+
+`:not()`
+
+`:contains`
+
 # 7	Exercises: Using jQuery Selectors
 http://d3jtzah944tvom.cloudfront.net/jquery_selectors/index.html
 
+```js
+// manipulate class
+$("h1").removeClass('highlight')
+$("h1").addClass('highlight')
+$("h1").toggleClass('highlight')
+
+// selector 
+$('table').find('tr').filter(':odd');
+// or
+$('table').find('tr:odd');
+
+// index function
+$('table td').last();
+// or
+$('table td').eq(-1);
+
+// index selector
+$("article li:eq(2)");
+
+
+// not can be function or selector
+$('td').not('.protected');
+// or
+$('td:not('.protected')');
+
+// attribute selector
+$('a[href^=#]');           // starts with
+$("input[name$='letter']") // ends with
+$('[class*=block]');       // contains
+
+```
 
 # 8	Exercises: jQuery Events
-
+[Exercise](./jq_event.html)
 
 # 9	Assignment: Arithmetic Calculator
-
+[Exercise](./calculator.html)
 
 # 10	Assignment: Removing jQuery
 
