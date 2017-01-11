@@ -67,8 +67,8 @@ jQuery function
 
 Part1: jQuery from a CDN, called on DOM ready
 - DOM ready 
-  - `$(document).ready(function(){});`
-  - `$(function(){});`
+  - $(document).ready(function(){});
+  - $(function(){})
 
 - window load `$(window).load(function (){})`
 
@@ -203,10 +203,56 @@ $('[class*=block]');       // contains
 [Exercise](./jq_event.html)
 
 # 9	Assignment: Arithmetic Calculator
-[Exercise](./calculator.html)
+[Exercise](./jq_calculator.html)
 
 # 10	Assignment: Removing jQuery
 
+[Exercise](./raw_calculator.html)
+
+```js
+
+// selector
+$("#element_id")
+document.getElementById('#element_i')
+
+// event
+$("form").on("submit", function(e) {})
+document.getElementById("calculator").onsubmit = function(e) {})
+
+// value
+$("#left").val()
+document.getElementById("left").value
+
+// text
+$("#right").val()
+document.getElementById("output").textContent 
+
+// window onload
+$(window).load(function(){})
+
+window.onload = function() {
+
+};
+
+window.addEventListener('load', function(){
+
+});
+
+// dom ready
+$(function(){
+
+});
+
+$(document).ready(function (){
+
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+
+});
+
+
+```
 
 # 11	Assignment: Grocery List
 

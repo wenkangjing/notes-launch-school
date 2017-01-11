@@ -1,0 +1,12 @@
+body {
+  font: normal 16px Helvetica, Arial, sans-serif;
+}
+
+input[type="number"] {
+  width: 100px;
+  border-radius: 4px;
+}
+
+h1 {
+  color: green;
+}
