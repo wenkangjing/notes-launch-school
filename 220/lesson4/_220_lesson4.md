@@ -18,6 +18,7 @@ https://www.youtube.com/watch?v=Fv9qT9joc0M
 
 > in jQuery, **$()** is an alias to **querySelector()**
 
+To get jQuery version `$(document).jquery`
 
 ```js
 
@@ -256,11 +257,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
 # 11	Assignment: Grocery List
 
+print.css
+- add `media` attribute
+- <link rel="stylesheet" media="print" href="print.css" />
+
+reset text in form
+- document.querySelector('form').reset()
+- $form.trigger('reset');
+- $form[0].reset();
+
+css
+- box-shadow
+- text-shadow
+- linear-gradient
+
+js
+- caching selectors in jQuery object
+- know how to use `$(this)` in callback
 
 # 12	Assignment: DOM Shuffling
 
+looping jquery object
+- `.eq()` returns jQuery object
+- `[]` or `.get()` returns element
+
+manipulate DOM
+- `.append(), .appendTo(), .prepend(), .prependTo()`
+- ` .before() .after()`
+- `detach()` is not needed
 
 # 13	Assignment: Team Member Profile Modals
+
+modal
 
 
 # 14	Assignment: Photo Gallery Slideshow

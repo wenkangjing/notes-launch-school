@@ -1,0 +1,388 @@
+/*
+----------------------------------------
+Tantek Celik's Whitepsace Reset
+     Author:    Tantek Celik, Shane Riley
+    Version:    (CC) 2010 Some Rights Reserved - http://creativecommons.org/licenses/by/2.0
+Description:  Resets default styling of common browsers to a common base
+----------------------------------------
+*/
+
+ul,ol { list-style: none; }
+h1,h2,h3,h4,h5,h6,pre,code { font-size: 1em; }
+ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input,dl,dt,dd, figure, figcaption {
+  margin: 0;
+  padding: 0; }
+a img,:link img,:visited img, fieldset { border: none; }
+address { font-style: normal; }
+header, section, article, nav, footer, hgroup, details, summary, figure, main { display: block; }
+mark {
+  color: inherit;
+  background: transparent; }
+abbr { border: none; }
+summary::-webkit-details-marker { display: none; }
+
+/*
+-----------------------------------------
+Prefered common styling
+-----------------------------------------
+*/
+html { box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
+
+.clearfix::after{
+  content:"";
+  display:block;
+  visibility: none;
+  clear:both;
+}
+
+/* Common */
+body{
+  font:normal 16px Helvetica, Arial, sans-serif;
+  background: transparent url("./images/bg_body.gif") 0 0 repeat;
+  width:auto;
+}
+
+/* This is a base styling, can be override by IDs in each page */
+.column{
+  max-width:1000px;
+  padding:75px 0 135px 0;
+  margin:0 auto;
+}
+
+/* header */
+header {
+  padding:75px 0 50px 0;
+}
+header h1 {
+  padding-bottom:120px;
+  text-align: center;
+}
+header nav {
+  text-align:center;
+}
+
+header li {
+  display:inline-block;
+  text-transform: uppercase;
+  padding: 0 42px;
+}
+
+header li + li {
+  padding-left:65px;
+}
+header a {
+  font-size:26px;
+  color:#cacaca;
+  text-decoration: none;
+}
+header a.active {
+  color:#6db9ff;
+}
+
+/* main */
+main {
+  background:#ffffff;
+}
+
+main h2 {
+  font-size:36px;
+  text-align: center;
+  margin-bottom:45px;
+}
+
+main h2:after,
+main h2:before{
+  content:"\2022";
+  padding: 0 30px;
+}
+main h3 {
+  font-size:24px;
+  text-align: center;
+  color:#3e59b2;
+  margin-bottom:20px;
+}
+
+main p {
+  text-align: center;
+}
+
+/* footer */
+
+footer {
+  padding:  90px 0 75px 0;
+  width:100%;
+  background: #e7e7e7;
+  text-align: center;
+  font-size:20px;
+}
+
+footer p {
+    color: #45494d;
+}
+footer ul {
+  display:inline-block;
+  list-style: none;
+  padding-top:45px;
+}
+
+footer li {
+  display:inline-block;
+  width:46px;
+  height:46px;
+  background:transparent url("./images/icons_social-media.png") 0 0 no-repeat;
+}
+
+footer li:hover{
+  cursor: pointer;
+}
+
+footer .facebook {
+  background-position:0 -46px;
+}
+
+footer .email {
+  background-position:0 -92px;
+}
+
+footer .instagram {
+  background-position:0 -138px;
+}
+
+footer li + li{
+  margin-left:130px;
+}
+
+/* Home page */
+#home > article{
+  padding:0 120px;
+}
+
+#home article + article {
+  margin-top:160px;
+}
+
+/* Projects page */
+#projects > article{
+  padding:0 30px 50px 30px;
+}
+
+#projects  article + article{
+  padding-top:50px;
+}
+
+#projects img {
+  width:100%;
+  display:block;
+  margin-bottom:50px;
+}
+
+#projects p {
+  padding: 0 120px;
+}
+
+/* Team page */
+#team > article{
+  padding:0;
+}
+#team p{
+  padding:0 110px 130px 110px;
+}
+#team ul {
+  text-align: center;
+  list-style: none;
+  padding:0;
+  margin:0;
+  box-sizing:border-box;
+}
+#team li {
+  display:inline-block;
+  padding:0 30px;
+  margin:0;
+}
+#team li a {
+  text-decoration: none;
+}
+
+#team li figcaption{
+  padding-top:30px;
+}
+
+/* team member profiile modals */
+#team .modal-layer {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  background: rgba(0, 0, 0, .3);
+}
+
+#team .modal {
+  display: none;  
+  position: absolute;
+  left: 50%;
+  width: 600px;
+  margin-left: -300px;
+  z-index: 10;
+  background: #fff;
+  padding: 50px;
+}
+
+#team .modal .close {
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  
+  background: transparent url("images/icon_close.png") 0 0 no-repeat;
+}
+
+#team .modal img {
+  width: 96px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 30px;
+}
+
+#team .modal h3 {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+}
+
+#team .modal p {
+  padding: 0;
+  margin: 20px 0;
+}
+
+
+@media (max-width: 875px) {
+  header h1 {
+    padding-bottom:50px;
+  }  
+  #team li {
+    width: 48%;
+    padding: 0 0 30px 0;
+  }
+  #team li figcaption {
+    padding-top: 0;
+  }
+  
+  #projects article + article{
+    border-top:1px solid #cccccc;
+    margin:0;
+  }
+}
+
+/* medium screen */
+@media (max-width: 768px) {
+  #home article{
+    padding:0;
+  }
+
+  #home article + article {
+    margin-top:130px;
+  }
+  
+  #projects p {
+    padding:0;
+  }
+
+  #team p {
+    padding:0 0 130px 0;
+  }
+  header {
+    padding:70px 0 30px 0;
+  }
+  header h1 {
+    padding-bottom:35px;
+  }
+  header img {
+    width:223px;
+    height:auto;
+    padding-top:30px;
+    padding-bottom:30px;
+  }
+
+  p {
+    padding: 0 20px;
+  }
+
+  footer {
+    padding: 60px 0 45px 0;
+  }
+  footer li {
+    margin:0 10px;
+  }
+  footer li + li{
+    margin-left:75px;
+  }
+}
+
+/* small screen */
+@media (max-width: 480px) {
+ header {
+   padding:15px 20px;
+ }
+  header h1 {
+    float:left;
+    padding:0;
+  }
+  header h1:before,
+  header h1:after{
+    padding:0;
+  }
+  header img,
+  header nav {
+    height: 60px;
+    width:auto;
+    padding: 5px;
+    box-sizing:border-box;
+  }
+
+  header li {
+    display:block;
+    text-align:right;
+    padding:0;
+  }
+  header li + li{
+    padding:0;
+  }
+  header a {
+    font-size:12px;
+  }
+  main h2{
+    font-size:26px;
+  }
+  main p {
+    padding: 0 20px;
+    text-align: justify;
+  }
+
+  main figure {
+    padding:0;
+    margin:0;
+  }
+  #home article + article{
+    margin-top:50px;
+  }
+
+  #team p{
+    padding:0 30px 40px 30px;
+  }
+  
+  #team li {
+    width:48%;
+    padding: 0 0 30px 0;
+    margin:0;
+  }
+
+  footer li + li {
+    margin-left:36px;
+  }
+}

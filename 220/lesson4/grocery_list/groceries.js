@@ -1,15 +1,25 @@
 $(function() {
   $('form').on('submit', function (e) {
     e.preventDefault();
-    
+    let $form = $(this),
+        $name = $form.find('#name'),
+        $quantity = $form.find('#quantity'),
+        $groceries = $('#groceries');
+
+    // get form value
     let newItem = {
-      name: $('#name').val(),
-      quantity: $('#quantity').val(),
+      name: $name.val(),
+      quantity: $quantity.val() || 1,
     };
 
-    console.log(newItem);
+    // compose list item
+    $groceries.append("<li>" + newItem.quantity + " " + newItem.name  + "</li>");
 
-    
-    $('groceries').
+    // reset form value
+    // $name.val('');
+    // $quantity.val('');
+    $form.trigger('reset');
+    $form[0].reset();
+
   });
 });
