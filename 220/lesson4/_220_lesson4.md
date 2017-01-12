@@ -288,8 +288,13 @@ manipulate DOM
 
 # 13	Assignment: Team Member Profile Modals
 
-modal
-
+`on()` callback
+- let `$e = $(this)` to cache current elemnt in callbacks
+- `scrollTop()` `scrollLeft()` to get current window offset
+- `.nextAll()` next all siblings
+- `siblings()`
+- `.fadeIn()` show/display element by fade them in
+-  `fadeOut()` hide elements by fade them out
 
 # 14	Assignment: Photo Gallery Slideshow
 
