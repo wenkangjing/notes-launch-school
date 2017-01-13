@@ -322,7 +322,7 @@ animation
 
 Filtering by visibility
 - filter by `:visible` or `:hidden`
-- `.end()` End the most recent filtering operation in the current chain and return the set of matched elements to its previous state.
+- `.end()` **End the most recent filtering operation in the current chain and return the set of matched elements to its previous state.**
 
 # 15	Lecture: Chrome Debugging Tools for Front End Development
 
