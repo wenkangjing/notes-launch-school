@@ -1,4 +1,5 @@
 $(function() {
+
   $('form').on('submit', function (e) {
     e.preventDefault();
     let $form = $(this),
@@ -20,6 +21,17 @@ $(function() {
     // $quantity.val('');
     $form.trigger('reset');
     $form[0].reset();
-
   });
+
+  // DevTools 
+  let $test = $(document).find('#name');
+  console.log($test.get(0));
+  console.dir($test.get(0));
+
+  let table = [{a:'A', b:'B'}, {a:'1', b:'2'}];
+  console.log(table);
+  console.dir(table);
+  console.table(table);
 });
+
+

@@ -293,8 +293,10 @@ manipulate DOM
 - `scrollTop()` `scrollLeft()` to get current window offset
 - `.nextAll()` next all siblings
 - `siblings()`
+
 - `.fadeIn()` show/display element by fade them in
 -  `fadeOut()` hide elements by fade them out 
+- `.toggle` Display or hide the matched elements.
 
 # 14	Assignment: Photo Gallery Slideshow
 
@@ -322,8 +324,55 @@ Filtering by visibility
 - filter by `:visible` or `:hidden`
 - `.end()` End the most recent filtering operation in the current chain and return the set of matched elements to its previous state.
 
-
 # 15	Lecture: Chrome Debugging Tools for Front End Development
 
+console tab
+- drop down list to select *current html*
+- navigating to elements tab - click/right click
+
+console function
+- `clear()` or CTRL+L on Windows
+
+- %d, %i, %f, or %c css format `console.log('%cHello world!', 'font-size: 30px; color: red; background-color: green')`
+
+- `console.dir()` Displays an interactive list of the properties of the specified JavaScript object.
+- `console.table` display array or object in a table
+
+- `console.time(label)` and timeEnd to log timestmap
+- `console.profile(label)`and profileEnd  to gether profile
+
+- `copy(obj` to copy to clipboard
+- `getEventListeners()`
+- keys() values()
+
+$ sign without jquery
+- `$` alias of querySelector
+- `$$` return an array
+
+blackboxing 
+- jquery min
+- regexp pattern
+
+event listener breakpoints
+- submit
+- keypress
+- mouse scroll
+- ...
+
+conditional breakpoints
 
 # 16	Assignment: Refactoring
+
+
+credit card validation
+
+[Luhn algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm)
+- to verify id numbers
+- mod 10
+- checksum formula
+- This won't tell you whether or not the card has the funds to pay for a purchase, but it will indicate whether or not a card number is valid, preventing a call to a merchant service to check it instead.
+
+refactoring
+ - use object to reduce switch case
+ - use `toggleClass()`
+ - use `toggle(bool)` to show/hide
