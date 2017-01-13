@@ -294,9 +294,33 @@ manipulate DOM
 - `.nextAll()` next all siblings
 - `siblings()`
 - `.fadeIn()` show/display element by fade them in
--  `fadeOut()` hide elements by fade them out
+-  `fadeOut()` hide elements by fade them out 
 
 # 14	Assignment: Photo Gallery Slideshow
+
+http://d3jtzah944tvom.cloudfront.net/lesson_5/photo_gallery_slideshow/index.html
+
+You can also use CSS transitions instead of jQuery animations to transition the elements' opacity value.
+
+navigation
+- use `.active` to address selected
+- `hasclass(), removeClass(), addClass()`
+- `prop()`
+- `index()`
+
+event
+- `e.currentTarget` The current DOM element within the event bubbling phase.
+- `e.target` The DOM element that initiated the event.
+
+animation
+- hide() / fadeOut()
+- `delay()` before fadeIn(0)
+- show() / fadeIn()
+- `stop()`Stop the currently-running animation on the matched elements.
+
+Filtering by visibility
+- filter by `:visible` or `:hidden`
+- `.end()` End the most recent filtering operation in the current chain and return the set of matched elements to its previous state.
 
 
 # 15	Lecture: Chrome Debugging Tools for Front End Development
