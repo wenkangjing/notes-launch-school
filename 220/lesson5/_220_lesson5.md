@@ -29,6 +29,20 @@ turn off animation
 
 # 3	Assignment: Animating a Cartoon Strip
 
+`$("div[id^=blind]")`
+- * contains
+- ^ starts with  // same as starts with of line in regex
+- $ ends with    // same as ends with of line in regex
+- ! not 
+
+`finish`
+- to stop all queued animation
+- called before replay
+
+
+`removeAttr('style')`
+- remove the output of animatino
+- called before replay
 
 # 4	HTML Data Attributes
 
