@@ -46,6 +46,22 @@ turn off animation
 
 # 4	HTML Data Attributes
 
+`id, class, value` are reserved html attribute for browser rendering or css cascading
+
+custom data attributes 
+- e.g. data-block, data-1, data-anything, *data + hyphen + anyting*
+- store your data, used in JS, `.attr('data-block')` or `$link.data('block');`
+
+> In short, if you want to get or set the value of an HTML data attribute, use the `.attr()` method. As a setter method, attr() will change the HTML markup. 
+>
+> If you want to set and retrieve custom data on an element **after the page has been rendered**, use the `.data()` method. As a setter method, data() will store the value on the node that can be retrieved with the data() method as a getter, but it will not update the HTML markup.
+
+for older versions of IE
+- use `dataset` of DOM Element
+
+HTML attributes vs DOM properties
+- html attr in html file (in file)
+- dom prop is in the DOM tree (in memory)
 
 # 5	Project: Search Filtering, Part 1: Structure and Styles
 
