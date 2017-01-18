@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  font: normal 16px Helvetica, Arial, sans-serif;
+  font: normal 13px Helvetica, Arial, sans-serif;
   background-color: #ECE297;
 }
 
@@ -21,36 +21,34 @@ ul {
   padding: 0;
 }
 
-#container {
+#page{
   width: 1000px;
   margin: 0 auto;
+  background: #fff;
   vertical-align: middle;
+  overflow: hidden;
 }
 
-#sidebar{
-  width: 200px;
-  height: 100vw;
-  float: left;
+aside{
+  width: 20%;
   padding: 100px 20px 20px 20px;
-  background: #fff;
 }
 
-#items{
-  height: 100vw;
+main{
   padding: 20px;
-  margin-left: 200px;
-  background: #fff;
+  width: 80%;
+  float: right;
 }
 
-#items li {
+main li {
   padding: 15px 20px;
 }
 
-#items li:hover {
+main li:hover {
   background: #99f099;
 }
 
-#items li + li {
+main li + li {
   border-top: 1px solid #ececec;
 }
 
