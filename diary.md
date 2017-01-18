@@ -253,13 +253,15 @@ Reference: YMPH-DWEX-AQRS
 2017-01-09
 - 220 - Done - score - 75/81
 
-2017-01-09
-- 220 - Lesson 4 - 5/16 
+2017-01-13
+- 220 - Lesson 4 - Done
 
-
+2017-01-xx
+- 220 - Lesson 5
 
 
 TODO:
+  - [ ] create some helper/reference pages in html/css/js to show common css style, js function
   - [ ] need review `context`, `this` for several times
   - [ ] [css inheritance and cascade](https://www.w3.org/wiki/Inheritance_and_cascade)
   - [ ] [Web Standards Curriculum](https://www.w3.org/wiki/Web_Standards_Curriculum)

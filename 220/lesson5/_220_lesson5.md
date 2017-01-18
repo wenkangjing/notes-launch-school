@@ -64,12 +64,24 @@ HTML attributes vs DOM properties
 - dom prop is in the DOM tree (in memory)
 
 # 5	Project: Search Filtering, Part 1: Structure and Styles
-
-
 # 6	Project: Search Filtering, Part 2: Interactivity
+
+checkbox on change, not click
+- based on status changed
+- in case click to label, and checkbox is not wrapped in label
+
+get checkbox status in jQuery
+ - `.is(":checked")`
+
+cache all variables
+- cache all need var at the beginning, debug to ensure all vars are correct, then
+- code logics
+
+filter using jQuery filter by data attribute
+- `$items.filter("[data-id=" + item.id + "]").toggle(checked)`
+
+
 
 
 # 7	Project: Dynamic Animations, Part 1: Structure and Styles
-
-
 # 8	Project: Dynamic Animations, Part 2: Animations
