@@ -256,9 +256,11 @@ Reference: YMPH-DWEX-AQRS
 2017-01-13
 - 220 - Lesson 4 - Done
 
-2017-01-xx
-- 220 - Lesson 5
+2017-01-19
+- 220 - Lesson 5 - Done
 
+2017-01-xx
+- 220 - Lesson 6 - x/11
 
 TODO:
   - [ ] create some helper/reference pages in html/css/js to show common css style, js function
