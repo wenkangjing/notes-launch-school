@@ -80,8 +80,29 @@ cache all variables
 filter using jQuery filter by data attribute
 - `$items.filter("[data-id=" + item.id + "]").toggle(checked)`
 
-
-
-
 # 7	Project: Dynamic Animations, Part 1: Structure and Styles
 # 8	Project: Dynamic Animations, Part 2: Animations
+
+fetch data from Form Control
+- `.serializeArray()`
+- name / value
+
+passing jQuery object to function
+- `function getFormObject($f)`
+- with dollar sign
+
+create element in jQuery
+
+  ```js
+  var $e = $("<div />", {
+    "class": "shape circle",
+    css: {
+      top:10,
+      left: 50
+    }
+  });
+```
+
+convert digits string to number
+- `parseInt()`
+- `+digits`

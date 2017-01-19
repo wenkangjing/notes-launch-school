@@ -1,4 +1,4 @@
-var items = [{
+var catalog = [{
   "title": "The Legend of Zelda: Majora's Mask 3D",
   "id": 1,
   "category": "Nintendo 3DS"
@@ -43,20 +43,19 @@ var items = [{
 $(function(){
   let $categories = $('input[type=checkbox]');
 
-  $categories.on('click', function(e) {
-    let $e = $(this);
+  $categories.on('change', function(e) {
+    let $e = $(this),
+        $items = $("main li"),
+        checked = $e.prop("checked"),
+        category = $e.parent().text(),
+        category_items;
 
-    let ids = items.filter(function(item) { 
-      return item.category === $e.parent().text();
-    }).map(function(item) {
-      return item.id;
+    category_items = catalog.filter(function(item) { 
+      return item.category === category;
     });
 
-    $("main li").each(function(index, element){
-      let id = parseInt($(this).attr('data-id'), 10);
-      if (ids.indexOf(id) !== -1) {
-          $(this).toggle($e.prop("checked"))
-      }
+    category_items.forEach(function (item) { 
+      $items.filter("[data-id=" + item.id + "]").toggle(checked);
     });
   });
 })

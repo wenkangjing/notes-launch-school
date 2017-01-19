@@ -11,12 +11,12 @@ html {
 }
 
 body {
-  font: normal 13px Helvetica, Arial, sans-serif;
+  font: normal 14px Helvetica, Arial, sans-serif;
   background: #780E24;
 }
 
 #page {
-  width: 1000px;
+  width: 802;
   padding: 30px;
   margin: 0 auto;
   background: #fff;
@@ -34,22 +34,25 @@ body {
   position: absolute;
   width: 30px;
   height: 30px;
+  z-index: 1;
+  background: #dde338;
 }
 
 .circle {
   border-radius: 15px;
-  background: yellow;
   top: 100px;
+  left: 0;
 }
 
 .square {
-  background: yellow;
   top: 0;
+  left: 0;
 }
 .star {
   background: transparent url("star.png") 0 0 no-repeat;
   background-size: cover;
   top: 200px;
+  left: 0;
 }
 
 
@@ -66,3 +69,4 @@ input[type="number"] {
   margin: 5px 0 5px 0;
   width: 60px;
 }
+
