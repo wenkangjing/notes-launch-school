@@ -82,7 +82,6 @@ Dimensions in jQuery (**not same as in css**)
 custom event
 
 
-
 # 3	Assignment: Managing Collections in JavaScript
  
 HTML template
@@ -104,6 +103,28 @@ global varible and **IIFE**
 > We defined inventory as a global variable, and used an IIFE to assign it to an object that contains all the app logic. The advantage of exposing inventory to the global namespace is that we can inspect the inventory variable in the console to check its state, which we won't be able to do if we hide the inventory inside jQuery's document ready callback function: 
 >
 >The purpose of the IIFE, together with the global inventory is to say that inventory is the only variable that can be observed from the outside, and any other variables declared in this app should be private and not leaked to the global namespace.
+
+
+## inventory order - walk through video 
+
+OOP in js
+- put logic in inventory object, not global scope
+- put `.on(event, cb)` in  bindEvents function
+- seperate data and UI
+  - `add()` for data + `addItem` for UI
+  - remove(id)  for data + `removeItem` for UI
+
+
+jQuery object .html()
+- convinient way to print element in console
+
+HTML template
+- replace ID with increamental id, rather than use `.data('id', id)`
+
+event delegate
+- `$this` with be the parent
+- `e.target` is the child that fired the event
+
 
 
 # 4	HTML Templating With JavaScript
