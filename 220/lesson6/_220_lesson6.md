@@ -84,6 +84,26 @@ custom event
 
 
 # 3	Assignment: Managing Collections in JavaScript
+ 
+HTML template
+- to add them dynamically on the page later.
+- `<script type="text/template" id="inventory_item">` script tag type as text/template
+
+IIFE
+
+```js
+(function() {
+  console.log("IIFE");
+};
+
+})();
+```
+
+global varible and **IIFE**
+
+> We defined inventory as a global variable, and used an IIFE to assign it to an object that contains all the app logic. The advantage of exposing inventory to the global namespace is that we can inspect the inventory variable in the console to check its state, which we won't be able to do if we hide the inventory inside jQuery's document ready callback function: 
+>
+>The purpose of the IIFE, together with the global inventory is to say that inventory is the only variable that can be observed from the outside, and any other variables declared in this app should be private and not leaked to the global namespace.
 
 
 # 4	HTML Templating With JavaScript
