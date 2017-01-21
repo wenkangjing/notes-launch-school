@@ -82,7 +82,7 @@ Dimensions in jQuery (**not same as in css**)
 custom event
 
 
-# 3	Assignment: Managing Collections in JavaScript
+# 3	Assignment: Managing Collections in JavaScript (a bite on MVC)
  
 HTML template
 - to add them dynamically on the page later.
@@ -107,6 +107,8 @@ global varible and **IIFE**
 
 ## inventory order - walk through video 
 
+good reading: https://medium.com/@jayshenk/how-being-stumped-by-one-line-of-code-helped-me-understand-context-in-javascript-2968c83e2771#.6oc9a4uai
+
 OOP in js
 - put logic in inventory object, not global scope
 - put `.on(event, cb)` in  bindEvents function
@@ -120,10 +122,28 @@ jQuery object .html()
 
 HTML template
 - replace ID with increamental id, rather than use `.data('id', id)`
+```html
+<!--template-->
+<input type="hidden" name="item_id_ID" value="ID" />
+
+<!--dynamically inserted-->
+<input type="hidden" name="item_id_1" value="1" />
+<input type="hidden" name="item_id_2" value="2" />
+```
+
+mind type `.val()` and integer
+- .val() returns string
+- id or idnex in our data is integer
+- `idx = +idx`
 
 event delegate
 - `$this` with be the parent
 - `e.target` is the child that fired the event
+- `.on(event, data, callback)`
+  - data is a selector that jQuery can find within this parent element
+
+Array.forEach
+- return false to stop the loop
 
 
 

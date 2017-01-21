@@ -32,29 +32,55 @@ var inventory;
       this.collection.push(item);
       return item;
     },
+    get: function(id) {
+      let found_item;
+      inventory.collection.forEach(function(item) {
+        if (item.id === id) {
+          found_item = item;
+          return false;
+        }
+      })
+      return found_item;
+    },
     remove: function (idx) {
+      idx = +idx;
       this.collection = this.collection.filter(function(item) {
-        return item.id !== inx;
+        return item.id !== idx;
       });
+    },
+    update: function($item) {
+      let id = this.findId($item);
+          item = this.get(id);
+      item.name = $item.find("input[name^='item_name']").val();
+      item.stockNumber = $item.find("input[name^='item_stock_number']").val();
+      item.quantity = $item.find("input[name^='item_quantity']").val();
+    },
+    findParent: function(e) {
+      return $(e.target).closest("tr");
+    },
+    findId: function($item) {
+      return +$item.find("input[type=hidden]").val();
     },
     newItem: function(e) {
       e.preventDefault();
       let item = this.add(),
           $item = $(this.template.replace(/ID/g, item.id));
-      
       $("#inventory").append($item);
-      console.log($item.html());
-      let $item = $(e.target).closest("tr").remove();
-
-      this.remove($item.find("input[type=hidden]").val());
     },
     deleteItem: function(e) {
       e.preventDefault();
-
+      let $item = this.findParent(e).remove();
+      this.remove(this.findId($item));
+    },
+    updateItem: function(e) {
+      e.preventDefault();
+      let $item = this.findParent(e);
+      this.update($item);
     },
     bindEvents: function() {
       $("#add_item").on("click", this.newItem.bind(this));
-      $("#inventory").on("click", "a.remove", this.deleteItem.bind(this));
+      $("#inventory").on("click", "a.delete", this.deleteItem.bind(this));
+      $("#inventory").on("blur", "input", this.updateItem.bind(this));
     },
     init: function() {
       this.setDate();
@@ -63,15 +89,5 @@ var inventory;
     }
   };
 })();
-
-function newItem() {
-  let item = {
-    id: inventory.lastId++,
-    name: "",
-    stockNumber: "",
-    quantity: 1,
-  };
-  return item;
-}
 
 $(inventory.init.bind(inventory));
