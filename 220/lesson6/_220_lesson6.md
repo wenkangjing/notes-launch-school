@@ -149,8 +149,6 @@ Array.forEach
 
 # 4	HTML Templating With JavaScript
 
-
-
 client-side templating libraries to generate HTML using data
 - mustache JS
   - does not include a way to add logic to your HTML templates
@@ -173,8 +171,188 @@ Handlebars
 [ ] read thru
 [ ] fix products.js
 
+> Handlebars is a logic-less templating engine that dynamically generates your HTML page. It’s an extension of Mustache with a few additional features. Mustache is fully logic-less but Handlebars adds minimal logic thanks to the use of some helpers (such as if, with, unless, each and more) 
+
+
+```html
+// HTML - includes
+<script src="/path/to/handlebars.min.js"></script>
+
+// HTML - template
+<script id="handlebars-demo" type="text/x-handlebars-template">
+   <div>
+      My name is {{name}}. I am a {{occupation}}.
+   </div>
+</script>
+```
+
+```js
+// JS - retrieve the template data from the HTML
+var template = $('#handlebars-demo').html();
+
+// JS - Compile the template data into a function
+var templateScript = Handlebars.compile(template);
+
+// JS - data
+var context = { "name" : "Ritesh Kumar", "occupation" : "developer" };
+
+// JS - pass data into the template function, returning the rendered html
+var html = templateScript(context); // html = 'My name is Ritesh Kumar. I am a developer.'
+
+// JS - Insert the HTML code into the page
+$(document.body).append(html);
+
+```
+
+### Handlebars Syntax
+
+property
+- {{name}} 
+
+proeprty escape
+- {{{name}}}
+
+comments 
+- {{!--comments--}}
+
+property in comments
+- <!-- I am learning {{language}} --> - returns <!-- I am learning Handlebars -->
+
+blocks
+
+```html
+{{#if boolean}}
+   Some Content here
+{{/if}}
+
+{{#each names}}
+  My name is {{firstName}} {{lastName}}.<br/>
+{{/each}}
+```
+
+path - ../ 
+
+```
+This article is available on {{website.name}}.<br/>
+
+{{#each names}}
+  I am a {{../occupation}}. My name is {{firstName}} {{lastName}}.<br/>
+{{/each}}
+
+var context = {
+  "occupation" : "developer",
+  "website" : {
+    "name" : "sitepoint"
+  }
+  "names" : [
+    {"firstName" : "Ritesh", "lastName" : "Kumar"},
+    {"firstName" : "John" , "lastName" : "Doe"}
+  ]
+}
+
+This article is available on sitepoint.
+I am a developer. My name is Ritesh Kumar.
+I am a developer. My name is John Doe.
+
+```
+
+### Handlebars Helpers
+
+each helper with @index, {{this}} is equal to {{.}} 
+
+```
+{{#each countries}}
+  {{@index}} : {{this}}<br>
+{{/each}}
+```
+
+if helper
+
+```
+{{#if countries}}
+  The countries are present.
+{{else}}
+  The countries are not present.
+{{/if}}
+```
+
+custom function helper
+
+```js
+
+var context = {
+  "students":[
+    {"name" : "John", "passingYear" : 2013},
+    {"name" : "Doe" , "passingYear" : 2016}
+  ]
+}
+
+Handlebars.registerHelper("studyStatus", function(passingYear) {
+   if(passingYear < 2015) {
+      return "passed";
+   } else {
+      return "not passed";
+   }
+})
+```
+
+```html
+{{#each students}}
+  {{name}} has {{studyStatus passingYear}}.<br>
+{{/each}}
+
+```
+
+custom block helper
+
+### Partial Templates
+
+> Handlebars partials are templates that can be shared among different templates. They are written as {{> partialName}}. Before using them in the HTML, we need to register the partial using Handlebars.registerPartial() method.
+
+```
+Handlebars.registerPartial(
+  'partialTemplate',
+  '{{language}} is {{adjective}}. You are reading this article on {{website}}.'
+);
+
+var context={
+  "language" : "Handlebars",
+  "adjective": "awesome"
+}
+
+// html
+{{> partialTemplate website="sitepoint"}} <br>
+{{> partialTemplate website="www.sitepoint.com"}}
+
+// output
+Handlebars is awesome. You are reading this article on sitepoint
+Handlebars is awesome. You are reading this article on www.sitepoint.com
+
+```
+
 # 5	Exercises: Handlebars Basics
 
+each
+- *posts* is the keyword to link html/js
+
+```
+{{#each posts}}
+{{/each}}
+
+$(document.body).append(postsTemplate({ posts: postsArray }));
+```
+
+partial
+- *tagsTemplate* is the keyword to link html/js
+
+```
+ {{> tagsTemplate}}
+
+let postsTemplate = Handlebars.compile($('#posts').html());
+let tagsTemplate = Handlebars.compile($('#tags').html());
+
+Handlebars.registerPartial('tagsTemplate', $('#tags').html());
+```
 
 # 6	Assignment: Managing Collections in JavaScript with Handlebars
 

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Basics: Handlebars</title>
+    <meta charset="UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+    <!--<script src="..\..\..\common\js\handlebars-v4.0.5.js"></script>-->
+    <script src="blog.js"></script>
+    <style>
+      * { margin: 0; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <script id="posts" type="text/x-handlebars">
+      {{#each posts}}
+        <article>
+          <h1>{{title}}</h1>
+          <p><time>Posted on {{published}}</time></p>
+          <!--triple curely braces to escape html tags-->
+          {{{body}}}
+          <p>
+            Tags:
+            {{#each tags}}
+              <strong>{{.}}</strong>
+            {{/each}}
+          </p>
+          <ul>
+            {{#if tags}} 
+              {{#each tags}}
+                {{> tagsTemplate}}
+              {{/each}}
+            {{else}}
+              <p>Not tagged</p>
+            {{/if}}
+          </ul>
+        </article>
+      {{/each}}
+      </script>
+      <script id="tags" type="text/x-handlebars">
+        <li>{{.}}</li>
+      </script>
+    </main>
+  </body>
+</html>

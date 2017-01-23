@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="products.js"></script>
-    <script src="handlebars-v4.0.5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
     <style>
       * { margin: 0; }
     </style>
@@ -13,14 +13,13 @@
   <body>
     <main>
       <div>
-        <h1>Without Handlebars</h1>
+        <h1>No Handlebars</h1>
         <ul id="products"></ul>
       </div>
       <div>
-        <h1>With Handlebars</h1>
+        <h1>Handlebars</h1>
         <ul id="list">
           <script id='productTemplate' type='text/x-handlebars'>
-          {{#each items}}
           <li>
             <h3>{{name}}</h3>
             <dl>
@@ -35,7 +34,6 @@
               </dd>
             </dl>
           </li>
-          {{/each}}
           </script>
           <script id='productsList' type='text/x-handlebars'>
             {{#each items}}
