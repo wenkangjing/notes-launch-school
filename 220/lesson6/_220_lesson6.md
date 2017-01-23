@@ -168,8 +168,8 @@ Handlebars
 
 [A Beginner’s Guide to Handlebars](https://www.sitepoint.com/a-beginners-guide-to-handlebars/)
 
-[ ] read thru
-[ ] fix products.js
+[x] read thru
+[x] fix products.js
 
 > Handlebars is a logic-less templating engine that dynamically generates your HTML page. It’s an extension of Mustache with a few additional features. Mustache is fully logic-less but Handlebars adds minimal logic thanks to the use of some helpers (such as if, with, unless, each and more) 
 
