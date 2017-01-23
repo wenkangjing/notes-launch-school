@@ -150,6 +150,29 @@ Array.forEach
 # 4	HTML Templating With JavaScript
 
 
+
+client-side templating libraries to generate HTML using data
+- mustache JS
+  - does not include a way to add logic to your HTML templates
+
+- underscore js
+  - Underscore templates allow you to write plain-old JavaScript within your template to be executed when it renders
+
+- handlebarsjs
+  - adding logic and support for partials, but keeping the JavaScript out of the HTML. 
+  - It has no dependencies of any kind
+
+Handlebars
+- add a script tag in html, provide an id
+- Handlerbars.compile(tamplete html), returns a function
+- iterating data, for each item, pass to the  returned function
+- get the rendered html 
+
+[A Beginner’s Guide to Handlebars](https://www.sitepoint.com/a-beginners-guide-to-handlebars/)
+
+[ ] read thru
+[ ] fix products.js
+
 # 5	Exercises: Handlebars Basics
 
 

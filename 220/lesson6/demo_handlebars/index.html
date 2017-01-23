@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Demo: Handlebars</title>
+    <meta charset="UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="products.js"></script>
+    <script src="handlebars-v4.0.5.js"></script>
+    <style>
+      * { margin: 0; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div>
+        <h1>Without Handlebars</h1>
+        <ul id="products"></ul>
+      </div>
+      <div>
+        <h1>With Handlebars</h1>
+        <ul id="list">
+          <script id='productTemplate' type='text/x-handlebars'>
+          {{#each items}}
+          <li>
+            <h3>{{name}}</h3>
+            <dl>
+              <dt>Quantity:</dt>
+              <dd>{{quantity}}</dd>
+              <dt>Price:</dt>
+              <dd>
+                ${{price}}
+                {{#if on_sale}}
+                <strong>SALE!</strong>
+                {{/if}}
+              </dd>
+            </dl>
+          </li>
+          {{/each}}
+          </script>
+          <script id='productsList' type='text/x-handlebars'>
+            {{#each items}}
+            {{> productTemplate}}
+            {{/each}}
+          </script>
+        </ul>
+      </div>
+    </main>
+  </body>
+</html>
