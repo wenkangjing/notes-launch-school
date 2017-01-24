@@ -1,57 +1,89 @@
 $(function() {
   // catch templates and data
   let templates = {},
-      photos = [],
-      current_idx = 0;
+      photos = [];
 
-  catchTempaltes();
-  reloadPhotos();
+  // cache the compiled templates
+  $('script[type="text/x-handlebars"]').each(function() {
+    var $tmpl = $(this);
+    templates[$tmpl.attr('id')] = Handlebars.compile($tmpl.html());
+  });
 
-  function catchTempaltes() {
-    // cache the compiled templates
-    $('script[type="text/x-handlebars"]').each(function() {
-      var $tmpl = $(this);
-      templates[$tmpl.attr('id')] = Handlebars.compile($tmpl.html());
-    });
+  // register partial
+  $("[data-type=partial]").each(function () {
+    var $partial = $(this);
+    Handlebars.registerPartial($partial.attr("id"), $partial.html());
+  });
 
-    // register partial
-    $("[data-type=partial]").each(function () {
-      var $partial = $(this);
-      Handlebars.registerPartial($partial.attr("id"), $partial.html());
-    });
-  }
+  // get photos and render in success callback
+  $.ajax({
+    url: "/photos",
+    success: function(json) {
+      photos = json;
+      renderPhotos();
+      slideshow.init();
+    }
+  });
 
-  function reloadPhotos() {
-    // get photos and render in success callback
-    $.ajax({
-      url: "/photos",
-      success: function(json) {
-        photos = json;
-        renderPhotos();
-        navigateTo(current_idx);
+  var slideshow = {
+    $el: $("#slideshow"),
+    prevSlide: function(e) {
+      e.preventDefault();
+
+      var $current = this.$el.find("figure:visible"),
+          $prev = $current.prev("figure");
+      if (!$prev.length) {
+        $prev = this.$el.find("figure").last();
       }
-    });
+      $current.fadeOut(500);
+      $prev.delay(500).fadeIn(500);
+
+      this.renderPhotoContent($prev.data('id'));
+    },
+    nextSlide: function (e) {
+      e.preventDefault();
+
+      var $current = this.$el.find("figure:visible"),
+          $next = $current.next("figure");
+      if (!$next.length) {
+        $next = this.$el.find("figure").first();
+      }
+      $current.fadeOut(500);
+      $next.delay(500).fadeIn(500);
+
+      this.renderPhotoContent($next.data('id'));
+    },
+    renderPhotoContent: function(id) {
+      renderPhotoInformation(id);
+      getCommentsFor(id);
+    },
+    bind: function() {
+      this.$el.find("a.prev").on("click", this.prevSlide.bind(this));
+      this.$el.find("a.next").on("click", this.nextSlide.bind(this));
+    },
+    init: function() {
+      this.bind();
+      this.renderPhotoContent(photos[0].id);
+    }
   }
 
   function renderPhotos() {
     $("#slides").append(templates.photos({photos: photos}));
   }
 
-  function showPhoto(idx) {
-    $("#slides").children().hide();
-    $("#slides").children().eq(idx).show();
-  }
-
-  function renderPhotoInformation(idx) {
+  function renderPhotoInformation(id) {
     $("section > header").children().remove();
-    $("section > header").append(templates.photo_information(photos[idx]));
+    var photo = photos.filter(function(item) {
+      return item.id === id;
+    });
+    $("section > header").append(templates.photo_information(photo));
   }
 
   // get comments by photo id and render in success callback
-  function getCommentsFor(idx) {
+  function getCommentsFor(id) {
     $.ajax({
       url: "/comments",
-      data: "photo_id=" + idx,
+      data: "photo_id=" + id,
       success: function(comment_json) {
         $("#comments ul").children().remove();
         $("#comments ul").append(templates.comments({comments: comment_json}));
@@ -59,43 +91,5 @@ $(function() {
     });
   }
 
-  function navigateTo(idx) {
-    showPhoto(idx);
-    renderPhotoInformation(idx)
-    getCommentsFor(photos[idx].id);
-  }
 
-
-  // User Interactions
-  $("a.next").on("click", function(e) {
-    e.preventDefault();
-    let idx = getNext();
-    navigateTo(idx);
-  });
-
-  $("a.prev").on("click", function(e) {
-    e.preventDefault();
-     let idx = getPrev();
-     navigateTo(idx);
-  });
-
-  function getNext() {
-    var length = photos.length;
-    if (current_idx === length - 1) {
-      current_idx = 0;
-    } else {
-      current_idx++;
-    }
-    return current_idx;
-  }
-
-  function getPrev() {
-    var length = photos.length;
-    if (current_idx === 0) {
-      current_idx = length - 1;
-    } else {
-      current_idx--;
-    }
-    return current_idx;
-  }
 });

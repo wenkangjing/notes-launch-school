@@ -367,15 +367,17 @@ ignore node_moduels in git
 1. cache all template into an object, id as key, compiled function as value
 2. get data from server `$.get(url)`
 
-
-
 jQuery ajax functions are callbacks
 
 
 **Network tab** for ajax response
 
 
-
 # 10	Project: Photo Gallery, Part 2 - Slide Show
+
+Use jQuery's `.prev()` and `.next()`, `last()`, `first()`
+
+check jQuery object `.length`
+
 
 # 11	Project: Photo Gallery, Part 3 - Like, Favorite and Comment
