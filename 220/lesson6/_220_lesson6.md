@@ -379,5 +379,20 @@ Use jQuery's `.prev()` and `.next()`, `last()`, `first()`
 
 check jQuery object `.length`
 
+cached jQuery object may not valid after `append/remove/replace` node in the DOME
+
+```js
+// Update ui text
+$e.text(function(i, txt) {
+  return txt.replace(/\d+/, json.total);
+});
+```
+
+
+
 
 # 11	Project: Photo Gallery, Part 3 - Like, Favorite and Comment
+
+reset form after submit
+- $form.trigger("reset")
+
