@@ -359,11 +359,21 @@ Handlebars.registerPartial('tagsTemplate', $('#tags').html());
 
 # 7	AJAX Requests
 
-
 # 8	Project: Photo Gallery - Introduction and Server Setup
-
+ignore node_moduels in git
 
 # 9	Project: Photo Gallery, Part 1 - Fetch Data and Render on Page Load
+
+1. cache all template into an object, id as key, compiled function as value
+2. get data from server `$.get(url)`
+
+
+
+jQuery ajax functions are callbacks
+
+
+**Network tab** for ajax response
+
 
 
 # 10	Project: Photo Gallery, Part 2 - Slide Show
