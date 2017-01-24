@@ -1,0 +1,29 @@
+HTML5 APIs
+===========
+
+# 1	Introduction
+
+# 2	Client-side Storage
+
+cookies? 
+- only hold 4KB (4096 bytes) of data per site
+- have an expiration date
+- Creating a cookie is a very messy process, since all cookie data is just stored in a single string. To modify a cookie value, we'd have to search the string, find the current key and value, and replace it with a new key and value. 
+
+HTML5 ways
+- `window.localStorage` stays around after the browser window or tab closes, being accessible as long as the browser hasn't deleted localStorage by some other means.
+- `window.sessionStorage` only lasts the current session. In the case of a web browser, this means until the tab or window is closed. 
+- holds 5MB
+- is around until the user or our JavaScript removes it.
+- localStorage, on the other hand, stores its values in an object of key and value pairs and has methods meant to set and get these properties, as well as methods to remove a property and to clear the entire storage object.
+
+
+
+> Before we get further into these, it's important to note that in mobile Safari the data may be removed to free up space in the phone's cache, even if the user didn't tell the browser to delete it. In desktop browsers, though, unless the user deletes the localStorage it will remain indefinitely.
+
+
+
+# 3	Assignment: Storing and Retrieving State with localStorage
+# 4	The Canvas API
+# 5	Project: Canvas Shape Stamper
+# 6	Project: Image Manipulator
