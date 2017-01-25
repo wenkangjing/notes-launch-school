@@ -49,6 +49,43 @@ get body
 
 # 4	The Canvas API
 
+canvas, context
+
+move the last element of an array to the beginning
+`array.unshift(array.pop());`
+
+draw square
+- `.fillRect()`
+
+draw circle
+- `.arc` 
+
+draw
+- beginPath and closePath
+- .moveTo() and .lineTo()
+
+
+canvas to image
+
+```js
+var img_src = canvas.toDataURL('png');
+var img = document.createElement('img');
+
+img.src = img_src;
+document.body.appendChild(img);      
+```
+
+image to canvas
+
+```js
+var img = document.querySelector('img');
+ctx.drawImage(img, 0, 0);
+```
+
+manipulate iamge in canvas
+- `getImageData` and `putImagaData`
+
+[ ] what is ImageData
 
 # 5	Project: Canvas Shape Stamper
 
