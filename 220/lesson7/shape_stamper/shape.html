@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>Shape Stamper</title>
+    <meta charset="UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="draw.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main>
+     <canvas id="canvas" width="800" height="500"></canvas>
+     <div id="operation">
+       <input type="button" value="Circle" data-method="circle">
+       <input type="button" value="Square" data-method="square">
+       <input type="button" value="Triangle"data-method="triangle">
+       <input type="button" value="Clear canvas" data-method="clear">
+
+       <label>Color: </label>
+       <input type="text">
+     </div>
+    </main>
+  </body>
+</html>

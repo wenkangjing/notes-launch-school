@@ -89,5 +89,23 @@ manipulate iamge in canvas
 
 # 5	Project: Canvas Shape Stamper
 
+http://stackoverflow.com/questions/5034529/size-of-html5-canvas-via-css-versus-element-attributes
+
+```
+I don't get why the following pieces of code produce different results, because css would scale the canvas as it was zoomed in,
+
+<style>
+#canvas {
+    width: 800px;
+    height: 600px;
+}
+</style>
+<canvas id="canvas"></canvas>
+In contrast with this approach (that works as expected):
+
+<canvas id="canvas" width="800px" height="600px"></canvas>
+
+Yes, when you apply the css styling, the canvas fits 800x600 but the content inside it is "enlarged", it's like the canvas coordinate system keeps it's default size, but is "stretched". Let me know if I'm not clear enought. I'm using Firefox 4.0b11
+```
 
 # 6	Project: Image Manipulator

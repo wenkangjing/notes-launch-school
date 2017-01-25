@@ -1,0 +1,16 @@
+main {
+  width: 800px;
+  margin: 0 auto;
+}
+
+#canvas {
+  border: 1px solid #c0c0c0;
+}
+
+#operation input[type="button"]{
+  text-shadow:none !important;
+  border:none !important;
+  box-shadow:none !important;  
+  padding: 10px;
+  box-shadow: none;
+}
