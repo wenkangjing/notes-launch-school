@@ -1,0 +1,36 @@
+main {
+  width: 800px;
+  margin: 0 auto;
+  background:  #fff;
+}
+
+main nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+main nav li {
+  display: inline-block;
+}
+
+main nav li a {
+  display: inline-block;
+  background: #248395;
+  padding: 5px 15px;  
+  text-decoration: none;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;  
+}
+
+main nav li a.active {
+  background: #00ACA7;
+}
+
+#tabs p {
+  background: #A76C80;
+  min-height: 100px;
+}
+
+form fieldset {
+  border: none;
+}

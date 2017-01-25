@@ -17,13 +17,40 @@ HTML5 ways
 - is around until the user or our JavaScript removes it.
 - localStorage, on the other hand, stores its values in an object of key and value pairs and has methods meant to set and get these properties, as well as methods to remove a property and to clear the entire storage object.
 
-
+> We can **only save values as strings**. If we passed an object in as a value to setItem, the object's toString method would be called 
 
 > Before we get further into these, it's important to note that in mobile Safari the data may be removed to free up space in the phone's cache, even if the user didn't tell the browser to delete it. In desktop browsers, though, unless the user deletes the localStorage it will remain indefinitely.
 
 
+`localStorage`
+- it is an object, with
+- setItem/getItem/removeItem
+- length/clear
+
+`JSON.stringify` object to json string
+
+`JSON.parse` json string to object
+
+
 
 # 3	Assignment: Storing and Retrieving State with localStorage
+
+`.index()` without arg
+- returns of the zero-based index of jQuery object
+
+save index not name
+
+trigger event when loading
+- `.click()`
+- `.trigger('click')`
+
+get body
+- `$(document.body)` a little quick than `$("body")`
+
 # 4	The Canvas API
+
+
 # 5	Project: Canvas Shape Stamper
+
+
 # 6	Project: Image Manipulator
