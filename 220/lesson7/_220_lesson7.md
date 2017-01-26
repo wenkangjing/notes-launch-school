@@ -108,4 +108,10 @@ In contrast with this approach (that works as expected):
 Yes, when you apply the css styling, the canvas fits 800x600 but the content inside it is "enlarged", it's like the canvas coordinate system keeps it's default size, but is "stretched". Let me know if I'm not clear enought. I'm using Firefox 4.0b11
 ```
 
+line
+- strokeStyle / stroke
+
+bar
+- fillStyle / fill
+
 # 6	Project: Image Manipulator

@@ -1,58 +1,57 @@
 $(function() {
 
   var canvas = $("canvas")[0],
-      ctx = canvas.getContext("2d");
+      color = '#ffffff',
+      ctx = canvas.getContext("2d"),
+      shape = '',
+      size = 20;
       
-  var draw = {
-    color: '#ffffff',
-    shape: '',
-    x: 0,
-    y: 0,
-    size:20,
-
-    circle: function() {
-      console.log(this.shape, this.x, this.y);
+  var draw_methods = {
+    circle: function(x, y) {
+      ctx.fillStyle = color | '#ffffff';
+      ctx.beginPath();
+      ctx.arc(x, y, size / 2, 0, 2 * Math.PI);
+      ctx.fill();
+      ctx.closePath();
     },
-    square: function() {
-      console.log(this.shape, this.x, this.y);
-      ctx.fillStyle = hexToRgb(this.color);
-      ctx.fillRect(this.x, this.y, this.size, this.size);
+    square: function(x, y) {
+      ctx.fillStyle = color | '#ffffff';
+      ctx.fillRect(x, y, size, size);
     }, 
-    triangle: function() {
-      console.log(this.shape, this.x, this.y);
+    triangle: function(x, y) {
+      ctx.beginPath();
+      ctx.fillStyle = color | '#ffffff';
+      ctx.moveTo(x, y -size);
+      ctx.lineTo(x + size, y);
+      ctx.lineTo(x - size, y);
+      ctx.lineTo(x, y - size);
+      
+      ctx.fill(); 
+      ctx.closePath();
     }, 
     clear: function() {
-      console.log(this.shape, this.x, this.y);
+      ctx.clearRect(0, 0, 800,500);
     }
   };
 
-  function hexToRgb(hex) {
-    var bigint = parseInt(hex, 16);
-    var r = (bigint >> 16) & 255;
-    var g = (bigint >> 8) & 255;
-    var b = bigint & 255;
-
-    return [r, g, b].join();
-  }
-
   $("#canvas").on("click", function(e) {
     e.preventDefault();
-
     var $e = $(this);
     
-    draw.x = e.offsetX;
-    draw.y = e.offsetY;
-    if(!draw.shape) {
+    if(!shape) {
       return;
     }
-    draw[draw.shape]();
+    draw_methods[shape](e.offsetX, e.offsetY);
   });
 
   $("#operation > input[type=button]").on('click', function(e) {
     e.preventDefault();
-
     var $e = $(this);
-    draw.shape = $e.data("method").toLowerCase();
+
+    shape = $e.data("method").toLowerCase();
+    if (shape === 'clear') {
+      draw_methods.clear();
+    }
   })
 
   $("#operation > input[type=text]").on('blur', function(e) {
