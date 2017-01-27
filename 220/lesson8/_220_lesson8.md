@@ -2,7 +2,38 @@ Object Creation Patterns
 ==========================
 
 # 1	Factory Functions
+
+```js
+function createPerson(firstName, lastName) {
+  return {
+    firstName: firstName,
+    lastName: lastName || '',
+    fullName: function() {
+      return (this.firstName + ' ' + this.lastName).trim();
+    },
+  };
+}
+
+var john = createPerson('John', 'Doe');
+var jane = createPerson('Jane');
+
+john.fullName();        // 'John Doe'
+jane.fullName();        // 'Jane'
+
+```
+
+
 # 2	Exercises: Create Objects with Factory Functions
+
+Guard Clause of the object as argu
+
+```js
+function createPayment(services) {
+  services = services || {};
+}
+```
+
+
 # 3	Constructor Functions
 # 4	Objects and Prototypes
 # 5	Prototypal Inheritance and Behavior Delegation
