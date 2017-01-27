@@ -114,4 +114,22 @@ line
 bar
 - fillStyle / fill
 
+circle `arc`
+
+square `fillRect`
+
+triangle `beginPath, moveTo, lineTo, and closePath`
+
+clear  `clearRect`
+
 # 6	Project: Image Manipulator
+
+same origin
+
+start a server in a directory on your computer
+- python
+  - `python -m SimpleHTTPServer`
+
+- node 
+  - `npm install -g http-server`
+  - `http-server`

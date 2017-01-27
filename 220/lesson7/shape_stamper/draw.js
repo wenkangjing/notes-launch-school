@@ -8,20 +8,20 @@ $(function() {
       
   var draw_methods = {
     circle: function(x, y) {
-      ctx.fillStyle = color | '#ffffff';
+      ctx.fillStyle = color || '#ffffff';
       ctx.beginPath();
       ctx.arc(x, y, size / 2, 0, 2 * Math.PI);
       ctx.fill();
       ctx.closePath();
     },
     square: function(x, y) {
-      ctx.fillStyle = color | '#ffffff';
+      ctx.fillStyle = color || '#ffffff';
       ctx.fillRect(x, y, size, size);
     }, 
     triangle: function(x, y) {
       ctx.beginPath();
-      ctx.fillStyle = color | '#ffffff';
-      ctx.moveTo(x, y -size);
+      ctx.fillStyle = color || '#ffffff';
+      ctx.moveTo(x, y - size);
       ctx.lineTo(x + size, y);
       ctx.lineTo(x - size, y);
       ctx.lineTo(x, y - size);
@@ -30,7 +30,7 @@ $(function() {
       ctx.closePath();
     }, 
     clear: function() {
-      ctx.clearRect(0, 0, 800,500);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
   };
 
