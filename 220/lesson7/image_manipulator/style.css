@@ -5,14 +5,22 @@ body {
 }
 
 #columns {
+  width: 1000px;  
+  margin: 0 auto;
   overflow: hidden;
 }
 
 #original {
+  width: 500px;  
   float: left;
 }
 
 #manipulated {
+  width: 500px;
   float: right;
   background: #ffffff;
+}
+
+img {
+  width: 500px;
 }

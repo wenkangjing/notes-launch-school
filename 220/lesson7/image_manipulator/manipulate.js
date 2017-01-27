@@ -8,8 +8,8 @@ var manipulator,
       ctx =  document.querySelector("canvas").getContext("2d");
     },
     drawImage: function(img) {
-      ctx.canvas.width = img.width;
-      ctx.canvas.height = img.height;
+      ctx.canvas.width = img.naturalWidth;
+      ctx.canvas.height = img.naturalHeight;
       ctx.drawImage(img, 0, 0);
     },
     convertToGrayscale: function() {
