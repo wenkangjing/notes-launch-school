@@ -202,6 +202,14 @@ Personally, I prefer to use the Object.create approach. It feels more natural to
 If you have a specific topic/point that is confusing, we could focus on that more.
 ```
 
+
+what happens when use **new** to create an object
+- use neww(constructor, args) to replace built-in new
+- assuming the return value is `obj`, then:
+1. `obj's constructor property` need to point to the `constructor function`
+2. `obj's __proto__ property` needs to point to `construction function's prototype`
+3. the `constructor function` needs to be called with obj as its context to mutate the obj object.
+
 # 10	The Pseudo-classical Pattern and the OLOO Pattern
 
 object creation patterns
@@ -307,12 +315,135 @@ pointA.distanceToOrigin();          // 50
 pointB.onXAxis();                   // true
 ```
 
+## Object Oriented JavaScript Pattern Comparison
+
 https://john-dugan.com/object-oriented-javascript-pattern-comparison/
 
+#### what happen when define `function F() {}`
+- `F.prototype` points to an object, and `F.prototype.constructor = F`. It is actually a roundabout. 
+- `F.__proto__` is `Object.prototype`
+
+#### what happen when call `new F()`
+- create an new `object` 
+- `object.constructor = F`
+- `object.__proto__ == F.prototype`
+- `F.call(object)`
+
+
+#### The new Keyword in JavaScript
+
+When the new keyword is placed in front of a function call, four things happen:
+
+- A new object gets created by the constructor function.
+- The new object gets linked to a different object.
+- The new object gets bound as the this keyword within the constructor function call.
+- If the constructor function does not return a value, JavaScript implicitly inserts return this; at the end of the constructor function’s execution.
+
+#### factory pattern
+- a factory function called, createCar, createPerson, createShape...
+- Type Determination, all Object
+- Cons: Methods created on the factory function are copied to all new object instances. This is inefficient.
+
+#### constructor pattern
+- **state and methods** are in Constructor Function
+- add type check, alert(johnCar.constructor === Car); // true
+- upper case Constructor Function 
+- Cons: still copied to all new object instances
+
+#### Combination Constructor/Prototype Pattern 
+- **state** in Constructor Function
+- **methods** in Constructor.prototype
+- Constructor.prototype is shared among instances/objects
+- Because constructor is simply a default property on all prototypes, it gets removed when you replace the prototype with a new object. If you wish to assign a new object to a prototype and maintain the constructor relationship, you will need to recreate the constructor property and assign it the proper value 
+- Cons: long list of Constructor.prototype.func
+
+#### Dynamic Prototype Pattern
+- store **methods** in Constructor.prototype
+- code **methods** in Constructor
+- encapsulates all information within a constructor
+- has the benefits of both unique instance properties and shared prototypal properties and methods.
+
+```js
+function Car(make, model, year) {
+  this.make   = make;
+  this.model  = model;
+  this.year   = year;
+
+  // constructor prototype to share properties and methods
+  if ( typeof this.sayCar !== "function" ) {
+    Car.prototype.sayCar = function() {
+        alert('I have a ' + this.year + ' ' + this.make + ' ' + this.model + '.');    
+    }
+  }
+}
+
+```
+
+#### OLOO Pattern
+- [In the OLOO Pattern] there are just pure objects that delegate to one another.
+- a uppercase object
+- Object.create new ones
+- then initialize
+- no constructor, can't call instanceof 
+
+```js
+var Car = {
+    init: function(make, model, year) {
+        this.make   = make;
+        this.model  = model;
+        this.year   = year;        
+    },
+    sayCar: function() {
+        alert('I have a ' + this.year + ' ' + this.make + ' ' + this.model + '.');    
+    }
+};
+
+var johnCar = Object.create(Car);
+johnCar.init('Ford', 'F150', '2011');
+
+```
+
+#### Parasitic Constructor Pattern
+- Constructor: create a new Object, add state, add methold, then return it
+- is useful in situations where you want to abstract and encapsulate code in a safe way,
+
+```js
+function SpecialArray() {
+    // create the array
+    var values = new Array();
+
+    // add the values
+    values.push.apply( values, arguments);
+
+    // assign the method
+    values.toPipedString = function() {
+        return this.join(' |');
+    };
+
+    // return it
+    return values;
+}
+
+// create a new [special] array for colors
+var colors = new SpecialArray(' red', 'blue', 'green');
+alert(colors.toPipedString()); // ' red | blue | green'
+```
+
+#### Durable Constructor Pattern
+- The this keyword is never used on constructor methods.
+- The new keyword is never called before the constructor.
 
 # 11	Assignment: Object Constructor Inheritance
+- prototype must be a object **pointing to the object that delegated to**
+- prototype.constructor must be a function
+- prototypal inheritance 
+  - modify properteis and methods on prototype object, not the constructor function 
+
+![Prototypal Inheritance](./constructor_inheritance.png)
 
 # 12	More Methods on the Object Constructor
+
+
 
 # 13	Douglas Crockford Lecture: JavaScript the Good Parts
 

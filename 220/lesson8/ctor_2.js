@@ -143,6 +143,6 @@ Person.prototype.greeting = function() {
   console.log('Hello, ' + this.firstName + ' ' + this.lastName);
 }
 
-var john = neww(Person, ['John', 'Doe']);
+var john = newww(Person, ['John', 'Doe']);
 john.greeting();          // Hello, John Doe
 john.constructor;         // Person(firstName, lastName) {...}
