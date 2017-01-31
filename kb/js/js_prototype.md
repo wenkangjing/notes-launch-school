@@ -100,3 +100,26 @@ function
 - any function can be added to an object **in the form of a property**
 - An inherited function acts just as any other property, including property shadowing as shown above (in this case, a form of method overriding).
 
+
+Object.create vs Function Constructor
+
+- First off, `.__proto__` exists for any object. It is not unique to the function creation way. Your mental model of it is ok. To be more accurate, I'd position it is a **"pointer to the object that it delegates to"**. In JS, the objects don't inherit from "parent objects"; they delegate. It is not recommend to use this property. Use Object.getPrototypeOf instead.
+- `.prototype` is a property that exists for Functions. The property points to an object that "objects" created using the constructor function delegate to. The default value is an empty object (i.e. Foo {}).
+- `.prototype` is set when a function is used as constructor function (called with the new keyword).
+- `.constructor` is a property of the `.prototype` object.
+  - As a property, `.prototype` can be re-assigned. When it is reassigned the `.constructor` property also changes (You will this getting re-set in one of the assignments)
+- "whereas constructor pointing from prototype back to the function constructor." --> I'm not sure what you mean by this.
+- `Object.create` creates a new object that delegates to the object that is passed in as an argument. You are correct it does not have .prototype and consequently .constructor.
+
+
+"scope-safe constructors"
+
+```js
+function User(first, last){
+  if (!(this instanceof User)) {
+    return new User(first, last);
+  }
+
+  this.name = first + ' ' + last;
+}
+```
