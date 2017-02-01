@@ -626,6 +626,31 @@ function myPowerConstructor() {
 
 # 14	Project: Array and Object Utility Library
 
+ TDD
+ - unit test
+ - implementation
+
+
+utility library 
+- `_`
+
+if prop exist in object
+- prop in obj // true/false
+- obj[prop] // undefined or value
+
+convert arguments to Array
+- [].slice.call(arguments)
+- Array.prototype.slice.call(arguments)
+
+check type
+- toString.call([]) === "[object Boolean]";
+
+primitive vs object
+- boolean vs Boolean
+- string vs string
+- 123 vs Number
+
+
 # 15	Project: Guess a Word, Part 1: Structure and Styles
 # 16	Project: Guess a Word, Part 2: Core Functions
 # 17	Project: Guess a Word, Part 3: Event Handling and Game Play

@@ -269,6 +269,10 @@ Reference: YMPH-DWEX-AQRS
 - 220 - Lesson 8
 
 TODO:
+  - [ ] recursive 
+    - \220\lesson8\utilities\utilities.js
+    - fabnacci
+    - jiuzhang
   - [ ] create some helper/reference pages in html/css/js to show common css style, js function
   - [ ] need review `context`, `this` for several times
   - [ ] [css inheritance and cascade](https://www.w3.org/wiki/Inheritance_and_cascade)
