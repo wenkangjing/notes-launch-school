@@ -443,9 +443,186 @@ alert(colors.toPipedString()); // ' red | blue | green'
 
 # 12	More Methods on the Object Constructor
 
+Object.create() and Object.getPrototypeOf()
+- Array.prototype === Object.getPrototypeOf([]) // true
+
+```js
+function NewArray() {}
+
+NewArray.prototype = Object.create(Object.getPrototypeOf([]));
+NewArray.prototype.first = function() {
+  return this[0];
+}
+
+var newArr = new NewArray(),
+var oldArr = new Array();
+
+oldArr.push(5);
+newArr.push(5);
+oldArr.push(2);
+newArr.push(2);
+console.log(newArr.first());           // 5
+console.log(typeof oldArr.first);      // undefined
+```
+
+
+Object.defineProperties()
+- to create read-only properties/methods
+
+```js
+var obj = {
+  name: 'Obj'
+};
+
+Object.defineProperties(obj, {
+  age: {
+    value: 30,
+    writable: false,
+  },
+});
+
+console.log(obj.age); // 30
+obj.age = 32;
+console.log(obj.age); // 30
+```
+
+```js
+function newPerson(name) {
+  return Object.defineProperties({ name: name }, {
+    log: {
+      value: function() {
+        console.log(this.name);
+      },
+      writable: false,
+    },
+  });
+}
+
+function newPerson(name) {
+  // ...
+}
+
+var me = newPerson('Shane Riley');
+me.log();     // Shane Riley
+me.log = function() { console.log("Amanda Rose"); };
+me.log();     // Shane Riley
+```
+
+Object.freeze()
+- prevent anything from being changed about an object
+- if you freeze an object, it can not be unfrozen.
+- For property values that are objects, the references to the objects are frozen, so you can't point to other objects, but you can still use the frozen references to mutate the objects.
 
 
 # 13	Douglas Crockford Lecture: JavaScript the Good Parts
+
+Now you can watch the lecture from about 22 minutes to the 30 minutes on object creation.
+
+https://www.youtube.com/watch?v=hQVTIJBZook
+
+Inheritance
+- classical
+- prototypal
+
+#### prototypal Inheritance
+- class free, no classes
+- objects inherit from objects
+- An object contains a link to another object, call **delegation**, `__proto__`
+  - newObject = Object.create(oldObject)
+  - newObject.__proto__ is oldObject
+
+```js
+if (tyoepf Obejct.create !== 'function') {
+  Object.create = function(0) {
+    function F() {};
+    F.prototype = o;
+    return new F();
+  };
+}
+```
+#### new operator
+- absolutely required when calling a Constructor function
+- without new, global is the context
+- no warning
+
+#### global
+- avoid global variables
+- move variables to function - function scope
+- cons: everytime function get called, need to init variables
+
+#### Closure
+- a function returns another function
+- the outer function execute immediately 
+- the inner function still can access the variables in outer function scope, even the outer function has returned
+
+#### Module Pattern
+
+```js
+var singleton = function() {
+  // private varible
+  var privateVariable = 0; 
+
+  // private function, can be accessed in this object only
+  function privateFunction() {
+    privateVariable++;
+  }
+
+  // public section
+  return {
+    firstMethod: function() {
+      privateVariable++;
+    }, 
+    secondMethod: function() {
+      privateFunction();
+      return privateVariable;
+    }
+
+  }
+}(); // make it called immediately
+```
+
+
+#### Power Constructors
+- to hide internal implementation
+
+1. make a object
+  - Object literal `var obj = {bala}`, or
+  - new
+  - Object.create
+  - call another power constructor
+
+2. define some properties and Functions
+  - private members
+
+
+3. privileged // public, can access private members
+
+
+4. return the object
+
+
+```js
+
+function myPowerConstructor() {
+  // created object
+  var that = {};
+
+  // private section
+  var lastId = 0;
+  var secret = function() {
+    console.log("I am a private function", lastId++);
+  }
+  
+  // public function
+  that.priv = function () {
+    that['one'] = 1;
+    that['two'] = 2;
+    secret();
+  };
+  return that;
+}
+```
+
 
 # 14	Project: Array and Object Utility Library
 
