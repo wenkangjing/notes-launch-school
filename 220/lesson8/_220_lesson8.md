@@ -652,6 +652,8 @@ primitive vs object
 
 
 # 15	Project: Guess a Word, Part 1: Structure and Styles
+
+
 # 16	Project: Guess a Word, Part 2: Core Functions
 # 17	Project: Guess a Word, Part 3: Event Handling and Game Play
 # 18	Project: Guess a Word, Part 4: OLOO Pattern Solution
