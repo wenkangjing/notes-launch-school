@@ -555,6 +555,10 @@ if (tyoepf Obejct.create !== 'function') {
 - the outer function execute immediately 
 - the inner function still can access the variables in outer function scope, even the outer function has returned
 
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
+
+https://lostechies.com/derekgreer/2012/02/17/javascript-closures-explained/
+
 #### Module Pattern
 
 ```js
