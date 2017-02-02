@@ -653,6 +653,39 @@ primitive vs object
 
 # 15	Project: Guess a Word, Part 1: Structure and Styles
 
+pixel in DevTool
+- with prop selected in stale tab
+- up/down 1px 
+- shift up/down 10px
+
+prop order in css
+- position
+- display
+- width/height/top/left
+- padding/margin
+- font/text-decoration
+- border
+- background
+
+
+animation change background
+
+```
+body.win {
+  animation: win 3s;
+}
+
+@keyframes win {
+  0% {
+    background-color: #f0f0f0;
+  }
+  100% {
+    background-color: #0066cc;
+  }
+}
+
+```
+
 
 # 16	Project: Guess a Word, Part 2: Core Functions
 # 17	Project: Guess a Word, Part 3: Event Handling and Game Play
