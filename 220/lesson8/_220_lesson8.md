@@ -690,7 +690,17 @@ body.win {
 
 ```
 
-
 # 16	Project: Guess a Word, Part 2: Core Functions
+
+put script tag last element before closing bady
+- no need to wrap everything in DOM ready function.
+
+closures
+- var aClosures is a function, that
+- returns another function + variables
+- immediately execute the function ()
+- aClosures is now ready to use
+
+
 # 17	Project: Guess a Word, Part 3: Event Handling and Game Play
 # 18	Project: Guess a Word, Part 4: OLOO Pattern Solution
