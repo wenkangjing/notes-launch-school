@@ -40,13 +40,14 @@ p {
 #guesses,
 p,
 a {
-  display: block;
   padding: 0 0 20px 0;
 }
 
 p:empty {
   display: none;
 }
+
+a { display: inline-block; }
 
 h3 {
   width: 100px;
