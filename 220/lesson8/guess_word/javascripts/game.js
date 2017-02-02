@@ -61,7 +61,15 @@ $(function(){
         $new_game.hide();
       }
     },
-    guess: function(letter) {
+    guess: function(e) {
+      e.preventDefault();
+
+      if (e.which < 97 || e.which > 122 || !this.word) {
+        return;
+      }
+
+      var letter = e.key;
+      
       // lose?
       if (this.guessed_letters.length >= this.total_wrong_guesses) {
         this.lose();
@@ -110,7 +118,15 @@ $(function(){
         $body.addClass("lose");
       }
     },
+    bind: function() {
+      $(document).on("keypress", this.guess.bind(this));
+      $new_game.on("click", function(e) {
+        e.preventDefault();
+        game = new Game();
+      }, this);
+    },
     init: function() {
+      this.bind();
       if (!this.word) {
         this.updateMessage("Sorry, I've run out of words!");
       }
@@ -119,19 +135,6 @@ $(function(){
       $body.removeClass();
     }
   };
-
-  $new_game.on("click", function(e) {
-    e.preventDefault();
-    game = new Game();
-  });
-
-  $(document).on("keypress", function(e) {
-    e.preventDefault();
-
-    if (e.which >= 97 && e.which <=122 && game.word) {
-      game.guess(e.key);
-    }
-  });
 
   game = new Game();
 });

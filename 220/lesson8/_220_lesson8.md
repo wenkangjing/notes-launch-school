@@ -703,4 +703,8 @@ closures
 
 
 # 17	Project: Guess a Word, Part 3: Event Handling and Game Play
+Game
+- init
+- bind to link event handler
+
 # 18	Project: Guess a Word, Part 4: OLOO Pattern Solution
