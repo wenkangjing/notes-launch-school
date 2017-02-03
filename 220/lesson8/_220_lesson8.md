@@ -706,5 +706,6 @@ closures
 Game
 - init
 - bind to link event handler
+- unbind
 
 # 18	Project: Guess a Word, Part 4: OLOO Pattern Solution

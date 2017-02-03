@@ -9,6 +9,11 @@ var randomWord = function() {
   };
 }();
 
+function isLetter(letter) {
+  var code = letter.charCodeAt(0);
+  return code >= 97 && code <= 122; // lower case
+}
+
 $(function(){
   var game,
       $body        = $(document.body),
@@ -31,13 +36,12 @@ $(function(){
   Game.prototype = {
     updateBlanks: function() {
       $letters.find('span').remove();
-      $guesses.find('span').remove();
       if (this.word) {
         this.word.split("").forEach(function() {
           $letters.append("<span></span>");
-          $guesses.append("<span></span>");
         });
       }
+      $guesses.find("span").remove();
     },
     updateApples: function() {
       $apples.removeClass();
@@ -52,7 +56,7 @@ $(function(){
     },
     updateGuesses: function(letter) {
       this.guessed_letters.push(letter);
-      $guesses.find("span:empty").eq(0).text(letter);
+      $guesses.append("<span>" + letter + "</span>");
     },
     toggleNewGame: function(b) {
       if (b) {
@@ -64,29 +68,39 @@ $(function(){
     guess: function(e) {
       e.preventDefault();
 
-      if (e.which < 97 || e.which > 122 || !this.word) {
+      // run out of words
+      if (!this.word) {
+        return;
+      }
+
+      // already lose
+      if (this.wrong_guesses >= this.total_wrong_guesses) {
         return;
       }
 
       var letter = e.key;
-      
-      // lose?
-      if (this.guessed_letters.length >= this.total_wrong_guesses) {
-        this.lose();
+      if (!isLetter(letter)) {
         return;
-      };
+      }
 
       // already guessed
       if (this.guessed_letters.indexOf(letter) !== -1) {
         console.log("already guessed");
         return;
       };
+
       this.updateGuesses(letter);
       
       // not hit
       if (this.word.indexOf(letter) === -1) {
         this.wrong_guesses++;
+        console.log(this.wrong_guesses);
         this.updateApples();
+        // lose?
+        if (this.wrong_guesses >= this.total_wrong_guesses) {
+          this.lose();
+          return;
+        };
         return;
       }
 
@@ -94,38 +108,54 @@ $(function(){
       this.word.split("").forEach(function(ch, idx) {
         if (ch === letter) {
           this.updateLetters(letter, idx);
+          // win?
+          if ($letters.find("span:empty").length === 0) {
+            this.win();
+          }
         }
       }, this);
-
-      // win?
-      if ($letters.find("span:empty").length === 0) {
-        this.win();
-      }
     },
     win: function() {
       console.log("win");
       this.updateMessage("You win.");
-      this.toggleNewGame(true);      
-      if (!$body.hasClass("win")) {
-        $body.addClass("win");
-      }
+      this.toggleNewGame(true);
+      this.setClass("win");
     },
     lose: function() {
       console.log("lose");
       this.updateMessage("You lose.");
       this.toggleNewGame(true);
-      if (!$body.hasClass("lose")) {
-        $body.addClass("lose");
+      this.setClass("lose");
+    },
+    new: function(e) {
+      e.preventDefault();
+
+      this.word = randomWord();
+      this.wrong_guesses = 0;
+      this.total_wrong_guesses = 6;
+      this.guessed_letters = [];
+      
+      if (!this.word) {
+        this.updateMessage("Sorry, I've run out of words!");
       }
+      this.updateApples();
+      this.updateBlanks();
+      this.toggleNewGame(!!this.word);
+      $body.removeClass();
+    },
+    setClass: function(name) {
+      $body.removeClass();
+      $body.addClass(name);
+    },
+    unbind: function() {
+      $body.off(".game");
     },
     bind: function() {
-      $(document).on("keypress", this.guess.bind(this));
-      $new_game.on("click", function(e) {
-        e.preventDefault();
-        game = new Game();
-      }, this);
+      $body.on("keypress.game", this.guess.bind(this));
+      $new_game.on("click", this.new.bind(this));
     },
     init: function() {
+      this.unbind();
       this.bind();
       if (!this.word) {
         this.updateMessage("Sorry, I've run out of words!");
