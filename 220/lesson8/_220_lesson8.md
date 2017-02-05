@@ -709,3 +709,27 @@ Game
 - unbind
 
 # 18	Project: Guess a Word, Part 4: OLOO Pattern Solution
+
+*objects linked to other objects*
+
+
+```js
+var Game = {
+  guesses: 6,
+  ...
+
+  createBlanks: function() {
+    ...
+  }
+  ...
+}
+
+var game = Object.create(Game).init()     // create the new game object and initialize
+```
+
+Hint: Mutable States on the Prototype Object
+>It's generally not a good idea to store mutable states on the parent objects. In our example, if we stored lettersGuessed array on the Game object and defaulted it to [], we have to be very careful that our created games don't mutate this array, by calling push on it, for example. Otherwise one game's state will carry over to the next game. If there's a piece of data that's meant to change on created objects, don't keep it in the prototype object, but initialize them in the init() method instead.
+
+mutable states store in created object, not parent object
+
+Notice also the use of `return this` at the end of init. This is done so that the game object itself is returned so it can be assigned to a variable, instead of undefined.
