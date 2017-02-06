@@ -1,6 +1,8 @@
 this
 ===========
 
+# How is the function invoked?
+
 https://rainsoft.io/gentle-explanation-of-this-in-javascript/
 
 # 1. What is `this`

@@ -265,10 +265,14 @@ Reference: YMPH-DWEX-AQRS
 2017-01-27
 - 220 - Lesson 7 - Done 
 
-2017-01-
-- 220 - Lesson 8
+2017-02-07
+- 220 - Lesson 8 -Done
+
+2017-02-07
+- 240 - Assessment - prop
 
 TODO:
+  - [ ] JS system exception
   - [ ] recursive 
     - \220\lesson8\utilities\utilities.js
     - fabnacci

@@ -9,14 +9,13 @@ The DOM
 
 https://css-tricks.com/dom/
 
->*JavaScript* is a language that the browser reads and does stuff with. But *the DOM* is where that stuff happens. In fact a lot of what you might think of as a "JavaScript Thing" is more accurately a "DOM API".
+> *JavaScript* is a language that the browser reads and does stuff with. But *the DOM* is where that stuff happens. In fact a lot of what you might think of as a "JavaScript Thing" is more accurately a "DOM API".
 
 https://www.w3.org/TR/DOM-Level-2-Core/introduction.html
 
 [Introduction to the DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
 
 [The Basics of JavaScript DOM Manipulation](http://callmenick.com/post/basics-javascript-dom-manipulation)
-
 
 document
 - any web page loaded in the browser 
@@ -49,7 +48,7 @@ namedNodeMap
 # 3	Douglas Crockford: An Inconvenient API
 https://www.youtube.com/watch?v=Fv9qT9joc0M
 
-[DOM note](../../kb/webapi/_DOM.md)
+[DOM note](../../kb/webapis/_DOM.md)
 
 # 4	A Hierarchy of Nodes
 

@@ -25,7 +25,7 @@ document.write *Bad*
 
 script tag
 - big impact on page loading times
-- place `script` to the bottom fo `body` as possible, and place css `link` as high in the `head` as possible
+- place `script` to the bottom of `body` as possible, and place css `link` as high in the `head` as possible
 
 ## Document Tree Structure
 
@@ -35,11 +35,11 @@ script tag
       |----head `documentElement`
       |----body `document.body`
             |----h1
-            |    |----#test  
+            |    |----#text  
             |----p
-            |    |----#test
+            |    |----#text
             |----p
-                |----#test
+                |----#text
 
 ```
 
@@ -58,9 +58,9 @@ script tag
 
 ## Retrieving Nodes
 - `document.getElementsById(id)` // efficient
+- `document.getElementsByClassName(className)`
 - `document.getElementsByName(name)`
 - `node.getElementsByTagName(tagName)`
-
 
 ## Manipulating Elements
 - change node peroperties, e.g. border, align, width,...
@@ -104,7 +104,7 @@ Event
   - **async programming model**
 
 - event
-  - targeted on  particular nodes
+  - targeted on particular nodes
   - invoke event handler function
 
 Event handlers
@@ -158,23 +158,20 @@ Ajax Library
 HTML5
 - a big step in the wrong direction
 
-
-
 # Q&A
 
 How to detect the node type in JS?
 
-```
-> p.instanceof(HTMLElement);
+```js
+> p instanceof HTMLElement
 = true
-> p.instanceof(Element);
+> p instanceof Element
 = true
-> p.instanceof(Node);
+> p instanceof Node
 = true
-> p.instanceof(SVGElement);
+> p instanceof SVGElement
 = false
 ```
-
 
 How to convert HTMLCollection or NodeList to JS Array?
 - `var arr = Array.prototype.slice.call(htmlCollection)`
@@ -182,8 +179,8 @@ How to convert HTMLCollection or NodeList to JS Array?
 
 
 textContent vs value vs innerText vs innerHtml
-- `Node.textContent` property represents the text content of a node and its descendants.
-- `Node.innerText` is a property that represents the "rendered" text content of a node and its descendants
+- `Node.textContent` property represents the text content of *a node and its descendants*.
+- `Node.innerText` is a property that represents the *"rendered" text* content of *a node and its descendants*
 - `textarea.value` form controls
 - `innerText` will not include text that is hidden by CSS, but textContent will.
 
