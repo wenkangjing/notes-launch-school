@@ -22,7 +22,7 @@ A method is a piece of code that is called by a name that is associated with an 
 
 **Invocation** is executing the code that makes the body of a function (simply calling the function). For example parseInt function invocation is parseInt('15').
 
-**Context** of an invocation is the value of this within function body.
+**Context** of an invocation is **the value of `this` within function body**.
 
 **Scope** of a function is a set of variables, objects, functions accessible within a function body.
 
@@ -70,15 +70,15 @@ Pitfall: create object without `new`, `this` is `global`
 
 # 7. Indirect Invocation
 
-calling via .call() or .apply()
-
-`this` is the first argument of .call() or .apply() in an indirect invocation
-
+.call() or .apply()
+- `func.call(context, arg1, arg2, arg3..)` or
+- `func.apply(valueForThis, arrayOfArgs)`
 
 # 8. Bind
 
-`this` is the first argument of .bind() when invoking a bound function
-
+ `.bind(obj, arg1, arg2, arg3)` create a bound function, usually used in
+- in event callback
+- end of function expression 
 
 # 9. Arrow Function
 
@@ -99,3 +99,16 @@ The arrow function doesn't create its own execution context, but takes this from
 
 https://launchschool.com/lessons/2555bbbb/assignments/93b8b6af
 
+
+IIFE
+============
+
+Immediately Invoked Function Expressions (IIFE, pronounced iffy)
+
+```js
+(function() {
+    // Your awesome code here, suggested by Douglas Crockford 
+}());
+```
+
+Any variables or functions defined within IIFE block are local to the block and it’s not possible for any code outside this scope to change them.

@@ -64,25 +64,24 @@ first-class functions mean
 >
 > change a function's execution context (what the `this` keyword in functions points to) **when the function is executed**, with the `call` or `apply` method.
 
+binding `this`to a function `context` which will be `this` inside the function 
 
-`func.call(context, arg1, arg2, arg3..)` or `func.apply(valueForThis, arrayOfArgs)`
-- binding `this`to a function `context` which will be `this` inside the function 
-- `arg`s are functin parameters 
+- `func.call(context, arg1, arg2, arg3..)` or
+- `func.apply(valueForThis, arrayOfArgs)`
 
 To make you remember what each one does, use the mnemonic below:
 
-`Call`: **Count the Commas** (you have to count the number of arguments to match the called function)
+`Call`: **Count the Commas**
 
 `Apply`: **Arguments as Array**
 
 # 6	Hard Binding Functions with Contexts
 
-`binding(object)` - permanently binding a function to a context object
+`bind(object, arg1, arg3)` - permanently binding a function to a context object
 
 > Unlike call or apply, the bind method doesn't actually execute the function. Instead, it returns a new function with the original function's this keyword permanently bound to a context. 
 >
 > We can then pass this function around, knowing that its this will never change when executed.
-
 
 # 7	Example: Changing Function's Contexts (very well explained)
 
@@ -142,8 +141,8 @@ temperatures.average = average
 console.log(temperatures.average());
 ```
 
-
 # 8	Dealing with Context Loss (1)
+
 > When you take a method out of its containing object and execute it elsewhere, you will lose its context:
 
 # 9	Dealing with Context Loss (2)
