@@ -156,3 +156,19 @@ How JS looks up variables?
 - If it doesn't exist, it will look at the next outer score and see if the variable exists at that scope. 
 - It will continue doing this until reaches the outer most (global) scope.
 - if there is none even the outer scopes. When this happens, JavaScript binds it to be a "property" of the global object. This is "almost" the same as if myVar was globally declared.
+
+How to traverse the DOM?
+
+```js
+function walk(node, callback) {
+  callback(node);
+
+  for (var i = 0; i < node.childNodes.length; i++) {
+    walk(node.childNodes[i], callback);
+  }
+}
+
+walk(document.body, function(node) {
+  console.log(node.nodeName);
+});
+```

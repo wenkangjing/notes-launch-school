@@ -5,12 +5,10 @@ function walk(node, callback) {
 
   // for each child node
   for (var i = 0; i < node.childNodes.length; i++) {
-
     // recursively call walk()
     walk(node.childNodes[i], callback);
   }
 }
-
 
 //print out the nodeName of every node
 walk(document.body, function(node) {

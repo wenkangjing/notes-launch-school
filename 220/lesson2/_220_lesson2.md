@@ -134,7 +134,7 @@ EventTarget **event handling**
                     |--etc, etc.
 ```
 
-![Nodes and Elements](../../kb/dom/node.png)
+![Nodes and Elements](../../kb/webapis/node.png)
 
 What type of a node is in Console?
 - `node.toString()`
@@ -171,8 +171,8 @@ What type of a node is in JS?
 - `parentNode`	Immediate parent of this node
 
 
-
 # 9	Element Attributes
+
 get/set attribute
 
 attribute property
@@ -190,8 +190,6 @@ class
 style
 - Every CSS property can be modified using the style attribute.
 - e.g. `h1.style.lineHeight = '3em';`, `h1.style.color = 'red`;, `h1.style.color = null;`
-
-
 # 10	Exercises: Traversing and Accessing Attributes
 
 1. Write JavaScript to determine how many total images are on the webpage and how many of those images are in the PNG format.
@@ -217,33 +215,31 @@ HTMLCollection or NodeList
 # 12	Traversing Elements
 
 all child nodes (text / element)
-
-- parentNod 
+- parentNode
 - childNodes, firstChild, lastChild,
 - nextSibling, previousSibling
 
-![all nodes](../../kb/dom/node_hierarchy2.png)
+![all nodes](../../kb/webapis/node_hierarchy2.png)
 
 vs
 
 element child nodes (element)
-
 - parentNode
 - children, firstElementChild, lastElementChild
 - nextElementSibling, previousElementSibling
 
-![element nodes](../../kb/dom/node_hierarchy3.png)
+![element nodes](../../kb/webapis/node_hierarchy3.png)
 
 
 > Internet Explorer doesn't provide these newer methods on document, but they are available on any other Element. A workaround for this is to use document.body, which is an Element, instead of document, which is a Document.
 
 textContent (text)
 
-- It's important to be careful when setting a value to textContent, because doing do will remove all child nodes from the Element and replace them with a single Text Node containing the specified value:
+- It's important to be careful when setting a value to `textContent`, because doing do will remove all child nodes from the Element and replace them with a single Text Node containing the specified value:
 
 - The best way to handle updating text on a page is to always keep text that needs to be updated via JavaScript within an Element, even if that Element is a <span> or <div> that serves no other purpose. 
 
-```
+```html
 <html>
   <body>
     <div>
@@ -255,13 +251,13 @@ textContent (text)
 </html>
 
 document.querySelector('span.time').textContent = '9:16 am';
-
 ```
 
 # 13	Exercises: Finding Nodes and Traversing Elements
 
 NodeList / HTMLCollection to JS Array?
 - `var arr = Array.prototype.slice.call(htmlCollection)`
+- `var arr = [].slice.call(arrLike)`
 
 # 14	Creating and Moving DOM Nodes
 
@@ -342,6 +338,10 @@ node.innerText
 - The *whitespace in an HTML document* will result in many *empty text nodes appearing in the DOM*.
 
 - Useful properties of nodes include `nodeName, nodeType, nodeValue, and textContent`.
+  - nodeName: tag name, p, input, article
+  - nodeType element 1, text 3, comment 8, document 9
+  - nodeValue: text on text/comment, null on the rest
+  - textContent: a collection of nodeValue of all its descendants
 
 - Nodes have many properties for traversing the DOM tree: firstChild, lastChild, childNodes, nextSibling, previousSibling, and parentNode.
 
@@ -363,6 +363,6 @@ node.innerText
 
 - A copy of a node can be obtained using `mode.cloneNode(deepClone)`.
 
-- parent.appendChild(node), parent.insertBefore(node, targetNode), parent.replaceChild(node, targetNode), element.insertAdjacentElement(position, newElement), and element.insertAdjacentText(position, text) are used to add nodes to the DOM.
+- `parent.appendChild(node), parent.insertBefore(node, targetNode), parent.replaceChild(node, targetNode), element.insertAdjacentElement(position, newElement), and element.insertAdjacentText(position, text)` are used to add nodes to the DOM.
 
-- node.remove() and parent.removeChild(node) are used to remove nodes from the DOM.
+- `node.remove() and parent.removeChild(node)` are used to remove nodes from the DOM.
