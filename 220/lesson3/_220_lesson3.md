@@ -6,15 +6,21 @@ Event-Driven and Asynchronous Programming
 
 # 2	Timeouts and Intervals
 
-setTimeout(func, delay) clearTimeout(timeoutID)
+```
+var timeoutID = setTimeout(func, delay) 
+clearTimeout(timeoutID)
 
-setInterval(func, delay) clearInterval(intervalID)
+var  intervalID = setInterval(func, delay) 
+clearInterval(intervalID)
+```
 
 # 3	User Interfaces and Events
 
 event
 - info about *what and where* it happened
 - `addEventListener`
+- `removeEventListener`
+
 - [event type](https://developer.mozilla.org/en-US/docs/Web/Events) 
 
 # 4	A Simple Example
@@ -34,9 +40,9 @@ html file
 
 ```
 
-![semicomplete page loading](../../kb/dom/semicomplete_page_loading.png)
+![semicomplete page loading](../../kb/webapis/semicomplete_page_loading.png)
 
-![complete page loading](../../kb/dom/complete_page_loading.png)
+![complete page loading](../../kb/webapis/complete_page_loading.png)
 
 # 6	User Events
 
@@ -72,8 +78,8 @@ Form
 
 # 8	The Event Object
 - `e.type` a string, case insensitive, e.g. click
-- `e.target` The object the event originally was fired upon.
 - `e.currentTarget` The object that is currently being targetted as the event bubbles up the DOM. This will be the object the event handler was attached to.
+- `e.target` The object the event originally was fired upon. **inner most**
 
 keyboard event
 - which // keyCode **preferred**
@@ -82,7 +88,7 @@ keyboard event
 
 # 9	Capturing and Bubbling
 
-![event phases](../../kb/dom/event_phases.png)
+![event phases](../../kb/webapis/event_phases.png)
 
 > Capturing vs. Bubbling
 >
@@ -93,7 +99,7 @@ keyboard event
 # 10	Preventing Propagation and Default Behaviors
 
 - event.stopPropagation()
-- preventDefault()
+- event.preventDefault()
 
 > It is a good practice to call preventDefault() or stopPropagation() as early as possible in an event handler. 
 
@@ -119,11 +125,10 @@ When To Use Event Delegation?
 
 ## callback queue
 - just one queue
-- pick cb fron callback  queue **when stack is clear** (whenthread is idle)
+- pick cb from callback  queue **when stack is clear** (when thread is idle)
 
 ## render queue
 - when sync executing, reunder queue is blocked, ui is stucked
-
 
 ```
 JS stack `setTimeout(5s)`
@@ -149,6 +154,7 @@ callback queue
 
 quesiton
 - keydown on `div` or `document`
+- must be focusable control, to walk around set a tabIndex
 
 # 15	Summary
 
