@@ -19,7 +19,6 @@ version
 - $(document).jquery
 
 
-
 # Traversing
 
 - .each(index, element)
@@ -33,6 +32,7 @@ version
 - .slice()
 - .first() .last() .eq()
 - .index()
+- .not() .is()
 
 # Selector
 - :visible :hidden
@@ -43,23 +43,26 @@ version
 - :focus :submit :selected :enabled
 - :checkbox :input :radio
 
+# Form
+
+```js
+$f.serializeArray().forEach(function(input){
+  o[input.name] = input.value;
+});
+```
 
 # jQuery Attribute Selector
 
-contains 
-- *
+contains *
 - `[name*="value"]`
 
-end with 
-- $
+end with $
 - `[name$="value"]`
 
-start with
-- ^
+start with ^
 -  `[name^="value"]`
 
-not
-- !
+not !
 -  `[name!="value"]`
 
 # Manipulate
@@ -68,13 +71,46 @@ not
 - .before() .after()
 - .remove()
 - .text()
+- .addClass() .removeClass() .toggleClass()
 - .prop()
-- .attr()
-- .data() // store and retrieve back
+- .attr() .removeAttr()
+- .data() .removeData() // store and retrieve back
 
+```js
+var $e = $("<div />", {
+  "class": "shape circle",
+  css: {
+    top:10,
+    left: 50
+  }
+});
+```
+
+# Animation
 - .show() .hide() .toggle()
 - .fadeIn() .fadeOut()
 - .delay() .stop()
+
+fade 
+- `.fadeIn()` Display the matched elements by fading them to opaque.
+- `.fadeOut()` Hide the matched elements by fading them to transparent.
+- `.fadeTo()` Adjust the opacity of the matched elements.
+- `.fadeToggle()` Display or hide the matched elements by animating their opacity.
+- complete callback
+
+slide
+- `.slideDown()` Display the matched elements with a sliding motion.
+- `.slideToggle()` Display or hide the matched elements with a sliding motion.
+- `.slideUp()` Hide the matched elements with a sliding motion.
+
+jQuery effect queue
+- `.stop()` current the new animation
+- `.finish()` stop all queued animations
+
+turn off animation
+- `$.fx.off` to disable animation
+
+
 
 # Event
 
