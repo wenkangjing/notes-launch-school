@@ -1,9 +1,47 @@
 jQuery
 ==========
+# Basics
+
+```js
+// dom ready
+$(document).ready(function() {});
+
+$(function() {
+
+});
+
+// window load
+$(window).load(function() {});
+
+```
+
+version 
+- $(document).jquery
+
+
 
 # Traversing
 
-.each()
+- .each(index, element)
+- $("this").add("that") // add that to this collection, not change DOM at all. 
+- .children()
+- .closet("li")
+- .filter(":even")  .filter(":visible") 
+- .find("p")
+- .siblings()
+- .next() .nextAll()
+- .slice()
+- .first() .last() .eq()
+- .index()
+
+# Selector
+- :visible :hidden
+- :not :empty
+- :even :odd
+- :checked
+- :first :last :first-child :last-child
+- :focus :submit :selected :enabled
+- :checkbox :input :radio
 
 
 # jQuery Attribute Selector
@@ -24,7 +62,21 @@ not
 - !
 -  `[name!="value"]`
 
-#Event
+# Manipulate
+
+- .append(), .appendTo(), .prepend(), .prependTo()
+- .before() .after()
+- .remove()
+- .text()
+- .prop()
+- .attr()
+- .data() // store and retrieve back
+
+- .show() .hide() .toggle()
+- .fadeIn() .fadeOut()
+- .delay() .stop()
+
+# Event
 
 http://learn.jquery.com/events/
 

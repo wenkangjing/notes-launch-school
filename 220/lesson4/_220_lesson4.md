@@ -282,9 +282,14 @@ looping jquery object
 - `[]` or `.get()` returns element
 
 manipulate DOM
-- `.append(), .appendTo(), .prepend(), .prependTo()`
-- ` .before() .after()`
-- `detach()` is not needed
+- .append(), .appendTo(), .prepend(), .prependTo()
+- .before() .after()
+- .remove()
+- .text()
+- .prop()
+- .attr()
+- .data() // store and retrieve back
+
 
 # 13	Assignment: Team Member Profile Modals
 
@@ -346,8 +351,8 @@ console function
 - keys() values()
 
 $ sign without jquery
-- `$` alias of querySelector
-- `$$` return an array
+- `$` alias of querySelector, first one
+- `$$` return an array, all
 
 blackboxing 
 - jquery min
