@@ -114,3 +114,27 @@ Immediately Invoked Function Expressions (IIFE, pronounced iffy)
 ```
 
 Any variables or functions defined within IIFE block are local to the block and it’s not possible for any code outside this scope to change them.
+
+# Examples
+
+```js
+// a global var that can access in console without debug
+var global_variable;
+
+// IIFE function declairaton, to build up the global var
+(function() {
+  global_variable = {
+    data: "bala",
+    collection: [],
+    foo: function() {
+
+    },
+    init: function() {
+
+    },
+  };
+})();
+
+// call when dom ready
+$( global_variable.init.bind(global_variable));
+```

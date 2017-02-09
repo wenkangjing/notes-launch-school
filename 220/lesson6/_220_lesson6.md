@@ -93,9 +93,7 @@ IIFE
 ```js
 (function() {
   console.log("IIFE");
-};
-
-})();
+}());
 ```
 
 global varible and **IIFE**
@@ -232,9 +230,9 @@ blocks
 
 path - ../ 
 
+
 ```
 This article is available on {{website.name}}.<br/>
-
 {{#each names}}
   I am a {{../occupation}}. My name is {{firstName}} {{lastName}}.<br/>
 {{/each}}
@@ -369,9 +367,7 @@ ignore node_moduels in git
 
 jQuery ajax functions are callbacks
 
-
 **Network tab** for ajax response
-
 
 # 10	Project: Photo Gallery, Part 2 - Slide Show
 
@@ -384,12 +380,9 @@ cached jQuery object may not valid after `append/remove/replace` node in the DOM
 ```js
 // Update ui text
 $e.text(function(i, txt) {
-  return txt.replace(/\d+/, json.total);
+  return txt.replace(/\d+/, 5); // update number to 5
 });
 ```
-
-
-
 
 # 11	Project: Photo Gallery, Part 3 - Like, Favorite and Comment
 

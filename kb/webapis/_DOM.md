@@ -186,11 +186,16 @@ textContent vs value vs innerText vs innerHtml
 
 
 
+Storage
+===========
 
+`window.localStorage` stays around after the browser window or tab closes, being accessible as long as the browser hasn't deleted localStorage by some other means.
 
+`window.sessionStorage` only lasts the current session. In the case of a web browser, this means until the tab or window is closed. 
 
+`JSON.stringify` object to json string
 
-
+`JSON.parse` json string to object
 
 
 

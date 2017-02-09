@@ -31,6 +31,7 @@ version
 - .next() .nextAll()
 - .slice()
 - .first() .last() .eq()
+- .prev() .next()
 - .index()
 - .not() .is()
 

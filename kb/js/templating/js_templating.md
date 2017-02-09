@@ -1,18 +1,19 @@
 Handlebars
 ==================
 
+# Steps
+
 ```html
-// HTML - includes
+<!--HTML - includes-->
 <script src="/path/to/handlebars.min.js"></script>
 
-// HTML - template
+<!--HTML - template-->
 <script id="handlebars-demo" type="text/x-handlebars-template">
    <div>
       My name is {{name}}. I am a {{occupation}}.
    </div>
 </script>
 ```
-
 
 ```js
 // get html
@@ -28,3 +29,30 @@ var html = templateScript(context); // html = 'My name is Ritesh Kumar. I am a d
 $(document.body).append(html);
 
 ```
+
+
+# Partial
+
+```js
+Handlebars.registerPartial(
+  'partialTemplate',
+  '{{language}} is {{adjective}}. You are reading this article on {{website}}.'
+);
+
+var context={
+  "language" : "Handlebars",
+  "adjective": "awesome"
+}
+
+// html
+{{> partialTemplate website="sitepoint"}} <br>
+{{> partialTemplate website="www.sitepoint.com"}}
+
+// output
+// Handlebars is awesome. You are reading this article on sitepoint
+// Handlebars is awesome. You are reading this article on www.sitepoint.com
+```
+
+# Syntax
+
+# Helper

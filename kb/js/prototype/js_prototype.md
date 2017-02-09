@@ -6,6 +6,11 @@
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model#Class-based_vs._prototype-based_languages
 
+`__proto__`
+(pronounced "dunder proto", "dunder" is a portmanteau for "double underscore"), that points to another object. 
+
+`Object.getPrototypeOf(obj)` is equivalent of `obj.__proto__`
+
 
 ## class-based 
 
@@ -59,6 +64,7 @@ function WorkerBee() {
   Employee.call(this);
   this.projects = [];
 }
+
 WorkerBee.prototype = Object.create(Employee.prototype);
 
 function SalesPerson() {

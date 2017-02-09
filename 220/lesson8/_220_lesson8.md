@@ -179,28 +179,26 @@ know difference bwteen `Object.prototype` and `Function.prototype`
 
 Victor reply:
 
-```
 Hi Jamie. Agree with you completely that this isn't an easy topic to grasp. For the article/reference I mostly use the MDN articles on this and just read their documentation. Here is my attempt at clarifying things for you =).
 
-First off, .__proto__ exists for any object. It is not unique to the function creation way. Your mental model of it is ok. To be more accurate, I'd position it is a "pointer to the object that it delegates to". In JS, the objects don't inherit from "parent objects"; they delegate. It is not recommend to use this property. Use Object.getPrototypeOf instead.
+First off, `.__proto__` exists for **any object**. It is not unique to the function creation way. Your mental model of it is ok. To be more accurate, I'd position it is a "pointer to the object that it delegates to". In JS, the objects don't inherit from "parent objects"; they delegate. It is not recommend to use this property. Use `Object.getPrototypeOf` instead.
 
-.prototype is a property that exists for Functions. The property points to an object that "objects" created using the constructor function delegate to. The default value is an empty object (i.e. Foo {}).
+`.prototype` is a property that exists for **Functions**. The property points to **an object that "objects" created using the constructor function delegate to**. The default value is an empty object (i.e. Foo {}).
 
-.prototype is set when a function is used as constructor function (called with the new keyword).
+`.prototype` is set when a function is used as constructor function (called with the new keyword).
 
-.constructor is a property of the .prototype object.
+`.constructor` is **a property of the .prototype object**.
   As a property, .prototype can be re-assigned. When it is reassigned the .constructor property also changes (You will this getting re-set in one of the assignments)
 
 "whereas constructor pointing from prototype back to the function constructor." --> I'm not sure what you mean by this.
 
 Object.create creates a new object that delegates to the object that is passed in as an argument. You are correct it does not have .prototype and consequently .constructor.
 
-I'm not sure if my above statements have helped you. Sorry, if it hasn't. If you'll notice, though, I use the words "object" and "property" to discuss the terms. For me, the main difference of the two is the object to which it delegates to. The constructor function approach delegates to the Function.prototype object while the Object.create delegates to the Object.prototype object. Thinking of it this way, simplifies it for me because now I just need to think of the methods and properties that becomes available depending on the object that is delegated to. Finally, as you've pointed out, Function.prototype delegates to Object.prototype, and this is probably why there is a layer of indirection that gets added (via .prototype property of a function).
+I'm not sure if my above statements have helped you. Sorry, if it hasn't. If you'll notice, though, I use the words "object" and "property" to discuss the terms. For me, the main difference of the two is the object to which it delegates to. The **constructor function approach delegates to the Function.prototype object** while the **Object.create delegates to the Object.prototype object**. Thinking of it this way, simplifies it for me because now I just need to think of the methods and properties that becomes available depending on the object that is delegated to. Finally, as you've pointed out, Function.prototype delegates to Object.prototype, and this is probably why there is a layer of indirection that gets added (via .prototype property of a function).
 
 Personally, I prefer to use the Object.create approach. It feels more natural to use when using "native" JS. However, when working with Libraries/Frameworks built on JS, the Constructor approach seems more prevalent as far as those that I have seen/used.
 
 If you have a specific topic/point that is confusing, we could focus on that more.
-```
 
 
 what happens when use **new** to create an object
