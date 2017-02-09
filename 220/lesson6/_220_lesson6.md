@@ -71,7 +71,7 @@ context in jQuery
   - `func.call(context)`
 
 position() vs offset()
-- `position()` relative to positioned parent, match top/left in css, **imclude margin**
+- `position()` relative to positioned parent, match top/left in css, **inmclude margin**
 - `offset()` relative to the window
 
 Dimensions in jQuery (**not same as in css**)
@@ -111,7 +111,7 @@ good reading: https://medium.com/@jayshenk/how-being-stumped-by-one-line-of-code
 
 OOP in js
 - put logic in inventory object, not global scope
-- put `.on(event, cb)` in  bindEvents function
+- put `.on(event, cb)` in bindEvents function
 - seperate data and UI
   - `add()` for data + `addItem` for UI
   - remove(id)  for data + `removeItem` for UI

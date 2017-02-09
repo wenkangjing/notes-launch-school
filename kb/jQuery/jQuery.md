@@ -75,6 +75,7 @@ not !
 - .prop()
 - .attr() .removeAttr()
 - .data() .removeData() // store and retrieve back
+  - $('p').data("block") // returns gold cause in html `<p data-block="gold"> </p>`
 
 ```js
 var $e = $("<div />", {
@@ -85,6 +86,7 @@ var $e = $("<div />", {
   }
 });
 ```
+
 
 # Animation
 - .show() .hide() .toggle()
@@ -141,3 +143,26 @@ stopPropagation()
 
 
 link Namespacing Events
+- $("p").on("click.bala", func...)
+- $("p").off("click.bala")
+
+
+attach multiple event in one call
+
+```js
+$("#text").on({
+  focus: function() { 
+    $(this).addClass("focused"); 
+  },
+  keyup: function(e) {
+    $("#which b").text(e.which);
+    $(this).val("");
+  },
+  blur: function() {
+    $(this).removeClass("focused"); 
+  }
+});
+```
+
+fire event
+- $("a").trigger('click')
