@@ -21,49 +21,50 @@
       </div>
       <div id="message">
         <p>There is no contacts.</p>
-        <input type="button" class="add" value="Add Contact">
+        <input type="button" class="button add" value="Add Contact">
       </div>
-      <div id="contacts">
-        <div class="contact">
-          <h3>K Wen</h3>
-          <dl>
-            <dt>Phone Number:</dt>
-            <dd>123456789</dd>
-            <dt>Email:</dt>
-            <dd>bala@bala.com</dd>
-          </dl>
-          <a href="#" class="button"><span class="pencil"></span>Edit</a>
-          <a href="#" class="button"><span class="trash"></span>Delete</a>
-        </div>
+      <div id="contacts"></div>
+      <div class="container clearfix">
+        <form>
+          <fieldset>
+              <h2>Create Contact</h2>
+              <p>
+                <label>Full name:</label>
+                <input type="hidden" name="id">
+                <input type="text" name="fullname" required>
+              </p>
+              <p>
+                <label>Email address:</label>
+                <input type="email" name="email" required>
+              </p>
+              <p>
+                <label>Telephone number::</label>
+                <input type="telephone" name="phone" required>
+              </p>
+              <p>
+                <label></label>
+                <input type="submit" class="button" value="Submit">
+                <input type="reset" class="button" value="Cancel">
+              </p>
+          </fieldset>
+        </form>
       </div>
-      <form>
-        <fieldset>
-            <h2>Edit Contact</h2>
-            <p>
-              <label>Full name:</label>
-              <input type="text" name="fullname">
-            </p>
-            <p>
-              <label>Email address:</label>
-              <input type="text" name="email">
-            </p>
-            <p>
-              <label>Telephone number::</label>
-              <input type="text" name="phone">
-            </p>
-            <p>
-              <label></label>
-              <input type="submit" class="button" value="Submit">
-              <input type="button" class="button" value="Cancel">
-            </p>
-        </fieldset>
-      </form>
     </main>
     <footer>
       Coded by kwen for learning purposes only.
     </footer>
     <script id="contact" type="text/x-handlebars-template">
-
+      <div class="contact">
+        <h3>{{fullname}}</h3>
+        <dl>
+          <dt>Phone Number:</dt>
+          <dd>{{phone}}</dd>
+          <dt>Email:</dt>
+          <dd>{{email}}</dd>
+        </dl>
+        <a href="#" class="button edit"><span class="pencil"></span>Edit</a>
+        <a href="#" class="button delete"><span class="trash"></span>Delete</a>
+      </div>
     </script>
 
     <script id="form" type="text/x-handlebars-template">
