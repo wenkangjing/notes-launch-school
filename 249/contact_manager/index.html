@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <title>Contact Manager</title>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="stylesheets/style.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -16,48 +16,39 @@
     </header>
     <main>
       <div id="operation">
+        <div><input type="button" class="button add" value="Add Contact"></div>
+        <div><input type="text" id="search" placeholder="Search"></div>
+      </div>
+      <div id="message">
+        <p>There is no contacts.</p>
         <input type="button" class="add" value="Add Contact">
-        <input type="text" placeholder="Search">
       </div>
-      <div>
-        <div id="message">
-          <p>There is no contacts.</p>
-          <input type="button" class="add" value="Add Contact">
+      <div id="contacts">
+        <div class="contact">
+          <h3>K Wen</h3>
+          <dl>
+            <dt>Phone Number:</dt>
+            <dd>123456789</dd>
+            <dt>Email:</dt>
+            <dd>bala@bala.com</dd>
+          </dl>
+          <a href="#" class="button"><span class="edit"></span>Edit</a>
+          <a href="#" class="button"><span class="delete"></span>Delete</a>
         </div>
-        <div id="contacts">
-          <div>
-            <h3>K Wen</h3>
-            <p>Phone Number:</p>
-            <p>123456789</p>
-            <p>Email:</p>
-            <p>kwen@bala.com</p>
-            <input type="button" class="edit" value="Edit">
-            <input type="button" class="delete" value="Delete">
-          </div>
-          <div>
-            <h3>K Wen</h3>
-            <p>Phone Number:</p>
-            <p>123456789</p>
-            <p>Email:</p>
-            <p>kwen@bala.com</p>
-            <input type="button" class="edit" value="Edit">
-            <input type="button" class="delete" value="Delete">
-          </div>          
-        </div>
-        <form>
-          <fieldset>
-             <h2>Edit Contact</h2>
-             <label>Full name:</label>
-             <input type="text" name="fullname">
-             <label>Email address:</label>
-             <input type="text" name="email">
-             <label>Telephone number::</label>
-             <input type="text" name="phone">
-             <input type="submit" value="Submit">
-             <input type="button" value="Cancel">
-          </fieldset>
-        </form>
       </div>
+      <form>
+        <fieldset>
+            <h2>Edit Contact</h2>
+            <label>Full name:</label>
+            <input type="text" name="fullname">
+            <label>Email address:</label>
+            <input type="text" name="email">
+            <label>Telephone number::</label>
+            <input type="text" name="phone">
+            <input type="submit" class="button" value="Submit">
+            <input type="button" class="button" value="Cancel">
+        </fieldset>
+      </form>
     </main>
     <footer>
       Coded by kwen only for learning purposes.
