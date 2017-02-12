@@ -143,6 +143,8 @@ header a {
 
 #contacts {
   margin: 30px 5px;
+  text-align: left;
+  min-height: 300px;
 }
 
 .contact {
@@ -182,14 +184,7 @@ header a {
   padding-right: 5px;
 }
 
-.container {
-  display: none;
-  position: absolute;
-  top: 100vw;
-  width: 100%;
-  min-height: 300px;
-  text-align: center;
-}
+
 /* form */
 form {
   width: 600px;
@@ -232,9 +227,26 @@ form .button + .button {
   margin-left: 70px;
 }
 
+/*layout - read-mode vs edit mode*/
+
+.container {
+  position: absolute;
+  width: 100%;
+  
+}
+
+.read-mode {
+  display: block;
+  text-align: left;
+}
+
+.edit-mode {
+  display: none;
+  text-align: center;
+}
 
 /* footer */
-footer {
+.footer {
    margin: 20px auto;
    text-align: center;
    max-width: 800px;

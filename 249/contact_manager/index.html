@@ -15,16 +15,18 @@
       <p>Practice Project of Course 249</p>
     </header>
     <main>
-      <div id="operation">
-        <div><input type="button" class="button add" value="Add Contact"></div>
-        <div><input type="text" id="search" placeholder="Search"></div>
+      <div class="container read-mode"> 
+        <div id="operation">
+          <div><input type="button" class="button add" value="Add Contact"></div>
+          <div><input type="text" id="search" placeholder="Search"></div>
+        </div>
+        <div id="contacts"></div>
+        <div id="message">
+          <p>There is no contacts.</p>
+          <input type="button" class="button add" value="Add Contact">
+        </div>
       </div>
-      <div id="message">
-        <p>There is no contacts.</p>
-        <input type="button" class="button add" value="Add Contact">
-      </div>
-      <div id="contacts"></div>
-      <div class="container clearfix">
+      <div class="container edit-mode">
         <form>
           <fieldset>
               <h2>Create Contact</h2>
@@ -49,10 +51,10 @@
           </fieldset>
         </form>
       </div>
+      <div class="container footer">
+        <p>Coded by kwen for learning purposes only.</p>
+      </div>
     </main>
-    <footer>
-      Coded by kwen for learning purposes only.
-    </footer>
     <script id="contact" type="text/x-handlebars-template">
       <div class="contact">
         <h3>{{fullname}}</h3>

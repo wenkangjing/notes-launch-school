@@ -1,6 +1,9 @@
-var operation,
-    contacts;
+var operation, // controller
+    contacts; // data model
 
+//
+// Helper functions
+//
 var generateId = function() {
   var last_id = 1;
   return function() {
@@ -9,14 +12,17 @@ var generateId = function() {
 }();
 
 function Contact(obj) {
+  if (!(this instanceof Contact)) {
+    return new this;
+  }
   if (obj.id) {
     this.id = +obj.id;
   } else {
     this.id = generateId();
   }
   this.fullname = obj.fullname;
-  this.phone = obj.phone;
-  this.email = obj.email;
+  this.phone    = obj.phone;
+  this.email    = obj.email;
 }
 
 Contact.prototype = {
@@ -54,14 +60,25 @@ Contact.prototype = {
   };
 
   view = {
+    init: function() {
+      this.$operation = $("#operation");
+      this.$contacts = $("#contacts");
+      this.$message = $("#message");
+      this.$footer = $(".footer");
+    },
     addContact: function(contact) {
       $contact = $(this.template(contact))
       $contact .data("contact", contact);
-      $("#contacts").append($contact);
+      this.$contacts.append($contact);
     },
-    updateContact: function(contact) {
-      $contact = $("#contacts").find(".contact").filter(function(idx, el) {
-        return $(el).data().contact.id === contact.id;
+    updateContact: function(data) {
+      $contact = this.$contacts.find(".contact").filter(function(idx, el) {
+        var contact = $(el).data("contact");
+        if (contact) {
+          return contact.id === data.id;
+        } else {
+          return false;
+        }
       });
       $contact.replaceWith($(this.template(contact)));
     },
@@ -69,35 +86,33 @@ Contact.prototype = {
       $contact.remove();
     },
     updateMessage: function() {
-      if ($("#contacts").find(":visible").length === 0) {
-        $("#message").show().find("p").text("There is no contacts.");
+      if (this.$contacts.find(":visible").length === 0) {
+        this.$message.show().find("p").text("There is no contacts.");
       }
     },
-    editing: function(contact) {
-      var $form = $("form");
-
-
+    editMode: function(contact) {
+      $(".container").hide();
+      var top = $(".edit-mode").show().css("height");
+      this.$footer.show().css("top", top);
       if (!!contact) {
+        var $form = $("form");
         $form.find("h2").text("Edit Contact");
         for (var prop in contact) {
           $form.find("input[name=" + prop + "]").val(contact[prop]);
         }
       }
-      $(".container").show();
-      // $(".container").show().animate({
-      //   top: 0,
-      //   display: "block"
-      // }, 500);
-      $("#operation").hide();
-      $("#contacts").hide();
-      $("#message").hide();
     },
+    readMode: function() {
+      $(".container").hide();
+      var top = $(".read-mode").show().css("height");
+      this.$footer.show().css("top", top);
+    }
   };
 
   operation = {
     add: function(e) {
       e.preventDefault();
-      $("form").show();
+      view.editMode();
     },
     submit: function(e) {
       e.preventDefault();
@@ -114,26 +129,33 @@ Contact.prototype = {
         contacts.add(contact);
         view.addContact(contact);
       }
-      $("#contacts").show();
-      $("form").slideDown();
-
+      view.readMode();
     },
     cancel: function(e) {
       e.preventDefault();
+      view.readMode();
     },
     edit: function(e) {
       e.preventDefault();
       $contact = $(e.target.closest(".contact"));
       var contact = $contact.data("contact");
-      view.editing(contact);
+      if (contact) {
+        view.editMode(contact);
+      } else {
+        console.log("Contact not found");
+      }
     },
     delete: function(e) {
       e.preventDefault();
       $contact = $(e.target.closest(".contact"));
-      var id = $contact.data().contact.id;
-      contacts.delete(id);
-      view.deleteContact($contact);
-      view.updateMessage();
+      var contact = $contact.data("contact");
+      if (contact) {
+        contacts.delete(contact.id);
+        view.deleteContact($contact);
+        view.updateMessage();
+      } else {
+        console.log("Contact not found");
+      }
     },
     cacheTemplate: function() {
       view.template = Handlebars.compile($("#contact").html());
@@ -148,9 +170,14 @@ Contact.prototype = {
     init: function() {
       this.bindEvents();
       this.cacheTemplate();
-       var contact = new Contact({fullname: "kwen", phone: 123, email: "abc@soi.com"});
-       contacts.add(contact);
-       view.addContact(contact);
+      view.init();
+      // fake contacts
+      for (var i = 0; i < 5; i++) {
+        var contact = new Contact({fullname: "kwen", phone: 123, email: "abc@soi.com"});
+        contacts.add(contact);
+        view.addContact(contact);
+      }
+      view.readMode();
     }
   };
 })();$(operation.init.bind(operation));
