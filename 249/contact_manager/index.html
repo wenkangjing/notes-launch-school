@@ -15,38 +15,42 @@
       <p>Practice Project of Course 249</p>
     </header>
     <main>
-      <div id="operation">
-        <div><input type="button" class="button add" value="Add Contact"></div>
-        <div><input type="search" id="search" placeholder="Search"></div>
+      <div id="read-mode"> 
+        <div id="operation">
+          <div><input type="button" class="button add" value="Add Contact"></div>
+          <div><input type="search" id="search" placeholder="Search"></div>
+        </div>
+        <div id="message">
+          <p>There is no contacts.</p>
+          <input type="button" class="button add" value="Add Contact">
+        </div>
+        <div id="contacts"></div>
       </div>
-      <div id="message">
-        <p>There is no contacts.</p>
-        <input type="button" class="button add" value="Add Contact">
+      <div>
+        <form>
+          <fieldset>
+              <h2>Create Contact</h2>
+              <p>
+                <label>Full name:</label>
+                <input type="hidden" name="id">
+                <input type="text" name="fullname" required>
+              </p>
+              <p>
+                <label>Email address:</label>
+                <input type="email" name="email" required>
+              </p>
+              <p>
+                <label>Telephone number::</label>
+                <input type="tel" name="phone" pattern="\d+"  required>
+              </p>
+              <p>
+                <label></label>
+                <input type="submit" class="button" value="Submit">
+                <input type="reset" class="button" value="Cancel">
+              </p>
+          </fieldset>
+        </form>
       </div>
-      <div id="contacts"></div>
-      <form>
-        <fieldset>
-            <h2>Create Contact</h2>
-            <p>
-              <label>Full name:</label>
-              <input type="hidden" name="id">
-              <input type="text" name="fullname" required>
-            </p>
-            <p>
-              <label>Email address:</label>
-              <input type="email" name="email" required>
-            </p>
-            <p>
-              <label>Telephone number::</label>
-              <input type="tel" name="phone" pattern="\d+"  required>
-            </p>
-            <p>
-              <label></label>
-              <input type="submit" class="button" value="Submit">
-              <input type="reset" class="button" value="Cancel">
-            </p>
-        </fieldset>
-      </form>
     </main>
     <footer>
       <p>Coded by kwen for learning purposes only.</p>

@@ -11,6 +11,21 @@ var generateId = function() {
   }
 }();
 
+function slideUpShow($el) {
+    var outerHeight = $el.css({
+      display: "block"
+    }).outerHeight();
+    
+    $el.css({
+      overflow: "hidden",
+      marginTop: outerHeight,
+      outerHeight: 0 
+    }).animate({
+      marginTop: 0,
+      outerHeight: outerHeight
+    }, 500);
+}
+
 function Contact(obj) {
   if (!(this instanceof Contact)) {
     return new this;
@@ -36,18 +51,21 @@ Contact.prototype = {
     collection: [],
     add: function (contact) {
       this.collection.push(contact);
+      this.save();
     },
     update: function(contact) {
       this.collection.forEach(function(c) {
         if (c.id === contact.id) {
            Object.assign(c, contact);
         }
-      })
+      });
+      this.save();
     },
     delete: function(id) {
       this.collection = this.collection.filter(function(o){
         return o.id !== id;
       });
+      this.save();
     },
     exist: function(contact) {
       return this.collection.some(function(c) {
@@ -55,10 +73,10 @@ Contact.prototype = {
       });
     },
     load: function() {
-
+      contacts.collection = JSON.parse(localStorage.getItem("contacts"));
     },
     save: function() {
-
+      localStorage.setItem("contacts", JSON.stringify(contacts.collection));
     },
     init: function () {
       this.load();
@@ -99,29 +117,26 @@ Contact.prototype = {
     },
     filterContact:function(name) {
       $(".contact").each(function(idx, el ) {
-        console.log(idx);
         var visible = $(el).data("contact").fullname.toLowerCase().indexOf(name) !== -1;
         $(el).toggle(visible);
       });
     },
     editMode: function(contact) {
+      var $form = $("form");
       if (!!contact) {
-        var $form = $("form");
         $form.find("h2").text("Edit Contact");
         for (var prop in contact) {
           $form.find("input[name=" + prop + "]").val(contact[prop]);
         }
+      } else {
+         $form.find("input[name=" + prop + "]").val("");
       }
-      $("#contact_manager").hide();
-      $("#contacts").hide();
-      $("#message").hide();
-      $("form").slideDown(500);
+      $("#read-mode").hide();
+      slideUpShow($("form"));
     },
     readMode: function() {
-      $("form").slideUp(500, function() {
-        $("#contact_manager").show();
-        $("#contacts").show();
-      });
+      $("form").hide();
+      slideUpShow($("#read-mode"));
     },
     init: function() {
       contacts.collection.forEach(function(contact) {
