@@ -60,22 +60,16 @@ Contact.prototype = {
   };
 
   view = {
-    init: function() {
-      this.$operation = $("#operation");
-      this.$contacts = $("#contacts");
-      this.$message = $("#message");
-      this.$footer = $(".footer");
-    },
     addContact: function(contact) {
       $contact = $(this.template(contact))
       $contact .data("contact", contact);
-      this.$contacts.append($contact);
+      $("#contacts").append($contact);
     },
-    updateContact: function(data) {
-      $contact = this.$contacts.find(".contact").filter(function(idx, el) {
-        var contact = $(el).data("contact");
-        if (contact) {
-          return contact.id === data.id;
+    updateContact: function(contact) {
+      $contact = $("#contacts").find(".contact").filter(function(idx, el) {
+        var data = $(el).data("contact");
+        if (data) {
+          return data.id === contact.id;
         } else {
           return false;
         }
@@ -86,14 +80,11 @@ Contact.prototype = {
       $contact.remove();
     },
     updateMessage: function() {
-      if (this.$contacts.find(":visible").length === 0) {
-        this.$message.show().find("p").text("There is no contacts.");
+      if ($("#contacts").find(":visible").length === 0) {
+        $("#message").show().find("p").text("There is no contacts.");
       }
     },
     editMode: function(contact) {
-      $(".container").hide();
-      var top = $(".edit-mode").show().css("height");
-      this.$footer.show().css("top", top);
       if (!!contact) {
         var $form = $("form");
         $form.find("h2").text("Edit Contact");
@@ -101,11 +92,16 @@ Contact.prototype = {
           $form.find("input[name=" + prop + "]").val(contact[prop]);
         }
       }
+      $("#operation").hide();
+      $("#contacts").hide();
+      $("#message").hide();
+      $("form").slideDown(500);
     },
     readMode: function() {
-      $(".container").hide();
-      var top = $(".read-mode").show().css("height");
-      this.$footer.show().css("top", top);
+      $("form").slideUp(500, function() {
+        $("#operation").show();
+        $("#contacts").show();
+      });
     }
   };
 
@@ -147,14 +143,17 @@ Contact.prototype = {
     },
     delete: function(e) {
       e.preventDefault();
-      $contact = $(e.target.closest(".contact"));
-      var contact = $contact.data("contact");
-      if (contact) {
-        contacts.delete(contact.id);
-        view.deleteContact($contact);
-        view.updateMessage();
-      } else {
-        console.log("Contact not found");
+
+      if (confirm("Are you sure to delete contact?")) {
+        $contact = $(e.target.closest(".contact"));
+        var contact = $contact.data("contact");
+        if (contact) {
+          contacts.delete(contact.id);
+          view.deleteContact($contact);
+          view.updateMessage();
+        } else {
+          console.log("Contact not found");
+        }
       }
     },
     cacheTemplate: function() {
@@ -170,14 +169,13 @@ Contact.prototype = {
     init: function() {
       this.bindEvents();
       this.cacheTemplate();
-      view.init();
+      view.readMode();
       // fake contacts
-      for (var i = 0; i < 5; i++) {
-        var contact = new Contact({fullname: "kwen", phone: 123, email: "abc@soi.com"});
+      for (var i = 0; i < 7; i++) {
+        var contact = new Contact({fullname: "joe", phone: 123, email: "abc@soi.com"});
         contacts.add(contact);
         view.addContact(contact);
       }
-      view.readMode();
     }
   };
 })();$(operation.init.bind(operation));

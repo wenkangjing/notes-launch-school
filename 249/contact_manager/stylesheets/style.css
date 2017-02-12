@@ -72,7 +72,7 @@ a.button {
 
 input[type="text"],
 input[type="email"],
-input[type="telephone"] {
+input[type="tel"] {
   height: 34px;
   min-width: 300px;
   padding: 10px;
@@ -84,7 +84,7 @@ input[type="telephone"] {
 
 input[type="text"]:focus,
 input[type="email"]:focus,
-input[type="telephone"]:focus {
+input[type="tel"]:focus {
   border-color: #66afe9;
   outline: 0;
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6)
@@ -111,7 +111,6 @@ header a {
 
 /* main */
  main {
-   position: relative;
    margin: 0 auto;
    max-width: 1000px;
  }
@@ -187,6 +186,7 @@ header a {
 
 /* form */
 form {
+  display: none;
   width: 600px;
   padding: 40px 0;
   border-bottom: 1px solid #ccc;
@@ -214,7 +214,7 @@ form label {
 
 form input[type="text"],
 input[type="email"], 
-input[type="telephone"] {
+input[type="tel"] {
   display: inline-block;
   width: 380px;
 }
@@ -227,26 +227,8 @@ form .button + .button {
   margin-left: 70px;
 }
 
-/*layout - read-mode vs edit mode*/
-
-.container {
-  position: absolute;
-  width: 100%;
-  
-}
-
-.read-mode {
-  display: block;
-  text-align: left;
-}
-
-.edit-mode {
-  display: none;
-  text-align: center;
-}
-
 /* footer */
-.footer {
+footer {
    margin: 20px auto;
    text-align: center;
    max-width: 800px;
