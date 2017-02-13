@@ -40,8 +40,12 @@
                 <input type="email" name="email" required>
               </p>
               <p>
-                <label>Telephone number::</label>
+                <label>Telephone number:</label>
                 <input type="tel" name="phone" pattern="\d+"  required>
+              </p>
+              <p>
+                <label>Tags:</label>
+                <input type="text" name="tags">
               </p>
               <p>
                 <label></label>
@@ -63,6 +67,12 @@
           <dd>{{phone}}</dd>
           <dt>Email:</dt>
           <dd>{{email}}</dd>
+          <dt>Tags:</dt>
+          <dd>
+            {{#each tags}}
+              <span class="tag">{{.}}</span>
+            {{/each}}
+          </dd>
         </dl>
         <a href="#" class="button edit"><span class="pencil"></span>Edit</a>
         <a href="#" class="button delete"><span class="trash"></span>Delete</a>

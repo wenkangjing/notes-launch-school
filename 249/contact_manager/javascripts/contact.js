@@ -26,6 +26,9 @@ function slideUpShow($el) {
     }, 500);
 }
 
+//
+// Constructor
+//
 function Contact(obj) {
   if (!(this instanceof Contact)) {
     return new this;
@@ -38,13 +41,14 @@ function Contact(obj) {
   this.fullname = obj.fullname;
   this.phone    = obj.phone;
   this.email    = obj.email;
+  if (Array.isArray(obj.tags)) {
+    this.tags = obj.tags;
+  } else {
+    this.tags = obj.tags.split(",").map(function(tag) {
+      return tag.trim();
+    });
+  }
 }
-
-Contact.prototype = {
-  same: function(contact) {
-    return this.id === contact.id;
-  },
-};
 
 (function(){
   contacts = {
@@ -73,7 +77,10 @@ Contact.prototype = {
       });
     },
     load: function() {
-      contacts.collection = JSON.parse(localStorage.getItem("contacts"));
+      var stored = JSON.parse(localStorage.getItem("contacts"));
+      if (!!stored) {
+        contacts.collection = stored
+      }
     },
     save: function() {
       localStorage.setItem("contacts", JSON.stringify(contacts.collection));
@@ -90,7 +97,8 @@ Contact.prototype = {
       $("#contacts").append($contact);
     },
     updateContact: function(contact) {
-      $contact = $("#contacts").find(".contact").filter(function(idx, el) {
+      var $new_contact = $(this.template(contact));
+          $contact = $("#contacts").find(".contact").filter(function(idx, el) {
         var data = $(el).data("contact");
         if (data) {
           return data.id === contact.id;
@@ -98,26 +106,38 @@ Contact.prototype = {
           return false;
         }
       });
-      $contact.replaceWith($(this.template(contact)));
+      
+      $new_contact.data("contact", contact);
+      $contact.replaceWith($new_contact);
     },
     deleteContact: function($contact) {
       $contact.remove();
     },
-    updateMessage: function(message) {
-      var $message = $("#message");
+    updateMessage: function() {
+      var $message = $("#message"),
+          keyword = $("#search").val();
+
       if (contacts.collection.length === 0) {
         $message.show().find("p").text("There is no contacts.");
       }
       else if ($("#contacts").find(":visible").length === 0) {
-        $message.show().find("p").text("There is no contacts starting with " + message +  ".");
+        $message.show().find("p").text("There is no contacts starting with " + keyword +  ".");
         $message.find(".button").hide();
       } else {
         $message.hide();
       }
     },
-    filterContact:function(name) {
-      $(".contact").each(function(idx, el ) {
-        var visible = $(el).data("contact").fullname.toLowerCase().indexOf(name) !== -1;
+    filterContact: function(keyword) {
+      $(".contact").each(function(idx, el) {
+        var contact = $(el).data("contact");
+        var visible = !!contact && contact.fullname.toLowerCase().indexOf(keyword) !== -1;
+        $(el).toggle(visible);
+      });
+    },
+    tagContact: function(tag) {
+      $(".contact").each(function(idx, el) {
+        var contact = $(el).data("contact");
+        var visible = !!contact && !!contact.tags && contact.tags.indexOf(tag) !== -1;
         $(el).toggle(visible);
       });
     },
@@ -129,7 +149,8 @@ Contact.prototype = {
           $form.find("input[name=" + prop + "]").val(contact[prop]);
         }
       } else {
-         $form.find("input[name=" + prop + "]").val("");
+        $form.find("h2").text("Create Contact");
+        $form.find("input:has(name)").val("");
       }
       $("#read-mode").hide();
       slideUpShow($("form"));
@@ -196,14 +217,22 @@ Contact.prototype = {
         }
       }
     },
-    filter: function(e) {
-      var keyword = $("#search").val().toLowerCase();
+    filterByKeyword: function(e) {
+      var $search = $("#search"),
+          keyword = $search.val().toLowerCase();
+
+      // ESC
       if (e.which === 27) {
+        $search.val("");
         keyword = "";
-        $("#search").val("");
       }
       view.filterContact(keyword);
-      view.updateMessage(keyword);
+      view.updateMessage();
+    },
+    filterByTag: function(e) {
+      e.preventDefault();
+      view.tagContact($(e.target).text());
+      view.updateMessage();
     },
     cacheTemplate: function() {
       view.template = Handlebars.compile($("#contact").html());
@@ -214,18 +243,20 @@ Contact.prototype = {
       $("form").on("reset", this.cancel.bind(this));
       $("#contacts").on("click", "a.edit", this.edit.bind(this));
       $("#contacts").on("click", "a.delete", this.delete.bind(this));
-      $("#search").on("keyup", this.filter.bind(this));
+      $("#contacts").on("click", "span.tag", this.filterByTag.bind(this));
+      $("#search").on("keyup", this.filterByKeyword.bind(this));
+      $(document).on("keyup", this.filterByKeyword.bind(this));
     },
     init: function() {
       this.bindEvents();
       this.cacheTemplate();
       contacts.init();
       if (contacts.collection.length === 0) {
-        contacts.add(new Contact({fullname: "Tony", phone: 123, email: "abc@soi.com"}));
-        contacts.add(new Contact({fullname: "kog ko", phone: 45648, email: "abc@er.cji.com"}));
-        contacts.add(new Contact({fullname: "PP", phone: 3095783, email: "abc@soi.com"}));
-        contacts.add(new Contact({fullname: "Hok", phone: 439067, email: "abc@soi.com"}));
-        contacts.add(new Contact({fullname: "Mazz", phone: 587895465, email: "abc@soi.com"}));
+        contacts.add(new Contact({fullname: "Tony", phone: 123, email: "abc@soi.com", tags: ["marketing", "manager"]}));
+        contacts.add(new Contact({fullname: "kog ko", phone: 45648, email: "abc@er.cji.com", tags: ["sales", "marketing"]}));
+        contacts.add(new Contact({fullname: "PP", phone: 3095783, email: "abc@soi.com", tags: ["R&D", "Developer"]}));
+        contacts.add(new Contact({fullname: "Hok", phone: 439067, email: "abc@soi.com", tags: ["Finance", "Exec"]}));
+        contacts.add(new Contact({fullname: "Mazz", phone: 587895465, email: "abc@soi.com", tags: ["HR", "Exec"]}));
         contacts.add(new Contact({fullname: "J Wong Jr ", phone: 55752465, email: "abc@soi.com"}));
       }
       view.init();
