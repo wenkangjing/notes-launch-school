@@ -69,9 +69,13 @@
           <dd>{{email}}</dd>
           <dt>Tags:</dt>
           <dd>
-            {{#each tags}}
-              <span class="tag">{{.}}</span>
-            {{/each}}
+            {{#if tags}} 
+              {{#each tags}}
+                <span class="tag">{{this}}</span>
+              {{/each}}
+            {{else}}
+              <span>Not tagged</span>
+            {{/if}}
           </dd>
         </dl>
         <a href="#" class="button edit"><span class="pencil"></span>Edit</a>

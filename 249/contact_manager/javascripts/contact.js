@@ -1,5 +1,6 @@
-var contact_manager, // controller
-    contacts; // data model
+var contact_manager, 
+    contacts,
+    view; 
 
 //
 // Helper functions
@@ -43,12 +44,20 @@ function Contact(obj) {
   this.email    = obj.email;
   if (Array.isArray(obj.tags)) {
     this.tags = obj.tags;
-  } else {
+  } else if (typeof obj.tags === "string" && obj.tags !== "") {
     this.tags = obj.tags.split(",").map(function(tag) {
       return tag.trim();
     });
+  } else {
+    // no tags
   }
 }
+
+Contact.prototype = {
+  same: function(ct) {
+    return this.id === ct.id;
+  }
+};
 
 (function(){
   contacts = {
@@ -58,9 +67,9 @@ function Contact(obj) {
       this.save();
     },
     update: function(contact) {
-      this.collection.forEach(function(c) {
-        if (c.id === contact.id) {
-           Object.assign(c, contact);
+      this.collection.forEach(function(ct) {
+        if (ct.id === contact.id) {
+           Object.assign(ct, contact);
         }
       });
       this.save();
@@ -71,15 +80,17 @@ function Contact(obj) {
       });
       this.save();
     },
-    exist: function(contact) {
-      return this.collection.some(function(c) {
-        return c.id === contact.id;
+    contains: function(contact) {
+      return this.collection.some(function(ct) {
+        return ct.same(contact);
       });
     },
     load: function() {
       var stored = JSON.parse(localStorage.getItem("contacts"));
       if (!!stored) {
-        contacts.collection = stored
+        stored.forEach(function(o){
+          contacts.collection.push(new Contact(o));
+        });
       }
     },
     save: function() {
@@ -112,13 +123,14 @@ function Contact(obj) {
     },
     deleteContact: function($contact) {
       $contact.remove();
+      this.updateMessage();
     },
     updateMessage: function() {
       var $message = $("#message"),
           keyword = $("#search").val();
-
       if (contacts.collection.length === 0) {
         $message.show().find("p").text("There is no contacts.");
+         $message.find(".button").show();
       }
       else if ($("#contacts").find(":visible").length === 0) {
         $message.show().find("p").text("There is no contacts starting with " + keyword +  ".");
@@ -133,6 +145,7 @@ function Contact(obj) {
         var visible = !!contact && contact.fullname.toLowerCase().indexOf(keyword) !== -1;
         $(el).toggle(visible);
       });
+      this.updateMessage();
     },
     tagContact: function(tag) {
       $(".contact").each(function(idx, el) {
@@ -140,6 +153,7 @@ function Contact(obj) {
         var visible = !!contact && !!contact.tags && contact.tags.indexOf(tag) !== -1;
         $(el).toggle(visible);
       });
+      this.updateMessage();
     },
     editMode: function(contact) {
       var $form = $("form");
@@ -168,19 +182,18 @@ function Contact(obj) {
   };
 
   contact_manager = {
-    add: function(e) {
+    onAdd: function(e) {
       e.preventDefault();
       view.editMode();
     },
-    submit: function(e) {
+    onSubmit: function(e) {
       e.preventDefault();
-
       var obj = {};
       $("form").serializeArray().forEach(function(field) {
-        obj[field.name] = field.value;
+        obj[field.name] = field.value.trim();
       });
       var contact = new Contact(obj);
-      if (contacts.exist(contact)) {
+      if (contacts.contains(contact)) {
         contacts.update(contact);
         view.updateContact(contact);
       } else {
@@ -189,11 +202,11 @@ function Contact(obj) {
       }
       view.readMode();
     },
-    cancel: function(e) {
+    onCancel: function(e) {
       e.preventDefault();
       view.readMode();
     },
-    edit: function(e) {
+    onEdit: function(e) {
       e.preventDefault();
       $contact = $(e.target.closest(".contact"));
       var contact = $contact.data("contact");
@@ -203,7 +216,7 @@ function Contact(obj) {
         console.log("Contact not found");
       }
     },
-    delete: function(e) {
+    onDelete: function(e) {
       e.preventDefault();
       if (confirm("Are you sure to delete contact?")) {
         $contact = $(e.target.closest(".contact"));
@@ -211,13 +224,12 @@ function Contact(obj) {
         if (contact) {
           contacts.delete(contact.id);
           view.deleteContact($contact);
-          view.updateMessage();
         } else {
-          console.log("Contact not found");
+          console.log("Contact not found", contact);
         }
       }
     },
-    filterByKeyword: function(e) {
+    onFilterByKeyword: function(e) {
       var $search = $("#search"),
           keyword = $search.val().toLowerCase();
 
@@ -227,25 +239,23 @@ function Contact(obj) {
         keyword = "";
       }
       view.filterContact(keyword);
-      view.updateMessage();
     },
-    filterByTag: function(e) {
+    onFilterByTag: function(e) {
       e.preventDefault();
       view.tagContact($(e.target).text());
-      view.updateMessage();
     },
     cacheTemplate: function() {
       view.template = Handlebars.compile($("#contact").html());
     },
     bindEvents: function() {
-      $(".add").on("click", this.add.bind(this));
-      $("form").on("submit", this.submit.bind(this));
-      $("form").on("reset", this.cancel.bind(this));
-      $("#contacts").on("click", "a.edit", this.edit.bind(this));
-      $("#contacts").on("click", "a.delete", this.delete.bind(this));
-      $("#contacts").on("click", "span.tag", this.filterByTag.bind(this));
-      $("#search").on("keyup", this.filterByKeyword.bind(this));
-      $(document).on("keyup", this.filterByKeyword.bind(this));
+      $(".add").on("click", this.onAdd.bind(this));
+      $("form").on("submit", this.onSubmit.bind(this));
+      $("form").on("reset", this.onCancel.bind(this));
+      $("#contacts").on("click", "a.edit", this.onEdit.bind(this));
+      $("#contacts").on("click", "a.delete", this.onDelete.bind(this));
+      $("#contacts").on("click", "span.tag", this.onFilterByTag.bind(this));
+      $("#search").on("keyup", this.onFilterByKeyword.bind(this));
+      $(document).on("keyup", this.onFilterByKeyword.bind(this));
     },
     init: function() {
       this.bindEvents();

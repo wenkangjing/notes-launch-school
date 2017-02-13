@@ -223,6 +223,7 @@ form label {
   width:180px;
   text-align: right;
   font-weight: bold;
+  padding: 10px 0;
   margin-right: 34px;
 }
 
@@ -246,4 +247,26 @@ footer {
    margin: 20px auto;
    text-align: center;
    max-width: 800px;
+}
+
+@media (max-width: 768px) { 
+  form {
+    width: 100%;
+    padding: 50px;
+  }
+  form label,
+  form input[type="text"],
+  form input[type="email"], 
+  form input[type="tel"],
+  form .button {
+    display: block;
+    width: 100%;
+    margin: 0;
+  }
+  form .button + .button {
+    margin: 0;
+  }
+  form label {
+    text-align: left;
+  }
 }
