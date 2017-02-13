@@ -1,4 +1,4 @@
-var operation, // controller
+var contact_manager, // controller
     contacts; // data model
 
 //
@@ -54,8 +54,14 @@ Contact.prototype = {
         return c.id === contact.id;
       });
     },
+    load: function() {
+
+    },
+    save: function() {
+
+    },
     init: function () {
-      console.log("contacts init");
+      this.load();
     }
   };
 
@@ -79,10 +85,24 @@ Contact.prototype = {
     deleteContact: function($contact) {
       $contact.remove();
     },
-    updateMessage: function() {
-      if ($("#contacts").find(":visible").length === 0) {
-        $("#message").show().find("p").text("There is no contacts.");
+    updateMessage: function(message) {
+      var $message = $("#message");
+      if (contacts.collection.length === 0) {
+        $message.show().find("p").text("There is no contacts.");
       }
+      else if ($("#contacts").find(":visible").length === 0) {
+        $message.show().find("p").text("There is no contacts starting with " + message +  ".");
+        $message.find(".button").hide();
+      } else {
+        $message.hide();
+      }
+    },
+    filterContact:function(name) {
+      $(".contact").each(function(idx, el ) {
+        console.log(idx);
+        var visible = $(el).data("contact").fullname.toLowerCase().indexOf(name) !== -1;
+        $(el).toggle(visible);
+      });
     },
     editMode: function(contact) {
       if (!!contact) {
@@ -92,20 +112,26 @@ Contact.prototype = {
           $form.find("input[name=" + prop + "]").val(contact[prop]);
         }
       }
-      $("#operation").hide();
+      $("#contact_manager").hide();
       $("#contacts").hide();
       $("#message").hide();
       $("form").slideDown(500);
     },
     readMode: function() {
       $("form").slideUp(500, function() {
-        $("#operation").show();
+        $("#contact_manager").show();
         $("#contacts").show();
       });
+    },
+    init: function() {
+      contacts.collection.forEach(function(contact) {
+        this.addContact(contact);
+      }, this);
+      this.readMode();
     }
   };
 
-  operation = {
+  contact_manager = {
     add: function(e) {
       e.preventDefault();
       view.editMode();
@@ -143,7 +169,6 @@ Contact.prototype = {
     },
     delete: function(e) {
       e.preventDefault();
-
       if (confirm("Are you sure to delete contact?")) {
         $contact = $(e.target.closest(".contact"));
         var contact = $contact.data("contact");
@@ -156,6 +181,15 @@ Contact.prototype = {
         }
       }
     },
+    filter: function(e) {
+      var keyword = $("#search").val().toLowerCase();
+      if (e.which === 27) {
+        keyword = "";
+        $("#search").val("");
+      }
+      view.filterContact(keyword);
+      view.updateMessage(keyword);
+    },
     cacheTemplate: function() {
       view.template = Handlebars.compile($("#contact").html());
     },
@@ -165,17 +199,21 @@ Contact.prototype = {
       $("form").on("reset", this.cancel.bind(this));
       $("#contacts").on("click", "a.edit", this.edit.bind(this));
       $("#contacts").on("click", "a.delete", this.delete.bind(this));
+      $("#search").on("keyup", this.filter.bind(this));
     },
     init: function() {
       this.bindEvents();
       this.cacheTemplate();
-      view.readMode();
-      // fake contacts
-      for (var i = 0; i < 7; i++) {
-        var contact = new Contact({fullname: "joe", phone: 123, email: "abc@soi.com"});
-        contacts.add(contact);
-        view.addContact(contact);
+      contacts.init();
+      if (contacts.collection.length === 0) {
+        contacts.add(new Contact({fullname: "Tony", phone: 123, email: "abc@soi.com"}));
+        contacts.add(new Contact({fullname: "kog ko", phone: 45648, email: "abc@er.cji.com"}));
+        contacts.add(new Contact({fullname: "PP", phone: 3095783, email: "abc@soi.com"}));
+        contacts.add(new Contact({fullname: "Hok", phone: 439067, email: "abc@soi.com"}));
+        contacts.add(new Contact({fullname: "Mazz", phone: 587895465, email: "abc@soi.com"}));
+        contacts.add(new Contact({fullname: "J Wong Jr ", phone: 55752465, email: "abc@soi.com"}));
       }
+      view.init();
     }
   };
-})();$(operation.init.bind(operation));
+})();$(contact_manager.init.bind(contact_manager));

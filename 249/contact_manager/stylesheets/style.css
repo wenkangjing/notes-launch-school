@@ -71,6 +71,7 @@ a.button {
 }
 
 input[type="text"],
+input[type="search"],
 input[type="email"],
 input[type="tel"] {
   height: 34px;
@@ -83,6 +84,7 @@ input[type="tel"] {
 }
 
 input[type="text"]:focus,
+input[type="search"]:focus,
 input[type="email"]:focus,
 input[type="tel"]:focus {
   border-color: #66afe9;
@@ -143,7 +145,6 @@ header a {
 #contacts {
   margin: 30px 5px;
   text-align: left;
-  min-height: 300px;
 }
 
 .contact {
