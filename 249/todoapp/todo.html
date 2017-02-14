@@ -4,7 +4,11 @@
     <title>To Do List</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="todo.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+    <script src="todo.js"></script>
+
   </head>
   <body>
     <div id="columns">
@@ -32,164 +36,109 @@
           </ul>
         </section>
       </div>
-
       <div id="content">
         <h2><span>02/16</span><span class="badge active">8</span></h2>
         <p class="add"><a href="#">Add new to do</a></p> 
         <table>
           <tbody>
-            <tr id="item1">
-              <td><label class="my-checkbox"></label></td>
-              <td class="task-title">
-                <input type="checkbox" id="modal-toggle">
-                <label for="modal-toggle">Item 1</label>
-                <div class="modal">
-                  <form method="post">
-                    <!--<label for="modal-toggle" id="modal-toggle-ghost">ghost</label>-->
-                    <fieldset>
-                      <div>
-                        <label for="title">Title</label>
-                        <input type="text" name="title" id="title" value="Item 1">
-                      </div>
-                      <div>
-                        <label for="day">Due Date</label>
-                        <div class="three-columns">
-                        <select id="day" name="day" size="1" >
-                          <option value="" disabled selected >Day</option> 
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                          <option>6</option>
-                          <option>7</option>
-                          <option>8</option>
-                          <option>9</option>
-                          <option>10</option>
-                          <option>11</option>
-                          <option>12</option>
-                          <option>13</option>
-                          <option>14</option>
-                          <option>15</option>
-                          <option>16</option>
-                          <option>17</option>
-                          <option>18</option>
-                          <option>19</option>
-                          <option>20</option>
-                          <option>21</option>
-                          <option>22</option>
-                          <option>23</option>
-                          <option>24</option>
-                          <option>25</option>
-                          <option>26</option>
-                          <option>27</option>
-                          <option>28</option>
-                          <option>29</option>
-                          <option>30</option>
-                          <option>31</option>
-                        </select>
-                          <span>/</span>
-                          <select name="month" id="month" size="1">
-                            <option value="" disabled selected >Month</option>
-                            <option value="01">January</option>
-                            <option value="02">February</option>
-                            <option value="03">March</option>
-                            <option value="04">April</option>
-                            <option value="05">May</option>
-                            <option value="06">June</option>
-                            <option value="07">July</option>
-                            <option value="08">August</option>
-                            <option value="09">September</option>
-                            <option value="10">October</option>
-                            <option value="11">November</option>
-                            <option value="12">December</option>
-                          </select>
-                          <span>/</span>
-                          <select id="year" name="year" size="1"> 
-                            <option value="" disabled selected >Year</option>
-                            <option>2016</option>
-                            <option>2017</option>
-                            <option>2018</option>
-                            <option>2019</option>
-                            <option>2020</option>
-                            <option>2021</option>
-                          </select>                           
-                        </div>
-                      </div>
-                      <div class="task-description">
-                        <label for="description">Description</label>
-                        <textarea name="description" id="description" cols="30" rows="10" placeholder="Description"></textarea>
-                      </div>
-
-                      <div>
-                        <input type="submit" value="Save">
-                        <input type="button" value="Mark As Complete">
-                      </div>
-                    </fieldset>
-                  </form>                 
-                </div>                
-              </td>
-              <td><span class="delete"></span></td>
-            </tr>
-            <tr>
-              <td><label class="my-checkbox"></label></td>
-              <td class="task-title">
-                  <label>Item 2</label>
-              </td>
-              <td><span class="delete"></span></td>
-            </tr>
-            <tr class="completed-task">
-              <td><label class="my-checkbox"></label></td>
-              <td class="task-title">
-                  <label>Item 3</label>
-              </td>
-              <td><span class="delete"></span></td>
-            </tr>
-            <tr class="completed-task">
-              <td><label class="my-checkbox"></label></td>
-              <td class="task-title">
-                <label>Item 4</label>                
-              </td>
-              <td><span class="delete"></span></td>
-            </tr>
-            <tr class="completed-task">
-              <td><label class="my-checkbox"></label></td>
-              <td class="task-title">
-                <label>Item 5</label>
-              </td>
-              <td><span class="delete"></span></td>
-            </tr>
-            <tr>
-              <td><label class="my-checkbox"></label></td>
-              <td class="task-title">
-                <label>Item 6</label>
-              </td>
-              <td><span class="delete"></span></td>
-            </tr>
-            <tr>
-              <td><label class="my-checkbox"></label></td>
-              <td class="task-title">
-                <label>Item 7</label>
-              </td>
-              <td><span class="delete"></span></td>
-            </tr>
-            <tr>
-              <td><label class="my-checkbox"></label></td>
-              <td class="task-title">
-                <label>Item 8</label>
-              </td>
-              <td><span class="delete"></span></td>
-            </tr>
-            <tr>
-              <td><label class="my-checkbox"></label></td>
-              <td class="task-title">
-                <label>Item 9</label>
-              </td>
-              <td><span class="delete"></span></td>
-            </tr>
           </tbody>
         </table>
       </div><!--content-->
     </div><!--columns-->
+
+    <div id="modal_background"></div>
+    <div id="modal_form">
+      <form method="post">
+        <fieldset>
+          <div>
+            <label>Title</label>
+            <input type="hidden" name="id">
+            <input type="text" name="title">
+          </div>
+          <div>
+            <label>Due Date</label>
+            <div class="three-columns">
+            <select name="day" size="1" >
+              <option value="" disabled selected >Day</option> 
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+              <option>13</option>
+              <option>14</option>
+              <option>15</option>
+              <option>16</option>
+              <option>17</option>
+              <option>18</option>
+              <option>19</option>
+              <option>20</option>
+              <option>21</option>
+              <option>22</option>
+              <option>23</option>
+              <option>24</option>
+              <option>25</option>
+              <option>26</option>
+              <option>27</option>
+              <option>28</option>
+              <option>29</option>
+              <option>30</option>
+              <option>31</option>
+            </select>
+              <span>/</span>
+              <select name="month" size="1">
+                <option value="" disabled selected >Month</option>
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+              </select>
+              <span>/</span>
+              <select name="year" size="1"> 
+                <option value="" disabled selected >Year</option>
+                <option>2016</option>
+                <option>2017</option>
+                <option>2018</option>
+                <option>2019</option>
+                <option>2020</option>
+                <option>2021</option>
+              </select>
+            </div>
+          </div>
+          <div class="task-description">
+            <label>Description</label>
+            <textarea name="description" cols="30" rows="10" placeholder="Description"></textarea>
+          </div>
+
+          <div>
+            <input type="submit" value="Save">
+            <input type="button" id="mark-as-complete" value="Mark As Complete">
+          </div>
+        </fieldset>
+      </form>
+    </div> 
+    <script id="todo-template" type="text/x-handlebars-template">
+      <tr>
+        <td>
+          <label class="title">{{title}} - {{due_date}}</label>
+        </td>
+        <td><span class="delete"></span></td>
+      </tr>
+    </script>
   </body>
 </html>

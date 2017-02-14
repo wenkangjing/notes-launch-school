@@ -103,8 +103,8 @@ Contact.prototype = {
 
   view = {
     addContact: function(contact) {
-      $contact = $(this.template(contact))
-      $contact .data("contact", contact);
+      var $contact = $(this.template(contact));
+      $contact.data("contact", contact);
       $("#contacts").append($contact);
     },
     updateContact: function(contact) {
@@ -291,4 +291,6 @@ Contact.prototype = {
       view.init();
     }
   };
-})();$(contact_manager.init.bind(contact_manager));
+})();
+
+$(contact_manager.init.bind(contact_manager));

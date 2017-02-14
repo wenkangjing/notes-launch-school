@@ -11,6 +11,10 @@ https://d3905n0khyu9wc.cloudfront.net/assessment/todo-js/todo.html
 Prep: make html/css ready
 
 Milestone 1
+- add by + 
+- delete by trash // <tr class="completed-task">
+- total number
+- save/load localStorage 
 
 Milestone 2
 

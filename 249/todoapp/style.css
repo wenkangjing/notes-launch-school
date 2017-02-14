@@ -56,9 +56,9 @@ a {
 
 .delete {
   display: inline-block;
-  vertical-align: middle;
   width: 16px;
   height: 17px;
+  vertical-align: middle; 
   background: transparent url("./images/delete.png") 0 center no-repeat;    
 }
 
@@ -212,35 +212,39 @@ Content - Right
   border-top: 1px solid #e7e7e7;
 }
 
+#content table td:first-child {
+  text-align: left;
+}
+
+#content table td:first-child:hover {
+  background-color: rgba(0,100,205, 0.2);
+}
+
+#content table td:last-child {
+  text-align: center;
+}
+
+#content table td:last-child:hover {
+  background-color:rgba(255, 0, 0, 0.4);
+}
+
 #content table td {
   height: 50px;
   line-height: 50px;
 }
 
-#content table tr td:first-of-type {
-  width: 38px;
+#content table tr label.title {
+  padding-left: 42px;
+  background: transparent url("./images/unchecked.png") 14px 0 no-repeat;
 }
 
-#content table .my-checkbox {
-  background: transparent url("./images/unchecked.png") 0 0 no-repeat;
-  width: 14px;
-  height: 14px;
-  display: inline-block;
-  vertical-align: middle;
-  margin: auto 12px;
-}
-
-#content table .completed-task .my-checkbox{
-  background: transparent url("./images/checked.png") 0 0 no-repeat;
-}
-
-#content table .completed-task .task-title > label {
+#content table tr.completed-task label.title {
   color: #b3b3b3;
   text-decoration: line-through;
+  background: transparent url("./images/checked.png") 14px 0 no-repeat;
 }
 
-#content table .task-title > label:hover,
-#content table .completed-task .task-title > label:hover {
+#content table label.title:hover {
   color: #148fd5;
   cursor: pointer;
 }
@@ -254,28 +258,12 @@ Content - Right
 checkbox hack to show modal
 -----------------------------------------
 */
-#item1 {
-  position: relative;
-}
-
 #modal-toggle {
   display: none;
 }
 
-/*#modal-toggle-ghost {
-  position: absolute;
-  display: inline-block;
-  width: 184px;
-  height: 36px;
-  top: 325px;
-  left: 142px;
-}
-
-#modal-toggle-ghost:hover {
-  cursor: pointer;
-}*/
-
-#modal-toggle:checked ~ .modal:before {
+#modal_background {
+  display: none;
   position: fixed;
   top: 0;
   right: 0;
@@ -286,8 +274,8 @@ checkbox hack to show modal
   background: rgba(0, 0, 0, .2);
 }
 
-#modal-toggle:checked ~ .modal form {
-  display: block;
+#modal_form {
+  display: none;
   position: absolute;
   top: 100px;
   z-index: 2;
@@ -299,7 +287,7 @@ form
 -----------------------------------------
 */
 form {
-  display: none;
+  display: block;
   width: 575px;
   height: 400px;
   padding: 37px 37px 39px 30px;
