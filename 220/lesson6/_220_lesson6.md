@@ -53,9 +53,9 @@ fire event
 `delegateTarget` is `parent`, the delegated parent element
 
 tricky index 
-- the index of all of the siblings, whether it filtered or not
+- **the index of all of the siblings, whether it filtered or not**
 
-```HTML
+```html
 <div id="index">
   <p>Index 0</p>
   <p>Index 1</p>
@@ -71,16 +71,15 @@ context in jQuery
   - `func.call(context)`
 
 position() vs offset()
-- `position()` relative to positioned parent, match top/left in css, **inmclude margin**
+- `position()` relative to positioned parent, match top/left in css, **include margin**
 - `offset()` relative to the window
 
 Dimensions in jQuery (**not same as in css**)
 - `.height() .weight()`
 - `.innerHeight()` content including padding not border
-- `outerHeight()` including padding and border
+- `.outerHeight()` including padding and border
 
 custom event
-
 
 # 3	Assignment: Managing Collections in JavaScript (a bite on MVC)
  
