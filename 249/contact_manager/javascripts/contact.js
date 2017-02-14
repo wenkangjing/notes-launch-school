@@ -164,19 +164,37 @@ Contact.prototype = {
         }
       } else {
         $form.find("h2").text("Create Contact");
-        $form.find("input:has(name)").val("");
+        $form.find("input[name]").val("");
       }
       $("#read-mode").hide();
       slideUpShow($("form"));
     },
     readMode: function() {
+      var tags = [];
       $("form").hide();
+      contacts.collection.forEach(function(ct) {
+        if (!!ct.tags) {
+          ct.tags.forEach(function(tag) {
+            if (tags.indexOf(tag) === -1) {
+              tags.push(tag);
+            }
+          });
+        }
+      });
+      var $tags = tags.map(function(tag) {
+        return $("<span class=\"tag\">" + tag + "</span>");
+      });
+
+      $("#tags").children().remove();
+      $("#tags").append($tags);
       slideUpShow($("#read-mode"));
     },
     init: function() {
       contacts.collection.forEach(function(contact) {
         this.addContact(contact);
       }, this);
+
+
       this.readMode();
     }
   };
@@ -256,6 +274,7 @@ Contact.prototype = {
       $("#contacts").on("click", "span.tag", this.onFilterByTag.bind(this));
       $("#search").on("keyup", this.onFilterByKeyword.bind(this));
       $(document).on("keyup", this.onFilterByKeyword.bind(this));
+      $("#tags").on("click", "span.tag", this.onFilterByTag.bind(this));
     },
     init: function() {
       this.bindEvents();
