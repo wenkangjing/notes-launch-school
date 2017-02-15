@@ -7,14 +7,20 @@ var templates = {},
 // Helper functions
 //
 function dumpData() {
-  data.todos.forEach(function(t) {
+  data.getTodos().forEach(function(t) {
     console.log(t);
   });
   console.log(data.last_id);
 }
 
+function fakeData() {
+  data.push(new Todo({title:"meet John", completed: true}));
+  data.push(new Todo({title:"buy milk", day: 23, month: 3, year: 2016, description: "to coles"}));
+  data.push(new Todo({title:"hair cut", day: 23, month: 3, year: 2016, description: "to coles"}));
+  data.push(new Todo({title:"check xxx", day: 23, month: 3, year: 2016, description: "", completed: true}));
+}
 function clearData() {
-  data.todos = [];
+  data.getTodos() = [];
   data.last_id = 0;
   localStorage.removeItem("todos");
   localStorage.removeItem("last_id");
@@ -75,6 +81,14 @@ Todo.prototype = {
   }
 };
 
+function Group(obj) {
+  if (!(this instanceof Group)) {
+    return new Group(obj);
+  }
+  this.name = obj.name;
+  this.count = obj.count;
+}
+
 (function(){
   data = {
     last_id: 0,
@@ -83,19 +97,47 @@ Todo.prototype = {
       this.last_id++;
       return this.last_id;
     },
-    getDone: function() {
-      return this.todos.filter(function(t) {
+    getTodos: function() {
+      return this.todos;
+    },
+    getAllGroups: function() {
+      var groups = {},
+          result = [];
+      this.todos.forEach(function(t) {
+        if (groups[t.due_date]) {
+          groups[t.due_date]++;
+        } else {
+          groups[t.due_date] = 1;
+        }
+      });
+      for (var g in groups) {
+        result.push({
+          due_date: g,
+          count: groups[g]
+        });
+      }
+      return result;
+    },
+    getCompletedGroups: function() {
+      var groups = {},
+          result = [];
+      this.todos.filter(function(t) {
         return t.completed;
+      }).forEach(function(t) {
+        if (groups[t.due_date]) {
+          groups[t.due_date]++;
+        } else {
+          groups[t.due_date] = 1;
+        }
       });
-    },
-    getUndone: function() {
-      return this.todos.filter(function(t) {
-        return !t.completed;
-      });
-    },
-    getSorted: function() {
-      return this.getUndone().concat(this.getDone());
-    },
+      for (var g in groups) {
+        result.push({
+          due_date: g,
+          count: groups[g]
+        });
+      }
+      return result;
+    },    
     contains: function(todo) {
       return this.todos.some(function(t) {
         return todo.same(t);
@@ -130,13 +172,6 @@ Todo.prototype = {
         }, this);
       }
       this.last_id = parseInt(localStorage.getItem("last_id"), 10) || 0;
-      if (this.todos.length === 0) {
-        this.todos.push(new Todo({title:"meet John", completed: true}));
-        this.todos.push(new Todo({title:"buy milk", day: 23, month: 3, year: 2016, description: "to coles"}));
-        this.todos.push(new Todo({title:"hair cut", day: 23, month: 3, year: 2016, description: "to coles"}));
-        this.todos.push(new Todo({title:"check xxx", day: 23, month: 3, year: 2016, description: "", completed: true}));
-        this.save();
-      }
     },
     save: function() {
       localStorage.setItem("todos", JSON.stringify(this.todos));
@@ -147,27 +182,25 @@ Todo.prototype = {
     }
   };
 
-  /*
-  A dumb view
-    - render the data passing in
-    - no directl access to data layer
-  */
   view = {
-    renderTodos: function(todo_list) {
-      var $todos = $("#content tbody"),
-          $title = $("#content .title"),
-          $badge = $("#content .badge");
-      
-      todo_list = todo_list || [];
+    render: function() {
+      this.renderTodos($("#content"), data.getTodos() || []);
+      this.renderGroups($("#sidebar .all"), data.getAllGroups() || []);
+      this.renderGroups($("#sidebar .completed"), data.getCompletedGroups() || []);
+    },
+    renderTodos: function($el, todos) {
+      var $todos = $el.find("tbody"),
+          $title = $el.find(".title"),
+          $badge = $el.find(".badge");
 
       // render title
       $title.text("All Todos");
-      $badge.text(todo_list.length);
-
-      // render list
-      todo_list = todo_list || [];
+      $badge.text(todos.length);
       $todos.children().remove();
-      todo_list.forEach(function(t) {
+
+      todos.sort(function(a, b) {
+        return a.completed;
+      }).forEach(function(t) {
          var $item = $(templates["todo-template"](t));
          $item.data("todo", t);
          if (t.completed) {
@@ -176,7 +209,25 @@ Todo.prototype = {
          $todos.append($item);
       });
     },
+    renderGroups: function($el, groups) {
+      var $group_list = $el.find("ul"),
+          $group_badge = $el.find(".badge")
+    
+      $group_badge.text(groups.length);
+      $group_list .children().remove();
+      groups.sort(function(a, b) {
+        return a.due_date > b.due_date;
+      }).forEach(function(g) {
+        var $item = $(templates["group-template"](g));
+        if ($el.hasClass("completed")) {
+          $item.addClass("completed");
+        }
+        $group_list.append($item);
+      });
+    },
     renderSidebar: function() {
+
+
 
     },
     showForm: function(todo) {
@@ -219,6 +270,7 @@ Todo.prototype = {
   controller = {
     cacheTemplates: function() {
       templates["todo-template"] = Handlebars.compile($("#todo-template").html());
+      templates["group-template"] = Handlebars.compile($("#group-template").html());
     },
     add: function(e) {
       e.preventDefault();
@@ -232,12 +284,12 @@ Todo.prototype = {
     delete: function(e) {
       e.preventDefault();
       data.delete(getItemTodo(e).id);
-      view.renderTodos(data.getSorted());
+      view.render();
     },
     submit: function(e) {
       e.preventDefault();
       data.push(new Todo(getFormObject()));
-      view.renderTodos(data.getSorted());
+      view.render();
       view.hideForm();
     },
     completeByForm: function(e) {
@@ -250,14 +302,14 @@ Todo.prototype = {
       }
       todo = new Todo(obj);
       data.push(todo.complete());
-      view.renderTodos(data.getSorted());
+      view.render();
       view.hideForm();
     },
     completeByClick: function(e) {
       e.preventDefault();
       var todo = getItemTodo(e);
       data.push(todo.toggle());
-      view.renderTodos(data.getSorted());
+      view.render();
       view.hideForm();
     },
     bindEvents: function() {
@@ -273,8 +325,7 @@ Todo.prototype = {
       this.cacheTemplates();
       data.init();
       view.init();
-      view.renderTodos(data.getSorted());
-      view.renderSidebar();
+      view.render();
     }
   };
 })();

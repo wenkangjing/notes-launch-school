@@ -15,32 +15,19 @@
       <label for="sidebar-toggle" id="menu"></label>  
       <div id="sidebar">
         <section class="all">
-          <h1>All Todos<span class="badge">18</span></h1>
-          <ul>
-            <li class="active-group">02/16<span class="badge active">8</span></li>
-            <li>03/16<span class="badge">2</span></li>
-            <li>04/16<span class="badge">1</span></li>
-            <li>05/16<span class="badge">1</span></li>
-            <li>06/16<span class="badge">6</span></li>
-          </ul>
+          <h1>All Todos<span class="badge"></span></h1>
+          <ul></ul>
         </section>
-        <section class="done">
-          <h1>Completed</h1>
-          <ul>
-            <li class="completed-group">02/15</li>
-            <li class="completed-group">03/15</li>
-            <li class="completed-group">04/15</li>
-            <li class="completed-group">05/15</li>
-            <li class="completed-group">06/14</li>
-          </ul>
+        <section class="completed">
+          <h1>Completed<span class="badge"></span></h1>
+          <ul></ul>
         </section>
       </div>
       <div id="content">
         <h2><span class="title"></span><span class="badge active"></span></h2>
         <p class="add"><a href="#">Add new to do</a></p> 
         <table>
-          <tbody>
-          </tbody>
+          <tbody></tbody>
         </table>
         <div id="modal_background"></div>
         <div id="modal_form">
@@ -138,6 +125,9 @@
         </td>
         <td><span class="delete"></span></td>
       </tr>
+    </script>
+    <script id="group-template" type="text/x-handlebars-template">
+      <li class="group">{{due_date}}<span class="badge">{{count}}</span></li>
     </script>
   </body>
 </html>

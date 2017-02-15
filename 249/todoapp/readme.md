@@ -26,11 +26,12 @@ Milestone 2: a Todo list with due dates and the ability to mark todos as complet
 
 Milestone 3: sidebar
 
-- group name:
+- x group name:
   - the due months, in the format of (mm/yy), should be dynamic and based on the due dates of all the todos.
-- group badge: 
+- x group badge: 
   - the numbers after the "All Todos", "Completed" and the due months are dynamic and they should be the number of todos that due in that month.
-- when a todo is completed, it should be put into the “Completed” lists.
+- x when a todo is completed, it should be put into the “Completed” lists.
+- [ ] click sidebar
 
 Optional
   - render individual item

@@ -126,7 +126,7 @@ Sidebar - Left
   background: transparent url("../images/all-todos.png") 0 center no-repeat;
 }
 
-#sidebar .done h1 {
+#sidebar .completed h1 {
   background: transparent url("../images/completed.png") 0 center no-repeat;
 }
 
@@ -137,13 +137,13 @@ Sidebar - Left
   padding: 0 32px 0 138px;
 }
 
-#sidebar .active-group {
+#sidebar .active.group {
   opacity: 1;
   color: #cccccc;
   background: #383f5f;
 }
 
-#sidebar .completed-group {
+#sidebar .completed.group {
   text-decoration: line-through;
 }
 
