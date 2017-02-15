@@ -196,6 +196,13 @@ function Group(obj) {
       this.renderTodos($("#content"), data.getTodos() || []);
       this.renderGroups($("#sidebar .all"), data.getAllGroups() || []);
       this.renderGroups($("#sidebar .completed"), data.getCompletedGroups() || []);
+      if ($("#content .todo").length === 0) {
+        this.filter = {
+          status: "all",
+          due_date: undefined
+        };
+        this.render();
+      }
     },
     renderTodos: function($el, todos) {
       var $todos = $el.find("tbody"),
@@ -226,7 +233,7 @@ function Group(obj) {
         $title.text("All Todos");
       }
       $badge.text(todos.length);
-            
+
       // render todos 
       $todos.children().remove();
       todos.sort(function(a, b) {
