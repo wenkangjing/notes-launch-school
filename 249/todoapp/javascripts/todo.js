@@ -79,12 +79,22 @@ Todo.prototype = {
   data = {
     last_id: 0,
     todos: [],
-    done:[],
     newId: function() {
-      this.last_id++
+      this.last_id++;
       return this.last_id;
     },
-    getSortedTodos: function() {
+    getDone: function() {
+      return this.todos.filter(function(t) {
+        return t.completed;
+      });
+    },
+    getUndone: function() {
+      return this.todos.filter(function(t) {
+        return !t.completed;
+      });
+    },
+    getSorted: function() {
+      return this.getUndone().concat(this.getDone());
     },
     contains: function(todo) {
       return this.todos.some(function(t) {
@@ -121,10 +131,10 @@ Todo.prototype = {
       }
       this.last_id = parseInt(localStorage.getItem("last_id"), 10) || 0;
       if (this.todos.length === 0) {
+        this.todos.push(new Todo({title:"meet John", completed: true}));
         this.todos.push(new Todo({title:"buy milk", day: 23, month: 3, year: 2016, description: "to coles"}));
         this.todos.push(new Todo({title:"hair cut", day: 23, month: 3, year: 2016, description: "to coles"}));
         this.todos.push(new Todo({title:"check xxx", day: 23, month: 3, year: 2016, description: "", completed: true}));
-        this.todos.push(new Todo({title:"meet John", }));
         this.save();
       }
     },
@@ -137,6 +147,11 @@ Todo.prototype = {
     }
   };
 
+  /*
+  A dumb view
+    - render the data passing in
+    - no directl access to data layer
+  */
   view = {
     renderTodos: function(todo_list) {
       var $todos = $("#content tbody"),
@@ -182,15 +197,18 @@ Todo.prototype = {
       }
       if (!!todo) {
         for (var p in todo) {
-          $form.find("[name=" + p + "]").val(todo[p]);
+          if (["Day", "Month", "Year"].indexOf(todo[p]) === -1) {
+            $form.find("[name=" + p + "]").val(todo[p]);
+          } 
         }
       }
     },
     // hide form and claer all fields
     hideForm: function() {
       $("#modal_background").fadeOut(500);
-      $("#modal_form").fadeOut(500);
-      $("form").find("[name]").val("");
+      $("#modal_form").fadeOut(500, function() {
+        $("form").find("[name]").val("");
+      });
     },
 
     init: function() {
@@ -209,22 +227,17 @@ Todo.prototype = {
     edit: function(e) {
       e.preventDefault();
       e.stopPropagation();
-
-      var todo = $(e.target).closest("tr").data("todo");
-      view.renderTodos(data.todos);
-      view.showForm(todo);
+      view.showForm(getItemTodo(e));
     },
     delete: function(e) {
       e.preventDefault();
-      var todo = getItemTodo(e);
-      data.delete(todo.id);
-      view.renderTodos(data.todos);
+      data.delete(getItemTodo(e).id);
+      view.renderTodos(data.getSorted());
     },
     submit: function(e) {
       e.preventDefault();
-      var obj = getFormObject();
-      data.push(new Todo(obj));
-      view.renderTodos(data.todos);
+      data.push(new Todo(getFormObject()));
+      view.renderTodos(data.getSorted());
       view.hideForm();
     },
     completeByForm: function(e) {
@@ -237,15 +250,15 @@ Todo.prototype = {
       }
       todo = new Todo(obj);
       data.push(todo.complete());
-      view.renderTodos(data.todos);
+      view.renderTodos(data.getSorted());
       view.hideForm();
     },
     completeByClick: function(e) {
       e.preventDefault();
       var todo = getItemTodo(e);
       data.push(todo.toggle());
-      view.renderTodos(data.todos);
-      view.hideForm();      
+      view.renderTodos(data.getSorted());
+      view.hideForm();
     },
     bindEvents: function() {
       $(".add").on("click", this.add.bind(this));
@@ -260,7 +273,7 @@ Todo.prototype = {
       this.cacheTemplates();
       data.init();
       view.init();
-      view.renderTodos(data.todos);
+      view.renderTodos(data.getSorted());
       view.renderSidebar();
     }
   };

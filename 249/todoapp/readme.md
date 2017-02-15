@@ -21,8 +21,8 @@ Milestone 1: a Todo list (focus on the right panel)
 
 
 Milestone 2: a Todo list with due dates and the ability to mark todos as complete
-- split data.todos to `todos` and `done`
-- . all completed tasks should be on the bottom of the todo list.
+- x split data todos and done, using functions
+- x all completed tasks should be on the bottom of the todo list.
 
 Milestone 3: sidebar
 
