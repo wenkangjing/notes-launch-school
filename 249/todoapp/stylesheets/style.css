@@ -117,17 +117,16 @@ Sidebar - Left
   height: 50px;
   line-height: 50px;
   font-weight: normal;
-  margin-left: 100px;
-  padding: 0 32px 0 37px;
+  padding: 0 32px 0 138px;
   color: #ffffff;
 }
 
 #sidebar .all h1 {
-  background: transparent url("../images/all-todos.png") 0 center no-repeat;
+  background: transparent url("../images/all-todos.png") 100px center no-repeat;
 }
 
 #sidebar .completed h1 {
-  background: transparent url("../images/completed.png") 0 center no-repeat;
+  background: transparent url("../images/completed.png") 100px center no-repeat;
 }
 
 #sidebar li {
@@ -137,10 +136,15 @@ Sidebar - Left
   padding: 0 32px 0 138px;
 }
 
-#sidebar .active.group {
+#sidebar h1:hover,
+li:hover {
+  cursor: pointer;
+}
+
+#sidebar .group.active {
   opacity: 1;
   color: #cccccc;
-  background: #383f5f;
+  background-color: #383f5f;
 }
 
 #sidebar .completed.group {

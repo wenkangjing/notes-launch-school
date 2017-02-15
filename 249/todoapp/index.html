@@ -15,11 +15,11 @@
       <label for="sidebar-toggle" id="menu"></label>  
       <div id="sidebar">
         <section class="all">
-          <h1>All Todos<span class="badge"></span></h1>
+          <h1 class="group">All Todos<span class="badge"></span></h1>
           <ul></ul>
         </section>
         <section class="completed">
-          <h1>Completed<span class="badge"></span></h1>
+          <h1 class="group">Completed<span class="badge"></span></h1>
           <ul></ul>
         </section>
       </div>
@@ -127,7 +127,7 @@
       </tr>
     </script>
     <script id="group-template" type="text/x-handlebars-template">
-      <li class="group">{{due_date}}<span class="badge">{{count}}</span></li>
+      <li class="group"><span class="due-date">{{due_date}}</span><span class="badge">{{count}}</span></li>
     </script>
   </body>
 </html>

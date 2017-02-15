@@ -20,14 +20,22 @@ function fakeData() {
   data.push(new Todo({title:"check xxx", day: 23, month: 3, year: 2016, description: "", completed: true}));
 }
 function clearData() {
-  data.getTodos() = [];
+  data.todos = [];
   data.last_id = 0;
   localStorage.removeItem("todos");
   localStorage.removeItem("last_id");
 }
 
-function getItemTodo(e) {
+// Get attached data of a given item in todo panel
+function getData(e) {
   return $(e.target).closest("tr").data("todo");
+}
+// Get filter (completed + due_date) of a given item in sidebar
+function getFilter($el) {
+  var filter = {};
+  filter.status = $el.closest("section")[0].className;
+  filter.due_date = $el.find(".due-date").text() || undefined;
+  return filter;
 }
 
 function getFormObject() {
@@ -177,12 +185,13 @@ function Group(obj) {
       localStorage.setItem("todos", JSON.stringify(this.todos));
       localStorage.setItem("last_id", this.last_id);
     },
-    init: function () {
-      this.load();
-    }
   };
 
   view = {
+    filter: {
+       status: "all", 
+       due_date: undefined 
+    },
     render: function() {
       this.renderTodos($("#content"), data.getTodos() || []);
       this.renderGroups($("#sidebar .all"), data.getAllGroups() || []);
@@ -192,12 +201,34 @@ function Group(obj) {
       var $todos = $el.find("tbody"),
           $title = $el.find(".title"),
           $badge = $el.find(".badge");
+          
+      todos = todos || [];
+
+      // filter data
+      todos = todos.filter(function(t) { // by whether completed
+        if (this.filter.status === "completed") {
+          return t.completed
+        }
+        return true;
+      }, this).filter(function(t) { // by due date
+        if (this.filter.due_date) {
+          return t.due_date === this.filter.due_date;
+        }
+        return true;
+      }, this); 
 
       // render title
-      $title.text("All Todos");
+      if (this.filter.due_date) {
+        $title.text(this.filter.due_date);
+      } else if (this.filter.status === "completed"){
+        $title.text("Completed");
+      } else if (this.filter.status === "all"){
+        $title.text("All Todos");
+      }
       $badge.text(todos.length);
+            
+      // render todos 
       $todos.children().remove();
-
       todos.sort(function(a, b) {
         return a.completed;
       }).forEach(function(t) {
@@ -209,26 +240,39 @@ function Group(obj) {
          $todos.append($item);
       });
     },
-    renderGroups: function($el, groups) {
-      var $group_list = $el.find("ul"),
-          $group_badge = $el.find(".badge")
-    
-      $group_badge.text(groups.length);
+    renderGroups: function($section, groups) {
+      var $group_list = $section.find("ul"),
+          $group_badge = $section.find(".badge"),
+          $group_title = $section.find("h1"),
+          $highlight,
+          total = 0;
+
       $group_list .children().remove();
       groups.sort(function(a, b) {
         return a.due_date > b.due_date;
       }).forEach(function(g) {
         var $item = $(templates["group-template"](g));
-        if ($el.hasClass("completed")) {
+        total += g.count;
+        if ($section.hasClass("completed")) {
           $item.addClass("completed");
         }
         $group_list.append($item);
       });
-    },
-    renderSidebar: function() {
+      $group_badge.text(total);
 
-
-
+      // highlight
+      if ($section.hasClass(this.filter.status)) {
+        if (this.filter.due_date) {
+          $highlight = $group_list.find(".due-date").filter(function(idx) {
+            return $(this).text() === view.filter.due_date;
+          });
+          if ($highlight.length > 0) {
+            $highlight.closest("li").addClass("active");
+          }
+        } else {
+          $group_title.addClass("active");
+        }
+      }
     },
     showForm: function(todo) {
       var $form = $("#modal_form"),
@@ -261,10 +305,6 @@ function Group(obj) {
         $("form").find("[name]").val("");
       });
     },
-
-    init: function() {
-
-    }
   };
 
   controller = {
@@ -279,11 +319,11 @@ function Group(obj) {
     edit: function(e) {
       e.preventDefault();
       e.stopPropagation();
-      view.showForm(getItemTodo(e));
+      view.showForm(getData(e));
     },
     delete: function(e) {
       e.preventDefault();
-      data.delete(getItemTodo(e).id);
+      data.delete(getData(e).id);
       view.render();
     },
     submit: function(e) {
@@ -307,24 +347,40 @@ function Group(obj) {
     },
     completeByClick: function(e) {
       e.preventDefault();
-      var todo = getItemTodo(e);
+      var todo = getData(e);
       data.push(todo.toggle());
       view.render();
       view.hideForm();
     },
+    filter: function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      var $el = $(e.currentTarget),
+          $sidebar = $("#sidebar"),
+          $content = $("#content");
+
+      $sidebar.find(".active").removeClass("active");
+      $el.addClass("active");
+      view.filter = getFilter($el);
+      view.render();
+    },
     bindEvents: function() {
-      $(".add").on("click", this.add.bind(this));
-      $("#content").on("click", ".todo .delete", this.delete.bind(this)); 
+      // content - right panel
+      $("#content .add").on("click", this.add.bind(this));
+      $("#content").on("click", ".todo td:last-child", this.delete.bind(this)); 
       $("#content").on("click", ".todo td:first-child", this.completeByClick.bind(this)); 
       $("#content").on("click", ".todo .title", this.edit.bind(this)); 
+      // sidebar
+      $("#sidebar").on("click", "h1, li", this.filter.bind(this));
+      // modal - form
       $("form").on("submit", this.submit.bind(this));
       $("form input[type=button]").on("click", this.completeByForm.bind(this));
     },
     init: function() {
       this.bindEvents();
       this.cacheTemplates();
-      data.init();
-      view.init();
+      data.load();
       view.render();
     }
   };
