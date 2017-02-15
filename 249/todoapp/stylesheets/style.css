@@ -48,7 +48,8 @@ a {
   text-align: center;
 }
 
-.badge.active {
+.active .badge,
+.active.badge {
   opacity: 1;
   color: rgba(255, 255, 255, 1);
   background: #148fd5;
@@ -153,6 +154,7 @@ li:hover {
 
 #sidebar h1 .badge {
   float: right;
+  width: 30px;
   margin: 15px 0;  
 }
 
@@ -225,6 +227,7 @@ Content - Right
 }
 
 #content .todo td:last-child {
+  width: 40px;
   text-align: center;
 }
 
@@ -252,10 +255,6 @@ Content - Right
 #content .todo .title:hover {
   color: #148fd5;
   cursor: pointer;
-}
-
-#content .todo tr td:nth-of-type(3) {
-  text-align: right;
 }
 
 /*
