@@ -246,7 +246,7 @@ Content - Right
   background: transparent url("../images/unchecked.png") 14px 0 no-repeat;
 }
 
-#content  .todo.completed-task .title {
+#content  .todo.completed .title {
   color: #b3b3b3;
   text-decoration: line-through;
   background: transparent url("../images/checked.png") 14px 0 no-repeat;

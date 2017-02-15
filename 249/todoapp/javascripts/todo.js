@@ -27,9 +27,10 @@ function clearData() {
 }
 
 // Get attached data of a given item in todo panel
-function getData(e) {
-  return $(e.target).closest("tr").data("todo");
+function getTodoId(e) {
+  return parseInt($(e.target).closest(".todo").attr("data_id"), 10);
 }
+
 // Get filter (completed + due_date) of a given item in sidebar
 function getFilter($el) {
   var filter = {};
@@ -83,10 +84,6 @@ Todo.prototype = {
     this.completed = true;
     return this;
   },
-  toggle: function() {
-    this.completed = !this.completed;
-    return this;
-  }
 };
 
 function Group(obj) {
@@ -172,6 +169,30 @@ function Group(obj) {
       });
       this.save();
     },
+    getTodoById: function(id) {
+      var todo;
+      this.todos.forEach(function(t) {
+        if (id === t.id) {
+          todo = t;
+          return false;
+        }
+      });
+      return todo;
+    },
+    toggleTodoById: function(id, completed) {
+      id = parseInt(id, 10);
+      this.todos.forEach(function(t) {
+        if (t.id === id) {
+          if (completed === undefined) {
+            t.completed = !t.completed;
+          } else {
+            t.completed = completed;
+          }
+          return false;
+        }
+      });
+      this.save();
+    },
     load: function() {
       var arr = JSON.parse(localStorage.getItem("todos")) || [];
       if (!!arr) {
@@ -233,17 +254,11 @@ function Group(obj) {
       $title_badge.text(todos.length);
 
       // render todo items
-      $todos.children().remove();
-      todos.sort(function(a, b) {
+      $content.find("table").remove();
+      todos = todos.sort(function(a, b) {
         return a.completed;
-      }).forEach(function(t) {
-         var $item = $(templates["todo-template"](t));
-         $item.data("todo", t);
-         if (t.completed) {
-           $item.addClass("completed-task");
-         }
-         $todos.append($item);
       });
+      $content.append(templates["todos-template"]({ todos: todos }));
     },
     renderSidebar: function() {
       this.renderGroups($("#sidebar .all"), data.getAllGroups() || []);
@@ -287,9 +302,10 @@ function Group(obj) {
       });
       $group_badge.text(total);
     },
-    showForm: function(todo) {
+    showForm: function(id) {
       var $form = $("#modal_form"),
-          $background = $("#modal_background");
+          $background = $("#modal_background"),
+          todo = data.getTodoById(id);
 
       $background.fadeIn(500);
       $form.fadeIn(500);
@@ -322,7 +338,7 @@ function Group(obj) {
 
   controller = {
     cacheTemplates: function() {
-      templates["todo-template"] = Handlebars.compile($("#todo-template").html());
+      templates["todos-template"] = Handlebars.compile($("#todos-template").html());
       templates["group-template"] = Handlebars.compile($("#group-template").html());
     },
     add: function(e) {
@@ -332,11 +348,11 @@ function Group(obj) {
     edit: function(e) {
       e.preventDefault();
       e.stopPropagation();
-      view.showForm(getData(e));
+      view.showForm(getTodoId(e));
     },
     delete: function(e) {
       e.preventDefault();
-      data.delete(getData(e).id);
+      data.delete(getTodoId(e));
       view.render();
       if (view.isEmpty()) {
         view.reset();
@@ -361,8 +377,7 @@ function Group(obj) {
         confirm("Cannot mark as complete as item has not been created yet!");
         return;
       }
-      todo = new Todo(obj);
-      data.push(todo.complete());
+      data.toggleTodoById(obj.id, true);
       view.hideForm();
       view.render();
       if (view.isEmpty()) {
@@ -372,8 +387,8 @@ function Group(obj) {
     },
     completeByClick: function(e) {
       e.preventDefault();
-      var todo = getData(e);
-      data.push(todo.toggle());
+      var id = getTodoId(e);
+      data.toggleTodoById(id);
       view.hideForm();
       view.render();
       if (view.isEmpty()) {

@@ -32,12 +32,12 @@ Milestone 3: sidebar
   - the numbers after the "All Todos", "Completed" and the due months are dynamic and they should be the number of todos that due in that month.
 - x when a todo is completed, it should be put into the “Completed” lists.
 - x sidebar -> refresh title / list
-- sidebar all/complete badge
-- use handler partial in sidebar
+- x sidebar all/complete badge
 
 
 Optional
-  - render individual item
+  - use handler partial in sidebar
+  - render individual item // attach data
 
 Checklist
 - [ ] get things done

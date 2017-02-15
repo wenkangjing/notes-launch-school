@@ -26,9 +26,7 @@
       <div id="content">
         <h2><span class="title">All Todos</span><span class="badge active"></span></h2>
         <p class="add"><a href="#">Add new to do</a></p> 
-        <table>
-          <tbody></tbody>
-        </table>
+        <!--todos-->
         <div id="modal_background"></div>
         <div id="modal_form">
           <form method="post">
@@ -117,14 +115,25 @@
         </div> 
       </div><!--content-->
     </div><!--columns-->
-
-    <script id="todo-template" type="text/x-handlebars-template">
-      <tr class="todo">
-        <td>
-          <label class="title">{{title}} - {{due_date}}</label>
-        </td>
-        <td><span class="delete"></span></td>
-      </tr>
+    
+    <script id="todos-template" type="text/x-handlebars-template">
+      <table>
+        <tbody>
+        {{#each todos}}
+          {{#if completed}} 
+          <tr class="todo completed" data_id={{id}}>
+            <td><label class="title">{{title}} - {{due_date}}</label></td>
+            <td><span class="delete"></span></td>
+          </tr>
+          {{else}}
+          <tr class="todo" data_id={{id}}>
+            <td><label class="title">{{title}} - {{due_date}}</label></td>
+            <td><span class="delete"></span></td>
+          </tr>
+          {{/if}}
+        {{/each}}
+        </tbody>
+      </table>
     </script>
     <script id="group-template" type="text/x-handlebars-template">
       <li class="group"><span class="due-date">{{due_date}}</span><span class="badge">{{count}}</span></li>
