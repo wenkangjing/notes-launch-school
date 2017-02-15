@@ -337,10 +337,6 @@ function Group(obj) {
   };
 
   controller = {
-    cacheTemplates: function() {
-      templates["todos-template"] = Handlebars.compile($("#todos-template").html());
-      templates["group-template"] = Handlebars.compile($("#group-template").html());
-    },
     add: function(e) {
       e.preventDefault();
       view.showForm();
@@ -409,6 +405,15 @@ function Group(obj) {
       view.filter = getFilter($el);
       view.renderTodos();
     },
+    cacheTemplates: function() {
+      templates["todos-template"] = Handlebars.compile($("#todos-template").html());
+      templates["todo-template"] = Handlebars.compile($("#todo-template").html());
+      templates["todo-completed-template"] = Handlebars.compile($("#todo-completed-template").html());
+      Handlebars.registerPartial("todo-template", $("#todo-template").html());
+      Handlebars.registerPartial("todo-completed-template", $("#todo-completed-template").html());
+
+      templates["group-template"] = Handlebars.compile($("#group-template").html());
+    },    
     bindEvents: function() {
       // content - right panel
       $("#content .add").on("click", this.add.bind(this));
