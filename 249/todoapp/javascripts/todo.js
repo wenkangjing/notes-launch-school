@@ -15,9 +15,9 @@ function dumpData() {
 
 function fakeData() {
   data.push(new Todo({title:"meet John", completed: true}));
-  data.push(new Todo({title:"buy milk", day: 23, month: 3, year: 2016, description: "to coles"}));
-  data.push(new Todo({title:"hair cut", day: 23, month: 3, year: 2016, description: "to coles"}));
-  data.push(new Todo({title:"check xxx", day: 23, month: 3, year: 2016, description: "", completed: true}));
+  data.push(new Todo({title:"buy milk", day: 23, month: 3, year: 2017, description: "full cream 2L"}));
+  data.push(new Todo({title:"hair cut", day: 12, month: 7, year: 2016, description: "near station"}));
+  data.push(new Todo({title:"check xxx", month: 3, year: 2016, description: "confirm with Tim", completed: true}));
 }
 function clearData() {
   data.todos = [];
@@ -27,7 +27,7 @@ function clearData() {
 }
 
 // Get attached data of a given item in todo panel
-function getTodoId(e) {
+function getId(e) {
   return parseInt($(e.target).closest(".todo").attr("data_id"), 10);
 }
 
@@ -344,11 +344,11 @@ function Group(obj) {
     edit: function(e) {
       e.preventDefault();
       e.stopPropagation();
-      view.showForm(getTodoId(e));
+      view.showForm(getId(e));
     },
     delete: function(e) {
       e.preventDefault();
-      data.delete(getTodoId(e));
+      data.delete(getId(e));
       view.render();
       if (view.isEmpty()) {
         view.reset();
@@ -383,7 +383,7 @@ function Group(obj) {
     },
     completeByClick: function(e) {
       e.preventDefault();
-      var id = getTodoId(e);
+      var id = getId(e);
       data.toggleTodoById(id);
       view.hideForm();
       view.render();
@@ -407,11 +407,8 @@ function Group(obj) {
     },
     cacheTemplates: function() {
       templates["todos-template"] = Handlebars.compile($("#todos-template").html());
-      templates["todo-template"] = Handlebars.compile($("#todo-template").html());
-      templates["todo-completed-template"] = Handlebars.compile($("#todo-completed-template").html());
       Handlebars.registerPartial("todo-template", $("#todo-template").html());
       Handlebars.registerPartial("todo-completed-template", $("#todo-completed-template").html());
-
       templates["group-template"] = Handlebars.compile($("#group-template").html());
     },    
     bindEvents: function() {
