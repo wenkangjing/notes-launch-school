@@ -59,7 +59,7 @@ a {
   width: 16px;
   height: 17px;
   vertical-align: middle; 
-  background: transparent url("./images/delete.png") 0 center no-repeat;    
+  background: transparent url("../images/delete.png") 0 center no-repeat;
 }
 
 /*
@@ -91,7 +91,7 @@ Layout - 2 column
   left: 32px;
   width: 23px;
   height: 18px;
-  background: transparent url("./images/menu.png") center center no-repeat;
+  background: transparent url("../images/menu.png") center center no-repeat;
 }
 
 #sidebar-toggle {
@@ -123,11 +123,11 @@ Sidebar - Left
 }
 
 #sidebar .all h1 {
-  background: transparent url("./images/all-todos.png") 0 center no-repeat;
+  background: transparent url("../images/all-todos.png") 0 center no-repeat;
 }
 
 #sidebar .done h1 {
-  background: transparent url("./images/completed.png") 0 center no-repeat;
+  background: transparent url("../images/completed.png") 0 center no-repeat;
 }
 
 #sidebar li {
@@ -197,7 +197,7 @@ Content - Right
   height: 50px;
   line-height: 50px;
   color: #148fd5;
-  background: transparent url("./images/add.png") 0 center no-repeat;
+  background: transparent url("../images/add.png") 0 center no-repeat;
   /* space for + sign */
   padding-left: 27px;
 }
@@ -208,48 +208,49 @@ Content - Right
   width: 100%;
 }
 
-#content table tr {
+#content .todo {
   border-top: 1px solid #e7e7e7;
 }
 
-#content table td:first-child {
+#content .todo td:first-child {
   text-align: left;
 }
 
-#content table td:first-child:hover {
+#content .todo td:first-child:hover {
   background-color: rgba(0,100,205, 0.2);
 }
 
-#content table td:last-child {
+#content .todo td:last-child {
   text-align: center;
 }
 
-#content table td:last-child:hover {
+#content .todo td:last-child:hover {
+  cursor: pointer;
   background-color:rgba(255, 0, 0, 0.4);
 }
 
-#content table td {
+#content .todo td {
   height: 50px;
   line-height: 50px;
 }
 
-#content table tr label.title {
+#content .todo .title {
   padding-left: 42px;
-  background: transparent url("./images/unchecked.png") 14px 0 no-repeat;
+  background: transparent url("../images/unchecked.png") 14px 0 no-repeat;
 }
 
-#content table tr.completed-task label.title {
+#content  .todo.completed-task .title {
   color: #b3b3b3;
   text-decoration: line-through;
-  background: transparent url("./images/checked.png") 14px 0 no-repeat;
+  background: transparent url("../images/checked.png") 14px 0 no-repeat;
 }
 
-#content table label.title:hover {
+#content .todo .title:hover {
   color: #148fd5;
   cursor: pointer;
 }
 
-#content table tr td:nth-of-type(3) {
+#content .todo tr td:nth-of-type(3) {
   text-align: right;
 }
 

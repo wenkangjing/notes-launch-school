@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>To Do List</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+    <script src="javascripts/todo.js"></script>
+  </head>
+  <body>
+    <div id="columns">
+      <input type="checkbox" id="sidebar-toggle"/>  
+      <label for="sidebar-toggle" id="menu"></label>  
+      <div id="sidebar">
+        <section class="all">
+          <h1>All Todos<span class="badge">18</span></h1>
+          <ul>
+            <li class="active-group">02/16<span class="badge active">8</span></li>
+            <li>03/16<span class="badge">2</span></li>
+            <li>04/16<span class="badge">1</span></li>
+            <li>05/16<span class="badge">1</span></li>
+            <li>06/16<span class="badge">6</span></li>
+          </ul>
+        </section>
+        <section class="done">
+          <h1>Completed</h1>
+          <ul>
+            <li class="completed-group">02/15</li>
+            <li class="completed-group">03/15</li>
+            <li class="completed-group">04/15</li>
+            <li class="completed-group">05/15</li>
+            <li class="completed-group">06/14</li>
+          </ul>
+        </section>
+      </div>
+      <div id="content">
+        <h2><span class="title"></span><span class="badge active"></span></h2>
+        <p class="add"><a href="#">Add new to do</a></p> 
+        <table>
+          <tbody>
+          </tbody>
+        </table>
+        <div id="modal_background"></div>
+        <div id="modal_form">
+          <form method="post">
+            <fieldset>
+              <div>
+                <label>Title</label>
+                <input type="hidden" name="id">
+                <input type="hidden" name="completed" value=0>
+                <input type="text" name="title">
+              </div>
+              <div>
+                <label>Due Date</label>
+                <div class="three-columns">
+                <select name="day" size="1" >
+                  <option value="" disabled selected >Day</option> 
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                  <option>10</option>
+                  <option>11</option>
+                  <option>12</option>
+                  <option>13</option>
+                  <option>14</option>
+                  <option>15</option>
+                  <option>16</option>
+                  <option>17</option>
+                  <option>18</option>
+                  <option>19</option>
+                  <option>20</option>
+                  <option>21</option>
+                  <option>22</option>
+                  <option>23</option>
+                  <option>24</option>
+                  <option>25</option>
+                  <option>26</option>
+                  <option>27</option>
+                  <option>28</option>
+                  <option>29</option>
+                  <option>30</option>
+                  <option>31</option>
+                </select>
+                  <span>/</span>
+                  <select name="month" size="1">
+                    <option value="" disabled selected >Month</option>
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                  </select>
+                  <span>/</span>
+                  <select name="year" size="1"> 
+                    <option value="" disabled selected >Year</option>
+                    <option>2016</option>
+                    <option>2017</option>
+                    <option>2018</option>
+                    <option>2019</option>
+                    <option>2020</option>
+                    <option>2021</option>
+                  </select>
+                </div>
+              </div>
+              <div class="task-description">
+                <label>Description</label>
+                <textarea name="description" cols="30" rows="10" placeholder="Description"></textarea>
+              </div>
+              <div>
+                <input type="submit" value="Save">
+                <input type="button" value="Mark As Complete">
+              </div>
+            </fieldset>
+          </form>
+        </div> 
+      </div><!--content-->
+    </div><!--columns-->
+
+    <script id="todo-template" type="text/x-handlebars-template">
+      <tr class="todo">
+        <td>
+          <label class="title">{{title}} - {{due_date}}</label>
+        </td>
+        <td><span class="delete"></span></td>
+      </tr>
+    </script>
+  </body>
+</html>

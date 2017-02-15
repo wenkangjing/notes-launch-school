@@ -1,18 +1,39 @@
-var templates = {},
+var templates = {}, 
     data,
-    controller, 
+    controller,
     view;
 
 //
 // Helper functions
 //
-var generateId = function() {
-  var last_id = 1;
-  return function() {
-    return last_id++;
-  }
-}();
+function dumpData() {
+  data.todos.forEach(function(t) {
+    console.log(t);
+  });
+  console.log(data.last_id);
+}
 
+function clearData() {
+  data.todos = [];
+  data.last_id = 0;
+  localStorage.removeItem("todos");
+  localStorage.removeItem("last_id");
+}
+
+function getItemTodo(e) {
+  return $(e.target).closest("tr").data("todo");
+}
+
+function getFormObject() {
+  var todo,
+      obj = {};
+  $("form").serializeArray().forEach(function(field) {
+    obj[field.name] = field.value.trim();
+  });
+  return obj;
+}
+
+// Constructor
 function Todo(obj) {
   obj = obj || {};
 
@@ -22,14 +43,14 @@ function Todo(obj) {
   if (obj.id) {
     this.id = +obj.id;
   } else {
-    this.id = generateId();
+    this.id = data.newId();
   }
   this.title       = obj["title"];
   this.day         = obj["day"]         || "Day";
   this.month       = obj["month"]       || "Month";
   this.year        = obj["year"]        || "Year";
   this.description = obj["description"] || "";
-  this.completed   = obj["completed"]   || false;
+  this.completed   = (obj["completed"] === true  || obj["completed"] === "true") || false;
   this.due_date    = this.formatDate();
 }
 
@@ -37,27 +58,42 @@ Todo.prototype = {
   formatDate: function() {
     var date_string = "No Due Date";
     if (this.month !== "Month" && this.year !== "Year") {
-        date_string = this.month + "/" + this.year.toString().slice(2)
+        date_string = this.month + "/" + String(this.year).slice(2)
     }
     return date_string;
   },
   same: function(todo) {
     return this.id === todo.id;
+  },
+  complete: function() {
+    this.completed = true;
+    return this;
+  },
+  toggle: function() {
+    this.completed = !this.completed;
+    return this;
   }
 };
 
 (function(){
   data = {
+    last_id: 0,
     todos: [],
+    done:[],
+    newId: function() {
+      this.last_id++
+      return this.last_id;
+    },
+    getSortedTodos: function() {
+    },
     contains: function(todo) {
       return this.todos.some(function(t) {
         return todo.same(t);
       });
     },
-    insertOrUpdate: function(todo) {
+    push: function(todo) {
       if (!(todo instanceof Todo)) {
-        console.error("wrong type expecting a instance of Todo");
-        return;
+        todo = new Todo(todo);
       }
       if (this.contains(todo)) {
         this.todos.forEach(function(o) {
@@ -83,8 +119,8 @@ Todo.prototype = {
           this.todos.push(new Todo(o));
         }, this);
       }
-
-      if (this.todos.length < 5) {
+      this.last_id = parseInt(localStorage.getItem("last_id"), 10) || 0;
+      if (this.todos.length === 0) {
         this.todos.push(new Todo({title:"buy milk", day: 23, month: 3, year: 2016, description: "to coles"}));
         this.todos.push(new Todo({title:"hair cut", day: 23, month: 3, year: 2016, description: "to coles"}));
         this.todos.push(new Todo({title:"check xxx", day: 23, month: 3, year: 2016, description: "", completed: true}));
@@ -94,6 +130,7 @@ Todo.prototype = {
     },
     save: function() {
       localStorage.setItem("todos", JSON.stringify(this.todos));
+      localStorage.setItem("last_id", this.last_id);
     },
     init: function () {
       this.load();
@@ -102,7 +139,19 @@ Todo.prototype = {
 
   view = {
     renderTodos: function(todo_list) {
-      var $todos = $("#content tbody")
+      var $todos = $("#content tbody"),
+          $title = $("#content .title"),
+          $badge = $("#content .badge");
+      
+      todo_list = todo_list || [];
+
+      // render title
+      $title.text("All Todos");
+      $badge.text(todo_list.length);
+
+      // render list
+      todo_list = todo_list || [];
+      $todos.children().remove();
       todo_list.forEach(function(t) {
          var $item = $(templates["todo-template"](t));
          $item.data("todo", t);
@@ -132,28 +181,18 @@ Todo.prototype = {
         return;
       }
       if (!!todo) {
-        $form.data("todo", todo);
-        $form.find("[name=id]").val(todo.id);
-        $form.find("[name=title]").val(todo.title);
-        if (todo.day !== "Day"){
-          $form.find("[name=day]").val(todo.day);
+        for (var p in todo) {
+          $form.find("[name=" + p + "]").val(todo[p]);
         }
-        if (todo.month !== "Month"){
-          $form.find("[name=month]").val(todo.month);
-        }
-        if (todo.year !== "Year") {
-          $form.find("[name=year]").val(todo.year);
-        }
-        $form.find("[name=description]").val(todo.description);
       }
     },
+    // hide form and claer all fields
     hideForm: function() {
-      var $form = $("#modal_form"),
-          $background = $("#modal_background");
-      $background.fadeOut(500);
-      $form.fadeOut(500);
-      $form.removeData("todo");
+      $("#modal_background").fadeOut(500);
+      $("#modal_form").fadeOut(500);
+      $("form").find("[name]").val("");
     },
+
     init: function() {
 
     }
@@ -165,28 +204,56 @@ Todo.prototype = {
     },
     add: function(e) {
       e.preventDefault();
+      view.showForm();
+    },
+    edit: function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      var todo = $(e.target).closest("tr").data("todo");
+      view.renderTodos(data.todos);
+      view.showForm(todo);
+    },
+    delete: function(e) {
+      e.preventDefault();
+      var todo = getItemTodo(e);
+      data.delete(todo.id);
+      view.renderTodos(data.todos);
     },
     submit: function(e) {
       e.preventDefault();
-      var $form = $("#modal_form");
-          modified_todo = $form.data("todo");
-     data.insertOrUpdate(modified_todo);
+      var obj = getFormObject();
+      data.push(new Todo(obj));
+      view.renderTodos(data.todos);
       view.hideForm();
     },
-    completeOnForm: function(e) {
+    completeByForm: function(e) {
       e.preventDefault();
-      var $form = $("#modal_form");
-      $form.data("todo").completed = true;
+      var obj = getFormObject(),
+          todo;
+      if (!obj.id) {
+        confirm("Cannot mark as complete as item has not been created yet!");
+        return;
+      }
+      todo = new Todo(obj);
+      data.push(todo.complete());
+      view.renderTodos(data.todos);
+      view.hideForm();
     },
-    completeOnList: function(e) {
+    completeByClick: function(e) {
       e.preventDefault();
+      var todo = getItemTodo(e);
+      data.push(todo.toggle());
+      view.renderTodos(data.todos);
+      view.hideForm();      
     },
     bindEvents: function() {
       $(".add").on("click", this.add.bind(this));
-      $("#modal_form").on("submit", this.submit.bind(this));
-      $("#mark-as-complete").on("click", this.completeOnForm.bind(this));
-      $("#content").on("click", "td", this.completeOnList.bind(this));
-       $("#content").on("click", "label.title", this.completeOnList.bind(this));
+      $("#content").on("click", ".todo .delete", this.delete.bind(this)); 
+      $("#content").on("click", ".todo td:first-child", this.completeByClick.bind(this)); 
+      $("#content").on("click", ".todo .title", this.edit.bind(this)); 
+      $("form").on("submit", this.submit.bind(this));
+      $("form input[type=button]").on("click", this.completeByForm.bind(this));
     },
     init: function() {
       this.bindEvents();
