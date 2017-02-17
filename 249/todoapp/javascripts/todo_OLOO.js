@@ -14,11 +14,12 @@ function dumpData() {
 }
 
 function fakeData() {
-  data.push(new Todo({title:"meet John", completed: true}));
-  data.push(new Todo({title:"buy milk", day: 23, month: 3, year: 2017, description: "full cream 2L"}));
-  data.push(new Todo({title:"hair cut", day: 12, month: 7, year: 2016, description: "near station"}));
-  data.push(new Todo({title:"check xxx", month: 3, year: 2016, description: "confirm with Tim", completed: true}));
+  data.push(Object.create(Todo).init({title:"meet John", completed: true}));
+  data.push(Object.create(Todo).init({title:"buy milk", day: 23, month: 3, year: 2017, description: "full cream 2L"}));
+  data.push(Object.create(Todo).init({title:"hair cut", day: 12, month: 7, year: 2016, description: "near station"}));
+  data.push(Object.create(Todo).init({title:"check xxx", month: 3, year: 2016, description: "confirm with Tim", completed: true}));
 }
+
 function clearData() {
   data.todos = [];
   data.last_id = 0;
@@ -48,28 +49,24 @@ function getFormObject() {
   return obj;
 }
 
-// Constructor
-function Todo(obj) {
-  obj = obj || {};
-
-  if (!(this instanceof Todo)) {
-    return new this;
-  }
-  if (obj.id) {
-    this.id = +obj.id;
-  } else {
-    this.id = data.newId();
-  }
-  this.title       = obj["title"];
-  this.day         = obj["day"]         || "Day";
-  this.month       = obj["month"]       || "Month";
-  this.year        = obj["year"]        || "Year";
-  this.description = obj["description"] || "";
-  this.completed   = (obj["completed"] === true || obj["completed"] === "true") || false;
-  this.due_date    = this.formatDate();
-}
-
-Todo.prototype = {
+// Prototype object
+var Todo = {
+  init: function(obj) {
+    obj = obj || {};
+    if (obj.id) {
+      this.id = +obj.id;
+    } else {
+      this.id = data.newId();
+    }
+    this.title       = obj["title"];
+    this.day         = obj["day"]         || "Day";
+    this.month       = obj["month"]       || "Month";
+    this.year        = obj["year"]        || "Year";
+    this.description = obj["description"] || "";
+    this.completed   = (obj["completed"] === true || obj["completed"] === "true") || false;
+    this.due_date    = this.formatDate();
+    return this;
+  },
   formatDate: function() {
     var date_string = "No Due Date";
     if (this.month !== "Month" && this.year !== "Year") {
@@ -83,16 +80,17 @@ Todo.prototype = {
   complete: function() {
     this.completed = true;
     return this;
-  },
+  }
 };
 
-function Group(obj) {
-  if (!(this instanceof Group)) {
-    return new Group(obj);
+var Group = {
+  init: function(obj) {
+    obj = obj || {};
+    this.name = obj.name;
+    this.count = obj.count;
+    return this;
   }
-  this.name = obj.name;
-  this.count = obj.count;
-}
+};
 
 (function(){
   data = {
@@ -149,8 +147,9 @@ function Group(obj) {
       });
     },
     push: function(todo) {
-      if (!(todo instanceof Todo)) {
-        todo = new Todo(todo);
+      if (Object.getPrototypeOf(todo) !== Todo) {
+        console.error("wrong type expecting an object that delegated to Todo.");
+        return;
       }
       if (this.contains(todo)) {
         this.todos.forEach(function(o) {
@@ -197,7 +196,7 @@ function Group(obj) {
       var arr = JSON.parse(localStorage.getItem("todos")) || [];
       if (!!arr) {
         arr.forEach(function(o){
-          this.todos.push(new Todo(o));
+          this.todos.push(Object.create(Todo).init(o));
         }, this);
       }
       this.last_id = parseInt(localStorage.getItem("last_id"), 10) || 0;
@@ -315,8 +314,8 @@ function Group(obj) {
         $form.find("[name]").val("");
         return;
       }
-      if (!(todo instanceof Todo)) {
-        console.error("wrong type expecting the instance of Todo.");
+      if (Object.getPrototypeOf(todo) !== Todo) {
+        console.error("wrong type expecting an object that delegated to Todo.");
         return;
       }
       if (!!todo) {
@@ -357,7 +356,8 @@ function Group(obj) {
     },
     submit: function(e) {
       e.preventDefault();
-      data.push(new Todo(getFormObject()));
+      var form_obj = getFormObject();
+      data.push(Object.create(Todo).init(form_obj));
       view.hideForm();
       view.render();
       if (view.isEmpty()) {
