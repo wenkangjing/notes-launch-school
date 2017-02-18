@@ -1,3 +1,4 @@
+
 JavaScript Context
 =====================
 
@@ -29,12 +30,12 @@ function invocation
 
 method invocation 
 - `obj.func(args)`
-- this is obj
+- `this` is obj
 
 
-constructor w `new`
+constructor w/ `new`
 - return the create `obj` 
-- this is obj
+- `this` is obj
 
 constructor w/o `new`
 - call constructor on `window`

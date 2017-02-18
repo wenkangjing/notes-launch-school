@@ -48,7 +48,7 @@ namedNodeMap
 # 3	Douglas Crockford: An Inconvenient API
 https://www.youtube.com/watch?v=Fv9qT9joc0M
 
-[DOM note](../../kb/webapis/_DOM.md)
+[DOM note](../../kb/dom/_DOM.md)
 
 # 4	A Hierarchy of Nodes
 
@@ -134,7 +134,7 @@ EventTarget **event handling**
                     |--etc, etc.
 ```
 
-![Nodes and Elements](../../kb/webapis/node.png)
+![Nodes and Elements](../../kb/dom/node.png)
 
 What type of a node is in Console?
 - `node.toString()`
@@ -219,7 +219,7 @@ all child nodes (text / element)
 - childNodes, firstChild, lastChild,
 - nextSibling, previousSibling
 
-![all nodes](../../kb/webapis/node_hierarchy2.png)
+![all nodes](../../kb/dom/node_hierarchy2.png)
 
 vs
 
@@ -228,7 +228,7 @@ element child nodes (element)
 - children, firstElementChild, lastElementChild
 - nextElementSibling, previousElementSibling
 
-![element nodes](../../kb/webapis/node_hierarchy3.png)
+![element nodes](../../kb/dom/node_hierarchy3.png)
 
 
 > Internet Explorer doesn't provide these newer methods on document, but they are available on any other Element. A workaround for this is to use document.body, which is an Element, instead of document, which is a Document.

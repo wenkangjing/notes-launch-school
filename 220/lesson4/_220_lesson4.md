@@ -229,7 +229,9 @@ $("#right").val()
 document.getElementById("output").textContent 
 
 // window onload
-$(window).load(function(){})
+$(window).load(function(){
+
+})
 
 window.onload = function() {
 
@@ -252,14 +254,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-
 ```
 
 # 11	Assignment: Grocery List
 
 print.css
 - add `media` attribute
-- <link rel="stylesheet" media="print" href="print.css" />
+- `<link rel="stylesheet" media="print" href="print.css" />`
 
 reset text in form
 - document.querySelector('form').reset()

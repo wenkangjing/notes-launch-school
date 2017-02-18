@@ -94,7 +94,7 @@ function Group(obj) {
   this.count = obj.count;
 }
 
-(function(){
+//(function(){
   data = {
     last_id: 0,
     todos: [],
@@ -430,6 +430,5 @@ function Group(obj) {
       view.render();
     }
   };
-})();
-
+//})();
 $(controller.init.bind(controller));

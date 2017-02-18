@@ -1,3 +1,4 @@
+
 Object Creation Patterns
 ==========================
 
@@ -19,7 +20,6 @@ var jane = createPerson('Jane');
 
 john.fullName();        // 'John Doe'
 jane.fullName();        // 'Jane'
-
 ```
 
 
@@ -49,7 +49,6 @@ window.fullName();          // "John Doe"
 
 var john = new Person('John', 'Doe');
 john.fullName();
-
 ```
 
 `new`
@@ -59,7 +58,7 @@ john.fullName();
 3. the code in the function is executed
 4. `this` is returned if there's not an explicit return
 
-# 4	Objects and Prototypes
+   # 4	Objects and Prototypes
 
 `__proto__`
 (pronounced "dunder proto", "dunder" is a portmanteau for "double underscore"), that points to another object. 
@@ -102,7 +101,7 @@ Object.prototype;
 - The Object.prototype object is at the end of the prototype chain for all JavaScript objects
 - like CBase
 
-# 5	Prototypal Inheritance and Behavior Delegation
+  # 5Prototypal Inheritance and Behavior Delegation
 
 Prototype Chain Lookup for Property Access
 - When we try to access a property or a method on an object, JavaScript searches not only in the object itself, but all the objects on its prototype chain, until the end is reached. 
@@ -140,16 +139,16 @@ use `Object.create` instead of `setPrototypeOf`
 use `for (var prop in object)` to loop all properties/metholds
 
 `Object.assign`
- - copy object reference
- - The properties are overwritten by other objects that have the same properties later in the parameters order.
- - primitive 
- - symblo
- - non-enumerable cannot be copied
+-  copy object reference
+-  The properties are overwritten by other objects that have the same properties later in the parameters order.
+-  primitive 
+-  symblo
+-  non-enumerable cannot be copied
 
-# 7	Constructors and Prototypes
+   # 7Constructors and Prototypes
 
-- In JavaScript, every function has a special prototype property.
-- A function's prototype property is only useful when the function is used as a constructor
+-  In JavaScript, every function has a special prototype property.
+-  A function's prototype property is only useful when the function is used as a constructor
 
 Objects created from a Function share the same prototype object.
 
@@ -208,7 +207,7 @@ what happens when use **new** to create an object
 2. `obj's __proto__ property` needs to point to `construction function's prototype`
 3. the `constructor function` needs to be called with obj as its context to mutate the obj object.
 
-# 10	The Pseudo-classical Pattern and the OLOO Pattern
+   # 10The Pseudo-classical Pattern and the OLOO Pattern
 
 object creation patterns
 - Pseudo-classical Pattern 
@@ -431,7 +430,7 @@ alert(colors.toPipedString()); // ' red | blue | green'
 - The this keyword is never used on constructor methods.
 - The new keyword is never called before the constructor.
 
-# 11	Assignment: Object Constructor Inheritance
+  # 11Assignment: Object Constructor Inheritance
 - prototype must be a object **pointing to the object that delegated to**
 - prototype.constructor must be a function
 - prototypal inheritance 
@@ -588,13 +587,13 @@ var singleton = function() {
 - to hide internal implementation
 
 1. make a object
-  - Object literal `var obj = {bala}`, or
-  - new
-  - Object.create
-  - call another power constructor
+- Object literal `var obj = {bala}`, or
+- new
+    - Object.create
+    - call another power constructor
 
 2. define some properties and Functions
-  - private members
+- private members
 
 
 3. privileged // public, can access private members
@@ -629,8 +628,8 @@ function myPowerConstructor() {
 # 14	Project: Array and Object Utility Library
 
  TDD
- - unit test
- - implementation
+- unit test
+- implementation
 
 
 utility library 
@@ -706,7 +705,7 @@ Game
 - bind to link event handler
 - unbind
 
-# 18	Project: Guess a Word, Part 4: OLOO Pattern Solution
+  # 18Project: Guess a Word, Part 4: OLOO Pattern Solution
 
 *objects linked to other objects*
 

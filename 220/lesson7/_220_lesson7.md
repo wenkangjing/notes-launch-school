@@ -31,8 +31,6 @@ HTML5 ways
 
 `JSON.parse` json string to object
 
-
-
 # 3	Assignment: Storing and Retrieving State with localStorage
 
 `.index()` without arg

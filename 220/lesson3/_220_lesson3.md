@@ -40,9 +40,9 @@ html file
 
 ```
 
-![semicomplete page loading](../../kb/webapis/semicomplete_page_loading.png)
+![semicomplete page loading](../../kb/dom/semicomplete_page_loading.png)
 
-![complete page loading](../../kb/webapis/complete_page_loading.png)
+![complete page loading](../../kb/dom/complete_page_loading.png)
 
 # 6	User Events
 
@@ -88,7 +88,7 @@ keyboard event
 
 # 9	Capturing and Bubbling
 
-![event phases](../../kb/webapis/event_phases.png)
+![event phases](../../kb/dom/event_phases.png)
 
 > Capturing vs. Bubbling
 >

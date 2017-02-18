@@ -31,7 +31,7 @@ A method is a piece of code that is called by a name that is associated with an 
 - function invocation: `alert('Hello World!')`
 - method invocation: `console.log('Hello World!')`
 - constructor invocation: `new RegExp('\\d')`
-- indirect invocation: `alert.call(undefined, 'Hello World!')`
+- indirect invocation: `alert.call(undefined, 'Hello World!')` `[].slice.call([1,2,3,4], 2)`
 
 # 4. Functions Invocation
 
@@ -70,13 +70,13 @@ Pitfall: create object without `new`, `this` is `global`
 
 
 
-# 7. Indirect Invocation
+# 7. Indirect Invocation (immediately)
 
 .call() or .apply()
 - `func.call(context, arg1, arg2, arg3..)` or
 - `func.apply(valueForThis, arrayOfArgs)`
 
-# 8. Bind
+# 8. Bind (not immediately)
 
  `.bind(obj, arg1, arg2, arg3)` create a bound function, usually used in
 - in event callback
