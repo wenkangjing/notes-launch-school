@@ -105,15 +105,16 @@ https://launchschool.com/lessons/2555bbbb/assignments/93b8b6af
 IIFE
 ============
 
-Immediately Invoked Function Expressions (IIFE, pronounced iffy)
+- Immediately Invoked Function Expressions (IIFE, pronounced iffy)
+- It's used as a convenient way to create a scope.
+- to create a closure
 
 ```js
 (function() {
-    // Your awesome code here, suggested by Douglas Crockford 
+  //Any variables or functions defined within IIFE block are local to the block and it’s not possible for any code outside this scope to change them.
 }());
 ```
 
-Any variables or functions defined within IIFE block are local to the block and it’s not possible for any code outside this scope to change them.
 
 # Examples
 

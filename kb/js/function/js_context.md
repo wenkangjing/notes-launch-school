@@ -46,7 +46,7 @@ apply / call
 
 bind
 - given context **permanently**
-
+- returns a copy of the given function with the specified this value and initial arguments.
 arrow function
 
 
