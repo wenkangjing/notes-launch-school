@@ -35,7 +35,7 @@ SPA
 # 5	Project: *Model Constructor* Getter and Setter
 - add attributes property to Model.prototype
 
-# 6	Project: Model Constructor Seeding and Change *Events*
+# 6	Project: Model Constructor *Seeding and Change Events*
 - __events store array of callbacks
 - trigger all callbacks in setter 
 
@@ -47,14 +47,19 @@ SPA
 # 8	Project: Collection Constructor: Set, Get
 
 
-
 # 9	Project: *View Constructor*: Render, Remove
-
-
+- store model
+- model stores a reference of view
+- parent element
+- render
 
 # 10	Project: View Constructor: Binding Events
 
-
+```
+Collection        Model             View              App
+                  callbacks ------> render 
+                  get/set <-------- events (type/cb)  register event/callbacks 
+```
 
 # 11	Project: Todo App
 
