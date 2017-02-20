@@ -47,8 +47,6 @@ To have the correct `this`:
 - call or apply
 - bind
 
-
-
 # 5. Method Invocation
 
 A method is a function stored in a property of an object.
@@ -69,7 +67,6 @@ if the method is called without an object, then a function invocation happens: w
 Pitfall: create object without `new`, `this` is `global`
 
 
-
 # 7. Indirect Invocation (immediately)
 
 .call() or .apply()
@@ -84,7 +81,6 @@ Pitfall: create object without `new`, `this` is `global`
 
 # 9. Arrow Function
 
-
 `this` is the enclosing context where the arrow function is defined
 
 The arrow function doesn't create its own execution context, but takes this from the outer function where it is defined. 
@@ -94,8 +90,6 @@ The arrow function doesn't create its own execution context, but takes this from
 **How is the function invoked?**
 
 **where the arrow function is defined?**
-
-
 
 # Examples
 
