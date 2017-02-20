@@ -172,3 +172,5 @@ walk(document.body, function(node) {
   console.log(node.nodeName);
 });
 ```
+`__name`
+- prefix properties and methods that are meant to be private with two underscores
