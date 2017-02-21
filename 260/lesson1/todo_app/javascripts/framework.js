@@ -97,13 +97,14 @@ function ViewConstructor(opts) {
     this.model.addCallback(this.render.bind(this));
     this.model.__remove = this.remove.bind(this);
     this.model.view = this;
+    this.attributes["data-id"] = this.model.id;
     this.$el = $("<" + this.tag_name + " />", this.attributes);
     this.render();
   };
 
   View.prototype = {
     tag_name: "div",
-    attributes: [],
+    attributes: {},
     events: {},
     tempalte: function() { },
     render: function() {

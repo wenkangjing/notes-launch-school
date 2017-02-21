@@ -63,7 +63,15 @@ Collection        Model             View              App
 
 # 11	Project: Todo App
 
+http://d3905n0khyu9wc.cloudfront.net/todo_app/index.html
 
+$ with attributes
+- `$("<div></div>", { foo: "bar", hello: "world" })`
+- >> `<div foo="bar" hello="world"></div>`
+
+`e.preventDefault()` is equal to `return false`
+
+unbind event `$(e.target).off(e);`
 
 # 12	Summary
 
