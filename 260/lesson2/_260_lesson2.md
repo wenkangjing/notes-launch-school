@@ -55,6 +55,68 @@ Tips from walk thru video
 
 http://backbonejs.org/#Model
 
+.extend
+- sets up the prototype chain
+- by given object with functions in it
+- futher extended
+- `.defaults` to specify the default attributes
+
+// my_ford.__proto__.__proto__ === Car.prototype
+
+```js
+var Car = Backbone.Model.extend({
+  defaults: {
+    doors: 4,
+    wheels: 4
+  },
+  setFullName: function() {
+    this.set("full_name", this.get("make") + " " + this.get("model"));
+  }
+});
+var my_car = new Car();
+var Ford = Car.extend({
+  defaults: {
+    make: "Ford"
+  }
+});
+var my_ford = new Ford();
+```
+
+.get
+- attribute by given name
+
+.set
+- attributes by given key/value or object 
+- chain
+- may trigger `change`
+
+.unset
+- remove 
+
+.id
+- unique id
+- able to re-map by idAttribute
+
+.cid
+- client id, when has not yet been saved to server
+
+.on(event, callback) or .on({event: cb, event: cb})
+- callback of model chagned, same as jquery on
+- event 
+  - `change` // all properties
+  - `change:name` // on particular property
+  - `change destroy` // multiple event 
+  - 
+
+.toJSON
+- return object
+- call JSON.stringify to return a JSON string
+
+
+
+Events
+- http://backbonejs.org/#Events-catalog
+
 
 # 4	Exercises: Backbone Models
 
