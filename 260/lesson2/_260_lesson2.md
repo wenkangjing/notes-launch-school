@@ -154,6 +154,9 @@ this.has("userId") && this.setUser();
 
 # 6	Project: Managing Multiple Models
 
+_.without()
+
+
 
 # 7	Backbone Collections
 

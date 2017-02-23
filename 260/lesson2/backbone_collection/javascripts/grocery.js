@@ -6,9 +6,8 @@ var items_json = [{
   quantity: 4
 }];
 
-
-
 var lastId = 0;
+
 var items_template = Handlebars.compile($("#items").html());
 Handlebars.registerPartial("item", $("#item").html());
 
@@ -30,58 +29,64 @@ var items = {
     items_json.forEach(this.create.bind(this));
   },
   clear: function() { this.collection = []; },
-  delete: function(id) {
-    items.collection = items.collection.filter(function(it) {
-      return it.id !== id;
-    });
+  delete: function(e) {
+    e.preventDefault();
+    var id = $(e.target).data("id"),
+        model = _.findWhere(this.collection, {id: id});
+    this.collection = _.without(this.collection, model)
+    this.render();
   },
   sortBy: function(prop) {
-     _.sort(this.collection);
+     _.sort(this.collection, prop);
   },
   render: function() {
     $("table tbody").html(items_template({items: this.collection}));
   },
   bind: function() {
-    $("table").on("click", "a", function(e) {
-      e.preventDefault();
-      var id = $(e.target).data("id");
-
-      renderItems(items.collection);
-    });
-
-    $("p").on("click", "a", function(e) {
-      items.clear();
-      renderItems([]);
-    });    
-    $("table th").on("click", function(e) {
-      e.preventDefault();
-      var column = $(e.target).data("prop"),
-          plain_items = items.map(function(it) {
-            return it.toJSON();
-          });
-      plain_items = _.sortBy(plain_items, column);
-      items = plain_items.map(function(it) {
-        return new ItemModel(it);
-      })
-      renderItems(items);
-    });
-
-    $("form").on("submit", function(e) {
-      e.preventDefault();
-      var $f = $(this),
-          inputs = $f.serializeArray(),
-          obj = {};
-      inputs.forEach(function(input) {
-        obj[input.name] = input.value;
-      });
-      items.push(new ItemModel(obj));
-      renderItems(items);
-    });
+    $("table").on("click", "a", this.delete.bind(this));
+  },
+  init: function() {
+    items.seedCollection();
+    items.bind();
+    items.render();
   }
 };
 
-items.seedCollection();
-items.render();
+// sort
+$("table th").on("click", function(e) {
+  e.preventDefault();
+  var column = $(e.target).data("prop"),
+      plain_items = items.collection.map(function(it) {
+        return it.toJSON();
+      });
+  plain_items = _.sortBy(plain_items, column);
+  items.collection = plain_items.map(function(it) {
+    return new ItemModel(it);
+  })
+  items.render();
+});
+
+// delete all
+$("p").on("click", "a", function(e) {
+  items.clear();
+  items.render();
+});    
+
+// submit
+$("form").on("submit", function(e) {
+  e.preventDefault();
+  var $f = $(this),
+      inputs = $f.serializeArray(),
+      obj = {};
+  inputs.forEach(function(input) {
+    obj[input.name] = input.value;
+  });
+  items.create(obj);
+  items.render();
+  this.reset();
+});
+
+items.init();
 
 
 
