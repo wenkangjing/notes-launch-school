@@ -11,6 +11,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Obj
 
 `Object.getPrototypeOf(obj)` is equivalent of `obj.__proto__`
 
+`AFunction.__proto__ === Function.prototype`
 
 ## class-based 
 
