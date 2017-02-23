@@ -120,6 +120,34 @@ Events
 
 # 4	Exercises: Backbone Models
 
+- GET  /books/ .... collection.fetch();
+- POST /books/ .... collection.create();
+- GET  /books/1 ... model.fetch();
+- PUT  /books/1 ... model.save();
+- DEL  /books/1 ... model.destroy();
+
+Prefer toJSON over direct access to attributes property
+
+```js
+// Works, but accessing attributes directly may lead to accidental attribute modification
+console.log(post_1.attributes);
+// Will safely collect post_1's attributes into a new plain object to avoid accidental attribute modification
+console.log(post_1.toJSON());
+```
+
+`success` and `error` callbacks 
+- this is window
+- function(model, response, options)  use `model` instead
+
+short circus
+
+```js
+if (this.has("userId")) {
+  this.setUser();
+}
+
+this.has("userId") && this.setUser();
+```
 
 # 5	Project: Editing a Backbone Model
 
