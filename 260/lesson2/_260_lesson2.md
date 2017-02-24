@@ -120,6 +120,8 @@ Events
 
 # 4	Exercises: Backbone Models
 
+> ajax calls, callbacks
+
 - GET  /books/ .... collection.fetch();
 - POST /books/ .... collection.create();
 - GET  /books/1 ... model.fetch();
@@ -151,15 +153,32 @@ this.has("userId") && this.setUser();
 
 # 5	Project: Editing a Backbone Model
 
+`toJSON` 
+- method only returns the data, leaving out the Backbone-specific properties and methods.
+
+`fatch`
+- with `{reset: true}` reset the collection rather than update it
+- `success` or `error` callback function (model, response, opts)
+
 
 # 6	Project: Managing Multiple Models
 
-_.without()
-
-
+- extend, urlRoot
+- id(server), cid(client id)
+- get/set/reset/clear
+- fetch/save/sync
+- on(event, cb(model, response, opts))
 
 # 7	Backbone Collections
-
+- extend, 
+- model as model constructor,
+- url
+- models, list of model
+- fatch/save
+- set/get/add
+- create = add + save
+- `.pluck("email")`
+- paser - paser the response of fetch, clean restructure the data
 
 # 8	Exercises: Backbone Collections
 
