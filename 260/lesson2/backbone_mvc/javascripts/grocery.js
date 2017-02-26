@@ -26,7 +26,7 @@ var App = {
     // out of view.el
     $("p a").on("click", this.removeAll.bind(this));
     $("form").on("submit", this.addItem.bind(this));
-     $("table th").on("click", this.sortItems.bind(this));
+    $("table th").on("click", this.sortItems.bind(this));
   },
   init: function() {
     this.items = new ItemCollection(items_json);

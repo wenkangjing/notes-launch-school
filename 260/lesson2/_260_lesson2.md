@@ -235,7 +235,8 @@ handlebars
 - with block, no comments
 - view.collection.toJSON(), pull attributes out
 
-
+delegateEvents
+- to bind event after modification a view
 
 # Backbone Events
 - on
