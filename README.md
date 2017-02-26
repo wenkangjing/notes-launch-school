@@ -55,13 +55,20 @@ LaunchSchool Notes
 - [x] Assessment - pass
 
 ## 220 - Front End Development with JavaScript
-- [ ] [Function Contexts and Objects](220/lesson1/_210_lesson1.md)
-- [ ] [jQuery and the DOM](220/lesson2/_210_lesson2.md)
-- [ ] [Debugging and Improving Code](220/lesson3/_210_lesson3.md)
-- [ ] [Putting it All Together](220/lesson4/_210_lesson4.md)
-- [ ] [Advanced jQuery and Dynamic Content Creation](220/lesson5/_210_lesson5.md)
-- [ ] [HTML5 APIs](220/lesson6/_210_lesson6.md)
-- [ ] [Object Creation Patterns](220/lesson7/_210_lesson7.md)
+- [x] [Function Contexts and Objects](220/lesson1/_210_lesson1.md)
+- [x] [jQuery and the DOM](220/lesson2/_210_lesson2.md)
+- [x] [Debugging and Improving Code](220/lesson3/_210_lesson3.md)
+- [x] [Putting it All Together](220/lesson4/_210_lesson4.md)
+- [x] [Advanced jQuery and Dynamic Content Creation](220/lesson5/_210_lesson5.md)
+- [x] [HTML5 APIs](220/lesson6/_210_lesson6.md)
+- [x] [Object Creation Patterns](220/lesson7/_210_lesson7.md)
+
+## 249 - Front End Development with JavaScript
+- [x] take-home project - implement a todo app without using any client side frameworks
+- [x] 1n1 - prototypal programming, IIFE, OLOO, Constructor, this, context, object, 
+
+# 260 - Building Applications with Client-Side MVC
+
 
 # Back-end
 TBD

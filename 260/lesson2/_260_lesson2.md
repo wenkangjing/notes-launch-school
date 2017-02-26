@@ -181,6 +181,7 @@ this.has("userId") && this.setUser();
 - paser - paser the response of fetch, clean restructure the data
 
 # 8	Exercises: Backbone Collections
+# 9	Project: Adding a Backbone Collection
 
 Backbone Events
 
@@ -205,11 +206,41 @@ Backbone.Model collection property
 - The model.collection property is normally created automatically when you first add a model to a collection. 
 - Note that the reverse is not true, as passing this option to the constructor will not automatically add the model to the collection. Useful, sometimes.
 
-# 9	Project: Adding a Backbone Collection
+Backbone.View collection property
+
 
 
 # 10	Backbone Views
 
+properties
+- `el`  **parent** element (string)
+  - set `el` in constructor, a selector stirng 
+  - $el is just a reference, easy to use `this.$el.html()`
+- `id` in css
+- `className` in css
+- `tagName`
+- `attributes`
+- `events`
+- `template`: `this.$el.html(template(data))`
+
+events
+- a hash
+- an events object to map event types and callbacks 
+- event name and optional CSS selector
+- customized event
+  - view.listenTo(this.collection, 'rerender', this.render)
+  - items.trigger("rerender");
+
+handlebars
+- with block, no comments
+- view.collection.toJSON(), pull attributes out
+
+
+
+# Backbone Events
+- on
+- off
+- listenTo `view.listenTo(model, 'change', view.render);`
 
 # 11	Project: Completing the Backbone App
 
