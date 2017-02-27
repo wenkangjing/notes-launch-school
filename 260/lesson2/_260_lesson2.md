@@ -183,6 +183,13 @@ this.has("userId") && this.setUser();
 # 8	Exercises: Backbone Collections
 # 9	Project: Adding a Backbone Collection
 
+method
+- where (attr) a array of models
+- findWhere (attr) first model
+- sort
+- pluck
+- set/get array of models
+
 Backbone Events
 
 - "add" (model, collection, options) — when a model is added to a collection.
@@ -251,4 +258,7 @@ delegateEvents
 
 # 13	Summary
 
+
 - [ ] go thru Live Session on Backbone Overview 
+
+

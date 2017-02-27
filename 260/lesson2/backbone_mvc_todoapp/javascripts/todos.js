@@ -19,12 +19,9 @@ var App = {
   },  
   clearComplete: function(e) {
     e.preventDefault();
-    var completed = this.Todos.filter(function(model) {
-      return model.attributes.complete;
-    });
-    completed.forEach(function(model) {
-      this.Todos.remove(model);
-    });
+    var incomplete = App.Todos.where({ complete: false });
+
+    App.Todos.set(incomplete);
   },
   bindEvents: function() {
     this.$el.find("form").on("submit", this.addItem.bind(this));
@@ -49,6 +46,9 @@ var App = {
 
 App.TodoModel = Backbone.Model.extend({ ///////////////// Todo
   idAttribute: "id",
+  defaults: {
+    complete: false
+  },
   initialize: function(obj) {
     this.collection.incrementID();
     this.set("id", this.collection.last_id);
@@ -103,11 +103,14 @@ App.TodoView = Backbone.View.extend({  /////////////// Todo view
   },
   render: function() {
     this.$el.attr("data-id", this.model.get("id"));
+    this.$el.toggleClass("complete", this.model.get("complete"));
     this.$el.html(this.template(this.model.toJSON()));
   },
   initialize: function() {
     this.render();
-    this.listenTo(this.model, "all", this.render);
+    this.listenTo(this.model, "change", this.render);
+    this.listenTo(this.model, "add", this.render);
+    this.listenTo(this.model, "remove", this.remove);    
   }
 });
 
