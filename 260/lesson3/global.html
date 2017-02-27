@@ -1,0 +1,16 @@
+<body>
+  <div id="welcome"></div>
+  <script>
+    function displayWelcome(name) {
+      welcome = "Welcome, " + name;
+      document.getElementById("welcome").innerText = welcome;
+    }
+    function delayedLog() {
+      console.log("Blastoff!");
+    }
+
+    console.log("3, 2, 1...");
+    window.setTimeout(delayedLog, 1000);
+        
+  </script>
+</body>

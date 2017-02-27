@@ -174,3 +174,19 @@ walk(document.body, function(node) {
 ```
 `__name`
 - prefix properties and methods that are meant to be private with two underscores
+
+How to get data from Form controls?
+
+```js
+var form_elements = {
+  email_address: "user_email",
+  subject: "message_subject",
+  message: "message_body"
+};
+
+var email = {};
+
+for (var input in form_elements) {
+  email[input] = $("#" + form_elements[input]).val();
+}
+```

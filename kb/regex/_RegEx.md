@@ -4,7 +4,16 @@ Regular Expression
 **case sensitive by default**
 **escape all non-alphanumeric characters even if they don't need to be escaped**
 
+https://launchschool.com/books/regex
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
+
+http://rubular.com/
+
 http://scriptular.com/
+
+
+
 
 ## patterns
 
