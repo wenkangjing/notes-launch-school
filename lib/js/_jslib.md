@@ -19,3 +19,6 @@ Utility
 Test
 - qunit - jQuery based unit test framework
 - 
+
+CanIUse
+- http://caniuse.com/#search=geolocation

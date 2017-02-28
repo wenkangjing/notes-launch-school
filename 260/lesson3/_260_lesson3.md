@@ -109,6 +109,68 @@ params_string = params_string.replace(/&$/, "");
 - 6	The Geolocation API
 - 7	Project: Geolocated Google Map
 
+window.navigator.geolocation
+
+```js
+// get normal geo location
+navigator.geolocation.getCurrentPosition(
+  function(position) { // success cb
+    console.log(position);
+  }, function(err) { // error cb
+    console.warn(`ERROR(${err.code}): ${err.message}`);
+  }, { // options
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0
+  }
+);
+
+{
+  coords: {
+    accuracy: 72,
+    altitude: null,
+    altitudeAccuracy: null,
+    heading: null,
+    latitude: 40.215474,
+    longitude: -100.6130937,
+    speed: null
+  },
+  timestamp: 1432748526470
+}  
+```
+
+```js
+// high accurate
+function onLocationSuccess(position) {
+  console.log(position);
+}
+
+function onLocationError(position_error) {
+  console.warn(position_error);
+}
+
+navigator.geolocation.getCurrentPosition(onLocationSuccess, onLocationError, {
+  enableHighAccuracy: true,
+  timeout: 30000
+});
+```
+
+```js
+// watch position -  called every time the position changes
+function onSuccess(position) {
+  console.log(position);
+}
+
+function onError(error) {
+  console.warn(position_error);
+}
+
+var watch_id = navigator.geolocation.watchPosition(onSuccess, onError);
+
+// Application settings change
+navigator.geolocation.clearWatch(watch_id);
+```
+
 
 - 8	The History Object
 - 9	Project: Manipulating History with Tabbed Navigation
