@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>Browser History APIs</title>
+    <meta charset="UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>    
+  </head>
+  <body>
+    <ul id="people">
+      <li>
+        <a href="#">
+          <img src="http://placehold.it/230x400" />
+          Shane Riley
+        </a>
+      </li>
+    </ul>    
+    <script>
+      $("#people").on("click", "a", function(e) {
+        e.preventDefault();
+        var idx = $(e.target).closest("li").index(),
+            person_name = $(e.target).text().trim();
+
+        history.pushState({ id: idx }, person_name, person_name + ".html");
+      });
+      window.addEventListener("popstate", function(e) {
+        alert(e.event);
+        // if (!isNaN(e.state.id)) {
+        //   openModal(e.state.id);
+        // }
+      });
+
+      function openModal(id) {
+        // Code to display the person modal
+        console.log(id);
+      }
+    </script>
+  </body>
+</html>

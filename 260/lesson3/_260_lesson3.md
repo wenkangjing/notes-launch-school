@@ -33,6 +33,10 @@ location
   - protocle: file: http: https:
   - search
 
+e.g.
+inner href is `location.pathname + href`
+
+
 ```js
 // Obtain the search string from the URL at https://www.google.com/finance?q=NASDAQ%3AAAPL and pull out the stock symbol ("AAPL").
 window.location.search.replace(/^.+%3A/, "");
@@ -189,10 +193,19 @@ owfond
 fontawesome
 - http://fontawesome.io/
 
-- [ ] to float the weather card on top of map
+- [X] ~~*to float the weather card on top of map*~~
 
 - 8	The History Object
 - 9	Project: Manipulating History with Tabbed Navigation
+
+https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onpopstate
+
+`history`
+- .length, 
+- .back, .forward
+- .go(integer) // o forward that number of states or a negative value to go back that number.
+- pushState replaceState
+- `popstate` event on window object
 
 
 - 10	Web Workers

@@ -1,0 +1,38 @@
+body {
+  font: normal 16px Helvetica, Arial, sans-serif;
+  background-color: rgba(0,0,0,0.8);
+}
+
+header, main { 
+  width: 800px; 
+  padding: 20px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+header h1, nav ul, nav li {
+  display: inline-block;
+  padding: 5px 10px;
+}
+
+li a {
+  text-decoration: none;
+  color: black;
+}
+
+li.active a {
+  color: green;
+  font-weight: bold;
+}
+
+article {
+  display: none;
+}
+
+article figure {
+  text-align: center;
+  margin: 0 auto;
+}
+article figure img {
+  padding: 10px;
+  border: 1px solid black;
+}
