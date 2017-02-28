@@ -171,6 +171,25 @@ var watch_id = navigator.geolocation.watchPosition(onSuccess, onError);
 navigator.geolocation.clearWatch(watch_id);
 ```
 
+precent encoding uri
+- https://en.wikipedia.org/wiki/Percent-encoding
+
+!	#	$	&	'	(	)	*	+	,	/	:	;	=	?	@	[	]
+%21	%23	%24	%26	%27	%28	%29	%2A	%2B	%2C	%2F	%3A	%3B	%3D	%3F	%40	%5B	%5D
+
+
+with unicode symbol
+- triple curly brace
+- `<h3>{{{temperature}}}</h3>`
+
+owfond
+- http://websygen.github.io/owfont
+- fond for open weather apis
+
+fontawesome
+- http://fontawesome.io/
+
+- [ ] to float the weather card on top of map
 
 - 8	The History Object
 - 9	Project: Manipulating History with Tabbed Navigation

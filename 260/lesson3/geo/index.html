@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>Google Geolocation APIs</title>
+    <meta charset="UTF-8" />
+    <link href="geo.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>    
+  </head>
+  <body>
+    <main>
+      <div id="map">
+        <p>Building Geolocation...</p>
+        <div id="weather"></div>
+      </div>
+    </main>
+    <script id="weather_card" type="text/x-handlebars">
+      <h2>{{city}}</h2>
+      <p><i class="owf owf-{{cod}}"></i></p>
+      <h3>{{{temperature}}}</h3>
+      <p>{{description}}</p>
+    </script> 
+    <script src="geo.js"></script>
+  </body>
+</html>
