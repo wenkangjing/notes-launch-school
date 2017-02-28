@@ -93,20 +93,62 @@ Given the string "H%*e(ll)o" create a regular expression to pass in to the strin
   var regex = new RegExp("[a-z]", "gi");
   var matches = str.match(regex) || [];
   console.log(matches.join(""));
-
   // or
-  hello.match(/\w/g).join("");
+  str.match(/\w/g).join("");
 }());
 
 
 /*
 Using a back reference, create a regular expression that will check whether or not a string has a pair of single or double quotes. The back reference will use the captured quote to ensure there is a matching end quote. As a refresher, here is an example of a back reference. We'll locate the word characters within backtick or single quote characters, but will not match if only one of either of the characters is present. The \1 back reference will take whatever value was captured in our parenthesized capture statement and use it in place of the \1, so if it found a backtick it will look for a closing backtick.
+
+\1 
+Using Backreferences To Match The Same Text Again
 */
 
 (function() {
-  var regexp = /([`'])\w+\1/;
-  console.log(regexp.exec("`backticks`")); // ["`backticks`", "`"]
+  var regexp = /([`'])\w+\1/; // single word
+  var result = regexp.exec("`backticks`"); // ["`backticks`", "`"]
   console.log(regexp.exec("'quotes'")); // ["'quotes'", "'"]
   console.log(regexp.exec("`mismatched'")); // null
 
+  var single_quotes = "'Hello world'";
+  var double_quotes = "\"Hello world\"";
+  var mismatched_quotes = "'Hello world\"";
+
+  function hasMatchedQuotes(str) {
+    return /(['"])[^'"]+\1/.test(str); // start with ' or ", following any number of non ' or ", end with the char that has been captured 
+  }
+
+  console.log(hasMatchedQuotes(single_quotes));
+  console.log(hasMatchedQuotes(double_quotes));
+  console.log(hasMatchedQuotes(mismatched_quotes));  
 }());
+
+
+
+/*
+
+Create a phone number regular expression that will test true for the string "(222) 555-1212" and false for "(222) 555-1212x150" and "1-(222) 555-1212"
+
+*/
+
+(function() {
+  var regex = new RegExp(/^\([0-9]{3}\) [0-9]{3}-[0-9]{4}$/); // /^\(\d{3}\) \d{3}-\d{4}$/;
+  console.log(regex.test("(222) 555-1212")); // true
+  console.log(regex.test("(222) 555-1212x150")); // false
+  console.log(regex.test("1-(222) 555-1212")); // false
+}());
+
+
+/*
+
+Create a new phone number regular expression that will test true for all three of the previously mentioned phone number strings.
+
+*/
+(function(){
+  var regex = new RegExp(/^\d?-?\(\d{3}\)\s\d{3}-\d{4}/);
+  console.log(regex.test("(222) 555-1212")); // true
+  console.log(regex.test("(222) 555-1212x150")); // true
+  console.log(regex.test("1-(222) 555-1212")); // true
+}());
+

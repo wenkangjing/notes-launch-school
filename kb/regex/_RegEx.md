@@ -141,6 +141,16 @@ xabcbcbacy
 xabcbcbacy
 - `/a[abc]*?c/` matches abc it is a lazy match by specifying?
 
+## Back Reference
+
+Using Backreferences To Match The Same Text Again
+
+http://www.regular-expressions.info/backref.html
+
+`/(['"])[^'"]+\1/` wrapped by single or double quote
+
+
+
 ## examples
 - `.*` any sequence of chars
 - `[abc]` 	A single character of: a, b, or c
