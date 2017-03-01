@@ -223,6 +223,56 @@ location.hash
   - https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
   - https://www.html5rocks.com/en/tutorials/workers/basics/
 
+Worker
+- background worker thread
+- running a given js file
+- in another global context
+- must obey the same-origin policy.
+
+Safety
+- spawns real OS-level threads
+
+Data Transfer
+- **Data passed between the main page and workers is copied, not shared**
+- serialized (JSON.stringify) main -> worker
+- de-serialized (eval or JSON.paser) worker -> main
+
+
+in main thread
+- .postMessage // post data 
+- .onmessage(e) // callback when data received from worker
+- .onerror(e) message, filename, lineno) // callback when error occurs in worker thread
+- worker.terminate(); // force terminate 
+
+```js
+var worker = new Worker("worker.js");
+worker.postMessage("balabal");
+worker.onmessage = function(e) {
+  console.log(e.data);
+};
+
+worker.onerror = function(e) {
+  e.message; // 
+  e.lineno; // lineno in worker.js
+  e.filename; // worker file name, e.g. worker.js
+};
+```
+
+
+in worker thread
+- .onmessage // callback when received from main
+- .postMessage // post result after processing data
+- .close(); // close itself when done
+```js
+onmessage = function(e) {
+  var workerResult = "result from worker: " + String(e.data);
+  postMessage(workerResult);
+}
+```
+
+`importScripts`
+
+
 # 12	Project: Live Image Editing with Web Workers
 
 
