@@ -1,11 +1,11 @@
 Lesson 3: Advanced Browser-based Javascript
 ================================================
 
-- 1	Introduction
+# 1	Introduction
 
 
-- 2	Exploring Global Properties and Functions with the Window Object
-- 3	Exercises: Window Object
+# 2	Exploring Global Properties and Functions with the Window Object
+# 3	Exercises: Window Object
 
 https://developer.mozilla.org/en-US/docs/Web/API/Window
 
@@ -106,12 +106,12 @@ params_string = params_string.replace(/&$/, "");
 ```
 
 
-- 4	Speeding Up Searches and Substitutions with Regular Expressions
-- 5	Exercises: Regular Expressions
+# 4	Speeding Up Searches and Substitutions with Regular Expressions
+# 5	Exercises: Regular Expressions
 
 
-- 6	The Geolocation API
-- 7	Project: Geolocated Google Map
+# 6	The Geolocation API
+# 7	Project: Geolocated Google Map
 
 window.navigator.geolocation
 
@@ -195,8 +195,8 @@ fontawesome
 
 - [X] ~~*to float the weather card on top of map*~~
 
-- 8	The History Object
-- 9	Project: Manipulating History with Tabbed Navigation
+# 8	The History Object
+# 9	Project: Manipulating History with Tabbed Navigation
 
 https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onpopstate
 
@@ -216,12 +216,15 @@ DOM callback
 location.hash
 - Is a DOMString containing a '#' followed by the fragment identifier of the URL.
 
-- 10	Web Workers
-- 11	Exercise: Web Workers
+# 10	Web Workers
+# 11	Exercise: Web Workers
+
+* [ ] go thru examples, skip shared workers
+  - https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
+  - https://www.html5rocks.com/en/tutorials/workers/basics/
+
+# 12	Project: Live Image Editing with Web Workers
 
 
-- 12	Project: Live Image Editing with Web Workers
-
-
-- 13	Summary
+# 13	Summary
 
