@@ -204,9 +204,17 @@ https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onpopstate
 - .length, 
 - .back, .forward
 - .go(integer) // o forward that number of states or a negative value to go back that number.
-- pushState replaceState
+- `pushState replaceState` with (data, title, url)
 - `popstate` event on window object
 
+jQuery callback 
+- `e.originalEvent.state;`
+
+DOM callback 
+- `e.state`
+
+location.hash
+- Is a DOMString containing a '#' followed by the fragment identifier of the URL.
 
 - 10	Web Workers
 - 11	Exercise: Web Workers

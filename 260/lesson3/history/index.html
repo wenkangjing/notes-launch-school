@@ -16,6 +16,8 @@
       </li>
     </ul>    
     <script>
+      history.pushState({ id: 0 }, "home", location.pathname);
+
       $("#people").on("click", "a", function(e) {
         e.preventDefault();
         var idx = $(e.target).closest("li").index(),
@@ -24,10 +26,10 @@
         history.pushState({ id: idx }, person_name, person_name + ".html");
       });
       window.addEventListener("popstate", function(e) {
-        alert(e.event);
-        // if (!isNaN(e.state.id)) {
-        //   openModal(e.state.id);
-        // }
+
+        if (!!e.state && !isNaN(e.state.id)) {
+          openModal(e.state.id);
+        }
       });
 
       function openModal(id) {
