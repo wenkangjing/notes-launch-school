@@ -14,12 +14,12 @@ $("form").on("submit", function(e) {
 
   var $f = $(e.target),
       series = $f.find("textarea").val().replace(/\s/g, ""),
-      number = parseInt($f.find("input").val().trim(), 10);
+      length = parseInt($f.find("input").val().trim(), 10);
       if (!!series && number > 0) {
-        var largest = largestProduct(series, number);
+        var largest = largestProduct(series, length);
         process({
           series: series,
-          number: number
+          length: number
         })
         showResult(largest);
       }
