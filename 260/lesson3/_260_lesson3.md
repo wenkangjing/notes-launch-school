@@ -279,3 +279,55 @@ onmessage = function(e) {
 
 # 13	Summary
 
+The window object
+- `screen.width` and `screen.height` to get the user's screen size
+- `scrollTo` to change the position of the scroll bars
+- `encodeURIComponent` to convert certain characters in strings to URL-friendly character codes
+
+The location object
+- `reload` method to reload the page
+- `location` property to get or set the current location
+- `search` to access the params in the address // after ? mark
+
+The history object
+- `back` and `forward` to go back or forward one or more history entries
+- `go` to traverse ahead or back a number of history entries
+
+The body object
+- `clientWidth` and `clientHeight` for the dimensions of the current document
+
+Regular expressions
+- Constructing patterns with "/" fences
+- Special characters that require escaping, like "*" and "+"
+- Flags, like (g)lobal match and (i)gnore case to modify how the regex searches for matches
+- Special matchers, like `\d` to match digit characters and `\s` to match space characters
+- Character sets, wrapped in brackets like `[A-Z]` for any uppercase letters
+- Alternation with the `|` character, allowing matches of either search
+- `^` and `$` to specify beginning and end of input
+- Captures with `()`
+- Using the `RegExp` constructor to create a regular expression from a string
+- `test` method on regular expressions to return a boolean result of the regular expression applied to the input
+- `match` and `replace` string methods that use a regular expression for searches
+
+Geolocation API
+- `getCurrentPosition` to obtain the user's position and pass it into a callback
+- `enableHighAccuracy` and `timeout` as options for getCurrentPosition
+- `watchPosition` to add an event listener to the position changing
+- `clearWatch` to unbind a `watchPosition` event listener by its ID
+
+
+Google Static Map API
+- Creating a map image using URL parameters defined in the API documentation
+
+OpenWeatherMap API
+- Obtaining current weather data
+- Output a weather icon using the remotely hosted OpenWeatherMap icons
+
+History API
+- `pushState` to add a history entry
+- `popstate` to listen to the browser requesting a previous history item
+
+Web Workers
+- Creating a new worker that is loaded from a separate file with the constructor
+- Adding a `message` event listener to the worker to respond to the worker sending a message back when complete
+- Sending the worker a message using `postMessage`
