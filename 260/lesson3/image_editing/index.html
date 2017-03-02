@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Image Editing</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <img id="image" src="http://placehold.it/600x480" alt="the image">
+    <canvas id="canvas"></canvas>
+    <dl>
+      <dt>
+        <label for="brigntness">Brightness</label>
+      </dt>
+      <dd>
+        <input id="brightness" class="worker" type="range" min="-50" max="50" step="1"><span></span>
+      </dd>
+      <dt>
+        <label for="saturation">Saturation</label>
+      </dt>
+      <dd>
+        <input id="saturation" class="worker" type="range" min="-100" max="100" step="1"><span></span>
+      </dd>
+    </dl>
+    <ul>
+      <li><a href="#" id="invert">Invert</a></li>
+      <li><a href="#" id="horizontal_flip">horizontal flip</a></li>
+      <li><a href="#" id="vertical_flip">vertical flip</a></li>
+    </ul>
+    <script src="app.js"></script>
+  </body>
+</html>
