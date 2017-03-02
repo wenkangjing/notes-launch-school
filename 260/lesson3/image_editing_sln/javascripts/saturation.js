@@ -1,7 +1,6 @@
-onmessage = function(e) {
-  var data = e.data.image_data.data,
-      rate = e.data.rate,
-      s = +rate * -.01,
+onmessage = function(app_data) {
+  var data = app_data.data.image_data.data,
+      s = +app_data.data.param * -.01,
       max,
       saturate = function(val) {
         return val === max ? 0 : (max - val) * s;
@@ -13,6 +12,6 @@ onmessage = function(e) {
     data[i + 1] += saturate(data[i + 1]);
     data[i + 2] += saturate(data[i + 2]);
   }
-  
-  postMessage(e.data.image_data);
-}
+
+  postMessage(app_data.data);
+};

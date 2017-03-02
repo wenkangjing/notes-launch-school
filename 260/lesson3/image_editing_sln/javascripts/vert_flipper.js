@@ -1,10 +1,9 @@
-onmessage = function(e) {
-  var data = e.data.image_data.data,
-      cols = e.data.image_data.width,
-      rows = e.data.image_data.height,
-      new_rows = [],
-      current_col;
-  
+onmessage = function(app_data) {
+  var data = app_data.data.image_data.data,
+      cols = app_data.data.image_data.width,
+      rows = app_data.data.image_data.height,
+      new_rows = [], current_col;
+
   for (var y = 0; y < rows; y++) {
     new_rows.push([]);
     current_col = y * cols * 4;
@@ -20,5 +19,6 @@ onmessage = function(e) {
       data[y * cols * 4 + x] = i;
     });
   });
-  postMessage(e.data.image_data);
+
+  postMessage(app_data.data);
 }

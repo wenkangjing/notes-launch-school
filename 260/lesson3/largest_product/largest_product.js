@@ -10,6 +10,11 @@ function product(digits) {
   });
 }
 
+/**
+ * 
+ * @param {string} series 
+ * @param {*} length 
+ */
 function largestProduct(series, length) {
   var largest = 0.
       last_index = series.length - length;

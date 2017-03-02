@@ -275,6 +275,7 @@ onmessage = function(e) {
 
 # 12	Project: Live Image Editing with Web Workers
 
+- [ ] check brightness
 
 # 13	Summary
 

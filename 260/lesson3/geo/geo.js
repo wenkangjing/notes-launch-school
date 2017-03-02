@@ -26,7 +26,6 @@ var map = {
     weather.build();
   }
 };
-
 var weather = {
   endpoint: "http://api.openweathermap.org/data/2.5/weather", 
   appId: "ec11a0ebf0aa8c01d6f31a107492a4af",

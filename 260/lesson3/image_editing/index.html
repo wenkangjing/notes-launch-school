@@ -6,26 +6,26 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   </head>
   <body>
-    <img id="image" src="http://placehold.it/600x480" alt="the image">
+    <img id="image" src="image.png" alt="the image">
     <canvas id="canvas"></canvas>
     <dl>
       <dt>
-        <label for="brigntness">Brightness</label>
+        <label>Brightness</label>
       </dt>
       <dd>
-        <input id="brightness" class="worker" type="range" min="-50" max="50" step="1"><span></span>
+        <input data-method="brightness" class="process" type="range" min="-50" max="50" step="1"><span></span>
       </dd>
       <dt>
-        <label for="saturation">Saturation</label>
+        <label>Saturation</label>
       </dt>
       <dd>
-        <input id="saturation" class="worker" type="range" min="-100" max="100" step="1"><span></span>
+        <input data-method="saturation" class="process" type="range" min="-100" max="100" step="1"><span></span>
       </dd>
     </dl>
     <ul>
-      <li><a href="#" id="invert">Invert</a></li>
-      <li><a href="#" id="horizontal_flip">horizontal flip</a></li>
-      <li><a href="#" id="vertical_flip">vertical flip</a></li>
+      <li><a href="#" data-method="invert" class="process">Invert</a></li>
+      <li><a href="#" data-method="horizontal_flip" class="process">horizontal flip</a></li>
+      <li><a href="#" data-method="vertical_flip" class="process">vertical flip</a></li>
     </ul>
     <script src="app.js"></script>
   </body>
