@@ -11,15 +11,28 @@ module.exports = function(grunt) {
       all: {
         dest: 'public/javascripts/all.js',
         cssDest: 'public/stylesheets/bower.css'
-      }
-    }
+      },
+    },
+    uglify: {
+      my_target: {
+        files: {
+          "public/javascripts/my.js": ["public/javascripts/all.js"]
+        }
+      },
+      your_target: {
+        files: {
+          "public/javascripts/your.js": ["public/javascripts/all.js"]
+        }
+      }      
+    },
   });
 
   // Load any Grunt plugins by name here
   grunt.loadNpmTasks("grunt-bower-concat");
+  grunt.loadNpmTasks("grunt-contrib-uglify");
 
   // Register task names here. These are run by calling the task by name when
   // using the Grunt CLI. The "default" task is run when running the Grunt CLI
   // without a task name.
-  grunt.registerTask("default", ["bower_concat"]);
+  grunt.registerTask("default", ["bower_concat"], ["uglify"]);
 };

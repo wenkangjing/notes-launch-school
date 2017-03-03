@@ -48,6 +48,7 @@ Grunt CLI
 - *the CLI is simply the application that runs the Grunt node module locally in your project. This allows for different versions of Grunt to be installed on a per-project basis, which saves you the headache of having to go back and update all of your projects if and when a breaking change is released in a newer Grunt version*
 
 Grunt plugins
+- http://gruntjs.com/plugins
 - grunt-bower-concat *to concatenate bower components into a single file*
 - grunt-contrib-uglify *to reduce its file size*
 
