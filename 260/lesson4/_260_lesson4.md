@@ -63,11 +63,74 @@ Gruntfile.js
 
 # 4	Testing Your Code with Jasmine
 
+jasmine and jasmine-node (DOM free)
+
+intro
+- https://jasmine.github.io/2.3/introduction.html
+- no frameowrk dependencies
+- replace the source/spec files with your own.
+- **Suites**: `describe(title, func)` Your Tests, can be nested `xdescribe` to disable
+- **Specs**: `it(title, func)` test  cases, passing or failing `xit` to pending 
+- `expect`: actual value, mathcer function, expected value
+- `spy` - A spy only exists in the describe or it block ` spyOn(foo, 'getBar').and.callThrough();`
+
+  
+```js
+expect(a).toBe(b);
+expect(a).not.toBe(null);
+expect(message).toMatch(/bar/);
+expect(message).toMatch("bar");
+expect(a.foo).toBeDefined();
+expect(a.bar).not.toBeDefined();
+expect(a.foo).not.toBeUndefined();
+expect(a.bar).toBeUndefined();    
+expect(foo).toBeTruthy();
+expect(a).not.toBeTruthy();
+expect(null).toBeNull();
+expect(a).toBeNull();   
+expect(e).toBeLessThan(pi);
+expect(pi).not.toBeLessThan(e);     
+expect(pi).toBeGreaterThan(e);
+expect(e).not.toBeGreaterThan(pi);    
+expect(pi).not.toBeCloseTo(e, 2);
+expect(pi).toBeCloseTo(e, 0);
+expect(foo).toThrowError("foo bar baz");
+expect(foo).toThrowError(/bar/);    
+fail("Callback has been called");
+expect(foo).toEqual(1);
+
+beforeEach(function() {
+  foo += 1;
+});
+
+afterEach(function() {
+  foo = 0;
+});
+
+it("a description", function() {
+  expect(foo).toEqual(1);
+});
+
+beforeAll(function() {
+  foo = 1;
+});
+
+afterAll(function() {
+  foo = 0;
+});
+
+```
 
 # 5	Exercises: Jasmine Testing
-
-
 # 6	Exercism Exercises
+
+code challeage
+- http://exercism.io/
+
+chocolatey package manager
+- https://chocolatey.org/
+- `exercism configure --key=YOUR_API_KEY`
+- `exercism configure --dir=C:\exercism`
 
 
 # 7	Project: Writing Test Coverage
