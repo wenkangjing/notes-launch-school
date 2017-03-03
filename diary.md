@@ -271,8 +271,19 @@ Reference: YMPH-DWEX-AQRS
 2017-02-07
 - 240 - Assessment - prop
 
+2017-02-
+- 249 - Assessment done - 99/100
+
+2017-02-18
+- 249 1n1 pass
+
+2019-03-
+- 260 -
+
+
 TODO:
   - [ ] JS system exception
+  - [ ] try glup
   - [ ] recursive 
     - \220\lesson8\utilities\utilities.js
     - fabnacci
