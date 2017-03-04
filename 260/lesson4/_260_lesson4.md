@@ -7,6 +7,8 @@ Lesson 4: Javascript Tools and Testing
 
 ```bash
 npm install -g bower
+npm list bower
+npm view bower
 
 bower help command
 bower home <package> // Opens a package homepage
