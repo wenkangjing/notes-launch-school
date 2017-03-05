@@ -137,6 +137,20 @@ chocolatey package manager
 
 # 7	Project: Writing Test Coverage
 
+folder structor
+```
+project
+  |--index.html
+  |--javascripts
+        |--lib
+        |   |--jasmine
+        |--spec
+        |   |--bala.spec.js
+        |--src
+            |--bala.js
+
+```
+
 
 # 8	Summary
 
