@@ -96,7 +96,7 @@ expect(pi).toBeGreaterThan(e);
 expect(e).not.toBeGreaterThan(pi);    
 expect(pi).not.toBeCloseTo(e, 2);
 expect(pi).toBeCloseTo(e, 0);
-expect(foo).toThrowError("foo bar baz");
+expect(foo).toThrowError("foo bar baz"); // foo is a function
 expect(foo).toThrowError(/bar/);    
 fail("Callback has been called");
 expect(foo).toEqual(1);
@@ -121,6 +121,12 @@ afterAll(function() {
   foo = 0;
 });
 
+```
+
+spy
+
+```js
+spyOn(Honda, 'getPrice'); // temporaryly replace the getPrice method on Honda.prototype object
 ```
 
 # 5	Exercises: Jasmine Testing

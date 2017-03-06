@@ -96,10 +96,35 @@ JavaScript objects
 - are dynamic "bags" of properties (referred to as own properties)
 - have a link to a prototype object. 
 
-protytype chain
+prototype chain
+
+- using `new` to build prototype chain
+```js
+function Honda (model) {
+  this.model = model;
+}
+Honda.prototype = new Vehicle();
+Honda.prototype.getPrice = function() {}
+Honda.prototype.getModels = function() {}
+```
+- using linked objects
+```js
+function Honda (model) {
+  this.model = model;
+}
+
+Honda.prototype = {
+  getPrice: function(model) {},
+  getModels: function() {}
+};
+
+Honda.prototype.__proto__ = Vehicle.prototype;
+Honda.prototype.constructor = Vehicle;
+```
 
 
 property shadowing
+
 
 
 function

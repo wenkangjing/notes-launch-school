@@ -204,7 +204,7 @@ what happens when use **new** to create an object
 - use neww(constructor, args) to replace built-in new
 - assuming the return value is `obj`, then:
 1. `obj's constructor property` need to point to the `constructor function`
-2. `obj's __proto__ property` needs to point to `construction function's prototype`
+2. `obj's __proto__ property` needs to point to `constructor function's prototype`
 3. the `constructor function` needs to be called with obj as its context to mutate the obj object.
 
    # 10The Pseudo-classical Pattern and the OLOO Pattern
