@@ -62,10 +62,25 @@ it("should respond with hello world", function(done) {
 > To have the server and tests running simultaneously, you have to use 2 terminals. You run npm test on one and npm start on the other.
 
 
-
-
-
 # 4	Project: Develop Albums Backbone Collection
+
+Folder structure and dependencies
+- folder structor, vendor, models, collections, view, app.js
+- bower, grunt, grunt-contrib-uglify, grunt-bower-concat
+
+Tasks
+- concat order(jquery, underscore, backbone)
+- concat all dependencies to vendor folder and uglify it  
+
+index.html
+- include dependencies by all.js
+- add app.js, model, collection, view js
+
+
+
+
+
+
 
 
 # 5	Project: Render Albums Collection

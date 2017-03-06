@@ -9,21 +9,19 @@ module.exports = function(grunt) {
     // plugin expects its options to be added to the property "bower_concat"
     bower_concat: {
       all: {
-        dest: 'public/javascripts/all.js',
-        cssDest: 'public/stylesheets/bower.css'
+        dest: 'public/javascripts/vendor/all.js',
+        dependencies: {
+          'underscore':'jquery',
+          'backbone': 'underscore',
+        }
       },
     },
     uglify: {
       my_target: {
         files: {
-          "public/javascripts/my.js": ["public/javascripts/all.js"]
+          "public/javascripts/vendor/all.js": ["public/javascripts/vendor/all.js"]
         }
       },
-      your_target: {
-        files: {
-          "public/javascripts/your.js": ["public/javascripts/all.js"]
-        }
-      }      
     },
   });
 
