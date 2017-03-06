@@ -30,7 +30,7 @@ Honda.prototype = {
 };
 Honda.prototype.__proto__ = Vehicle.prototype;
 Honda.prototype.constructor = Vehicle;
-//Honda.constructor = Honda;
+Honda.constructor = Honda;
 
 //
 // use `new`, better solution

@@ -21,6 +21,8 @@ function Honda(model) {
     return models.indexOf(model) !== -1;
   };
 
+
+  // [Jamie]: this is not visible to objects created by Honda constructor fucntion
   Honda.getPrice = function(model) { return prices[models.indexOf(model)]; };
   Honda.getModels = function() { return models.slice(); };
 
