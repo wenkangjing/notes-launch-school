@@ -5,14 +5,21 @@ Lesson 5: Creating a Single Page Application
 
 ```
 project
-  |--index.html
-  |--stylesheets
-  |--javascripts
-        |--vendor
-        |--models
-        |--collections
-        |--views
-        |--app.js
+  |--package.json 
+  |--gruntfile.js 
+  |--bower.json 
+  |--server.js (for http server)
+  |--spec includes x.spec.js
+  |--public
+      |--index.html
+      |--stylesheets
+      |--javascripts
+            |--vendor
+            |--models
+            |--collections
+            |--views
+            |--app.js
+          
 ```
 
 
@@ -75,12 +82,6 @@ Tasks
 index.html
 - include dependencies by all.js
 - add app.js, model, collection, view js
-
-
-
-
-
-
 
 
 # 5	Project: Render Albums Collection

@@ -17,21 +17,3 @@ http.createServer(function (request, response) {
         });
     }).resume();
 }).listen(3000);
-
-
-var App = {
-  albumsLoaded: function() {
-
-  },
-  fetchAlbums: function() {
-    this.albums = new Albums();
-    this.albums.fetch({
-      success: function(model, response) {
-        this.albumsLoaded(response);
-      }
-    });
-  },
-  init: function() {
-    this.fetchAlbums();
-  }
-};
