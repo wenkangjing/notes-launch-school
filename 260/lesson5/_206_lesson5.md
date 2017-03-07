@@ -68,6 +68,8 @@ it("should respond with hello world", function(done) {
 
 > To have the server and tests running simultaneously, you have to use 2 terminals. You run npm test on one and npm start on the other.
 
+- servier side test running via jasmine-node
+- to test routers and data
 
 # 4	Project: Develop Albums Backbone Collection
 
@@ -83,6 +85,9 @@ index.html
 - include dependencies by all.js
 - add app.js, model, collection, view js
 
+Client side test 
+- by standalone jasmine lib
+- under public folder
 
 # 5	Project: Render Albums Collection
 

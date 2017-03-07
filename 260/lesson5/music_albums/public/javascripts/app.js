@@ -1,6 +1,7 @@
 var App = {
   albumsLoaded: function() {
-
+    console.log("Albums loaded");
+    
   },
   fetchAlbums: function() {
     this.albums = new Albums();
