@@ -3,7 +3,7 @@ Backbone - client side MVC
 
 # resources
 
-https://addyosmani.com/backbone-fundamentals/#exercise-1-todos---your-first-backbone.js-app
+https://addyosmani.com/backbone-fundamentals/
 
 260 -  Lesson 2
 
