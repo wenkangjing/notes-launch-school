@@ -19,7 +19,6 @@ var TracksView = Backbone.View.extend({
   },
   open: function() {
     this.$el.add($overlay).fadeIn();
-    this.bindEvents();
   },
   close: function(e) {
     e.preventDefault();

@@ -26,7 +26,8 @@ var App = {
     this.selected_album = this.albums.findWhere({ title: name });
   },
   selectAlbum: function(e) {
-    console.log(e);
+    e.preventDefault();
+    this.fetchTracks($(e.target).text());
   },
   init: function() {
     this.fetchAlbums();

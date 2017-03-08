@@ -5,7 +5,7 @@ var AlbumsView = Backbone.View.extend({
     this.$el.html(this.template({albums: this.collection.toJSON()}));
   },
   bindEvents: function() {
-    this.$el.on("click", "a", App.selectAlbum);
+    this.$el.on("click", "a", App.selectAlbum.bind(App));
   },
   initialize: function() {
     Handlebars.registerPartial("album", $("#album").html());
