@@ -32,6 +32,7 @@
     <script id="tracks" type="text/x-handlebars">
       {{#with album}}
         <img src="{{cover}}">
+        <a href="#" class="close">&#10005;</a>
         <h2>{{title}}</h2>
         <h3>{{artist}}</h3>
         <p>Released: {{date}}</p>
@@ -41,7 +42,6 @@
           <li>{{title}}<span><small>{{length}}</small></span></li>
         {{/each}}
       </ol>
-      <a href="#" class="close button">Close</a>
     </script>
     <script src="javascripts/models/album.js"></script>
     <script src="javascripts/collections/albums.js"></script>

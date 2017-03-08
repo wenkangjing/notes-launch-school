@@ -21,7 +21,7 @@ var App = {
   },  
   fetchTracks: function(name) {
     var tracks = new Tracks();
-    tracks.url = "http://localhost:3000/albums/" + name + ".json";
+    tracks.url = "/albums/" + name + ".json";
     tracks.fetch({success: this.tracksLoaded.bind(this)});
     this.selected_album = this.albums.findWhere({ title: name });
   },
@@ -35,3 +35,20 @@ var App = {
 };
 
 App.init();
+
+
+var Router = Backbone.Router.extend({
+  routers: {
+    "albums:name": "getAlbum",
+  },
+  getAlbum: function(name) {
+    App.fetchTracks(name);
+  },
+  index: function() {
+  },
+  initialize : function() {
+    // can be router string or regex
+    this.route(/^\?$/, "index", this.inidex);
+  },
+
+});

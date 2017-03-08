@@ -31,16 +31,6 @@ h3 {
   font-size: 1.2em;
 }
 
-.button {
-  display: block;
-  width: 80px;
-  height: 20px;
-  line-height: 20px;
-  text-align: center;
-  border: 1px solid #fff;
-  border-radius: 4px;
-  margin: 0 auto;
-}
 .horizontal-center {
   text-align: center;
 }
@@ -70,8 +60,7 @@ h3 {
   position: fixed;
   display: none;
   width: 400px;
-  max-height: 90%;
-  overflow: scroll;
+  overflow: auto;
   top: 10px;
   left: 50%;
   margin-left: -200px;
@@ -82,8 +71,20 @@ h3 {
 }
 
 #tracks_container img {
+  width: 100px;
+  display: inline-block;
+}
+
+#tracks_container .close {
+  float: right;
   display: block;
-  margin: 0 auto 20px auto;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  border-radius: 50%;
+}
+#tracks_container .close:hover {
+  background: #D1DBBD;
 }
 
 #tracks_container li {
