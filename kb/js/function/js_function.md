@@ -75,9 +75,14 @@ Pitfall: create object without `new`, `this` is `global`
 
 # 8. Bind (not immediately)
 
- `.bind(obj, arg1, arg2, arg3)` create a bound function, usually used in
+`.bind(obj, arg1, arg2, arg3)` create a bound function, usually used in
 - in event callback
 - end of function expression 
+
+`.bind` is a method on any function object
+- function() {}.bind(this)
+- func.bind()
+
 
 # 9. Arrow Function
 

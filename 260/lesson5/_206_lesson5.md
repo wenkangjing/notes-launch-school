@@ -92,11 +92,7 @@ Client side test
 - put scaffold collection on top of spec file
 
 
-
-
-
 # 5	Project: Render Albums Collection
-
 
 # 6	Project: Render Tracks Collection
 

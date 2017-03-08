@@ -34,16 +34,16 @@ describe("Albums views", function() {
   });
   it("should render to an #albums container when render called", function() {
     this.view.render();
-    expect($("#albumns_container li").length).toBe(this.view.collection.length);
+    expect($("#albums_container li").length).toBe(this.view.collection.length);
   });
   it("should re-render the view when the collection changes", function() {
     var current_html, new_html;
     this.view.render();
-    current_html = $("#albumns_container").html();
+    current_html = $("#albums_container").html();
 
     this.view.collection.at(0).set("title", "abc");
 
-    new_html = $("#albumns_container").html();
+    new_html = $("#albums_container").html();
     expect(current_html).not.toEqual(new_html);
   });
 });

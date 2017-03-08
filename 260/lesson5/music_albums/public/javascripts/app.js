@@ -1,17 +1,32 @@
 var App = {
   albumsLoaded: function() {
     console.log("Albums loaded");
-    this.view.render();
+    this.albums_view.render();
   },
   fetchAlbums: function() {
     this.albums = new Albums();
-    this.view = new AlbumsView({ collection: this.albums });
+    this.albums_view = new AlbumsView({ collection: this.albums });
     this.albums.fetch({
-      // success: function(model, response) {
-      //   App.albumsLoaded(response);
-      // }
       success: this.albumsLoaded.bind(this),
     });
+  },
+  tracksLoaded: function(tracks) {
+    console.log("Tracks loaded");
+    var tracks_view = new TracksView({ 
+      album: this.selected_album,
+      collection: tracks 
+    });    
+    tracks_view.render();
+    this.tracks = tracks_view;
+  },  
+  fetchTracks: function(name) {
+    var tracks = new Tracks();
+    tracks.url = "http://localhost:3000/albums/" + name + ".json";
+    tracks.fetch({success: this.tracksLoaded.bind(this)});
+    this.selected_album = this.albums.findWhere({ title: name });
+  },
+  selectAlbum: function(e) {
+    console.log(e);
   },
   init: function() {
     this.fetchAlbums();

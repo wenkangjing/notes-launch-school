@@ -1,0 +1,108 @@
+@import url("whitespace-reset.css");
+
+html, body {
+  background: #FCFFF5;
+}
+
+body {
+  font: normal 14px 'Roboto Condensed', sans-serif;
+}
+
+main {
+  position: relative;
+  max-width: 800px;
+  padding: 20px;
+  margin: 0 auto;
+  background-color: #D1DBBD;
+}
+
+h1 {
+  padding: 0 0 .6em 0;
+  /*2.2 times of the font size of nearest parent*/
+  font-size: 2.2em;
+  color: #91AA9D;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+.button {
+  display: block;
+  width: 80px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  margin: 0 auto;
+}
+.horizontal-center {
+  text-align: center;
+}
+
+#albums_container li {
+  display: inline-block;
+  width: 25%;
+  padding: 0 10px 10px 0;
+  vertical-align: top;
+  box-sizing: border-box;
+}
+
+#albums_container img {
+  display: block;
+  /*to fit to the container*/
+  width: 100%;
+  margin: 0 0 10px 0;
+}
+
+#albums_container a,
+#tracks_container a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#tracks_container {
+  position: fixed;
+  display: none;
+  width: 400px;
+  top: 10px;
+  left: 50%;
+  margin-left: -200px;
+  color: #fff;
+  background: #3E606F;
+  padding: 20px;
+  z-index: 2;
+}
+
+#tracks_container img {
+  display: block;
+  margin: 0 auto 20px auto;
+}
+
+#tracks_container li {
+  padding: 5px 0;
+}
+
+#tracks_container li span {
+  float: right;
+}
+
+#tracks_container li + li {
+  border-top: 2px solid #193441;
+}
+
+#tracks_background {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:  rgba(0,0,0, 0.8);
+  z-index: 1;
+}
