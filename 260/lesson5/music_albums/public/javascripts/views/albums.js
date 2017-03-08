@@ -1,5 +1,5 @@
 var AlbumsView = Backbone.View.extend({
-  el: "ul",
+  el: "#albumns_container",
   tagName: "li",
   render: function() {
     this.$el.html(this.template({albums: this.collection.toJSON()}));

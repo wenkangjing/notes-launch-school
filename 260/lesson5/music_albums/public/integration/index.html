@@ -12,14 +12,30 @@
   <script src="lib/jasmine-2.5.2/boot.js"></script>
   <script src="../javascripts/vendor/all.js"></script>
 
-  <!-- include source files here... -->
-  <!-- include spec files here... -->
-
+  <style>
+    #albumns_container {display: none;}
+  </style>
 </head>
 <body>
+  <ul id="albumns_container"></ul>
+  <script id="albums" type="text/x-handlebars">
+    {{#each albums}}
+      {{> album}}
+    {{/each}}
+  </script>
+  <script id="album" type="text/x-handlebars">
+    <li>
+      <img src="{{cover}}" alt="cover">
+      <h3>{{title}}</h3>
+      <p>{{artist}}</p>
+      <p>{{date}}</p>
+    </li>  
+  </script>
   <script src="../javascripts/models/album.js"></script>
   <script src="../javascripts/collections/albums.js"></script>
+  <script src="../javascripts/views/albums.js"></script>
   <script src="../javascripts/app.js"></script>
   <script src="spec/albums.spec.js"></script>
+  <script src="spec/albums_view.spec.js"></script>
 </body>
 </html>

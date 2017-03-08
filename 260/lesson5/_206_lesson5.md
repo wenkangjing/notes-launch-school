@@ -87,7 +87,13 @@ index.html
 
 Client side test 
 - by standalone jasmine lib
-- under public folder
+- under public/integration folder
+- include views/models/collecitons/in specrunner.html/index.html
+- put scaffold collection on top of spec file
+
+
+
+
 
 # 5	Project: Render Albums Collection
 
