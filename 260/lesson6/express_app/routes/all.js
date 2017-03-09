@@ -15,10 +15,10 @@ module.exports = function(app) {
   router.get('/', function(req, res, next) {
     var title = "Home";
     setActiveNavTo(title);
-
-    res.render('index', { 
-      title: 'Home',
-    });
+    res.sendFile(__dirname.replace(/routes/, "views") + "/index.html");
+    // res.render('index', { 
+    //   title: 'Home',
+    // });
   });
 
   /* GET about page. */
@@ -34,7 +34,7 @@ module.exports = function(app) {
   router.get('/contact', function(req, res, next) {
     var title = "Contact";
     setActiveNavTo(title);
-    
+
     res.render('contact', { 
       title: 'Contact',
     });

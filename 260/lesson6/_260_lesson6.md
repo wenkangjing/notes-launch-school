@@ -26,7 +26,7 @@ Express
 
 
 # 3	Project: Converting HTML to Pug.
-
+- index.html -> views together with .jade files
 
 # 4	Project: Converting CSS to Stylus.
 
