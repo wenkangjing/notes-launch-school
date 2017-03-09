@@ -1,8 +1,12 @@
+//- set app.locals.basedir , otherwise use ./_mixins
+include _mixins 
+
+
 doctype html
 html
   head
     title Web Store
-    link(rel='stylesheet' href='/stylesheets/application.css')
+    +stylesheet_link_tag("application")
     link(href="http://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet" type="text/css")
   body
     main
@@ -18,6 +22,5 @@ html
             li <strong>Total</strong><span>$96.00</span>
           a(href="#") Checkout
 
-
-    block content
-    script(type="text/javascript" src="javascripts/cart.js")
+      block content
+    +javascript_include_tag("cart")

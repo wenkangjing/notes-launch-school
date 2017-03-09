@@ -29,5 +29,8 @@ Express
 - index.html -> views together with .jade files
 - port data from index.html to layout.jade
 
+_mixins.jade
+- identify as partial file, not for render
+
 # 4	Project: Converting CSS to Stylus.
 
