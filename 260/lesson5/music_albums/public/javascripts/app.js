@@ -62,8 +62,11 @@ $(document).on("click", "a[href^='/']", function(e) {
   e.preventDefault();
   var fragment = $(e.currentTarget).attr("href").replace(/^\//, "");
   console.log(fragment);
-  router.navigate(fragment);
-  //router.navigate(fragment, { trigger: true });
+  // will update url only without trigger router function
+  //router.navigate(fragment);
+
+  // trigger true  will triger the router function
+  router.navigate(fragment, { trigger: true }); 
 });
 
 App.init();
