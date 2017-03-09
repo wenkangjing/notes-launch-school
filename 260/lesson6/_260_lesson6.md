@@ -32,5 +32,12 @@ Express
 _mixins.jade
 - identify as partial file, not for render
 
+jade template
+```js
+- 
+
+```
+
+
 # 4	Project: Converting CSS to Stylus.
 
