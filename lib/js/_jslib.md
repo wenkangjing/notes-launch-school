@@ -38,3 +38,10 @@ HTTP Server
 - nodemon: automatic server restarting when changes are made the the server's file system.
 - http-server: simple http server index.html
 - request: the simplest way possible to make http calls
+
+Pug
+- html preprocessor
+
+
+Stylus
+  - css preprocessor

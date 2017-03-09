@@ -33,9 +33,9 @@ _mixins.jade
 - identify as partial file, not for render
 
 jade template
-```js
-- 
-
+  ```js
+  -
+    //whatever js
 ```
 
 
