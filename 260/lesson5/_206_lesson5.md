@@ -96,3 +96,4 @@ Client side test
 
 # 6	Project: Render Tracks Collection
 
+- [ ] Step 5: Add Test Coverage

@@ -2,8 +2,8 @@
   <head>
     <title>Music Albums</title>
     <!--all.js contains all dependencies that have been concatated and uglified by grunt tasks-->
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
     <link rel="stylesheet" href="stylesheets/application.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
     <script src="javascripts/vendor/all.js"></script>
   </head>
   <body>
@@ -23,10 +23,12 @@
     </script>
     <script id="album" type="text/x-handlebars">
       <li>
-        <img src="{{cover}}" alt="cover">
-        <h3><a href="#">{{title}}</a></h3>
-        <p>{{artist}}</p>
-        <p>{{date}}</p>
+        <a href="{{tracks_url}}">
+          <img src="{{cover}}" alt="cover">
+          <h3>{{title}}</h3>
+          <p>{{artist}}</p>
+          <p>{{date}}</p>
+        </a>
       </li>
     </script>
     <script id="tracks" type="text/x-handlebars">
