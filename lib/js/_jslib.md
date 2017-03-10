@@ -34,16 +34,13 @@ Task
 - Grunt to automate the tasks of concatenating your files and minifying your code.
 
 HTTP Server
-- node-static - 
+- node-static  
 - nodemon: automatic server restarting when changes are made the the server's file system.
 - http-server: simple http server index.html
 - request: the simplest way possible to make http calls
+- ExpressJS
 
-Pug
-- html preprocessor
-
-Stylus
-  - css preprocessor
-
-nib
-  - cross-browser mixins for Stylus
+Preprocessor
+- Pug: .jade html processor
+- Stylus: css preprocessor
+  - nib: cross-browser mixins for Stylus

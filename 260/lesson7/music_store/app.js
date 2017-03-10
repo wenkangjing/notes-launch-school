@@ -18,7 +18,9 @@ app.set('view engine', 'jade');
 app.use(stylus.middleware({
   src: path.join(__dirname, "public"),
   compile: function(str, p) {
-    return stylus(str).set("filename", p);
+    return stylus(str)
+    .set("filename", p)
+    .use(nib());
   }
 }));
 

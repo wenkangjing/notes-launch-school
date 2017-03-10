@@ -4,12 +4,24 @@ colors = {
   body: #FFFFFF,
   primary: #DFD6BC,
   secondary: #EDEBEC,
+  button: {
+    fg: #fff,
+    bg: #888,
+    hover: #ccc,
+    focus: red
+  }
 }
 
-button(bg = colors.primary)
+button()
   display: inline-block
-  padding: 4px 8px
+  cursor: pointer
+  padding: 4px
   text-decoration: none
-  color: #000
+  color: colors.button.fg
   border: 3px solid colors.secondary
-  background: bg
+  background: colors.button.bg
+  outline: none
+  &:hover
+    background: colors.button.hover
+  &:focus
+    background: colors.button.focus
