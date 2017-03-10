@@ -1,14 +1,37 @@
 @import "whitespace-reset.css"
 @import "mixins"
 
+/* box-sizing reset */
+*
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
+*, *:before, *:after
+  -webkit-box-sizing: inherit
+  -moz-box-sizing: inherit
+  box-sizing: inherit
+
+/* native implementationi reset */
+textarea, input, button, select 
+  font-family: inherit
+  font-size: inherit
+
 body
   font: font
+
+main
+  max-width: 800px
+  margin: 0 auto
+
+h1
+  margin: 20px 0 10px 0
 
 #albums
   li
     display: inline-block
     width: 100px
-    margin: 0 10px 10px 0
+    margin: 0 20px 20px 0
     vertical-align: top
     img 
       display: block
@@ -17,3 +40,17 @@ body
 
 .button
   button() 
+
+form
+  dt
+    padding: 0 0 5px 0
+  dd
+    padding: 0 0 20px 0
+  input[type="text"],
+  input[type="date"],
+  input[type="url"],
+  input[type="number"]
+    width: 100%
+    padding: 5px 8px
+    border: 1px solid colors.border
+    border-radius: 6px

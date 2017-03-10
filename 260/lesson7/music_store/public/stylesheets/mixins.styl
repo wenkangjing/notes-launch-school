@@ -4,10 +4,11 @@ colors = {
   body: #FFFFFF,
   primary: #DFD6BC,
   secondary: #EDEBEC,
+  border: #888888,
   button: {
     fg: #fff,
-    bg: #888,
-    hover: #ccc,
+    bg: #1be5af
+    hover: #0bba91,
     focus: red
   }
 }
@@ -18,8 +19,10 @@ button()
   padding: 4px
   text-decoration: none
   color: colors.button.fg
-  border: 3px solid colors.secondary
+  border: 1px solid colors.border
+  border-radius: 4px
   background: colors.button.bg
+  margin: 10px 0;
   outline: none
   &:hover
     background: colors.button.hover

@@ -41,3 +41,7 @@ jade template
 
 # 4	Project: Converting CSS to Stylus.
 
+.styl
+- no trailing space
+- correct indent
+- trailing ,

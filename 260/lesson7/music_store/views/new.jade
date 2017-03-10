@@ -1,0 +1,33 @@
+include _functions
+extends layout
+
+block content
+  #album_new
+    h1 New Ablum
+    form
+      fieldset
+        dl
+          dt
+            label Title
+          dd
+            input(type="url" name="title")
+          dt
+            label Artist
+          dd
+            input(type="text" name="artist")
+          dt
+            label Date
+          dd
+            input(type="date" name="date")
+          dt
+            label Covor
+          dd
+            input(type="url" name="cover")
+          dt
+            label Price
+          dd
+            input(type="number" name="price")
+      fieldset.actions
+        input.button(type="submit" value="Create")
+
+

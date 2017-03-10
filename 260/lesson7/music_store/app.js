@@ -8,6 +8,7 @@ var stylus = require('stylus');
 var nib = require('nib');
 
 var index = require('./routes/index');
+var albums = require('./routes/albums');
 
 var app = express();
 
@@ -33,6 +34,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
+app.use('/', albums);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -40,6 +42,9 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
+
+// "./views"
+app.locals.basedir = path.join(__dirname, "views");
 
 // error handler
 app.use(function(err, req, res, next) {

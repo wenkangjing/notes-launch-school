@@ -1,11 +1,39 @@
 @import "whitespace-reset.css";
+/* box-sizing reset */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+/* native implementationi reset */
+textarea,
+input,
+button,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
 body {
   font: normal 14px Helvetica, Arial, sans-serif;
+}
+main {
+  max-width: 800px;
+  margin: 0 auto;
+}
+h1 {
+  margin: 20px 0 10px 0;
 }
 #albums li {
   display: inline-block;
   width: 100px;
-  margin: 0 10px 10px 0;
+  margin: 0 20px 20px 0;
   vertical-align: top;
 }
 #albums li img {
@@ -19,13 +47,30 @@ body {
   padding: 4px;
   text-decoration: none;
   color: #fff;
-  border: 3px solid #edebec;
-  background: #888;
+  border: 1px solid #888;
+  border-radius: 4px;
+  background: #1be5af;
+  margin: 10px 0;
   outline: none;
 }
 .button:hover {
-  background: #ccc;
+  background: #0bba91;
 }
 .button:focus {
   background: #f00;
+}
+form dt {
+  padding: 0 0 5px 0;
+}
+form dd {
+  padding: 0 0 20px 0;
+}
+form input[type="text"],
+form input[type="date"],
+form input[type="url"],
+form input[type="number"] {
+  width: 100%;
+  padding: 5px 8px;
+  border: 1px solid #888;
+  border-radius: 6px;
 }
