@@ -1,0 +1,10 @@
+include _mixins
+include _functions
+
+doctype html
+html
+  head
+    title= title
+    +stylesheet_link_tag("style")
+  body
+    block content

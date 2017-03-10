@@ -1,0 +1,16 @@
+include _functions
+
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  ul#albums
+    each album in data
+      li 
+        img(src="#{album.cover}")
+        h2 #{album.title}
+        h3 #{album.artist}
+        p $format(#{album.price})
+        p Released #{album.date}
+        a.button(href="#") add to cart
