@@ -1,5 +1,3 @@
-var express = require('express');
-var router = express.Router();
 var path = require('path');
 var fs = require('fs');
 
@@ -9,17 +7,15 @@ function getAlbums() {
   return JSON.parse(albums);
 }
 
-
-/* GET home page. */
-router.get('/albums', function(req, res, next) {
-  res.render('albums', { 
-    title: 'Music Store',
-    data: getAlbums(),
+module.exports = function(router) {
+  router.get('/albums', function(req, res, next) {
+    res.render('albums', { 
+      title: 'Music Store',
+      data: getAlbums(),
+    });
   });
-});
 
-router.get('/albums/new', function(req, res, next) {
-  res.render('new');
-});
-
-module.exports = router;
+  router.get('/albums/new', function(req, res, next) {
+    res.render('new');
+  });
+};
