@@ -1,18 +1,29 @@
 var path = require('path');
 var fs = require('fs');
+var filepath = path.resolve(path.dirname(__dirname), "data/albums.json"); 
 
 function getAlbums() {
-  var filepath = path.resolve(path.dirname(__dirname), "data/albums.json"); 
-  var albums = fs.readFileSync(filepath, "utf8");
-  return JSON.parse(albums);
+  return JSON.parse(fs.readFileSync(filepath, "utf8")).data;
+}
+
+function nextID() {
+  return JSON.parse(fs.readFileSync(filepath, "utf8")).last_id + 1;
+}
+
+function writeAlbums(albums) {
+  fs.writeFileSync(filepath, JSON.stringify(albums), "utf8");
 }
 
 module.exports = function(router) {
-  router.get('/albums', function(req, res, next) {
-    res.render('albums', { 
-      title: 'Music Store',
-      data: getAlbums(),
-    });
+  router.post('/albums', function(req, res, next) {
+    var album = req.body;
+    console.log(album);
+    var albums = getAlbums();
+
+    album.id = nextID();
+    albums.push(album);
+    writeAlbums({last_id: album.id, data: albums});
+    res.json(album);
   });
 
   router.get('/albums/new', function(req, res, next) {

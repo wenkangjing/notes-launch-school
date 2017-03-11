@@ -11,7 +11,7 @@ block content
         img(src="#{album.cover}")
         h2 #{album.title}
         h3 #{album.artist}
-        p $format(#{album.price})
-        p Released #{album.date}
+        p #{album.date}
+        p $ #{format(+album.price)}
         span.button
           a(href="#") add to cart

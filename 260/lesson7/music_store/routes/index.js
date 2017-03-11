@@ -3,8 +3,7 @@ var fs = require('fs');
 
 function getAlbums() {
   var filepath = path.resolve(path.dirname(__dirname), "data/albums.json"); 
-  var albums = fs.readFileSync(filepath, "utf8");
-  return JSON.parse(albums);
+  return JSON.parse(fs.readFileSync(filepath, "utf8")).data;
 }
 
 module.exports = function(router) {
