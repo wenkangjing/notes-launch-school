@@ -1,28 +1,25 @@
-var path = require('path');
-var fs = require('fs');
-var filepath = path.resolve(path.dirname(__dirname), "data/albums.json"); 
 
-function getAlbums() {
-  return JSON.parse(fs.readFileSync(filepath, "utf8")).data;
-}
+var singleton = require('../modules/singleton');
 
-function nextID() {
-  return JSON.parse(fs.readFileSync(filepath, "utf8")).last_id + 1;
-}
+// function getAlbums() {
+//   return JSON.parse(fs.readFileSync(filepath, "utf8")).data;
+// }
 
-function writeAlbums(albums) {
-  fs.writeFileSync(filepath, JSON.stringify(albums), "utf8");
-}
+// function nextID() {
+//   return JSON.parse(fs.readFileSync(filepath, "utf8")).last_id + 1;
+// }
+
+// function writeAlbums(albums) {
+//   fs.writeFileSync(filepath, JSON.stringify(albums), "utf8");
+// }
 
 module.exports = function(router) {
   router.post('/albums', function(req, res, next) {
     var album = req.body;
-    console.log(album);
-    var albums = getAlbums();
+    var albums = singleton.get();
 
-    album.id = nextID();
     albums.push(album);
-    writeAlbums({last_id: album.id, data: albums});
+    singleton.set(albums);
     res.json(album);
   });
 
