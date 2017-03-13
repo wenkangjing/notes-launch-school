@@ -23,14 +23,40 @@ module.exports = function(grunt) {
         }
       },
     },
+    handlebars: {
+      all: {
+        files: {
+          "public/javascripts/handlebars_templates.js": ["handlebars/**/*.hbs"]
+        },
+        options: {
+          processContent: removeWhitespace,
+          processName: extractFileName
+        }
+      }
+    }
   });
 
   // Load any Grunt plugins by name here
-  grunt.loadNpmTasks("grunt-bower-concat");
-  grunt.loadNpmTasks("grunt-contrib-uglify");
+  [
+    "grunt-bower-concat",
+    "grunt-contrib-uglify",
+    "grunt-contrib-handlebars"
+  ].forEach(function(plugin) {
+    grunt.loadNpmTasks(plugin);
+  });
 
   // Register task names here. These are run by calling the task by name when
   // using the Grunt CLI. The "default" task is run when running the Grunt CLI
   // without a task name.
-  grunt.registerTask("default", ["bower_concat", "uglify"]);
+  grunt.registerTask("default", ["bower_concat", "uglify", "handlebars"]);
 };
+
+
+
+function removeWhitespace(template) {
+  return template.replace(/ {2,}/mg, "").replace(/\r|\n/mg, "");
+}
+
+function extractFileName(file) {
+  return file.match(/\/(.+).hbs$/).pop()
+}

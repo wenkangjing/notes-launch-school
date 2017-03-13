@@ -6,12 +6,10 @@ block content
   h1= title
   p Welcome to #{title}
   ul#albums
-    each album in data
+    each album in albums
       li 
-        img(src="#{album.cover}")
-        h2 #{album.title}
-        h3 #{album.artist}
-        p #{album.date}
-        p $ #{format(+album.price)}
-        span.button
-          a(href="#") add to cart
+
+block scripts
+  script(type="text/javascript").
+    App.albums = new Albums(!{JSON.stringify(albums)})
+    App.init();
