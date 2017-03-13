@@ -44,7 +44,11 @@ Create some basic Stylus styles.
 
 # 4	Album Node Module
 
-
+Debug Node JS App
+-  Note Inspector
+- https://github.com/node-inspector/node-inspector
+- node-debug ./bin/www
+- debug in Chrome
 
 # 5	Beginning Backbone Development
 
