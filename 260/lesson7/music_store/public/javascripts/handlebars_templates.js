@@ -15,3 +15,11 @@ this["JST"]["album"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":fun
     + alias4((helpers.format_price || (depth0 && depth0.format_price) || alias2).call(alias1,(depth0 != null ? depth0.price : depth0),{"name":"format_price","hash":{},"data":data}))
     + " </p><span class=\"button\"><a href=\"#\">add to cart</a></span>";
 },"useData":true});
+
+this["JST"]["index"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    return "<h1>Albums</h1><ul></ul><footer><a class=\"button\" href=\"/albums/new\">Add an Album</a></footer>";
+},"useData":true});
+
+this["JST"]["new_album"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    return "<form action=\"/albums\" method=\"post\"><h1>New Album</h1><fieldset><dl><dt><label>Title</label></dt><dd><input type=\"text\" name=\"title\"/></dd><dt><label>Artist</label></dt><dd><input type=\"text\" name=\"artist\"/><dt><label>Date</label></dd></dt><dd><input type=\"date\" name=\"date\" /></dd><dt><label>Covor</label></dt><dd><input type=\"url\" name=\"cover\" /></dd><dt><label>Price</label></dt><dd><input type=\"text\" name=\"price\" /></dd></dl></fieldset><input type=\"submit\" value=\"Create\"/></form>";
+},"useData":true});

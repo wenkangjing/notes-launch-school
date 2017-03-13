@@ -1,18 +1,1 @@
-{
-  "last_id": 5,
-  "data": [{
-    "title": "buy milk",
-    "artist": "John",
-    "date": "2017-01-01",
-    "cover": "http://placehold.it/200",
-    "price": "10.11",
-    "id": 1
-  }, {
-    "title": "buy milk",
-    "artist": "John",
-    "date": "2017-01-01",
-    "cover": "http://placehold.it/200",
-    "price": "10",
-    "id": 2
-  }]
-}
+{"last_id":4,"data":[{"title":"","artist":"","date":"","cover":"","price":""},{"title":"","artist":"","date":"","cover":"","price":""},{"title":"","artist":"","date":"","cover":"","price":""},{"title":"","artist":"","date":"","cover":"","price":""}]}
