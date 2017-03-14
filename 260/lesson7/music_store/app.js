@@ -32,6 +32,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
+// "./views"
+app.locals.basedir = path.join(__dirname, "views");
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -39,9 +41,6 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
-
-// "./views"
-app.locals.basedir = path.join(__dirname, "views");
 
 // error handler
 app.use(function(err, req, res, next) {

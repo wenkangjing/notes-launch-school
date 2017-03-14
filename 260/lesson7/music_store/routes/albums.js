@@ -15,7 +15,7 @@ module.exports = function(router) {
     singleton.set(albums);
     res.json(album);
   });
-  router.put('/', function(req, res) {
+  router.put('/albums', function(req, res) {
     console.log(req.body);
     var id = parseInt(req.body.id, 10);
     var album = _(singleton.collection).findWhere({id: id});
