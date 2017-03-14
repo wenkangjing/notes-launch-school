@@ -26,6 +26,7 @@ var App = {
     _.extend(this, Backbone.Events);
     this.listenTo(this.index, "add_album", this.newAlbum);
     this.on("add_to_cart", this.cart.addItem.bind(this.cart));
+    this.on("remove_from_cart", this.cart.removeItem.bind(this.cart));
   },
 };
 

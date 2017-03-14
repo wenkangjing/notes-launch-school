@@ -9,7 +9,10 @@ module.exports = function(router) {
   });
   router.post('/albums', function(req, res, next) {
     var album = req.body;
-    singleton.add(album);
+    var albums = singleton.get();
+    album.id = singleton.getLastID() + 1;
+    albums.push(album);
+    singleton.set({last_id: album.id, data: albums});
     res.json(album);
   });
   router.put('/albums', function(req, res) {

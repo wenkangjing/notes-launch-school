@@ -10,6 +10,16 @@ var CartItems = Backbone.Collection.extend({
     }
     this.setTotal().setQuantity();
     this.trigger("cart_updated");
+    this.saveCart();
+  },
+  removeItem: function(id) {
+    var existing = this.get(id);
+    if (existing) {
+      this.remove(existing);
+      this.setTotal().setQuantity();
+      this.trigger("cart_updated");
+      this.saveCart();
+    }
   },
   getTotal: function() {
     return this.total;
@@ -28,5 +38,19 @@ var CartItems = Backbone.Collection.extend({
       return sum + Number(item.quantity);
     }, 0);
     return this;
+  },
+  saveCart: function() {
+    localStorage.setItem("cart", JSON.stringify(this.toJSON()));
+  },
+  loadCart: function() {
+    var json = localStorage.getItem("cart");
+    if (json) {
+      this.reset(JSON.parse(json));
+      this.setTotal().setQuantity();
+      this.trigger("cart_updated");
+    }
+  },
+  initialize: function() {
+    this.loadCart();
   }
 });
