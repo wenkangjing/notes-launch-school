@@ -1,5 +1,5 @@
 
-var singleton = require('../modules/singleton');
+var singleton = require('./singleton');
 
 module.exports = function(router) {
   router.get('/albums/new', function(req, res, next) {
@@ -9,10 +9,7 @@ module.exports = function(router) {
   });
   router.post('/albums', function(req, res, next) {
     var album = req.body;
-    var albums = singleton.get();
-
-    albums.push(album);
-    singleton.set(albums);
+    singleton.add(album);
     res.json(album);
   });
   router.put('/albums', function(req, res) {

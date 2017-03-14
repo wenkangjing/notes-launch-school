@@ -11,11 +11,17 @@ var singleton = {
     this.collection = o.data;
     return this.collection;
   },
+  set: function() {
+    fs.writeFileSync(file_path, JSON.stringify({last_id: this.last_id + 1, data: this.collection}), "utf8");
+  },
+  add: function(album) {
+    this.last_id++;
+    album.id = this.last_id;
+    this.collection.push(album);
+    this.set();
+  },
   getLastID: function() {
     return this.last_id;
-  },
-  set: function(albums) {
-    fs.writeFileSync(file_path, JSON.stringify({last_id: this.last_id + 1, data: albums}), "utf8");
   },
 };
 
