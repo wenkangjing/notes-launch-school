@@ -45,27 +45,43 @@ Create some basic Stylus styles.
 # 4	Album Node Module
 
 Debug Node JS App
--  Note Inspector
+- Note Inspector
 - https://github.com/node-inspector/node-inspector
 - node-debug ./bin/www
 - debug in Chrome
 
 # 5	Beginning Backbone Development
-
-
-
 # 6	Convert New Album View to Backbone Page
-
-
-
 # 7	Adding a Cart
-
-
-
 # 8	Store and Retrieve Cart Data with localStorage
-
-
-
 # 9	Summary
+
+rebuild from scrach
+1. scaffolding
+  - express-generator using pug ->  npm install and npm start
+  - npm install  -> grunt + plugins
+  - bower install -> jquery, backbone, handlebars
+  - tasks in Gruntfile.js, concat, uglify, handlebars
+  - install stylus, nib
+
+2. layout.pug
+  - mixins
+  - includes 
+
+3. stylus
+  - mixins
+  - css auto compiled
+
+4. Data Accessor
+  - get, set, update, delete to json/db
+  - express router
+
+5. jasmine
+  - test express fouter
+
+6. implementing functional feature
+
+* [ ] check this https://github.com/TingC/music_store
+* [ ] deploy to heroku
 
 

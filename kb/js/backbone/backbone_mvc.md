@@ -45,6 +45,20 @@ https://launchschool.com/lessons/b9b67674/assignments/b383a8e7
 - "all" — this special event fires for any triggered event, passing the event name as the first argument followed by all trigger arguments.
 
 
+> listenTo:
+> Tell an object to listen to a particular event on an other object. The advantage of using this form, instead of other.on(event, callback, object), is that listenTo allows the object to keep track of the events, and they can be removed all at once later on. The callback will always be called with object as context.
+
+I think the personal opinion I arrived at was to use `this.on` and all other listeners should use `listenTo`.
+- `this.on`
+- `view.listenTo(model, 'change', view.render)`
+
+http://stackoverflow.com/questions/16823746/backbone-js-listento-vs-on
+- use the events property whenever possible as it is concise and correct
+- use this.listenTo for all bindings to models and collections
+- any additional bindings remember to bind the context reliably using your preferred method. I usually use ECMA Function.bind because hey, standards, but there are several good options here.
+
+
+
 ## Models
 - Fetching model data from the server
 - Populating model data locally
