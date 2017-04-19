@@ -44,6 +44,8 @@ https://launchschool.com/lessons/b9b67674/assignments/b383a8e7
 - "route" (router, route, params) — Fired by history when any route has been matched.
 - "all" — this special event fires for any triggered event, passing the event name as the first argument followed by all trigger arguments.
 
+this.$el.html() remove data and events
+> jQuery removes other constructs such as data and event handlers from child elements before replacing those elements with the new content.
 
 > listenTo:
 > Tell an object to listen to a particular event on an other object. The advantage of using this form, instead of other.on(event, callback, object), is that listenTo allows the object to keep track of the events, and they can be removed all at once later on. The callback will always be called with object as context.
