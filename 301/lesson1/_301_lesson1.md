@@ -97,6 +97,8 @@ view
 
 - irb with all active record loaded
 
+> By convention in Rails, the table name should be the lowercase plural of the model name.
+
 association
 ```ruby
 class Post < ActiveRecord::Base
@@ -140,32 +142,55 @@ end
 
 # 11	Assignment: Post model
 
+1. First, create a migration to modify the database. In this migration, we want to create the table. Rails migrations are the only place where we want to use generators. Issue this command from the terminal within your project directory: `rails generate migration create_posts`
+
+2. Open the newly created migration file in your code editor, and take a look at the migration file. Use the create_table method to create the necessary table and columns. We want: a url and title, which should both be strings and a description which should be text.
+
+3. From the terminal again, issue this command: `rake db:migrate` (you may need to do rake db:create first, if you're using mysql or postgres). If you're getting a rake error, you can try adding `bundle exec` before the rake command.
+
+4. Then take a look at your database and see that you have a posts table, with three columns: url, title and description.
+
+5. Create a Post model file: under app/models directory, create a post.rb file put class Post < ActiveRecord::Base; end
+
+6. Open rails console, and create your first Post object: `Post.create(title: "My first post", description: "I sure hope this works!", url: "www.yahoo.com")`. Verify by looking at your database that this worked.
+
+snake_case for 
+
+CamelCase for Model
 
 # 12	Assignment: User model
-
-
 # 13	Assignment: 1:M between User and Post
-
-
 # 14	Assignment: Verify in "rails console"
-
-
 # 15	Assignment: Comment model
-
-
 # 16	Assignment: Comment associations
-
-
 # 17	Assignment: Category model
-
-
 # 18	Solution: Setting up the models
-
-
 # 19	Solution: Pushing to Github
 
+use generate only for migration
 
 # 20	Lesson: Lecture 2
+
+### migration
+
+like sql schema, timestamped by generator
+
+increamental, run it in order, no conflicts allowed, e.g.
+
+order matters a lot, tracking in schema_migrations table, don't modify the table by hand
+
+
+Migrations:
+1. create posts table
+2. add title column to posts (delete this, error occurs on 3)
+3. remove title column to posts
+4. create users table  (what if I want rename user to posters)
+
+
+
+> never ever modify submitted migration files, prefer to add new migration
+
+
 
 
 # 21	Assignment: M:M between Post and Category
