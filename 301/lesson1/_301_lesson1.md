@@ -272,15 +272,18 @@ partial - reuse view
 
 # 24	Assignment: Read ActiveRecord Association Methods doc
 
+http://api.rubyonrails.org/classes/ActiveRecord/Associations/ClassMethods.html
+
 
 # 25	Assignment: Play with Associations
 
 
 # 26	Assignment: Read Routes tutorial
+http://guides.rubyonrails.org/routing.html
 
 
 # 27	Assignment: Read Layouts and Rendering
-
+http://guides.rubyonrails.org/layouts_and_rendering.html
 
 # 28	Assignment: resources :posts
 
@@ -449,4 +452,16 @@ class Group < ActiveRecord::Base
     has_many :user_groups, foreign_key: :group_id
     has_many :users, through: :user_groups
 end
+```
+
+
+```
+HTTP Verb	  Path	          Controller#Action	    Used for
+GET       	/users	        users#index	          display a list of all users
+GET	        /users/new	    users#new	            return an HTML form for creating a new user
+POST       	/users     	    users#create	        create a new user
+GET        	/users/:id	    users#show          	display a specific user
+GET       	/users/:id/edit	users#edit	          return an HTML form for editing a user
+PATCH/PUT	  /users/:id	    users#update        	update a specific user
+DELETE	    /users/:id	    users#destroy	        delete a specific user
 ```
