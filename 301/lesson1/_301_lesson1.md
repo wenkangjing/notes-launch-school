@@ -186,14 +186,82 @@ Migrations:
 3. remove title column to posts
 4. create users table  (what if I want rename user to posters)
 
-
-
 > never ever modify submitted migration files, prefer to add new migration
 
+`reload!` in rails console reload the changes in data layer
 
+- object to object // the virtual attributes
+- id to id // the actualy column name
 
 
 # 21	Assignment: M:M between Post and Category
+
+habtm vs hmt
+
+Database layer:
+- join table
+
+Model layer:
+
+1. `has_and_belongs_to_many` 
+- no join model
+- implicit join table at db layer
+  - `table1_name_table2_name` ex: `groups_users`
+- Problems:
+  - can't put additional attributes (columns) on association
+
+2. `has_many` :through (**always preferred**)
+- has a join model
+- can put additional attributes (columns) on association
+
+
+`tableize`
+
+```
+irb(main):021:0> "PostCategory".tableize
+=> "post_categories"
+```
+
+### resouces and route
+
+in routes.rb, `resources :posts` ~=
+
+**memorise the mapping**
+
+```
+  # get   '/posts',          to: 'posts#index'
+  # get   '/posts/:id',      to: 'posts#show'
+
+  # get   '/posts/new',       to: 'psots#new'
+  # post  '/posts',          to: 'posts#create'
+  # get   '/posts/:id/edit', to: 'posts#edit'
+  # patch '/posts/:id',      to: 'posts#update'
+```
+
+nested URL
+  ```ruby
+    resources :posts, except: [:destroy] do
+      resources :comments, only: [:create]
+    end
+  ```
+
+  ```
+  post_comments_path	POST	/posts/:post_id/comments(.:format)	comments#create
+  ```
+
+name route
+- build a link back to home page, 
+- use name route rather than url which is a hard code string
+
+```erb
+# never ever use url
+<%= link_to 'go back to all posts', '/posts' %>
+# use name route
+<%= link_to 'go back to all posts', posts_path %>
+```
+
+partial - reuse view
+- 
 
 
 # 22	Assignment: Verify with ERD Diagram
