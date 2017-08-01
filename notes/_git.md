@@ -1,3 +1,4 @@
 GIT
 ------------
 
+`git commit --amend`

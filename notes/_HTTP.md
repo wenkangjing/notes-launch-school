@@ -134,3 +134,11 @@ PostMan, DevTool Network Tab, cURL, Fiddler
 
 ## TODO
 - [.] config curl
+
+
+## HTTPS
+
+1. issue a CA by certificate authority
+2. 301 redirect to https page
+3. Use Fetch as Google to test that Googlebot can access your pages.
+4. supports HTTP Strict Transport Security (HSTS) and enable HSTS.

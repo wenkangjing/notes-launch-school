@@ -117,3 +117,10 @@ Scope look-up stops once it finds the first match.
 function-based scope
 - each function you declare creates a bubble for itself, but no other structures create their own scope bubbles.
 - It doesn't matter where in the scope a declaration appears, the variable or function belongs to the containing scope bubble, regardless
+
+
+## Closures
+
+[channel 9](https://channel9.msdn.com/Series/Javascript-Fundamentals-Development-for-Absolute-Beginners/Fundamentals-of-JavaScript-Closures-20)
+
+[js_closure.js](./js_closure.js)
