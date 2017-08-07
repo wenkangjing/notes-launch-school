@@ -64,9 +64,33 @@ A circular reference resulting in a memory leak
 ### Avoid memory leak
 
 
+### Event Loop
 
-Event Loop
----------------------
+https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/
+
+> An event loop has one or more task queues. A task queue is an ordered list of tasks, which are algorithms that are responsible for such work as:
+
+> 一个 eventloop 有一或多个 task 队列。每个 task 由一个确定的 task 源提供。从不同 task 源而来的 task 可能会放到不同的 task 队列中。
+> 例如，浏览器可能单独为鼠标键盘事件维护一个 task 队列，所有其他 task 都放到另一个 task 队列。通过区分 task 队列的优先级，使高优先级的 task 优先执行，保证更好的交互体验。
+
+![Eveng Loop](./event-loop.png)
+
+#### Task Queue (Macrotask)
+- event callbacks
+- XHR callbacks
+- IndexDB I/O
+- setTimeout/setInterval
+- history.back
+
+#### Microtask Queue
+are usually scheduled for things that should happen **straight after** the currently executing script
+经常是为需要直接在当前脚本执行完后立即发生的事
+- **Promise.then**
+- MutationObserver
+- Object.observe
+- process.nextTick
+
+order: script execution,  microtask queue, task
 
 http://latentflip.com/loupe/
 
@@ -86,6 +110,7 @@ setTimeout(function timeout() {
 }, 5000);
 // 4. print
 console.log("Welcome to loupe.");
+
 /*
 Output:
 Hi!
@@ -93,6 +118,7 @@ Welcome to loupe.
 Click the button!
 You clicked the button!
 */
+
 ```
 
 ### walk through
@@ -113,4 +139,7 @@ You clicked the button!
 - 2s later, c++ add `timer()` to *Queue*
 - *Event loop* pick `timer()` from the *Queue* and execute it
 - pirnt   
+
+
+### Promise and Event Loop
 
