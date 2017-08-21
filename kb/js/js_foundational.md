@@ -121,6 +121,47 @@ You clicked the button!
 
 ```
 
+### NodeJS Event Loop
+
+***!!! watch this please*** 
+
+https://www.youtube.com/watch?v=PNa9OMajw9w
+
+https://www.dynatrace.com/blog/all-you-need-to-know-to-really-understand-the-node-js-event-loop-and-its-metrics/
+
+http://libuv.org/
+
+> Node.js is an event-based platform. This means that everything that happens in Node is the reaction to an event. A transaction passing through Node traverses a cascade of callbacks. 
+
+> This is all handled by a library called libuv which provides a mechanism called an event loop.
+
+> **There is only one thread that executes JavaScript code and this is the thread where the event loop is running**. The execution of callbacks (know that every userland code in a running Node.js application is a callback) is done by the event loop. 
+
+> Whenever possible, libuv will use those asynchronous interfaces, avoiding usage of the thread pool.
+
+
+```
+// event loop
+-->-- index.js 
+ ^
+ ^      setTimeout/setInterval (timer)
+ ^
+ ^      network & disk & child processes (IO callbacks)
+ ^
+ ^      setImmediate
+ ^
+ ^      "close" events
+ ^
+--<-- process#exit
+
+// internal loop
+
+
+
+```
+
+
+
 ### walk through
 - 1. register `onClick` to c++
 - 2. pirnt hi

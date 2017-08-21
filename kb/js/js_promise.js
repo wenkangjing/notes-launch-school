@@ -29,19 +29,36 @@ console.log('3');
 
 
 // what is the output?
-(function test() {
-  setTimeout(function() {
-    console.log(4)
-  }, 0);
+// 12354
+setTimeout(function() {
+  console.log(4)
+}, 0);
 
-  new Promise(function executor(resolve) {
-      console.log(1);
-      for( var i=0 ; i<10000 ; i++ ) {
-          i == 9999 && resolve();
-      }
-      console.log(2);
-  }).then(function() {
-      console.log(5);
-  });
-  console.log(3);
-})();
+new Promise(function executor(resolve) {
+    console.log(1);
+    for( var i=0 ; i<10000 ; i++ ) {
+        i == 9999 && resolve();
+    }
+    console.log(2);
+}).then(function() {
+    console.log(5);
+});
+console.log(3);
+
+/*
+output:
+p1
+global1
+then1
+timeout1
+*/
+setTimeout(function() {
+    console.log('timeout1');
+});
+new Promise(function(resolve) {
+    console.log('p1');
+    resolve();
+}).then(function() {
+  console.log('then1');
+});
+console.log('global1');
