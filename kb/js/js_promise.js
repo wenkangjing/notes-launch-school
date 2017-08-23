@@ -58,7 +58,16 @@ setTimeout(function() {
 new Promise(function(resolve) {
     console.log('p1');
     resolve();
-}).then(function() {
-  console.log('then1');
-});
+}).then(() => 
+  console.log(' then1')
+).then(() => 
+  console.log(' then2')
+);
 console.log('global1');
+new Promise(function(resolve) {
+    console.log('pA');
+    resolve();
+}).then(() => 
+  console.log(' thenA')
+);
+console.log('global2');
